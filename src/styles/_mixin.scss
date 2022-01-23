@@ -1,0 +1,13 @@
+@mixin container($mxw,$rate){
+    margin: 0 auto;
+    max-width: $mxw*$rate;
+}
+@mixin text_white_shadow {
+    color: white;
+    text-shadow: black 0.05rem 0.05rem;
+}
+@mixin tablet{
+    @media(max-width:768px){
+        @content;
+      }
+}

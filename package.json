@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "react-my-blog",
-  "author": "ketyykes",
+  "author": "Danny",
   "keywords": [
     "gatsby"
   ],
@@ -16,7 +16,10 @@
   },
   "dependencies": {
     "gatsby": "^4.5.2",
+    "gatsby-plugin-image": "^2.5.1",
     "gatsby-plugin-sass": "^5.5.0",
+    "gatsby-plugin-sharp": "^4.5.1",
+    "gatsby-source-filesystem": "^4.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.48.0"
