@@ -1,56 +1,57 @@
-@import 'mixin';
-
-  .navbar {
-    position: sticky;
-    top: 0;
-    padding: 20px 20px;
-    background: #4296d1e0;
+@import "mixin";
+.container-xxl {
+  @include container(1200px, 1.6);
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 20px 20px;
+  background: #4296d1e0;
+  &>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    ul {
-      display: flex;
-    }
-    li {
-      position: relative;
-      a {
-        @include text_white_shadow;
-        padding: 0 20px;
-        &::after {
-          content: "";
-          position: absolute;
-          height: 5px;
-          width: 100%;
-          left: 0;
-          bottom: -20px;
-          background: white;
-          border-radius:4px;
-          transform: scaleX(0);
-          transform-origin: bottom left;
-          box-shadow: 0.05rem 0.05rem 0px 0px black;
-        }
-        &:hover::after{
-          transition: transform .5s;
-          transform: scaleX(1);
-        }
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    position: relative;
+    a {
+      @include text_white_shadow;
+      padding: 0 20px;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        left: 0;
+        bottom: -20px;
+        background: white;
+        border-radius: 4px;
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        box-shadow: 0.05rem 0.05rem 0px 0px black;
       }
-    }
-    .navbar-home {
-      a {
-        display: block;
-        font-size: 24px;
-        transform:scale(1);
-        transition:.5s;
-        @include text_white_shadow;
-        span{
-          font-size: 2rem;
-        }
-        &:hover{
-          transform:scale(1.1);
-        }
+      &:hover::after {
+        transition: transform 0.5s;
+        transform: scaleX(1);
       }
     }
   }
-
-
-  
+  .navbar-home {
+    a {
+      display: block;
+      font-size: 24px;
+      transform: scale(1);
+      transition: 0.5s;
+      @include text_white_shadow;
+      span {
+        font-size: 2rem;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

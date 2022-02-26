@@ -1,4 +1,7 @@
 @import 'mixin';
+.container-xxl {
+  @include container(1200px, 1.6);
+}
 .copyright {
     @include text_white_shadow;
     font-weight: 800;
