@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 const index = ({data}) => {
-    console.log(data);
+    // console.log(data);
     const {title,description} = data.site.siteMetadata
     return (
         <div>

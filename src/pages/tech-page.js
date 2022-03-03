@@ -1,14 +1,40 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import {graphql,Link} from 'gatsby'
 
-
-const techPage = () => {
+const techPage = ({data}) => {
+    console.log(data.allMarkdownRemark.nodes);
+    const markdownArticle = data.allMarkdownRemark.nodes;
     return (
-        <>
-            <Layout>
-            </Layout>
-        </>
+      <>
+        <Layout>
+          <div>
+            {markdownArticle.map(article =>(
+              <Link to={"/article/"+article.id} key={article.id}>
+                <div>
+                  <h3>{article.frontmatter.title}</h3>
+                  <p>{article.frontmatter.stack}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Layout>
+      </>
     )
 }
 
-export default techPage
+export default techPage;
+
+export const query = graphql`
+query listArticleQuery {
+  allMarkdownRemark {
+    nodes {
+      frontmatter {
+        slug
+        stack
+        title
+      }
+      id
+    }
+  }
+}`

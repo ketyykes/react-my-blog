@@ -22,7 +22,6 @@
       width: 100%;
       flex-direction: column;
       align-items: center;
-      max-height:0;
       overflow: hidden;
       transition: max-height 1s ease-in-out;
     }
@@ -61,61 +60,68 @@
       }
     }
   }
-  .navbar-home {
-    a {
-      display: block;
-      font-size: 24px;
-      transform: scale(1);
-      transition: 0.5s;
-      @include text_white_shadow;
-      &:hover {
-        transform: scale(1.1);
-      }
+}
+
+.navbar-home {
+  a {
+    display: block;
+    font-size: 24px;
+    transform: scale(1);
+    transition: 0.5s;
+    @include text_white_shadow;
+    &:hover {
+      transform: scale(1.1);
     }
   }
-  .icon {
-    font-size: 2rem;
+}
+
+
+.icon {
+  font-size: 2rem;
+}
+.iconTxt{
+  display:none;
+}
+
+ 
+@include tablet {
+  .menu-show {
+    max-height: 250px;
   }
-  .iconTxt{
-    display:none;
+  .menu-noshow{
+    max-height: 0px;
   }
-  
-  @include tablet {
-    .menu-show {
-      max-height: 250px;
-    }
-    .ham{
+  .ham{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    .line{
+      transform:translate(0,-50%);
+      top: 50%;
       position: absolute;
-      height: 40px;
+      left: 0;
+      display: block;
       width: 40px;
-      cursor: pointer;
-      .line{
-        transform:translate(0,-50%);
-        top: 50%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: rgb(255, 255, 255);
+      margin-bottom: 8px;
+      &::after, &:before{
+        content: '';
         position: absolute;
         left: 0;
         display: block;
-        width: 40px;
+        width: 100%;
         height: 4px;
         border-radius: 4px;
         background-color: rgb(255, 255, 255);
-        margin-bottom: 8px;
-        &::after, &:before{
-          content: '';
-          position: absolute;
-          left: 0;
-          display: block;
-          width: 100%;
-          height: 4px;
-          border-radius: 4px;
-          background-color: rgb(255, 255, 255);
-        }
-        &::after{
-          top: 12px;
-        }
-        &::before{
-          bottom: 12px;
-        }
+      }
+      &::after{
+        top: 12px;
+      }
+      &::before{
+        bottom: 12px;
       }
     }
   }

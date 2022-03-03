@@ -3,16 +3,16 @@ import { Link } from "gatsby";
 import "../styles/global.scss";
 import * as styles from "../styles/layout.module.scss";
 const Navbar = () => {
-  console.log(styles);
-  const { navbar, navbarHome, containerXxl, icon, ham, line, iconTxt ,menuShow} = styles;
+  // console.log(styles);
+  const { navbar, navbarHome, containerXxl, icon, ham, line, iconTxt ,menuShow,menuNoshow} = styles;
   const [hamburger, setHamburger] = useState(false);
   const hamHandler = ()=>{
     setHamburger(!hamburger);
   }
-  console.log(navbar);
+  // console.log(navbar);
   return (
       <nav className={`${navbar}`}>
-        <div className={ham} onClick={hamHandler} role = "button">
+        <div className={ham} onClick={hamHandler} role = "button"  tabIndex={0} onKeyDown={hamHandler}>
           <span className={line}></span>
         </div>
         <div className={containerXxl}>
@@ -22,7 +22,7 @@ const Navbar = () => {
               <span className={iconTxt}>水土曜來了</span>
             </Link>
           </h1>
-          <ul className={`${hamburger ? menuShow : ""}`}>
+          <ul className={`${hamburger ? menuShow : menuNoshow}`}>
             <li>
               <Link to="/">首頁</Link>
             </li>
