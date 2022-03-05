@@ -1,8 +1,7 @@
 ---
 title : 這是我第五個標題
 stack: 這是我第五個副標
-slug: MySecondSlug
-ImageHD: ../hdImages/bear.jpg
+slug: MySecondSlug3
 ---
 
 
