@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import {graphql,Link} from 'gatsby'
 
 const techPage = ({data}) => {
+
     // console.log(data.allMarkdownRemark.nodes);
     const markdownArticle = data.allMarkdownRemark.nodes;
     return (
@@ -13,7 +14,7 @@ const techPage = ({data}) => {
               <Link to={"/tech-page/"+article.id} key={article.id}>
                 <div>
                   <h3>{article.frontmatter.title}</h3>
-                  <p>{article.frontmatter.stack}</p>
+                  <p>{article.frontmatter.date}</p>
                 </div>
               </Link>
             ))}
@@ -30,9 +31,8 @@ query listArticleQuery {
   allMarkdownRemark {
     nodes {
       frontmatter {
-        slug
-        stack
         title
+        date
       }
       id
     }
