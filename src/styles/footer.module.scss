@@ -1,4 +1,5 @@
 @import 'mixin';
+@import 'color';
 .container-xxl {
   @include container(1200px, 1.6);
 }
@@ -8,5 +9,5 @@
     font-size: 1rem;
     line-height: 60px;
     text-align: center;
-    background: #4296d1e0;
+    background: $main_color;
   }

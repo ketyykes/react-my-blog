@@ -1,0 +1,23 @@
+@import 'color';
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  padding: 10px 0;
+  h3 {
+    margin: 10px 0;
+    a {
+    color: $main_color;
+      font-size: 1.5rem;
+      &:hover {
+        color: $secondary_color;
+      }
+      line-height: 1.5;
+    }
+   
+  }
+  text-align: left;
+  width: 660px;
+}

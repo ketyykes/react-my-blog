@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Banner />
-      {children}
+      <div className="container">{children}</div>
       <Footer />
     </>
   );

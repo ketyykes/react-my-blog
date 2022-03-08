@@ -55,7 +55,8 @@ a {
 //font
 $entire_font_family:'Noto Sans TC', sans-serif;
 html{
-	font-family: $entire_font_family;
+background:#4296d109;
+font-family: $entire_font_family;
 }
 @import 'mixin';
 

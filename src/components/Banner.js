@@ -3,12 +3,12 @@ import Navbar from "./Navbar";
 import * as styles from "../styles/banner.module.scss";
 const Banner = () => {
   return (
-    <div>
+    <>
       <div className={styles.header}>
       <Navbar />
         <h2 className={styles.headerH2}>水土曜來了</h2>
       </div>
-    </div>
+    </>
   );
 };
 export default Banner;

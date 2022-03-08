@@ -1,13 +1,11 @@
 @import "mixin";
-.container-xxl {
-  @include container(1200px, 1.6);
-}
+@import "color";
 .navbar {
   position: sticky;
   top: 0;
   z-index: 2;
   padding: 20px 20px;
-  background: #4296d1e0;
+  background: $main_color;
   & > div {
     display: flex;
     align-items: center;

@@ -1,8 +1,48 @@
-@import 'mixin';
+@import "mixin";
+@import "color";
 
-.article-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+$element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p;
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @each $i in $element {
+    #{$i} {
+      margin-top: 1rem;
+    }
+  }
+  @for $i from 0 to 6 {
+    h#{$i} {
+      font-size: (2.5rem - (0.25rem * $i));
+    }
+  }
+  img {
+    max-width: 1200px;
+    display: block;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 2;
+  }
+  pre {
+    padding: 10px;
+    background-color: $code_background_color;
+  }
+  a {
+    display: block;
+    color: $main_color;
+    &:hover{
+        color: $secondary_color;
+    }
+  }
+  b {
+    font-weight: 700;
+  }
+  li {
+    list-style: disc;
+    list-style-position: inside;
+  }
 }

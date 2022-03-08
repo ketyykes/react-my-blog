@@ -4,9 +4,9 @@ const index = ({data}) => {
     // console.log(data);
     const {title,description} = data.site.siteMetadata
     return (
-        <div>
+        <>
             <p>{title}:{description}</p>
-        </div>
+        </>
     )
 }
 export default index

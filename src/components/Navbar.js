@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import "../styles/global.scss";
-import * as styles from "../styles/layout.module.scss";
+import * as styles from "../styles/navbar.module.scss";
+import "../styles/global.scss";
 const Navbar = () => {
   // console.log(styles);
-  const { navbar, navbarHome, containerXxl, icon, ham, line, iconTxt ,menuShow,menuNoshow} = styles;
+  const { navbar, navbarHome, icon, ham, line, iconTxt ,menuShow,menuNoshow} = styles;
   const [hamburger, setHamburger] = useState(false);
   const hamHandler = ()=>{
     setHamburger(!hamburger);
@@ -15,7 +16,7 @@ const Navbar = () => {
         <div className={ham} onClick={hamHandler} role = "button"  tabIndex={0} onKeyDown={hamHandler}>
           <span className={line}></span>
         </div>
-        <div className={containerXxl}>
+        <div className="container-xxl">
           <h1 className={navbarHome}>
             <Link to="/">
               <span className={icon}>☿♄</span>

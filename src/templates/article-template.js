@@ -7,9 +7,9 @@ const articleTemplate = ({pageContext}) => {
   
   // console.log(data);
   const {html,title,date} = pageContext;
-  const fomateDate = dayjs(date).format('YYYY-MM-DD ddd HH:mm');
+  const fomateDate = dayjs(date).format('YYYY-MM-DD ddd');
   // const {title} = frontmatter;
-  console.log(pageContext);
+  // console.log(pageContext);
     const { articleContent} = styles;
   return (
     <Layout>

@@ -1,5 +1,6 @@
 const path = require("path");
 const util = require("util");
+const dayjs = require("dayjs");
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
   query articleTechQuery {
@@ -15,11 +16,12 @@ exports.createPages = async ({ graphql, actions }) => {
       }
 }
 `);
-  console.log(data);
-  console.log(util.inspect(data, {showHidden: false, depth: null, colors: true}))
+
+  // console.log(data);
+  // console.log(util.inspect(data, {showHidden: false, depth: null, colors: true}))
   data.allMarkdownRemark.nodes.forEach((node) => {
     actions.createPage({
-      path: '/tech-page/' + node.id,
+      path: '/tech-page/' + dayjs(node.frontmatter.date).format('YYYY-MM-DD ddd'),
       component: path.resolve("./src/templates/article-template.js"),
       context: {id:node.id,
         html:node.html,
