@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-const index = ({data}) => {
+const Index = ({data}) => {
     // console.log(data);
     const {title,description} = data.site.siteMetadata
     return (
@@ -9,7 +9,7 @@ const index = ({data}) => {
         </>
     )
 }
-export default index
+export default Index;
 export const query = graphql`query MyQuery {
     site {
       siteMetadata {

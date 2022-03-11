@@ -47,6 +47,8 @@ table {
 	border-spacing: 0;
 }
 
+@import 'color';
+@import 'mixin';
 //customize reset
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 a {
@@ -55,10 +57,10 @@ a {
 //font
 $entire_font_family:'Noto Sans TC', sans-serif;
 html{
-background:#4296d109;
+background:$body_color;
 font-family: $entire_font_family;
 }
-@import 'mixin';
+
 
 .container {
 	@include container(1200px, 1);
