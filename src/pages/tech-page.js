@@ -8,7 +8,7 @@ const dayjs = require("dayjs");
 
 const TechPage = ({ data }) => {
   const { content, card } = styles;
-  let perPage = 4;
+  let perPage = 10;
   const allmarkdownArticle = data.allMarkdownRemark.nodes;
   const [allItem, setAllItem] = useState(
     allmarkdownArticle.slice(0 , perPage * 1)
