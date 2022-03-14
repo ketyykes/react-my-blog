@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Pager from "../components/Pager";
-
 import { graphql, Link } from "gatsby";
 import * as styles from "../styles/tech-page.module.scss";
 const dayjs = require("dayjs");
 
-const TechPage = ({ data }) => {
-  const { content, card } = styles;
-  let perPage = 10;
+const Tem = ({ pageContext, data }) => {
+  console.log(pageContext);
+  console.log(data);
   const allmarkdownArticle = data.allMarkdownRemark.nodes;
+
+  const { perPage, currentPage, numPages } = pageContext;
+  const { content, card } = styles;
   const [allItem, setAllItem] = useState(
-    allmarkdownArticle.slice(0 , perPage * 1)
+    allmarkdownArticle.slice(perPage*(currentPage-1), perPage * currentPage)
   );
+
   return (
     <>
       <Layout>
@@ -32,11 +35,12 @@ const TechPage = ({ data }) => {
               <p>{dayjs(article.frontmatter.date).format("YYYY-MM-DD ddd")}</p>
             </div>
           ))}
-          <Pager
+           <Pager
             allItem={allItem}
             setAllItem={setAllItem}
             allmarkdownArticle={allmarkdownArticle}
             perPage={perPage}
+            currentPage={currentPage}
           />
         </div>
       </Layout>
@@ -44,7 +48,7 @@ const TechPage = ({ data }) => {
   );
 };
 
-export default TechPage;
+export default Tem;
 
 export const query = graphql`
   {
