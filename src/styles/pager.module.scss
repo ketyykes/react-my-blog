@@ -1,0 +1,41 @@
+@import "color";
+.page-button {
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+  }
+  &:active {
+    background: $main_color;
+  }
+  padding: 4px 10px;
+  border: 1px solid $secondary_color;
+  // border-radius: 4px;
+  color: $secondary_color;
+}
+
+.page-button:first-of-type{
+  border-radius: 4px 0 0 4px;
+}
+.page-button:last-of-type{
+  border-radius: 0 4px 4px 0;
+}
+
+.page-button-current {
+  background: $secondary_color;
+  color: white;
+}
+
+.page-button-active {
+  background: $secondary_color;
+  color: white;
+}
+.pagination {
+  display: flex;
+  margin-bottom: 10px;
+  li:first-of-type {
+    border-radius: 4px 0 0 4px;
+  }
+  li:last-of-type {
+    border-radius: 0 4px 4px 0;
+  }
+}

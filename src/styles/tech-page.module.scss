@@ -1,3 +1,4 @@
+@import "mixin";
 @import "color";
 .content {
   display: flex;
@@ -14,35 +15,20 @@
       &:hover {
         color: $secondary_color;
       }
+      @include tablet{
+        font-size: 1.25rem;
+      }
       line-height: 1.5;
     }
   }
   text-align: left;
   width: 660px;
-}
-.page-button {
-  cursor: pointer;
-  &:hover {
-    background-color: white;
+  @include tablet{
+    width: 350px;
   }
-  &:active {
-    background: $main_color;
-  }
-  padding: 4px 10px;
-  border: 1px solid $secondary_color;
-  color: $secondary_color;
-}
-.page-button-active {
-  background: $secondary_color;
-  color: white;
-}
-.pagination {
-  display: flex;
-  margin-bottom: 10px;
-  li:first-of-type {
-    border-radius: 4px 0 0 4px;
-  }
-  li:last-of-type {
-    border-radius: 0 4px 4px 0;
+  p{
+    @include tablet{
+      font-size: .75rem;
+    }
   }
 }

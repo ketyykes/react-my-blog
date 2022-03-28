@@ -31,7 +31,7 @@ let deviation = Math.round(d3.deviation(sortByDate,d=>(d.articleStrNum)*100))/10
 
 在入門篇的部分從安裝到寫程式以及關鍵字Highlight，另外附上許多MDN的連結，希望給Javascript不夠熟悉的人也可以在臨時需要的時候補充知識，另外也從中一起試錯、附上d3官方API說明和console.log()各種方法後的結果，希望能讓大家感受到彷彿像我在學習這個函式庫的時候一樣再觀看官方文件，進階篇的撰寫部分講解部分可能會比較迅速，適合對Javascript有一定基礎或入門篇弄熟的人觀看，最後特別篇希望帶到一下資料獲取和統計的部分，才能構成整個資料視覺化的要素，畢竟`數字本身沒有意義，數字的意義來自於人們賦予意義，統計的意義也不是數字本身，而是理解統計背後的含意`。
 
-~~最後講一個不重要的事情，我運用了回文、英文和中文押韻完成了三十天的標題OhYA，每次想標題要押韻和Match都得花上一段時間~~![/images/emoticon/emoticon13.gif](/images/emoticon/emoticon13.gif)
+~~最後講一個不重要的事情，我運用了回文、英文和中文押韻完成了三十天的標題OhYA，每次想標題要押韻和Match都得花上一段時間~~
 
 以下附上表格和連結作為閱讀建議和文章綱要
 
@@ -97,8 +97,8 @@ let deviation = Math.round(d3.deviation(sortByDate,d=>(d.articleStrNum)*100))/10
 |   `select()、selectAll()、selection.append()、selection.text()`   | [Day04一同來見識 D3起手式—用D3寫Helloworld](https://ithelp.ithome.com.tw/articles/10267374)                   |
 |                        ` selection.attr()`                        | [Day05Bar拉BarBarBar，作伙來畫吧—畫個bar chart長條圖](https://ithelp.ithome.com.tw/articles/10268424)         |
 |                        `selection.style()`                        |           [Day06這包什麼餡，原來是折線—繪製折線圖](https://ithelp.ithome.com.tw/articles/10269143)            |
-| `d3.text()、d3.json()、d3.csv()、d3.dsv()、d3.image()、d3.html()` | [Day08做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data](https://ithelp.ithome.com.tw/articles/10270548)] |
-| `selection.data()、selection.datum()、` | [Day09 資料元素來綁定，讓你元素有內定—資料綁定](https://ithelp.ithome.com.tw/articles/10271215)] |
+| `d3.text()、d3.json()、d3.csv()、d3.dsv()、d3.image()、d3.html()` | [Day08做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data](https://ithelp.ithome.com.tw/articles/10270548) |
+| `selection.data()、selection.datum()、` | [Day09 資料元素來綁定，讓你元素有內定—資料綁定](https://ithelp.ithome.com.tw/articles/10271215) |
 |                       `selection.enter()、selection.exit()、 selection.join`|[Day10遇到元素資料不相等，用函式解決高人一等](https://ithelp.ithome.com.tw/articles/10271954)|
 |`d3.scaleLinear()、continuous.clamp、d3.max()、d3.min()、continuous.domain()、continuous.range() ` | [Day11 觀測時候別鐵齒，拿出你的比例尺](https://ithelp.ithome.com.tw/articles/10272615) |
 |`d3.axisTop()、d3.axisRight、d3.axisBottom、d3.axisLeft()、axis.ticks()、axis.tickFormat()`     | [Day12完成製作的壓軸，畫出圖表座標軸](https://ithelp.ithome.com.tw/articles/10273251) |
@@ -119,5 +119,5 @@ let deviation = Math.round(d3.deviation(sortByDate,d=>(d.articleStrNum)*100))/10
 
 ## 感謝與結語
 
-最後感謝好想工作室夥伴們給我文章撰寫範例的靈感，~~還有感謝他們聽我講幹話給我歡樂的動力持續寫文XD~~![/images/emoticon/emoticon41.gif](/images/emoticon/emoticon41.gif)還有感謝我在理解函式過程當中，國內外撰寫過D3Js文章的Bloger們。
-另外要說的是D3Js是一個龐大的函式庫，我介紹到的部分僅是核心的DataBinding和冰山一角的常用圖表繪製，D3函式庫還可以繪製的圖表包括但不限於力圖、泡泡圖、TreeMap、AreaChart還有任何你能發揮創意巧思並且運用強大D3Js客製化工具所展現的視覺畫圖表，希望藉由這系列文章旅程能~~成為我們的夥伴，一起航向偉大的航道~~帶領你成為學習的基礎，變成後續學習的要領。最後再說一次本篇文章的重點`數字本身沒有意義，數字的意義來自於人們賦予意義，統計的意義也不是數字本身，而是理解統計背後的含意`~~重點就這句而已(誤)~~，以上。![/images/emoticon/emoticon42.gif](/images/emoticon/emoticon42.gif)
+最後感謝好想工作室夥伴們給我文章撰寫範例的靈感，~~還有感謝他們聽我講幹話給我歡樂的動力持續寫文XD~~還有感謝我在理解函式過程當中，國內外撰寫過D3Js文章的Bloger們。
+另外要說的是D3Js是一個龐大的函式庫，我介紹到的部分僅是核心的DataBinding和冰山一角的常用圖表繪製，D3函式庫還可以繪製的圖表包括但不限於力圖、泡泡圖、TreeMap、AreaChart還有任何你能發揮創意巧思並且運用強大D3Js客製化工具所展現的視覺畫圖表，希望藉由這系列文章旅程能~~成為我們的夥伴，一起航向偉大的航道~~帶領你成為學習的基礎，變成後續學習的要領。最後再說一次本篇文章的重點`數字本身沒有意義，數字的意義來自於人們賦予意義，統計的意義也不是數字本身，而是理解統計背後的含意`~~重點就這句而已(誤)~~，以上。

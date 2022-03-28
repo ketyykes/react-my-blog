@@ -5,16 +5,20 @@ import { graphql, Link } from "gatsby";
 import * as styles from "../styles/tech-page.module.scss";
 const dayjs = require("dayjs");
 
-const Tem = ({ pageContext, data }) => {
+
+const TechPageTemplate= ({ pageContext, data }) => {
   console.log(pageContext);
   console.log(data);
   const allmarkdownArticle = data.allMarkdownRemark.nodes;
-
-  const { perPage, currentPage, numPages } = pageContext;
+  const { perPage, currentPage } = pageContext;
   const { content, card } = styles;
   const [allItem, setAllItem] = useState(
     allmarkdownArticle.slice(perPage*(currentPage-1), perPage * currentPage)
-  );
+    );
+    
+    console.log(allItem);
+
+
 
   return (
     <>
@@ -48,7 +52,7 @@ const Tem = ({ pageContext, data }) => {
   );
 };
 
-export default Tem;
+export default TechPageTemplate;
 
 export const query = graphql`
   {

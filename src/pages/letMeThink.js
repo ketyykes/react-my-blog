@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Pager from "../components/Pager";
-
 import { graphql, Link } from "gatsby";
 import * as styles from "../styles/tech-page.module.scss";
 const dayjs = require("dayjs");
@@ -33,8 +32,8 @@ const TechPage = ({ data }) => {
             </div>
           ))}
           <Pager
-            allItem={allItem}
-            setAllItem={setAllItem}
+            // allItem={allItem}
+            // setAllItem={setAllItem}
             allmarkdownArticle={allmarkdownArticle}
             perPage={perPage}
           />
