@@ -12,6 +12,7 @@ const TechPageTemplate= ({ pageContext, data }) => {
   const allmarkdownArticle = data.allMarkdownRemark.nodes;
   const { perPage, currentPage } = pageContext;
   const { content, card } = styles;
+
   const [allItem, setAllItem] = useState(
     allmarkdownArticle.slice(perPage*(currentPage-1), perPage * currentPage)
     );

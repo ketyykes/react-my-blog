@@ -6,12 +6,6 @@ const Pager = ({ currentPage, allmarkdownArticle, perPage }) => {
   let totalPages = Math.ceil(allmarkdownArticle.length / perPage);
   const { pageButton, pagination, pageButtonCurrent } = styles;
 
-  function pageButtonFunction(index) {
-    if (currentPage == index + 1) {
-      return pageButtonCurrent;
-    }
-  }
-
   return (
     <ul className={pagination}>
       {Array.from({ length: totalPages }, (_, index) => (

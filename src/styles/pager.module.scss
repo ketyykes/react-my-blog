@@ -6,10 +6,10 @@
   }
   &:active {
     background: $main_color;
+    color: white;
   }
   padding: 4px 10px;
   border: 1px solid $secondary_color;
-  // border-radius: 4px;
   color: $secondary_color;
 }
 
@@ -23,11 +23,9 @@
 .page-button-current {
   background: $secondary_color;
   color: white;
-}
-
-.page-button-active {
-  background: $secondary_color;
-  color: white;
+  &:hover {
+    background-color: $secondary_color;
+  }
 }
 .pagination {
   display: flex;

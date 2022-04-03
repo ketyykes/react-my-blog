@@ -4,7 +4,6 @@ import * as styles from "../styles/article-template.module.scss";
 const dayjs = require('dayjs')
 // import {graphql} from 'gatsby'
 const articleTemplate = ({pageContext}) => {
-  
   // console.log(data);
   const {html,title,date} = pageContext;
   const fomateDate = dayjs(date).format('YYYY-MM-DD ddd');
