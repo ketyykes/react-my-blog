@@ -20,8 +20,10 @@
     "gatsby-plugin-image": "^2.5.1",
     "gatsby-plugin-sass": "^5.5.0",
     "gatsby-plugin-sharp": "^4.5.1",
+    "gatsby-remark-prismjs": "^6.12.1",
     "gatsby-source-filesystem": "^4.5.1",
-    "gatsby-transformer-remark": "^5.8.1",
+    "gatsby-transformer-remark": "^5.12.1",
+    "prismjs": "^1.28.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.48.0"

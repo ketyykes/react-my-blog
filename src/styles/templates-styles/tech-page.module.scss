@@ -1,5 +1,5 @@
-@import "mixin";
-@import "color";
+@import "../mixin";
+@import "../color";
 .content {
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
       &:hover {
         color: $secondary_color;
       }
-      @include tablet{
+      @include tablet {
         font-size: 1.25rem;
       }
       line-height: 1.5;
@@ -23,12 +23,12 @@
   }
   text-align: left;
   width: 660px;
-  @include tablet{
+  @include tablet {
     width: 350px;
   }
-  p{
-    @include tablet{
-      font-size: .75rem;
+  p {
+    @include tablet {
+      font-size: 0.75rem;
     }
   }
 }

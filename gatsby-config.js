@@ -4,9 +4,25 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
     description: `This is my first siteMetadata`,
   },
+
   plugins: [
     `gatsby-plugin-sass`,
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

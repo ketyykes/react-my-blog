@@ -1,13 +1,26 @@
-@mixin container($mxw,$rate){
-    margin: 0 auto;
-    max-width: $mxw*$rate;
+@mixin container($mxw, $rate) {
+  margin: 0 auto;
+  max-width: $mxw * $rate;
 }
 @mixin text_white_shadow {
-    color: white;
-    text-shadow: black 0.05rem 0.05rem;
+  color: white;
+  text-shadow: black 0.05rem 0.05rem;
 }
-@mixin tablet{
-    @media(max-width:768px){
-        @content;
-      }
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin responsive {
+  max-width: 1200px;
+  box-sizing: border-box;
+  @media (max-width: 992px) {
+    max-width: 940px;
+  }
+  @media (max-width: 768px) {
+    max-width: 720px;
+  }
+  @media (max-width: 576px) {
+    max-width: 540px;
+  }
 }

@@ -1,36 +1,58 @@
-@import "mixin";
-@import "color";
+@import "../mixin";
+@import "../color";
 
-$element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p;
+$element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 
 .article-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  // padding: 10px;
+  // @include responsive;
+  // box-sizing: border-box;
+  // @include responsive;
   @each $i in $element {
     #{$i} {
       margin-top: 1rem;
+      max-width: 100%;
     }
   }
   @for $i from 1 to 6 {
     h#{$i} {
       font-size: (2.5rem - (0.25rem * $i));
+      padding: 0 50px;
+      text-align: center;
     }
   }
+
+  // .gatsby-highlight-code-line {
+  //   background-color: #feb;
+  //   display: block;
+  //   margin-right: -1em;
+  //   margin-left: -1em;
+  //   padding-right: 1em;
+  //   padding-left: 0.75em;
+  //   border-left: 0.25em solid #f99;
+  // }
   img {
-    max-width: 1200px;
+    max-width: 100%;
     display: block;
+  }
+  code {
+    max-width: 90%;
   }
   p {
     font-size: 1rem;
     line-height: 2;
+    padding: 0 50px;
   }
-  pre {
-    padding: 10px;
-    background-color: $code_background_color;
-  }
+  // pre {
+  //   white-space: normal;
+  //   line-height: 3;
+  //   padding: 0 50px;
+  //   background-color: $code_background_color;
+  // }
   a {
     display: block;
     color: $main_color;
@@ -47,14 +69,14 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p;
   }
   table {
     line-height: 1.5;
-    a{
+    a {
       margin-top: 0;
     }
     td {
       border: 1px solid $code_background_color;
       padding: 10px;
     }
-    th{
+    th {
       border: 1px solid $code_background_color;
       padding: 10px;
     }

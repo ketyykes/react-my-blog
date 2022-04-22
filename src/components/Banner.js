@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import * as styles from "../styles/banner.module.scss";
+import * as styles from "../styles/components-styles/banner.module.scss";
 const Banner = () => {
   return (
     <>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import * as styles from "../styles/article-template.module.scss";
+import * as styles from "../styles//templates-styles/article-template.module.scss";
 const dayjs = require('dayjs')
 // import {graphql} from 'gatsby'
 const articleTemplate = ({pageContext}) => {
