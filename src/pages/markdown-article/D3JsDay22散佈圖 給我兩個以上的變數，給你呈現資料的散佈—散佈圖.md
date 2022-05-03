@@ -29,7 +29,7 @@ date: 2021-10-07T05:50:38.000Z
 
 ### tickSizeOuter();
 
-```javascript=
+```javascript{numberLines: true}
 const svg = d3.select("body")
             .append("svg")
             .attr("width", 800)
@@ -48,7 +48,7 @@ axisY(g);
 ### tickSizeInner()函式
 
 觀看帶入tickSizeInner()看看
-```javascript=
+```javascript{numberLines: true}
     let axisY = d3.axisRight(scaleY)
                 .tickSizeInner(100);
 ```
@@ -58,7 +58,7 @@ axisY(g);
 
 這邊可以發現`tickSizeInner()`改變的數值是class為tick的g元素裡面的`<line>`，而`tickSizeOuter()`改變的數值是最上面的`<path>`元素裡面的屬性d。最後我們嘗試改用`tickSize()`試試看就可以發現他將會改變`<path>`和`<line>`
 
-```javascript=
+```javascript{numberLines: true}
   let axisY = d3.axisRight(scaleY)
                 .tickSize(100)
 ```
@@ -68,7 +68,7 @@ axisY(g);
 ## 實際帶入地圖資料
 了解後我們帶入上次的行政區人口密度的資料，這時候我們就可以將.tickSize()設定的數值和scale的上限(`range()`)相等，記得注意伸展方向，因此我們**設置負值**，另外我們將對座標軸的樣式做小部分的修改，因此加入class名字。
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
  const newTaipei = taipei.map((el) => {
                     el.people_total = Number(el.people_total);
                     el.area = Number(el.area);
@@ -108,7 +108,7 @@ axisY(gY);
 ![](https://i.imgur.com/zBuJN9l.png)
 
 這時候當網格渲染出來之後如果在內容加入散佈圖的圓點時可能會讓人覺得網格影響視覺比重，因此我們使用css選取器選到剛剛所加入的class並將裡面的`<line>`的顏色進行微調程式碼如下
-```javascript=
+```javascript{numberLines: true}
 .xAxis line, .yAxis line {
     stroke:rgba(0,0,0,.1);
 }
@@ -116,7 +116,7 @@ axisY(gY);
 
 接下來我們將要進行資料綁定，與先前製作的長條圖的差別在於這次綁定完的資料在位置的設定要使用兩種變數資料。
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const circle = svg.selectAll("circle")
                     .data(newTaipei)
                     .join("circle");
@@ -134,7 +134,7 @@ joinCircle.attr("cx",d=>(scaleX(d.area)))
 由於每個紅點表示的是每個行政區，因此我們得再加入一項g群組來顯示文字，它的位置得到的方式和剛剛圓點的位置得道的方式一樣，皆來自於綁定資料的區域面積和人口總數所轉換的Scale函式，但是必須微調往右移，因此使用` gText.attr("transform",`translate(60,50)`);`
 
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let gText = svg.append("g");
 gText.attr("transform",`translate(60,50)`);
 let joinText = gText.selectAll("text").data(newTaipei).join("text");
@@ -160,7 +160,7 @@ joinText.text((d) => {
 
 
 本日完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
    d3.json("populationDensity.json")
     .then((data) => {
         return data.result.records;

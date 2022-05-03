@@ -9,17 +9,17 @@ date: 2021-09-22T06:15:54.000Z
 
 ### CSV逗號分隔值(Comma-Separated Values)
 <font color="red">`CSV`</font>是一種通用、簡單的格式，檔案以純文字儲存表格的資料，常見使用逗號來分隔資料，換句話說如果你用記事本的格式開啟的話大概會長這樣。
-![](https://i.imgur.com/HnGdZLM.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210922_01.png)
 
 如下圖
 
-![](https://i.imgur.com/295Ao2i.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210922_02.png)
 
 你也可以使用Microsoft Excel開啟，它會自動幫你引入表格當中呈現
 
 一般而言由於是以純文字的方式儲存，因此也會有編碼上的差異，如果你用記事本檔案→另存新檔的時候，存檔類型選擇所有檔案，在編碼的地方可以看到有許多種類可供選擇，順帶一提<font color="red">`ANSI編碼`</font>在語言不同的情況之下會有亂碼出現的可能性，現在大部分會使用<font color="red">`UTF`</font>形式儲存文字，目前常見使用的<font color="red">`UTF-8`</font>也常用在html的<font color="red">`meta`</font>資訊裡面，另外如果用Excel打開的時候會出現亂碼也可以嘗試另存成<font color="red">`具BOM的UTF-8`</font>來儲存，提供給預開啟軟體自動識別這是UTF的格式。
 
-![](https://i.imgur.com/gzTuGxR.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210922_03.png)
 
 > 其他更多資訊可以參見維基百科
 [CSV維基百科](https://zh.wikipedia.org/zh-tw/%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%80%BC)
@@ -38,7 +38,7 @@ date: 2021-09-22T06:15:54.000Z
 | null 空值      | null                  |
 
 以下作為JSON範例
-```javascript=
+```javascript{numberLines: true}
 {
   "item":{
       "name": "香蕉",
@@ -50,14 +50,14 @@ date: 2021-09-22T06:15:54.000Z
 可以發現與Javascript的物件可以儲存的內容有著十分類似的樣貌，但是<font color="red">Javascript的物件可以儲存函式</font>，然而JSON僅是儲存資料因此不能儲存函式，另外JSON在資料交換的時候必須使用<font color="red">`UTF-8的格式`</font>，也可以使用Unicode16進位跳脫字元序列，若你在網路上下載的JSON資料以文字檔打開的時候的文字類似像<font color="red">`\u0041`</font>這樣類型的話，並不是出現亂碼的狀況，而使它使用了十六進位的跳脫字元序列，你在console.log欄位的話就能看出原本的字符。
 如下圖
 
-![](https://i.imgur.com/SSre39Q.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210922_04.png)
 
 另外在網路上找到相對應的字元編碼可以轉譯文字，參照下列網址
 > [UnicodePlus](https://unicodeplus.com/)
 > 
 ### XML可延伸標記式語言(Extensible Markup Language)
 <font color="red">`XML`</font>是一種<font color="red">標記式語言</font>，他長得有點類似HTML，這裡嘗試著寫一個XML的範例
-```htmlmixed=
+```html{numberLines: true}
 <?xml version="1.0"?>
 <item>
   <name>香蕉</name>

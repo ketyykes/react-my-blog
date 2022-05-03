@@ -15,7 +15,7 @@ date: 2021-09-29T10:05:54.000Z
 ## 監聽器
 首先我們要有一個所選取的元素，在後面透過方法鏈的方式添加要執行的函式，這邊可以直接就範例學習即可，例如我們預做出一個當按鈕按下去就會產生隨機的長條圖，我們可以先把按鈕和長條圖準備好
 創建好的範例如下
-```javascript=
+```javascript{numberLines: true}
 <style>
 .btn {
       padding: 8px;
@@ -87,7 +87,7 @@ date: 2021-09-29T10:05:54.000Z
 ### 加入on監聽
 
 接下來我們預計使用滑鼠點擊的事件因此在 <font color="red"> `on()`</font>內第一個參數填入**click**，第二個參數則是填入要執行的**function**，我們預計每次按下按鈕的時候畫出一個長條圖，因此先取名叫做render函式
-```javascript=
+```javascript{numberLines: true}
      let btn = d3.select("body")
         .append("button")
         .text("按鈕")
@@ -96,7 +96,7 @@ date: 2021-09-29T10:05:54.000Z
         .on("click", render);
 ```
 這時候我們將剛剛所建立的長條圖和隨機產生數字的程式碼用function render()包住此時大概會長這樣
-```javascript=
+```javascript{numberLines: true}
     function render() {
         let randomIntFun = d3.randomInt(50, 400);
         let randomArr = [];
@@ -120,7 +120,7 @@ date: 2021-09-29T10:05:54.000Z
 
 因此我們在執行render function的時候要先把先前的svg給移除掉，另外希望畫面載的時候有一個長條圖，因此可以先執行一次render()
 
-```javascript=
+```javascript{numberLines: true}
     function render() {
        d3.select("body").select("svg").remove();
         let randomIntFun = d3.randomInt(50, 400);
@@ -148,7 +148,7 @@ date: 2021-09-29T10:05:54.000Z
 延續前幾天的程式碼我們希望可以再滑鼠滑入到某個 <font color="red"> `<rect>`</font>的時候列出對應到的人口實際數字，另外添加過渡動畫改變長條圖的顏色，當滑鼠移出該rect的時候變回來。
 
 因此我們再前幾天的程式碼後面添加以下片段
-```javascript=
+```javascript{numberLines: true}
 svg.selectAll("rect")
   .on("mouseenter", function () {
     let thisRectX = d3.select(this).attr("x");
@@ -171,7 +171,7 @@ svg.selectAll("rect")
 ![](https://i.imgur.com/c1GyzkP.png)
 
 所以我們得在添加關於離開元素的時候的程式碼，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 svg.selectAll("rect")
   .on("mouseenter", function () {
     let thisRectX = d3.select(this).attr("x");
@@ -195,7 +195,7 @@ svg.selectAll("rect")
 這邊的this來自於事件的觸發也就是你當滑入進去的元素，方法鏈後面繼續接續一個事件表示滑鼠離開該元素時所要執行的事情，這邊執行的事情直接把剛剛添加的text用id選取起來並移除它，另外也將顏色改變回來。
 
 完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let newTaipei = taipei.map((el) => {
           el.people_total = Number(el.people_total);
           el.area = Number(el.area);

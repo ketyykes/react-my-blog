@@ -28,7 +28,7 @@ date: 2021-10-09T06:16:00.000Z
 
 現在回到程式碼
 我們可以對使用`scale函式`映射完在座標平面的**x值**和**y值**對**r值相減**是正數的情形就繪製半徑出來，否則半徑就等於0(也就是不繪製)
-```javascript=
+```javascript{numberLines: true}
 gCircle.selectAll("circle")
 .data(house)
 //中間省略
@@ -47,7 +47,7 @@ if(
 ```
 另外要考量的地方是除了圓形會超出在svg的負數位置上面，還可能超出svg的寬高，因此也必須判斷任何圓形繪製完後超出寬為800高為800的圓形
 因此程式碼如下
-```javascript=
+```javascript{numberLines: true}
 //這有程式碼先前提過故省略
 //這有程式碼先前提過故省略
 //這有程式碼先前提過故省略
@@ -66,7 +66,7 @@ if(
 })
 ```
 這邊先製作渲染樣板的函式做為等等在滑鼠移入的時候會執行的事情程式碼如下
-```javascript=
+```javascript{numberLines: true}
 function tooltip(city){
     d3.select(".wrap-data").append("div").classed("tooltip",true).html(
         `<p>交易標的：${city[0]["交易標的"]}</p>
@@ -83,7 +83,7 @@ function tooltip(city){
 
 
 接下來我們要進行滑鼠移入時所執行的function，在**mouseenter**的**callbackFunction** 裡面我們預計將所移入的圓點變換顏色，撰寫`attr("fill","blue")`，另外將所選到的圓點的data代入到一個tooltip的function執行，在**方法鏈串接**當中使用**mouseleave事件**，並且在其**callbackFuntion**裡面讓原本被改變的顏色恢復成透明度0.1的紅色。這邊使用`d3.select(".tooltip").remove();`在mouseenter的用意主要是希望我再移入下一個圓點之前房屋價格、土地面積等等的資料繼續出現直到下一個滑鼠移入圓點事件被觸發。
-```javascript=
+```javascript{numberLines: true}
 //方法鏈串接程式碼省略
 .on("mouseenter",function(){
 d3.select(".tooltip").remove();
@@ -103,7 +103,7 @@ d3.select(this)
 ![](https://i.imgur.com/GQ4fGU8.png)
 
 因此我們回到先前的程式碼的下方添加**change事件**，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const groupData = d3.group(data,d=>d["鄉鎮市區"]);
 //省略
 //省略
@@ -117,7 +117,7 @@ d3.select("#district").on("change", function(e) {
         })
 ```
 然後將接下來的程式碼使用**updata的函式**包住，另外在畫面載入的時候執行一次updata()函式程式碼如下
-```javascript=
+```javascript{numberLines: true}
 function update(){
 d3.selectAll("svg g").remove();
 const house = groupData.get(defaultDistrict).filter(function (d) {

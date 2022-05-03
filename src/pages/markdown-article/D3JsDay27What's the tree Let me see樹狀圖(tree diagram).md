@@ -21,7 +21,7 @@ date: 2021-10-12T09:01:00.000Z
 表示巢狀資料結構呈現像樹一樣，除了根節點之外，每一個節點都有一個父節點，同樣的除了葉子以外每一個都有一個或多個子節點。
 
 這邊舉例JSON檔案如下
-```javascript=
+```javascript
 const treeData =
 {
   "name": "Eve",
@@ -62,7 +62,7 @@ const treeData =
 > [d3官網hierarchy](https://github.com/d3/d3-hierarchy/blob/v3.0.1/README.md#hierarchy)
 
 這時候我們可以將treeData做階層化並且觀看其console.log()會出現什麼東西程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const hierarchyData = d3.hierarchy(treeData, function(d){
     return d.children;
 })
@@ -78,7 +78,7 @@ console.log(hierarchyData);
 ![https://ithelp.ithome.com.tw/upload/images/20211012/201250951xkqCZ4kIE.png](https://ithelp.ithome.com.tw/upload/images/20211012/201250951xkqCZ4kIE.png)
 
 接下來我們要設置樹的大小，這邊設定**size**的寬是**800**和高**600**
-```javascript=
+```javascript{numberLines: true}
 const tree = d3.tree().size([800,600]);
 ```
 
@@ -91,7 +91,7 @@ const tree = d3.tree().size([800,600]);
 
 
 將轉換後的**階層化數據**帶入成**tree**布局後使用`links()`，這邊可以使用`console.log`來觀看其經過轉換函式的樣貌
-```javascript=
+```javascript{numberLines: true}
 console.log(tree(hierarchyData).links());
 ```
 觀看開發者人員工具將會生成一個陣列儲存每個節的**source**和**target**
@@ -104,7 +104,7 @@ console.log(tree(hierarchyData).links());
 ## 畫樹枝
 有了經過`link()`轉換後的資料，接下來就可以開始畫圖了
 我們將剛剛生成的數據使用svg的line繪製進行data綁定之後，svg的x1和y1的屬性值設定為剛剛的source，svg的x2和y2屬性設定為target，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let padding = 20;
 let width =800-padding-padding;
 let height = 600-padding-padding;
@@ -141,7 +141,7 @@ g.selectAll("line").data(tree(hierarchyData).links())
 ![https://ithelp.ithome.com.tw/upload/images/20211012/20125095Y1Fmb8pIyw.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095Y1Fmb8pIyw.png)
 
 可以撰寫程式碼觀看內容
-```javascript=
+```javascript{numberLines: true}
 console.log(tree(hierarchyData).descendants());
 ```
 
@@ -155,7 +155,7 @@ console.log(tree(hierarchyData).descendants());
 在剛剛創建class名為g-node的元素選取起來後插入circle和text記得微調一下text的位置讓它不要和circle重疊即可
 
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
  let gNode = svg.append("g")
   .selectAll("g")
   .data(tree(hierarchyData).descendants())
@@ -189,7 +189,7 @@ console.log(tree(hierarchyData).descendants());
 這邊的樹枝由於使用的是svg的line元素，因此整個線段會是筆直的線段，如果要有點曲線的樣貌，必須改用**path**元素，這裡有兩種方法一種是手寫**M**和**C**的設定，另一種是使用d3的[link產生器](https://github.com/d3/d3-shape/blob/v3.0.1/README.md#links)，
 這邊簡單帶一下手寫的方法
 
-```javascript=
+```javascript{numberLines: true}
 g.selectAll("path")
   .data(tree(hierarchyData).descendants().slice(1))
   .join("path")
@@ -218,7 +218,7 @@ g.selectAll("path")
 
 
 可以先撰寫以下程式碼觀看呈現樣貌會比較好理解
-```javascript=
+```javascript{numberLines: true}
 <svg width="800" height="600" id="multiLink"></svg>
 <script>
     let linkGen = d3.linkHorizontal();
@@ -246,7 +246,7 @@ g.selectAll("path")
 
 
 我們撰寫程式碼如下，最後呈現的圖將會與剛剛手動的效果一樣，另外我們也可以`console.log()`觀看在轉換過程當中所呈現的內容是什麼
-```javascript=
+```javascript{numberLines: true}
 const linkMkr = d3.linkVertical().x(d=>d.x).y(d=>d.y); //使用link產生器指定成垂直的樣貌
 g.selectAll("path").data(tree(hierarchyData)
   .links())
@@ -378,7 +378,7 @@ g.selectAll("path").data(tree(hierarchyData)
 > 圖片來源：[Unsplash](https://unsplash.com/s/photos/fern)
 
 程式碼如下
-```
+```html{numberLines: true}
 <style>
   .node text {
     font: 12px;

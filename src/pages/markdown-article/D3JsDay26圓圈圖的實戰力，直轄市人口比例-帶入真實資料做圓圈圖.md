@@ -15,7 +15,7 @@ date: 2021-10-11T10:01:00.000Z
 ### 使用d3.group結合array.slice群組化資料
 
 由於裡面的值都是縣市+鄉鎮劃分又台灣的縣市的名稱都是以三個字為名，例如新北市、臺南市、XX市等等，因此我們透過`d3.group`的分組方式取前三個字來當作劃分依據，程式碼如下
-```javascript=
+```javascript{numberLines: true}
  d3.json("populationDensity.json")
     .then(function (data) {
       console.log(data);
@@ -32,7 +32,7 @@ date: 2021-10-11T10:01:00.000Z
 
 ### 用Array.from將Map物件轉換成Array
 接下來使用`Array.from`轉成陣列以便後續方便操作，如下列程式碼
-```javascript=
+```javascript{numberLines: true}
 const districtAry = Array.from(districtData);
 ```
 操作完應當如下圖
@@ -45,7 +45,7 @@ const districtAry = Array.from(districtData);
 ![](https://i.imgur.com/AWl3Uig.png)
 
 使用array清理資料的程式碼如下
-```javascript=
+```javascript{numberLines: true}
 districtAry.splice(-6);
 districtAry.shift();
 ```
@@ -56,7 +56,7 @@ districtAry.shift();
 
 首先我們對districtAry使用`forEach`遍歷，將元素裡面的陣列索引值1也就是鄉鎮市進行加總後，對該元素再增加一個索引值當作總人口數如下列第3行`districtAry.forEach......`所示
 
-```javascript=
+```javascript{numberLines: true}
 districtAry.forEach(function (el) {
     el.push(d3.sum(el[1], (d) => Number(d.people_total)));
 });
@@ -68,7 +68,7 @@ districtAry.forEach(function (el) {
 ### 增加一個元素寫入是否為直轄市
 我們先宣告一個municipality的陣列，把直轄市的縣市給帶進去陣列當中，然後判斷如果districtAry裡面的縣市欄位內容與municipality相等的話就在districtAry存入一個value是"直轄市"，否則就存入"非直轄市"
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let municipality = ["臺北市","新北市","臺南市","高雄市","桃園市","臺中市"];
   districtAry.forEach((districtAryEl) => {
       for (let i = 0; i < municipality.length; i++) {
@@ -91,7 +91,7 @@ let municipality = ["臺北市","新北市","臺南市","高雄市","桃園市",
 
 為了得到直轄市和非直轄市的人口，我們需要有所有人數和直轄市人數以及非直轄市人數，為了重複使用我們宣告一個宣告一個加總的函式，加總的內容有直轄市、非直轄市和總臺灣人口，詳細程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 const municipalitySumFun = (municipalityStr) =>
 d3.sum(districtAry, (d) => {
     if (d[3] === municipalityStr) return d[2];
@@ -102,7 +102,7 @@ let municipalitySum = municipalitySumFun("直轄市");
 let NotMunicipalitySum = municipalitySumFun("非直轄市");
 ```
 帶入`console.log()`檢查一下
-```javascript=
+```javascript{numberLines: true}
 console.log(districtArySum);
 console.log(municipalitySum);
 console.log(NotMunicipalitySum);
@@ -115,7 +115,7 @@ console.log(NotMunicipalitySum);
 ## arc函式和pie函式
 我們希望這次的圖形是圓圈圖，也就是空心的圓，中間的圓形部分可以當滑鼠移入某區域的時候得出該縣市和人口比例與人口數的資料，因此宣告的`arc()`如下
 
-```javascript=
+```javascript{numberLines: true}
 const arc = d3.arc().innerRadius(50).outerRadius(100).cornerRadius(2);
 ```
 
@@ -136,7 +136,7 @@ const arc = d3.arc().innerRadius(50).outerRadius(100).cornerRadius(2);
 換句話說也就是我們必須指定什麼資料要做成`pie`的開始角度、結束角度、和value物件等等
 
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let pie = d3.pie().value(function (d) {
               return d[2];
         });
@@ -152,7 +152,7 @@ console.log(pie(districtAry));
 順帶一提這次使用是**Tableau**的色系，Tableau也是先前[D3JsDay02 學學D3JS 技能提高SSS—為什麼D3](https://ithelp.ithome.com.tw/articles/10266099)那一篇所介紹的資料視覺化軟體。
 
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let color = d3.scaleOrdinal(d3.schemeTableau10);
 g.attr(
   "transform",
@@ -180,7 +180,7 @@ g.selectAll("g")
 ## 添加動畫
 
 我們希望慢慢的繪製出整個圓形，可能你會想要使用下列的程式碼進行動畫繪製
-```javascript=
+```javascript{numberLines: true}
 g.selectAll("g")
 .data(d3.sort(pie(districtAry), (d) => d.index))
 //中間省略
@@ -209,7 +209,7 @@ return arc(d);
 換句話說就是第二個參數要接收一個**callback函式**，裡面要**return一個插值器函數(interpolate)**，然後在根據時間**t(t將會介於0~1逐漸增加)**來對當前的元素內容修改值
 
 我們直接觀看程式碼
-```javascript=
+```javascript{numberLines: true}
 //上面省略
 .transition()
 .ease(d3.easeLinear)
@@ -233,7 +233,7 @@ return i*500;
 ![](https://i.postimg.cc/59rBWBNr/gif25public02.gif)
 ## 計算百分比函式
 最後我們要顯示人口百分比，這裡先宣告一個計算百分比的函式
-```javascript=
+```javascript{numberLines: true}
 function Percentage(num, total) {
     if (num == 0 || total == 0) {
       return 0;
@@ -244,7 +244,7 @@ function Percentage(num, total) {
 ## 添加滑鼠滑入事件
 
 接下來將插入滑鼠事件，selection.html()函式與眾多的函式一樣可以接收資料d，因此我們撰寫程式碼如下
-```javascript=
+```javascript{numberLines: true}
 g.selectAll("g")
 .on("mouseenter", function (e) {
     let appendText = d3
@@ -266,7 +266,7 @@ g.selectAll("g")
 
 最後補上直轄市和縣轄市的人口比例在畫面上就大功告成了，程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 svg.append("g").html(`
         <text  y="${height-100}" style="font-size:50; transform:translate(-20%,0)">
             <tspan x="${width/2}">直轄市${Percentage(municipalitySum,districtArySum)}%</tspan>

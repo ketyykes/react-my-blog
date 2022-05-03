@@ -45,7 +45,7 @@ r：πr²
 * 我們多設置一個ScaleR將總價格轉換成圓的半徑，之後再以`Math.sqrt()`將其半徑開平方根，以便繪圖完的圓形面積比與房屋價格比相同，與上一篇文章大同小異會是設置scaleX和scaleY來進行資料轉換至svg的座標點位置。
 
 ## 撰寫html點擊按鈕
-```
+```html{numberLines: true}
 <div class="wrap">
     <select id="district">
     </select>
@@ -67,7 +67,7 @@ r：πr²
 這邊在`input`使用`id屬性`以便日後要使用js選取時更為方便。
 
 ## 動態插入至select選單
-```javascript=
+```javascript{numberLines: true}
 const groupData = d3.group(data,d=>d["鄉鎮市區"]);
 groupData.delete("The villages and towns urban district");
 console.log(groupData);
@@ -94,7 +94,7 @@ let defaultDistrict = districtAry[0];
 使用`forEach()`轉換將土地、建物、總價的資料從字串型態轉換成數字型態
 程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 console.log(groupData.get(defaultDistrict));
 console.log(Array.isArray(groupData.get(defaultDistrict)));
 const house = groupData.get(defaultDistrict).filter(function (d) {
@@ -116,7 +116,7 @@ console出來的資料如下圖
 ## selection.node()介紹
 取得HTML元素雖然可以使用原生Js的`getElementById`，不過這邊介紹一個在d3的select底下的一個方法，`selection.node()`
 嘗試著撰寫以下程式碼
-```javascript=
+```javascript{numberLines: true}
 console.log(d3.select("#min-bulid").node());
 console.log(document.getElementById("min-bulid"));
 console.log(d3.select("#min-bulid").node()===document.getElementById("min-bulid"));
@@ -130,7 +130,7 @@ console.log(d3.select("#min-bulid").node()===document.getElementById("min-bulid"
 
 因此接下來我們可以撰寫以下的程式碼來得到使用者輸入的值並且將其設置為座標比例尺的上限和下限
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let minBuildArea =d3.select("#min-bulid").node().value;
 let maxBuildArea =d3.select("#max-bulid").node().value;
 let minLandArea = d3.select("#min-land").node().value;
@@ -142,13 +142,13 @@ const scaleY =  d3.scaleLinear().domain([maxLandArea,minLandArea]).range([0,800]
 與昨天不同的是這次我們要再**加入一個ScaleR來做為圓點的半徑**，我們將其範圍映射到5到900，換句話說希望圓點的半徑最小有5，由於之後會開平方根，因此最大值也頂多占座標軸的√900=30而已
 然後房價輸入價位最大值設定1億(~~這樣範圍應該可以容納大多數的房價了吧???~~)，
 因此添加以下程式碼
-```javascript=
+```javascript{numberLines: true}
 let minPrice = 0;
 let maxPrice = 10000000;
 const scaleR = d3.scaleLinear().domain([minPrice,maxPrice]).range([5,900]).clamp(false);
 ```
 最後我們將剛剛所做出來的比例尺配合**axisAPI**製作座標軸程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const axisX = d3.axisBottom(scaleX)
                 .ticks(15)
                 .tickFormat(d=>(d+"m²"))
@@ -168,7 +168,7 @@ const gY = svg.append("g")
 這邊簡單介紹一下`selection.call`，先前我們再進行座標渲染的時候都是使用`axis(selection)`的方式，例如`axisBottom( svg.append("g"))`，然而**d3Js是大量使用方法鏈所形成的一個套件**，因此如果使用axisY(gY)的方式來渲染座標軸的話，不便將方法鏈形成(由於回傳的內容不能傳遞給下一個函式使用。)
 
 我們可以撰寫以下程式碼來觀看差異
-```javascript=
+```javascript{numberLines: true}
 console.log(axisY(gY));
 console.log(gY.call(axisY));
 ```
@@ -185,7 +185,7 @@ console.log(gY.call(axisY));
 
 ## 添加動畫
 因此我們可以使用call將座標軸添加至畫面上並且加入動畫如以下程式碼
-```javascript=
+```javascript
 gX.transition().duration(1000).call(axisX);
 gY.transition().duration(1000).call(axisY);
 ```
@@ -197,7 +197,7 @@ gY.transition().duration(1000).call(axisY);
 ## 繪製圓圈圈
 接下來我們進行繪製圓型
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const gCircle = svg.append("g");
 gCircle.selectAll("circle")
         .data(house)

@@ -89,7 +89,7 @@ date: 2021-10-14T13:41:00.000Z
 
 接下來我們將昨天的資料裡面的文章字數算出q1的數值，中位數和q3的數值
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let dataSort = d3.sort(data,(a,b) => d3.ascending(a.articleStrNum,b.articleStrNum));
 let q1 = d3.quantile(dataSort,.25,d=>(d.articleStrNum));
 let median =d3.quantile(dataSort,.5,d=>(d.articleStrNum));
@@ -103,7 +103,7 @@ let maxBox = q1 + 1.5 * interQuantileRange;
 另外也在這邊多加一個g群組來裝盒鬚圖的各種svg元素，其中`nice()`這個函數讓軸的上限或者下限能夠自動延展到適當的值，不會因為你`domain()`設定min和max軸線然後不根據軸體的等距刻度就馬上截斷它。
 
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let scaleY =  d3.scaleLinear()
                 .domain([minBox,max])
                 .range([800, 0]).nice();
@@ -119,7 +119,7 @@ let boxPlotG = svg.append("g")
 
 
 這裡我們宣告一個盒子的中心位置和寬度如下
-```javascript=
+```javascript{numberLines: true}
 let boxCenter = 100;
 let boxWidth = 50;
 
@@ -141,7 +141,7 @@ boxPlotG
 
 接下來我們將繪製盒鬚圖的盒子的部分，由於一個`<rect>`的**x,y**是來自於左上角作為起始點，之後再繪製高度和寬度，因此我們將剛剛的盒子中心必須向左偏移，因為盒子對稱的關係所以將盒子的寬度除以2作為偏移量，另外依照盒鬚圖的定義帶入q3的值透過比例尺轉換作為y的位置，其盒鬚圖的高度就是四分位距
 具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 boxPlotG
     .append("rect")
     .attr("x", boxCenter - boxWidth/2)
@@ -158,7 +158,7 @@ boxPlotG
 接下來我們要繪製盒鬚圖的最小值和最大值和中位數，把剛剛所算出的這三個數字帶入成一個陣列，用d3的資料綁定把這三筆資料綁定到`<line>`上就可以簡單的劃出這三條線了。
 其中x位置要向左偏移，其原理與剛剛的`<rect>`同理。
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
         boxPlotG
         .selectAll(".SML")
         .data([minBox, median, maxBox])
@@ -180,7 +180,7 @@ boxPlotG
 
 另外呈現了以文章字數的最大值(也就是平常我們認知的最大值)當做盒鬚圖的上限和最小值當盒鬚圖的下限的圖，還有以圓點的方式把所有文章的字數分布出來做比對，圓點的程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 let circleG = svg.append("g").attr("transform",`translate(${padding},${padding})`);
 circleG.selectAll("circle").data(dataSort)
 .join("circle")

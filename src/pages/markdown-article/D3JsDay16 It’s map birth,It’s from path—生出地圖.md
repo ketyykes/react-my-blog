@@ -73,7 +73,7 @@ D3的作者也進行了開源專案讓**shp**轉換成**geojson**可以參考以
 
 ## 感受程式碼
 這一次換個解說方式，我們先行給予程式碼來讓各位感受一下，還不了解沒關係，等等將會講解重要函式的作用
-```javascript=
+```javascript{numberLines: true}
 const width = 800;
 const height = 600;
 const svg = d3.select("body").append("svg")
@@ -113,7 +113,7 @@ g.selectAll("path")
 
 因此我們撰寫程式碼了解一下projection是什麼東西如下
 
-```javascript=
+```javascript{numberLines: true}
 const projection = d3.geoMercator();
 console.log(typeof(projection));
 ```
@@ -160,7 +160,7 @@ console.log(typeof(projection));
 
 這時候我們撰寫程式碼，一樣使用先前提到的json載入資料方式來載入世界地圖，然後觀看一下<font color="red">`console.log`</font>的內容
 
-```javascript=
+```javascript{numberLines: true}
 d3.json("World_Countries.json").then(function(topojsonData) {
     console.log(topojsonData);
 })
@@ -175,7 +175,7 @@ d3.json("World_Countries.json").then(function(topojsonData) {
 
 程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 d3.json("World_Countries.json")
 .then(function(topojsonData) {
         console.log(topojsonData);

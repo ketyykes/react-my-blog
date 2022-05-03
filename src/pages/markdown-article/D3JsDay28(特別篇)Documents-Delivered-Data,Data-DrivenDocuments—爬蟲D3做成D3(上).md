@@ -89,7 +89,7 @@ cd移動到你要安裝套件的資料夾之後輸入
 
 說明可以觀看註解
 如下
-```javascript=
+```javascript{numberLines: true}
 const puppeteer = require("puppeteer"); //使用require引入puppeteer module
 const scrape = async () => {
     const browser = await puppeteer.launch({  //啟動瀏覽器
@@ -121,7 +121,7 @@ scrape();
 
 
 這邊要介紹一個函式，我們預計使用`page.evaluate`函式來擷取**DOM**的內容在function裡面就可以使用瀏覽器的API像是`document.querySelector`來選取元素，
-```
+```javascript{numberLines: true}
  await page.evaluate(function(){
  })
 ```
@@ -142,7 +142,7 @@ scrape();
 ![https://ithelp.ithome.com.tw/upload/images/20211013/20125095yyG5xK6YAt.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095yyG5xK6YAt.png)
 
 複製完後回到程式碼 我們嘗試著將剛剛複製的東西貼到**evaluate**裡面的**callbackFunction**，然後使用`innerText`取裡面的文字，最後return給str，然後我們試著將str印出來試試看
-```javascript=
+```javascript{numberLines: true}
 const puppeteer = require("puppeteer");
 const fs = require('fs');
 const scrape = async () => {
@@ -175,7 +175,7 @@ scrape();
 可以先寫在index.js這支檔案裏面並且使用`node index.js`執行
 
 
-```javascript=
+```javascript{numberLines: true}
 const fs = require('fs');
  
 fs.writeFile('test.txt', '哈囉世界', function (err) {
@@ -192,7 +192,7 @@ fs.writeFile('test.txt', '哈囉世界', function (err) {
 因此我們可以使用這個方式來產生json檔案
 
 結合剛剛所抓取網頁的資料元素的程式碼應當會如下
-```javascript=
+```javascript{numberLines: true}
 const puppeteer = require("puppeteer");
 const fs = require('fs');
 const scrape = async () => {
@@ -252,7 +252,7 @@ scrape().then(function (data) {
 `error { TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded`，因此這邊設定0(表示持續等待的意思)來讓程式等待到畫面跳轉為止
 
 程式碼內容如下
-```javascript=
+```javascript{numberLines: true}
 const puppeteer = require("puppeteer");
 const fs = require('fs');
 const scrape = async () => {
@@ -274,14 +274,14 @@ const scrape = async () => {
 ![https://ithelp.ithome.com.tw/upload/images/20211013/20125095AxwrJECBlh.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095AxwrJECBlh.png)
 
 這邊程式碼選取倒數第二個數字裡面的字串，因此寫`li:nth-last-child(2)`
-```javascript=
+```javascript{numberLines: true}
 let PageNum = await page.evaluate(() => {
     return Number(  document.querySelector(".tag-pagination > ul li:nth-last-child(2)").innerText);
 })
 console.log("總共有"+PageNum+"頁");
 ```
 得到總共有幾頁之後我們就撰寫一個for迴圈來遍歷頁數
-```javascript=
+```javascript{numberLines: true}
 // 開始跑所有頁數
 for (let index = 1; index <= PageNum; index++) {
  await page.goto(`https://ithelp.ithome.com.tw/tags/articles/d3.js?page=${index}`)
@@ -302,7 +302,7 @@ for (let index = 1; index <= PageNum; index++) {
 依照該頁面css的class我們獲取該頁面所有文章的連結存到currentPageHref陣列裡面
 
 之後我們找出該頁面所需要的內容元素存成一個物件，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 // 開始把這一頁的連結給爬一爬
 for(let i=0; i<currentPageHref.length; i++){
   await page.goto(currentPageHref[i]);
@@ -344,7 +344,7 @@ for(let i=0; i<currentPageHref.length; i++){
 ## 生成JSON檔案
 最後我們撰寫scrape()並在.then接收剛剛所取得的資料寫入json檔案，程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 scrape().then(function(allPeoplePages){
   console.log(allPeoplePages);
   let allPeoplePagesStr = JSON.stringify(allPeoplePages);

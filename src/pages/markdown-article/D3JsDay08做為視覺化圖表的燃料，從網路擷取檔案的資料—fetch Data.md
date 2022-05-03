@@ -7,14 +7,14 @@ date: 2021-09-23T11:25:54.000Z
 ## 淺談原始碼
 
 D3<font color="red">`包裝`</font>了Javascript的<font color="red">`fetchAPI`</font>來擷取資料我們這裡可以看到D3Js的原始碼為以下片段，不難看出它是return了fetchAPI
-```javascript=
+```javascript{numberLines: true}
 function json(input, init) {
   return fetch(input, init).then(responseJson);
 }
 ```
 
 另外也可以參見d3原始碼的部分
-```javascript=
+```javascript{numberLines: true}
 function dsv(delimiter, input, init, row) {
   if (arguments.length === 3 && typeof init === "function") row = init, init = undefined;
   var format = d3Dsv.dsvFormat(delimiter);
@@ -27,7 +27,7 @@ function dsv(delimiter, input, init, row) {
 
 <font color="red">`dsv`</font>的API reference說明文件下方有寫到
 
-![](https://i.imgur.com/Nss7tnm.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210923_01.png)
 
 > [參見d3.dsv API reference](https://github.com/d3/d3-fetch/blob/v3.0.1/README.md#dsv)
 
@@ -54,7 +54,7 @@ function dsv(delimiter, input, init, row) {
 以下就D3來獲取資料，需要注意的地方是由於是開啟URL因此必須使用伺服器的方式請求你的檔案，例如Visual Studio Code的套件**LiveServer**或者使用**Apache**開啟伺服器
 擷取資料方法如下
 ### 擷取JSON檔案
-```javascript=
+```javascript{numberLines: true}
 const data = d3.json("populationDensity.json");
   data.then((data) => {
       console.log(data);
@@ -62,7 +62,7 @@ const data = d3.json("populationDensity.json");
   });
 ```
 另外也可以支援使用<font color="red">`async await`</font>的方式使用，這邊接一個<font color="red">`立即函式(IIFE)`</font>來執行它
-```javascript=
+```javascript{numberLines: true}
 const fn = async function (){
   const data = await d3.json("populationDensity.json");
   await console.log(data);
@@ -71,7 +71,7 @@ const fn = async function (){
 
 ### 擷取CSV檔案
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const data = d3.csv("populationDensity.csv");
 data.then((data)=>{
     console.log(data);
@@ -80,12 +80,12 @@ data.then((data)=>{
 
 我們可以看到它會回傳一個陣列形式如下圖
 
-![](https://i.imgur.com/zzqvKA8.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210923_02.png)
 
 
 因此也可以使用<font color="red">`console.table`</font>來觀看
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const data = d3.csv("populationDensity.csv");
 data.then((data)=>{
     console.table(data);
@@ -94,23 +94,23 @@ data.then((data)=>{
 
 結果就會如下圖呈現表格的形式了
 
-![](https://i.imgur.com/9vCMaar.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210923_03.png)
 
 ### 擷取html
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const data = d3.html("hello.html");
 data.then((data)=>{
     console.log(data);
 })
 ```
 可以發現它會自動解析成**HTML**的**Element**
-![](https://i.imgur.com/VIjnCLi.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210923_04.png)
 ### 擷取image
 
 程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
 const data = d3.image("test.jpg");
 data.then((data)=>{
     console.log(data);
@@ -119,7 +119,7 @@ data.then((data)=>{
 
 可以發現它會自動解析成**HTML**的**img**元素
 
-![](https://i.imgur.com/L36F9Kt.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210923_05.png)
 
 如果對於<font color="red">`Fetch`</font>的<font color="red">`init`</font>參數有興趣的話可以看製定HTML標準的協會所寫的spec
 

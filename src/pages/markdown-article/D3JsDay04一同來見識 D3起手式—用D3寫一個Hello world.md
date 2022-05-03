@@ -7,12 +7,12 @@ date: 2021-09-19T05:52:54.000Z
 ## 如何開始D3js
 ### 方法一 使用CDN
 請google搜尋D3Js到D3Js的官方網站。
-![](https://i.imgur.com/jZLwPI6.jpg)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_01.jpg)
 滑鼠滾輪到下方處
 複製<font color="blue">`<script src="https://d3js.org/d3.v7.min.js"></script>`</font>
 [D3Js官方網站](https://d3js.org/)
 
-```htmlmixed=
+```html{numberLines: true}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,15 +29,15 @@ date: 2021-09-19T05:52:54.000Z
 把它複製貼到你的HTML頁面就可以了
 ### 方法二 去官方網站下載壓縮檔
 另外也可以在下方<font color="blue">`d3-7.0.1.tgz`</font>下載
-![](https://i.imgur.com/fdjl160.jpg)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_02.jpg)
 
 
 
 解壓縮之後會看到如下圖
-![](https://i.imgur.com/R0l3GDf.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_03.jpg)
 
 到<font color="blue">`dist`</font>的資料夾
-![](https://i.imgur.com/ELMjPKs.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_04.jpg)
 
 把<b>d3.js</b>或者<b>d3.min.js</b>擇一複製到你的專案資料夾底下就可以了
 
@@ -46,26 +46,26 @@ date: 2021-09-19T05:52:54.000Z
 
 #### 檢測是否有安裝成功
 使用開發者人員工具的console欄位鍵入<font color="red">`d3.version`</font>
-![](https://i.imgur.com/aBqaUKI.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_05.jpg)
 
 #### 第一個d3
 有用過jQuery的人起手式大概很熟悉的是$字號做開頭，d3是類似的方式，使用d3來做開頭後續使用<font color="red">`方法鏈(method chain)`</font>的方式來實作每個步驟。
 
 先直接看以下程式碼
-```javascript=
+```javascript{numberLines: true}
 <script>
   d3.select("body").append("div");
 </script>
 ```
 可以看到先選擇了<font color="red">`body`</font>這個tag，然後在裡面插入<font color="red">`div`</font>，於是打開開發者人員工具
 
-![](https://i.imgur.com/Lqcp1JG.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_06.jpg)
 
 在底下插入了一個<font color="red">`div`</font>
 這邊語法講解<font color="red">`select()`</font>是選到<b>第一個</b>出現的元素
 然後<font color="red">`append()`</font>是插入一個元素，換句話說如果我們選擇的元素有兩個一樣，只會選到第一個元素參見以下程式碼
 
-```htmlmixed=
+```html{numberLines: true}
 <div class="hello">
 </div>
 <div class="hello">
@@ -75,27 +75,27 @@ date: 2021-09-19T05:52:54.000Z
 </script>
 ```
 
-![](https://i.imgur.com/s4soN05.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_07.jpg)
 這個時候打開開發者人員工具會發現<font color="red">只有</font><b>第一個</b><font color="red">`class`</font>名為<b>hello</b>的底下有插入<font color="red">`div`</font>這個元素
 因此如果想要選取多個元素要改用<font color="red">`selectAll()`</font>來選取多個元素
 
 程式碼變成以下
-```htmlmixed=
+```html{numberLines: true}
 d3.selectAll(".hello").append("div");
 ```
 當打開開發者人員工具就可以發現成功插入兩個div元素了。
 
-![](https://i.imgur.com/8XxAr5Z.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_08.jpg)
 
 接下來我們要在新增的<font color="red">`div`</font>底下插入文字
 
-```htmlmixed=
+```html{numberLines: true}
  d3.select("body").append("div").text("Helo world");
 ```
 
 畫面就會出現如下面
 
-![](https://i.imgur.com/k7yIQCv.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_09.jpg)
 ---
 
 以上介紹如何安裝D3和撰寫一個Hello World下一篇將會使用D3來畫出一些簡單的圖表

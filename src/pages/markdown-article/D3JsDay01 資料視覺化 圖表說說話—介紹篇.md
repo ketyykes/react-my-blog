@@ -32,7 +32,7 @@ date: 2021-09-16T07:49:37.000Z
 | 線性回歸線         | y=3.00+0.500x（分別精確到小數點後兩位和三位） |
 
 如下圖
-![](https://i.imgur.com/SafMszf.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210916_01.png)
 > [參見維基百科 — 安斯庫姆四重奏](https://zh.wikipedia.org/wiki/%E5%AE%89%E6%96%AF%E5%BA%93%E5%A7%86%E5%9B%9B%E9%87%8D%E5%A5%8F)
 
 ## 科學與美學的結合
@@ -40,7 +40,7 @@ date: 2021-09-16T07:49:37.000Z
 當我們為了繪製出方便人們理解的圖表的時候必須也兼顧一些美學，我們並不會使用背景白色，字體或者圖形也是淡色系的方式來呈現，它會增加閱讀的難易度，另外用過於相似的顏色也造成判讀錯誤的可能性。
 
 ## 資料的表達
-![](https://i.imgur.com/tV2QyFz.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210916_02.png)
 常見的資料視覺化方式可以使用位置、形狀、大小、顏色、線條粗細、線條類型來呈現。
 
 

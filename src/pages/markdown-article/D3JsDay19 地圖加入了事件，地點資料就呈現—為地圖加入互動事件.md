@@ -15,7 +15,7 @@ date: 2021-10-04T06:10:23.000Z
 **Photo、AgriBtItemCost、AgriBtItemCnt、AgriBtItemNm、AgriBtItemSpec、AgriTel、AgriMainAdrs**分別是代表照片、價格、內容、產品名、產品說明、電話和住址
 
 因此我們先使用任何一筆資料寫在html的`<body>`當中觀看顯示的樣子
-```htmlembedded=
+```html{numberLines: true}
 <div class="wrap-item">
 <div >
   <img src="https://ezgo.coa.gov.tw/Uploads/opendata/BestItem/APPLY_D/20151216180812.jpg">
@@ -34,7 +34,7 @@ date: 2021-10-04T06:10:23.000Z
 ### 添加CSS到樣板
 之後寫一些css樣式到`<style></style>`調整排列
 
-```htmlembedded=
+```html{numberLines: true}
 .wrap-item{
     box-sizing: border-box;
     width: 400px;
@@ -56,7 +56,7 @@ date: 2021-10-04T06:10:23.000Z
 
 接下來我們就在先前的程式碼加入`on`的函數，添加滑鼠移入的事件，這邊使用`select(this)`讓滑鼠滑入觸發的circle進行顏色的變換，這邊可以使用一個變數儲存滑入東西的資料
 如` const selectObj = d3.select(this).data();`所示，可以`console.log`看看是否有如期取得當前滑入的資料值。
-```javascript=
+```javascript{numberLines: true}
  g.selectAll("circle")
   .data(product)
   .join("circle")
@@ -76,7 +76,7 @@ date: 2021-10-04T06:10:23.000Z
 ```
 
 我們可以使用 `selection.html([value])`函數來插入html的語法，把剛剛所建立好的html語法放入進去。這邊使用樣板字面值的Javascript語法來撰寫也方便變數和固定要插入的內容作轉換，因此在on("mouseenter", function(){})的完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
 d3.select(this).style("fill", "darkgreen");
   const selectObj = d3.select(this).data();
   console.log(selectObj);
@@ -109,7 +109,7 @@ d3.select(this).style("fill", "darkgreen");
 
 
 完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
 <style>
     .wrap{
         width: 1440px;

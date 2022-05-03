@@ -26,15 +26,6 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
     }
   }
 
-  // .gatsby-highlight-code-line {
-  //   background-color: #feb;
-  //   display: block;
-  //   margin-right: -1em;
-  //   margin-left: -1em;
-  //   padding-right: 1em;
-  //   padding-left: 0.75em;
-  //   border-left: 0.25em solid #f99;
-  // }
   img {
     max-width: 100%;
     display: block;
@@ -47,12 +38,7 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
     line-height: 2;
     padding: 0 50px;
   }
-  // pre {
-  //   white-space: normal;
-  //   line-height: 3;
-  //   padding: 0 50px;
-  //   background-color: $code_background_color;
-  // }
+  
   a {
     display: block;
     color: $main_color;

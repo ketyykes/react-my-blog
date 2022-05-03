@@ -39,7 +39,7 @@ date: 2021-10-05T04:07:38.000Z
 ## 設置地圖中心點和投影
 與先前一樣設置地圖中心點和投影轉換函式
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 let width = 1200;
 let height = 675;
 const projection = d3.geoMercator()
@@ -60,7 +60,7 @@ d3.json("taiwanDistrict.json")
     )
 ```
 ## 篩選縣市做為新的geojson資料
-```javascript=
+```javascript{numberLines: true}
 const tainanGeojson = [];
 geojson.forEach(function(el) {
     if(el.properties.COUNTYNAME=="臺南市"){
@@ -78,7 +78,7 @@ console.log(tainanGeojson);
 
 
 ## 載入土地房屋資料
-```javascript=
+```javascript{numberLines: true}
   d3.csv("taiwan109s4.csv")
             .then(function(csvData){
                 console.log(csvData);
@@ -106,7 +106,7 @@ console.log(tainanGeojson);
 因此撰寫程式碼如下
 
 
-```javascript=
+```javascript{numberLines: true}
  d3.csv("taiwan109s4.csv")
 .then(function(csvData){
     console.log(csvData);
@@ -130,7 +130,7 @@ console.log(tainanGeojson);
 > [d3.mean()](https://github.com/d3/d3-array/blob/v3.0.4/README.md#mean)
 
 因此我們帶入回原始資料，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 tainanGeojson.forEach(function(el){
     for (let [key, value] of districtMap) {
         if(key===el.properties.TOWNNAME){

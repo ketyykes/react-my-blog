@@ -4,9 +4,6 @@ slug: 2021-09-17T08:52:54.000Z
 date: 2021-09-17T08:52:54.000Z
 ---
 
-![](https://i.imgur.com/uWB7yz5.jpg)
-> 圖片來源:unsplash
-
 關於資料視覺化的工具一般使用者最先接觸的可能是<b>Microsoft Excel</b>工具，後來在程式語言當中常見的是<b>Python Matplotlib</b>和<b>R語言</b>，另外商業界常見的<b>Power BI</b>、<b>Tableau</b>。
 其他同樣是Javascript的函式庫的像是<b>ChartJs</b> 、<b>Hightcharts</b>等等
 

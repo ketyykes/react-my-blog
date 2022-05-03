@@ -5,7 +5,7 @@ date: 2021-10-02T06:45:23.000Z
 ---
 
 ## 改變path的樣貌
-```javascript=
+```javascript{numberLines: true}
 const width = 800;
 const height = 600;
 const svg = d3.select("body").append("svg")
@@ -45,13 +45,13 @@ g.selectAll("path")
 ![](https://i.imgur.com/9ioRKS9.png)
 
 這邊提到它的<font color="red">`range是[0,1]`</font>，我們可嘗試著撰寫一下程式碼看看會印出什麼
-```javascript=
+```javascript{numberLines: true}
 const a = d3.scaleSequential().domain([0,100]);
 console.log(a(1));
 ```
 其實這裡會印出的東西相當於先前提到的<font color="red">`scaleLinear()`</font>使用<font color="red">`range([0,1])`</font>的函式
 如下
-```javascript=
+```javascript{numberLines: true}
 const b = d3.scaleLinear().domain([0,1000]).range([0,1]);
 console.log(b(1));
 ```
@@ -60,7 +60,7 @@ console.log(b(1));
 
 因此我們可以給予一個**domain**來表示預計轉換的數字範圍
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 var rainbow = d3.scaleSequential(function(t) {
           return d3.hsl(t * 360, 1, 0.5) + "";
           }).domain([1,20]);
@@ -73,11 +73,11 @@ console.log( rainbow(5));//印出rgb(188, 255, 0)
 > 其他更多的色彩可參考[d3官方色彩API](https://github.com/d3/d3-color/blob/v3.0.1/README.md#lab)
 
 因此我們可以宣告一個**diversityColor變數**裡面使用**t**來設定不同的顏色，這邊飽和度和亮度設定0.9，為了確保格式正確使用<font color="red">`formatRgb()`</font>方法來轉換，另外全世界大概兩百多個國家，我們<font color="red">`domain([0,250])`</font>
-```javascript=
+```javascript{numberLines: true}
 const diversityColor = d3.scaleSequential(t => d3.hsl(t * 360,.9,.9).formatRgb()).domain([0,250]);
 ```
 接下來宣告完之後我們就再剛剛插入data的地方使用i遍歷每個區塊程式碼如下
-```javascript=
+```javascript{numberLines: true}
 g.selectAll("path")
   .data(
       getGeoFeature
@@ -103,7 +103,7 @@ g.selectAll("path")
 
 直接用將參數帶入到projection作方法鏈連接
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const  projection = d3.geoMercator()
                         .center([120, 23])
                         .scale(5000)
@@ -122,7 +122,7 @@ const  projection = d3.geoMercator()
 ![](https://i.imgur.com/qcyFxP4.png)
 
 我們撰寫以下程式碼
-```javascript=
+```javascript{numberLines: true}
  const zoom = d3.zoom()
               .on('zoom', function(event) {
                   console.log(event.transform);
@@ -154,7 +154,7 @@ const  projection = d3.geoMercator()
 ### scaleExtent()函式限制縮放焦距
 這個函式只要是可以讓使用者在透過滾輪或是滑鼠點擊兩下的時候不要無限放大(或是無限縮小)
 綜合以上的程式碼如下
-```javascript=
+```javascript{numberLines: true}
  const zoom = d3.zoom().scaleExtent([1,10])
                       .on('zoom', function(event) {
                           console.log(event.transform);

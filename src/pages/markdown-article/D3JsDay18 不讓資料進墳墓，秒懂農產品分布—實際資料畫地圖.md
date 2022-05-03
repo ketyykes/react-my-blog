@@ -10,7 +10,7 @@ date: 2021-10-03T08:25:23.000Z
 > [鄉鎮市區界線](https://data.gov.tw/dataset/7441)
 
 我們預計將**svg**和一個**div**的**class**叫做**wrap-item**放在**wrap**裡面，然後撰寫**css**使用**flex**來進行排版，**svg**這個容器是要放地圖檔案和農產品的經緯度預計要製作成circle的點狀的樣子來當作該地區有農產品的位置，**wrap-item**則是我們要顯示這些農產品的名稱、住址、電話、介紹等等的容器，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 <style>
 .wrap{
     display: flex;
@@ -40,7 +40,7 @@ d3.select(".wrap").append("div").classed("wrap-item",true);//選擇class是wrap�
 ```
 
 接下來我們載入真正的資料
-```javascript=
+```javascript{numberLines: true}
 d3.json("taiwantopo.json").then(function(topology) {
     console.log(topology);
 });
@@ -52,7 +52,7 @@ d3.json("taiwantopo.json").then(function(topology) {
 
 接下來我們就進行資料綁定的部分，綁定到path的內容是geojson的features
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 d3.json("taiwantopo.json").then(function(topology) {
     console.log(topology);
     const makeColor = d3.scaleSequential(t => d3.hsl(t * 360, .8, .9).formatRgb()).domain([0,30]);
@@ -79,7 +79,7 @@ d3.json("taiwantopo.json").then(function(topology) {
 為了確保地圖資料載入之後再載入農產品，我們可以在接一個.then(function{})在剛剛畫完台灣地圖的地方
 程式碼大致如下
 
-```javascript =
+```javascript{numberLines: true}
 d3.json("taiwantopo.json")
 .then(function(topology) {
 // 以下省略
@@ -95,7 +95,7 @@ d3.json("taiwantopo.json")
 ![](https://i.imgur.com/3SpYhHt.png)
 
 接下來我們可以進行資料綁定與先前的做法都一樣是半徑設為1然後設定淡綠色，此時要考慮的地方是圓的位置
-```javascript=
+```javascript{numberLines: true}
 d3.json("farm-product-map.json").then(function(product){
     console.log(product);
     g.selectAll("circle")
@@ -122,7 +122,7 @@ d3.json("farm-product-map.json").then(function(product){
 
 它印出x和y的位置所形成的陣列，因此我們陣列索引值0來當作cx的屬性位置，1來當作cy的屬性位置
 ，最後程式碼如下
-```javascript=
+```javascript{numberLines: true}
 g.selectAll("circle")
   .data(product)
   .join("circle")
@@ -146,7 +146,7 @@ g.selectAll("circle")
 ![](https://i.imgur.com/R8jZT57.png)
 
 本日完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
 <style>
 .wrap{
     display: flex;

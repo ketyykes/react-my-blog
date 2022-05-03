@@ -9,7 +9,7 @@ transition這個翻譯成**過渡**的意思，一個吸引人的圖表當中，
 
 
 首先我們先創建一個rect以寬50高300的長方形。
-```javascript=
+```javascript{numberLines: true}
 const svg = d3.select("body")
             .append("svg")
             .attr("width",800)
@@ -30,7 +30,7 @@ svg.append("rect")
 這時候我們要考慮的地方是<font color="red">`transition()`</font>要放在到哪個位置，依據官方的文件說明，前面**要有一個selection**，也就是你所選擇的元素，後方需要帶入要改變的樣式，因此依據指示我們可以放在<font color="red">`append()`</font>的後面
 
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 svg.append("rect")
     .attr("x",10)
     .attr("y",0)
@@ -52,7 +52,7 @@ svg.append("rect")
 
 程式碼如下
 
-```javascript=
+```javascript{numberLines: true}
  const svg = d3.select("body")
             .append("svg")
             .attr("width",600)
@@ -77,7 +77,7 @@ svg.append("rect")
 ## ease()
 ### easeLinear()
 這邊主要是帶入要呈現漸變時期的動畫時的效果，裡面帶入參數第一個是指定你要的函式第二個是時間，具體用法程式碼如下
-```javascript=
+```javascript{numberLines: true}
 svg.append("rect")
     .transition()
     .ease(d3.easeLinear,1)
@@ -111,7 +111,7 @@ Linear原始碼如下
 ![](https://i.imgur.com/XzdDtk2.png)
 
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
     svg.append("rect")
         .transition()
         .ease(d3.easePoly,4)
@@ -152,7 +152,7 @@ Linear原始碼如下
 原本的<font color="red">`<rect>`</font>的程式碼如下，延續我們之前的範例假設**我們希望畫面載入的時候長條圖由底部開始漸漸變長**的話，該如何撰寫呢？
 
 
-```javascript=
+```javascript{numberLines: true}
 svg.selectAll("rect")
     .data(newTaipei)
     .join("rect")
@@ -174,7 +174,7 @@ svg.selectAll("rect")
 
 而我們原本的程式碼是放在<font color="red">`transition`</font>之後當作**最後的結果**，最後的程式碼就如下面所示
 
-```javascript=
+```javascript{numberLines: true}
 svg.selectAll("rect")
             .data(newTaipei)
             .join("rect")
@@ -203,7 +203,7 @@ svg.selectAll("rect")
 
 
 本日完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
   let newTaipei = taipei.map((el) => {
             el.people_total = Number(el.people_total);
             el.area = Number(el.area);

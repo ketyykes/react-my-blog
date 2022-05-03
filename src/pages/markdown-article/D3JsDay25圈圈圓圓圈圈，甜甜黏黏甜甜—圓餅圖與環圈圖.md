@@ -20,7 +20,7 @@ date: 2021-10-10T13:15:00.000Z
 ![](https://i.imgur.com/DvsmLUl.png)
 
 因此我們可以自己嘗試看看撰寫如下程式碼，與官方不同的地方是我們 endAngle帶入2π也就是360度的意思
-```javascript=
+```javascript{numberLines: true}
 const arc = d3.arc();
 const obj = {innerRadius: 0,
             outerRadius: 100,
@@ -31,7 +31,7 @@ console.log(arc(obj));
 這時候我們console.log()會得到一串數值如下
 ![](https://i.imgur.com/PKd0nUy.png)
 是否覺得似曾相識，這些數值和英文字母組成是我們先前介紹svg的path的時候所需要的內容，因此我們嘗試著將這個數值複製起來撰寫到html的svg裡面的path中程式碼如下
-```htmlmixed=
+```html{numberLines: true}
 <svg width="400" height="400">
     <path d="M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100Z"></path>
 </svg>
@@ -40,7 +40,7 @@ console.log(arc(obj));
 這時候應當會看到如下圖
 ![](https://i.imgur.com/nW82J4E.png)
 由於他所繪製的以(0,0為中心)，因此我們通常都會使用transform的translate來移動顯示整個圓形，因為寬和高是400，所以我們使用transform="translate(200,200)"位移，最後應當可以看到如下圖
-```htmlmixed=
+```html{numberLines: true}
 <svg width="400" height="400">
       <path transform="translate(200,200)" d="M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100Z"></path>
 </svg>
@@ -50,7 +50,7 @@ console.log(arc(obj));
 
 除了可以使用物件的方式帶入進arc函式修改角度以外，也可以使用arc底下的方法鏈將角度傳入進arc函式裡面，
 程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const arc = d3.arc().innerRadius(0).outerRadius(100).startAngle(0).endAngle(2*Math.PI);
 ```
 
@@ -79,7 +79,7 @@ const arc = d3.arc().innerRadius(0).outerRadius(100).startAngle(0).endAngle(2*Ma
 > [d3 Pies官方API](https://github.com/d3/d3-shape/blob/v3.0.1/README.md#pies)
 
 接下來我們撰寫程式碼來嘗試使用pie()函式並且console.log()看看呈現什麼內容
-```javascript=
+```javascript{numberLines: true}
  const data = [1, 1, 2, 3, 5, 8, 13, 21];
 const pie = d3.pie();
 console.log(pie(data));
@@ -94,14 +94,14 @@ console.log(pie(data));
 
 由於我們的pie函式幫我們轉換出來只有startAngle和endAngle，因此必須給予內圓半徑和外圓半徑的數值
 這邊我們內半徑改設置50、外半徑改設置100試試看，具體程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const arc = d3.arc().innerRadius(50).outerRadius(100)	
 ```
 
 接下來我們將著手開始繪圖，記得使用`transform:translate`位移圓的位置，與先前教過的資料綁定一樣使用data()資料綁定然後join("path")函式
 
 這邊主要需要注意的地方是綁定的資料是剛剛進行pie函式轉換後的資料，而在繪製path的屬性d所帶的數值是使用arc轉換data的值，程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const width = 400;
 const height = 400;
 d3.select("body").append("svg").attr("width", width);
@@ -126,7 +126,7 @@ svg.append("g")
 這時候環圈圖將如期呈現，但是每筆資料的間隙太相近了，因此我們可以加入stroke屬性並設定和背景一樣的白色，另外可以添加cornerRadius()數值觀看其呈現效果
 
 最後完整程式碼如下
-```javascript=
+```javascript{numberLines: true}
 const width = 400;
 const height = 400;
 d3.select("body").append("svg").attr("width", width);

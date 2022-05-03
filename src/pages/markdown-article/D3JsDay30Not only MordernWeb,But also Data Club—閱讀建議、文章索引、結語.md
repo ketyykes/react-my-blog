@@ -10,7 +10,7 @@ date: 2021-10-15T13:31:00.000Z
 ![](https://i.imgur.com/RFrdcXx.png)
 
 這邊附上一些先前沒用過的函式的程式碼簡單講解一下
-```javascript=
+```javascript{numberLines: true}
 let firstDay = Date.parse(sortByDate[0].postTime);
 let lastDay = Date.parse(sortByDate[sortByDate.length-1].postTime); //轉換從1970-1-1 00:00:00 UTC到該時間的毫秒數
 const scaleX  = d3.scaleTime().domain([firstDay,lastDay]).range([0,1200]).nice(); //創建以時間構成的比例尺，裡面的值須帶入1970-1-1 00:00:00UTC到該時間的毫秒數
@@ -19,7 +19,7 @@ const axisX =  d3.axisBottom(scaleX).tickFormat(d3.timeFormat("%Y-%m-%d")).ticks
 
 
 另外計算了一些統計常用的數據
-```javascript=
+```javascript{numberLines: true}
 let variance = Math.round(d3.variance(sortByDate,d=>(d.articleStrNum)*100))/100; //回傳變異數並且四捨五入到小數第二位
 let deviation = Math.round(d3.deviation(sortByDate,d=>(d.articleStrNum)*100))/100;//回傳標準差並且四捨五入到小數第二位
 ```
