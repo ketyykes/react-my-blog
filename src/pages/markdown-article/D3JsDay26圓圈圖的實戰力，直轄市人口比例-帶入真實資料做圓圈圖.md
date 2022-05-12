@@ -10,7 +10,7 @@ date: 2021-10-11T10:01:00.000Z
 
 我們一樣先觀看資料狀況，這邊取**data.result.records**的資料查看情況，主要觀看觀察**site_id**欄位，如下圖
 
-![](https://i.imgur.com/24jm75G.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_01.png)
 
 ### 使用d3.group結合array.slice群組化資料
 
@@ -28,7 +28,7 @@ date: 2021-10-11T10:01:00.000Z
 
 我們`console.log(districtData)`可以看到以下內容
 
-![](https://i.imgur.com/r0efKQ7.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_02.png)
 
 ### 用Array.from將Map物件轉換成Array
 接下來使用`Array.from`轉成陣列以便後續方便操作，如下列程式碼
@@ -37,12 +37,12 @@ const districtAry = Array.from(districtData);
 ```
 操作完應當如下圖
 
-![](https://i.imgur.com/mJY9lhY.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_03.png)
 
 ### 清理資料
 由於政府的資料有些屬於可能人員輸入時造成的錯誤或是像是東沙群島等等並非這次要呈現的範疇，等等將使用array的操作方式稍作整理，原先內容如下圖，
 
-![](https://i.imgur.com/AWl3Uig.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_04.png)
 
 使用array清理資料的程式碼如下
 ```javascript{numberLines: true}
@@ -84,7 +84,7 @@ let municipality = ["臺北市","新北市","臺南市","高雄市","桃園市",
 ### 處理完畢
 到目前為止應當可以看到如下圖每筆陣列的value有內容也有一個陣列，這個陣列裡面有四種資料，該元素裡面是一個陣列，索引值0~3的內容如下圖
 
-![](https://i.imgur.com/1B0WwPz.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_06.png)
 
 
 ## 直轄市、非直轄市、全台人口數加總
@@ -109,7 +109,7 @@ console.log(NotMunicipalitySum);
 ```
 結果呈現如下圖
 
-![](https://i.imgur.com/5NoTy2U.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_07.png)
 
 
 ## arc函式和pie函式
@@ -123,11 +123,11 @@ const arc = d3.arc().innerRadius(50).outerRadius(100).cornerRadius(2);
 
 如下圖
 
-![](https://i.imgur.com/7aNhcac.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_08.png)
 
 因此我們需要使用`d3.pie().value()`這個函式，官方說明如下
 
-![](https://i.imgur.com/xTyBSK0.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_09.png)
 
 > [d3.pie().value()官方說明](https://github.com/d3/d3-shape/blob/v3.0.1/README.md#pie_value)
 
@@ -144,7 +144,7 @@ console.log(pie(districtAry));
 ```
 顯示出來的`console.log`如下圖，應當可以看到轉換後的值是來自於縣市人口總數所構成的開始角度、結束角度等等的物件。
 
-![](https://i.imgur.com/2Glm66s.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_10.png)
 
 ## 開始繪製圖形
 
@@ -175,7 +175,7 @@ g.selectAll("g")
 ```
 
 到目前為止應當可以看到一個具體的圓圈圖呈現如下圖
-![](https://i.imgur.com/7GFqgRg.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_11.png)
 
 ## 添加動畫
 
@@ -197,14 +197,14 @@ return arc(d);
 })
 ```
 但畫面看起來不夠柔順
-![](https://i.postimg.cc/5yKLqNJ7/gif25public01.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_12.gif)
 
 這裡我們使用補間動畫
 `transition().attrTween()`來增加每個扇形區域進行繪製的時候要進行的動畫
 
 官方說明如下
 
-![](https://i.imgur.com/U44p3uG.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_13.png)
 
 換句話說就是第二個參數要接收一個**callback函式**，裡面要**return一個插值器函數(interpolate)**，然後在根據時間**t(t將會介於0~1逐漸增加)**來對當前的元素內容修改值
 
@@ -230,7 +230,7 @@ return i*500;
 
 最後結果應當會呈現如下圖
 
-![](https://i.postimg.cc/59rBWBNr/gif25public02.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_14.gif)
 ## 計算百分比函式
 最後我們要顯示人口百分比，這裡先宣告一個計算百分比的函式
 ```javascript{numberLines: true}
@@ -277,6 +277,6 @@ svg.append("g").html(`
 
 最後呈現結果如下圖
 
-![](https://i.postimg.cc/QMpftr39/gif25public03.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_15.gif)
 
 ###### tags: `D3Js`

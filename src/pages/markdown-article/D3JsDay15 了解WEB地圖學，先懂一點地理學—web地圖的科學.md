@@ -45,7 +45,7 @@ date: 2021-09-30T15:40:54.000Z
 
 我們可以使用瀏覽器觀看geojson的結構可以發現使用type來儲存點、線、多邊的幾何結構和特徵或是特徵的集合。
 
-![](https://i.imgur.com/RrAfAFl.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210930_01.png)
 
 如上圖，**properties**儲存的東西是一些資訊例如縣市名稱、縣市代號等等，coordinate儲存的是經緯度這些座標點。
 
@@ -72,7 +72,7 @@ date: 2021-09-30T15:40:54.000Z
 
 如官方API文件的圖片
 
-![](https://i.imgur.com/NML6ysX.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210930_02.png)
 > 
 > [麥卡托投影法D3官方API](https://github.com/d3/d3-geo-projection#geoMercator)
 
@@ -87,7 +87,7 @@ date: 2021-09-30T15:40:54.000Z
 如果期望面積看起來與原始地球的樣貌差異不大的話，可以參考Equal Earth投影，啟發於羅賓森投影(**Robinson projection**)的改良版，在2018年發表，算是比較新的一種投影方式，D3內函式也包含了此種投影法則
 
 官方API文件展示的圖片如下圖
-![](https://i.imgur.com/bmEsyg0.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210930_03.png)
 
 
 > [Equal-Earth投影D3官方API](https://github.com/d3/d3-geo/blob/v3.0.1/README.md#equal-earth)

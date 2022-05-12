@@ -42,7 +42,7 @@ g.selectAll("path")
 
 ## 連續顏色比例尺轉換
 
-![](https://i.imgur.com/9ioRKS9.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_01.png)
 
 這邊提到它的<font color="red">`range是[0,1]`</font>，我們可嘗試著撰寫一下程式碼看看會印出什麼
 ```javascript{numberLines: true}
@@ -91,7 +91,7 @@ g.selectAll("path")
 ```
 之後你應該會看到的畫面如下
 
-![](https://i.imgur.com/OG1kUyX.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_02.png)
 
 
 ## 設經緯度、縮放、旋轉角度
@@ -113,13 +113,13 @@ const  projection = d3.geoMercator()
 
 設置完會看到如下圖
 
-![](https://i.imgur.com/HHYIJQq.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_03.png)
 
 ## zoom()縮放位移函式
 ### zoom事件
 我們在使用GoogleMap地圖的時候通常可以透過滾輪、滑鼠連續點兩下可以放大、滑鼠按住後移動可以位移地圖，在d3裡面可以使用zoom事件來表示這些行為
 
-![](https://i.imgur.com/qcyFxP4.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_04.png)
 
 我們撰寫以下程式碼
 ```javascript{numberLines: true}
@@ -134,20 +134,20 @@ const  projection = d3.geoMercator()
 
 這裡用<font color="red">`on()`</font>來監聽zoom事件，嘗試著印出event.transform看看，將會看到以下片段
 
-![](https://i.imgur.com/O7sSS4P.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_05.png)
 
 這邊k表示縮放距離，x和y表示位移座標
 
 官方文件說明如下，大致上的意思是使用高中數學所學的矩陣的概念轉換位置，web運作原理是來自於SVG的**transformMatrix**有興趣的人可以參考[SVGtransformMatrixMDN章節](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#matrix)
 
-![](https://i.imgur.com/2G7iTSQ.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_06.png)
 
 上述第2行綁定事件之後後面callback函式裡面可以代入要執行的動作，我們藉由所抓取的**zoom事件**來對應要改變屬性transform。
 
 另外記得的一點是創建一個zoom的行為的時候記得要掛載到某個元素上面
 官方說明如下圖
 
-![](https://i.imgur.com/xZWkaeW.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_07.png)
 
 > [D3官方Zoom官方API](https://github.com/d3/d3-zoom/blob/v3.0.0/README.md#zoom)
 

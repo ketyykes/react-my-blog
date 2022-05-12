@@ -11,7 +11,7 @@ date: 2021-10-04T06:10:23.000Z
 
 首先觀看什麼資料要印出到網頁畫面當中
 
-![](https://i.imgur.com/AphA7ti.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211004_01.png)
 **Photo、AgriBtItemCost、AgriBtItemCnt、AgriBtItemNm、AgriBtItemSpec、AgriTel、AgriMainAdrs**分別是代表照片、價格、內容、產品名、產品說明、電話和住址
 
 因此我們先使用任何一筆資料寫在html的`<body>`當中觀看顯示的樣子
@@ -30,7 +30,7 @@ date: 2021-10-04T06:10:23.000Z
 </div>
 ```
 
-![](https://i.imgur.com/sAVIpuu.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211004_02.png)
 ### 添加CSS到樣板
 之後寫一些css樣式到`<style></style>`調整排列
 
@@ -48,7 +48,7 @@ date: 2021-10-04T06:10:23.000Z
 ```
 呈現如下圖
 
-![](https://i.imgur.com/tXqOlPO.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211004_03.png)
 
 這邊的html文檔先留著
 
@@ -98,7 +98,7 @@ d3.select(this).style("fill", "darkgreen");
 
 這時候應該可以看到滑鼠移入的時候會有產品顯示，如下圖
 
-![](https://i.imgur.com/c3T8zy6.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211004_04.png)
 
 
 ## 添加mouselevae修正

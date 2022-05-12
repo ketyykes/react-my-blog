@@ -48,7 +48,7 @@ d3.json("taiwantopo.json").then(function(topology) {
 一樣我們先觀察轉換後的**topojson**的哪一個部分是我們需要的東西。
 如下圖objects裡面的<font color="red">`COUNTY_MOI_1090820`</font>是我們需要的東東西
 
-![](https://i.imgur.com/zUD07KU.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_01.png)
 
 接下來我們就進行資料綁定的部分，綁定到path的內容是geojson的features
 程式碼如下
@@ -74,7 +74,7 @@ d3.json("taiwantopo.json").then(function(topology) {
 ```
 這次沒有額外宣告一行，直接將topojson轉geojson和取出裡面的features綁定data到path裡面，另外第3行的地方，由於台灣大概有二十幾個縣市，我們就設定domain([0,30])，這時候可以看到如下圖
 
-![](https://i.imgur.com/feXrwvl.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_02.png)
 
 為了確保地圖資料載入之後再載入農產品，我們可以在接一個.then(function{})在剛剛畫完台灣地圖的地方
 程式碼大致如下
@@ -92,7 +92,7 @@ d3.json("taiwantopo.json")
 ```
 我們可以console.log()確認看資料是否有正確載入如下圖
 
-![](https://i.imgur.com/3SpYhHt.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_03.png)
 
 接下來我們可以進行資料綁定與先前的做法都一樣是半徑設為1然後設定淡綠色，此時要考慮的地方是圓的位置
 ```javascript{numberLines: true}
@@ -113,12 +113,12 @@ d3.json("farm-product-map.json").then(function(product){
 ```
 官方API說明如下
 
-![](https://i.imgur.com/GwRlif6.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_04.png)
 
 因此我們可以得知要帶入的是[longitude, latitude]，他將會正確地返回一個轉換後的svg位置
 ，我們可以試著插入console.log(projection([d.Longitude,d.Latitude]));程式碼在問號的區域，之後看主控台如下
 
-![](https://i.imgur.com/xbhwtZ4.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_05.png)
 
 它印出x和y的位置所形成的陣列，因此我們陣列索引值0來當作cx的屬性位置，1來當作cy的屬性位置
 ，最後程式碼如下
@@ -143,7 +143,7 @@ g.selectAll("circle")
 
 如下圖
 
-![](https://i.imgur.com/R8jZT57.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_06.png)
 
 本日完整程式碼如下
 ```javascript{numberLines: true}

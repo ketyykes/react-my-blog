@@ -20,10 +20,10 @@ date: 2021-10-07T05:50:38.000Z
 
 官方說明如下，可以設置外部軸和內部軸的大小，至於什麼是外部軸和內部軸呢?
 
-![](https://i.imgur.com/ui9BjrM.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_01.png)
 
 於是你點了連結的藍色字它又告訴你如下，這邊提到外部刻度是`path`
-![](https://i.imgur.com/zEwibCg.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_02.png)
 
 我們可以撰寫程式碼實際觀看一下
 
@@ -44,7 +44,7 @@ const g = svg.append("g")
 axisY(g);
 ```
 這個時候你打開主控台可以發現他將`<path>`的d改變了數值，另外看畫面頭和尾的長度也增加了如下圖
-![](https://i.imgur.com/3QPriaB.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_03.png)
 ### tickSizeInner()函式
 
 觀看帶入tickSizeInner()看看
@@ -54,7 +54,7 @@ axisY(g);
 ```
 一樣打開主控台觀看數值的變化和網頁畫面如下圖
 
-![](https://i.imgur.com/fQuiFvV.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_04.png)
 
 這邊可以發現`tickSizeInner()`改變的數值是class為tick的g元素裡面的`<line>`，而`tickSizeOuter()`改變的數值是最上面的`<path>`元素裡面的屬性d。最後我們嘗試改用`tickSize()`試試看就可以發現他將會改變`<path>`和`<line>`
 
@@ -105,7 +105,7 @@ axisY(gY);
 ```
 接下來將會看到的畫面如下圖
 
-![](https://i.imgur.com/zBuJN9l.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_05.png)
 
 這時候當網格渲染出來之後如果在內容加入散佈圖的圓點時可能會讓人覺得網格影響視覺比重，因此我們使用css選取器選到剛剛所加入的class並將裡面的`<line>`的顏色進行微調程式碼如下
 ```javascript{numberLines: true}
@@ -129,7 +129,7 @@ joinCircle.attr("cx",d=>(scaleX(d.area)))
 ```
 
 接下來就會看到如下圖
-![](https://i.imgur.com/Y4eoiRn.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_06.png)
 
 由於每個紅點表示的是每個行政區，因此我們得再加入一項g群組來顯示文字，它的位置得到的方式和剛剛圓點的位置得道的方式一樣，皆來自於綁定資料的區域面積和人口總數所轉換的Scale函式，但是必須微調往右移，因此使用` gText.attr("transform",`translate(60,50)`);`
 
@@ -152,11 +152,7 @@ joinText.text((d) => {
 
 最後應當可以看見如下圖
 
-![](https://i.imgur.com/SDnhzBC.png)
-
-
-
-
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211007_07.png)
 
 
 本日完整程式碼如下

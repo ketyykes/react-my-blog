@@ -20,7 +20,7 @@ date: 2021-10-06T05:22:38.000Z
 
 這個時候你應該可以看到畫出了台南市的地圖如下
 
-![](https://i.imgur.com/vppHwRo.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_01.png)
 
 接來我們要進行上色，因此在上色之前我們必須找到一個數字映射到顏色的函式用來轉換不同顏色所表示的數字大小，因此這裡一樣使用`d3.scaleSequential`來做轉換，先前說明過這個轉換函式給定domain([數字,數字])會轉換0~1的數字範圍，由於我們要繪製的是土地房屋每平方公尺平均價格的分層設色圖，所以我們就以最大值和最小值當domain值
 程式碼如下
@@ -36,17 +36,17 @@ console.log(d3.scaleSequential().domain([minNum, maxNum])(64774));
 
 可以使用console.log來觀看轉換過程有沒有問題
 
-![](https://i.imgur.com/n3zg9cS.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_02.png)
 
 因此接下來我們再選出一個顏色範圍放入scaleSequential
 
-![](https://i.imgur.com/zYFl0XL.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_03.png)
 
 如上圖官方scaleSequential說明中，除了上次提到可以在scaleSequential()放入自行轉換函數以外，API另個說明也可以帶入d3-scale-chromaticAPI裡面的Diverging中的顏色
 
 這裡我們取[interpolateRdYlGn](https://github.com/d3/d3-scale-chromatic/blob/main/README.md#interpolateRdYlGn)這個插值器
 
-![](https://i.imgur.com/1NEq5tp.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_04.png)
 
 > [scaleSequential官方說明](https://github.com/d3/d3-scale#scaleSequential)
 > [Diverging官方document](https://github.com/d3/d3-scale-chromatic/blob/main/README.md#diverging)
@@ -69,7 +69,7 @@ g.selectAll("path")
 .style("fill",d=>(redGreen(d.properties.HOUSEPRICE)))
 ```
 最後應該會呈現如下圖
-![](https://i.imgur.com/oLtjJV8.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_05.png)
 
 
 添加互動和動畫
@@ -102,13 +102,13 @@ g.selectAll("path")
 getTheDtPrice宣告的變數與getTheDtName的方式大同小異只不過我希望將顯示整數就好，因此使用parseInt()來將小數點轉換成整數。
 ### 獲取e的事件
 .html()的函式裡面使用樣板字面值的方式顯示，其中的e代表的是當滑鼠觸發mouseenter的事件，我們可以嘗試著console.log(e)來看看呈現什麼東西
-![](https://i.imgur.com/KOlf4PG.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_06.png)
 
-![](https://i.imgur.com/QnJyodi.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_07.png)
 
 為了能夠在svg裡面換行，這邊顯示文字的方式使用`<text>和<tspan>`排列並對每一行文字的x和y位置調整，使用rect作為邊框設計，這邊設定一個id為tooltip以便滑鼠移出該區域的時候可以容易移除整個tooltip到目前為止的顯示畫面如果你嘗試著將滑鼠移入一些區域的時候應該會呈現如下圖
 
-![](https://i.imgur.com/ttMSWzf.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_08.png)
 
 接下來我們就加入滑鼠移出事件，由於先前已經有先設置id了，因此移除的時候會相對簡單。
 ```javascript{numberLines: true}
@@ -118,7 +118,7 @@ getTheDtPrice宣告的變數與getTheDtName的方式大同小異只不過我希�
 ```
 
 目前有一個小問題當產生出tooltip的時候滑鼠移到tooltip上面會再次重新觸發mouseenter和mouseleave的狀況，明明顯示在同一個區域tooltip卻一直顯示→消失→顯失→消失如下圖
-![](https://i.postimg.cc/7LdY50s6/gif20public01.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_09.gif)
 
 因此我們可以在css的地方加入程式碼如下，將tooltip設成none的話就不會成為滑鼠游標的目標，換句話說就是滑鼠事件看不到tooltip
 ```html{numberLines: true}
@@ -222,6 +222,6 @@ d3.json("taiwanDistrict.json")
 ```
 
 實際效果如下
-![](https://i.postimg.cc/wv6nVD56/gif20public02.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_10.gif)
 
 ###### tags: `D3Js`

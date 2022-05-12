@@ -17,7 +17,7 @@ date: 2021-10-10T13:15:00.000Z
 
 具體所需要的物件如官方範例所示如下圖
 
-![](https://i.imgur.com/DvsmLUl.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_01.png)
 
 因此我們可以自己嘗試看看撰寫如下程式碼，與官方不同的地方是我們 endAngle帶入2π也就是360度的意思
 ```javascript{numberLines: true}
@@ -29,7 +29,7 @@ const obj = {innerRadius: 0,
 console.log(arc(obj));
 ```
 這時候我們console.log()會得到一串數值如下
-![](https://i.imgur.com/PKd0nUy.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_02.png)
 是否覺得似曾相識，這些數值和英文字母組成是我們先前介紹svg的path的時候所需要的內容，因此我們嘗試著將這個數值複製起來撰寫到html的svg裡面的path中程式碼如下
 ```html{numberLines: true}
 <svg width="400" height="400">
@@ -38,14 +38,14 @@ console.log(arc(obj));
 ```
 
 這時候應當會看到如下圖
-![](https://i.imgur.com/nW82J4E.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_03.png)
 由於他所繪製的以(0,0為中心)，因此我們通常都會使用transform的translate來移動顯示整個圓形，因為寬和高是400，所以我們使用transform="translate(200,200)"位移，最後應當可以看到如下圖
 ```html{numberLines: true}
 <svg width="400" height="400">
       <path transform="translate(200,200)" d="M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100Z"></path>
 </svg>
 ```
-![](https://i.imgur.com/TFx72y5.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_04.png)
 
 
 除了可以使用物件的方式帶入進arc函式修改角度以外，也可以使用arc底下的方法鏈將角度傳入進arc函式裡面，
@@ -73,7 +73,7 @@ const arc = d3.arc().innerRadius(0).outerRadius(100).startAngle(0).endAngle(2*Ma
 官方說明提到關於這些數據可以傳遞給arc()所用
 如下圖
 
-![](https://i.imgur.com/amdBPtw.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_05.png)
 
 
 > [d3 Pies官方API](https://github.com/d3/d3-shape/blob/v3.0.1/README.md#pies)
@@ -88,7 +88,7 @@ console.log(pie(data));
 打開主控台可以發現他會將原本的陣列中的各個數值自動轉換成圓餅圖所需要占比的角度，換句話說是自動分配每筆數據所比例並且回傳成arc所需要的資料
 如下圖
 
-![](https://i.imgur.com/nyKlBji.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_06.png)
 
 接下來我們將開始利用這些資料進行繪圖
 
@@ -121,7 +121,7 @@ svg.append("g")
 
 將會呈現下圖
 
-![](https://i.imgur.com/A7fUcXS.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_07.png)
 
 這時候環圈圖將如期呈現，但是每筆資料的間隙太相近了，因此我們可以加入stroke屬性並設定和背景一樣的白色，另外可以添加cornerRadius()數值觀看其呈現效果
 
@@ -146,7 +146,7 @@ svg.append("g")
 
 最後應該如下圖
 
-![](https://i.imgur.com/fFBAS7M.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211010_08.png)
 
 ## 總結
 

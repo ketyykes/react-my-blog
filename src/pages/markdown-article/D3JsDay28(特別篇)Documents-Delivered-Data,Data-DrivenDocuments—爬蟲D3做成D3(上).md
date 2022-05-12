@@ -22,7 +22,7 @@ date: 2021-10-13T13:21:00.000Z
 
 首先要下載 **node JS**
 到node Js官網的下載頁面如下圖
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095SbcbvFvwu1.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095SbcbvFvwu1.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_01.png)
 
 一般來說建議下載**LTS(Long Term Support)**，算是比較穩定的版本。
 
@@ -30,27 +30,27 @@ date: 2021-10-13T13:21:00.000Z
 
 依據你的作業系統下載，基本上使用預設**next→next**就可以了。
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095GPWMMw3QKF.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095GPWMMw3QKF.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_02.png)
 
 下載完畢後
 
 以windows為例 輸入**cmd**來打**開命令提示字元視窗**
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095mSPL5dSvdr.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095mSPL5dSvdr.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_03.png)
 
 輸入**node -v**
 
 可以看到node 的版本顯示的話就代表安裝成功了
 
 ## 移動至安裝資料夾
-![https://ithelp.ithome.com.tw/upload/images/20211013/201250954aWPQ2DY5L.png](https://ithelp.ithome.com.tw/upload/images/20211013/201250954aWPQ2DY5L.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_04.png)
 
 使用`cd ..` 回上層目錄 如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095sbyYQ3H0wi.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095sbyYQ3H0wi.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_05.png)
 
 使用`cd [目標資料夾名稱]`     代表**移動到該資料夾** 如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095KEMt7WvfOg.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095KEMt7WvfOg.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_06.png)
 
 ## 安裝puppeteer module
 cd移動到你要安裝套件的資料夾之後輸入
@@ -60,7 +60,7 @@ cd移動到你要安裝套件的資料夾之後輸入
 
 安裝過程如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095JeHvVpPP3p.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095JeHvVpPP3p.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_07.png)
 
 有關更多npm的知識可以查看以下維基或到NPM官方網站查看
 
@@ -73,7 +73,7 @@ cd移動到你要安裝套件的資料夾之後輸入
 
 使用**Visual Studio Code**打開**package.json**查看dependencies內容含有**puppeteer**也代表記錄了你安裝了**puppeteer**
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095Qgr3JnSYX3.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095Qgr3JnSYX3.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_08.png)
 
 ## 撰寫第一支瀏覽器自動化程式
 
@@ -110,7 +110,7 @@ scrape();
 
 這時候你應當可以看見如下的畫面
 
-![](https://i.postimg.cc/nr6w4vBK/gif28public01.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_09.gif)
 
 > 順帶一提如果使用命令提示字元執行`node [你的檔案名稱]`想要中斷執行程式，在命令提示字元按下`ctrl+c`就能退出了
 
@@ -128,18 +128,18 @@ scrape();
 
 按下`ctrl+shift+i`開啟**開發人員工具**找到方形帶有游標的圖樣按下去
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095SCXrWoE7Bu.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095SCXrWoE7Bu.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_10.png)
 
 
 接下來你滑鼠游標移到網頁要選的區域後，它就會自動幫你選到該element了如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095tPC7TYnWOv.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095tPC7TYnWOv.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_11.png)
 
 
 
 滑鼠移到該**Element**(這邊以如下圖的`<ui>`為例)按滑鼠右鍵選擇**Copy**→**Copy selector**
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095yyG5xK6YAt.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095yyG5xK6YAt.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_12.png)
 
 複製完後回到程式碼 我們嘗試著將剛剛複製的東西貼到**evaluate**裡面的**callbackFunction**，然後使用`innerText`取裡面的文字，最後return給str，然後我們試著將str印出來試試看
 ```javascript{numberLines: true}
@@ -163,7 +163,7 @@ scrape();
 
 最後應當會看到如下圖，依照剛剛的程式碼，得到了每個連結的文字內容
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095JYDSvzUWBc.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095JYDSvzUWBc.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_13.png)
 
 因此我們就可以使用此方法來獲取網頁的元素
 ## 產生json檔案並寫入資料
@@ -187,7 +187,7 @@ fs.writeFile('test.txt', '哈囉世界', function (err) {
 ```
 這時候你看到檔案總管會發現應當多了一個文字檔按叫做test.txt，它來自於你剛剛的程式碼所產生的檔案
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095mPJ8hLMB4z.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095mPJ8hLMB4z.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_14.png)
 
 因此我們可以使用這個方式來產生json檔案
 
@@ -228,18 +228,18 @@ scrape().then(function (data) {
 
 最後應當可以看到產生了一個json檔案如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095lmnhCA1J36.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095lmnhCA1J36.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_15.png)
 
 
 ## 獲取鐵人賽d3.js的tag標籤的所有文章
 
 首先我們先找到你要的標籤這裡以**d3JS**為例如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095JWDvIZcNgS.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095JWDvIZcNgS.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_16.png)
 
 我們可以點到第二頁查看可以發現網址多了`?page=2`
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095caBWCKR8l5.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095caBWCKR8l5.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_17.png)
 
 ## 潛談程式碼構想
 
@@ -271,7 +271,7 @@ const scrape = async () => {
 
 主要是獲取網頁最下方的頁數
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095AxwrJECBlh.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095AxwrJECBlh.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_18.png)
 
 這邊程式碼選取倒數第二個數字裡面的字串，因此寫`li:nth-last-child(2)`
 ```javascript{numberLines: true}
@@ -339,7 +339,7 @@ for(let i=0; i<currentPageHref.length; i++){
 
 另外為了得知目前爬取的進度我在for迴圈裡面一併印出第幾頁第幾個標題來顯示當前頁數和標題數。
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095PXxuq1xGkt.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095PXxuq1xGkt.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_19.png)
 
 ## 生成JSON檔案
 最後我們撰寫scrape()並在.then接收剛剛所取得的資料寫入json檔案，程式碼如下
@@ -358,7 +358,7 @@ scrape().then(function(allPeoplePages){
 ```
 最後打開json可以看到如下圖就代表恭喜你成功爬取到網頁文章的元素了。
 
-![https://ithelp.ithome.com.tw/upload/images/20211013/20125095W4JKPQCrGp.png](https://ithelp.ithome.com.tw/upload/images/20211013/20125095W4JKPQCrGp.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211013_20.png)
 
 ### 小小小總結
 本日爬取到的Json資料預計將會作為d3Js的資料引入，期待明天如何處理這些資料和訴說什麼故事吧。

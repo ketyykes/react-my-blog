@@ -7,7 +7,7 @@ date: 2021-10-05T04:07:38.000Z
 ## 面量圖介紹
 面量圖又稱分層設色圖、區域密度圖、(Choropleth map)，高中地理課本的說明是在界限明確的區域平均分布的地理現象以色彩或網紋來代表其數量大小，例如台北市的人口數用某個顏色代表，並且在台北市的地圖區域範圍呈現出該顏色。
 以下圖片為範例
-![](https://i.imgur.com/INW3btP.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_01.png)
 > 圖片取自維基百科
 > 更多知識點可以參考維基百科[Choropleth map Wiki](https://en.wikipedia.org/wiki/Choropleth_map)(英文)
 
@@ -16,10 +16,10 @@ date: 2021-10-05T04:07:38.000Z
 這次範例預計實作一個臺南市的面量圖，每個區的顏色表示該平均土地房屋的價格高低，因此我們要先有地圖資料和房屋土地的價格資料
 
 我們用的資料是實價登錄網因此先到該[網址](https://plvr.land.moi.gov.tw/DownloadOpenData)找非本期下載如下圖
-![](https://i.imgur.com/CmEcC4j.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_02.png)
 
 預計使用109第四期的臺南市CSV資料如下圖
-![](https://i.imgur.com/DZHRzlR.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_03.png)
 
 [鄉鎮市區界線(TWD97經緯度)](https://data.gov.tw/dataset/7441)
 [實價登路的網址 ](https://plvr.land.moi.gov.tw/DownloadOpenData)
@@ -28,11 +28,11 @@ date: 2021-10-05T04:07:38.000Z
 ## 加入dbf作為geojson的properties屬性
 我們將製作台南市
 由於dbf含有地圖區域的資料，因此這次我們到[mapshaper](https://mapshaper.org/)的網站添加shp副檔名之外還有添加dbf資料以便之後要進行資料篩選的時候把台南市給選取起來
-![](https://i.imgur.com/MGC508q.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_04.png)
 
 之後步驟與先前一樣輸出成topojson格式，再使用d3.json把引入的資料轉換成geojson的格式後使用consolo.log可以發現這時候properites的欄位多了欄位
 
-![](https://i.imgur.com/zPlIzCB.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_05.png)
 
 如上圖我們可以先看console.log(geojson)能夠發現每個陣列底下的properites都有正確被載入，裡面包含了縣市名稱、鄉鎮市名稱和英文名字等等的資訊，因此可以篩選COUNTYNAME為臺南市，然後重新組合成一個陣列來當作預備繪製我們台南市地圖的geojson資料
 具體程式碼如下
@@ -72,7 +72,7 @@ console.log(tainanGeojson);
 我們先創建一個陣列叫做tainanGeojson，然後對原本轉換完的geojson遍歷然後把元素裡面的properties.COUNTYNAME臺南市給添加到tainanGeojson的陣列裡面最後
 這時候可以用console.log檢查裡面的東西是不是都為臺南市
 
-![](https://i.imgur.com/xEhHSIw.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_06.png)
 
 如上圖裡面的properties內容物都是臺南市的資料，另外臺南市的行政區有37個，因此對應到陣列個數剛好也是37筆。
 
@@ -86,18 +86,18 @@ console.log(tainanGeojson);
 ```
 接下來我們再載入109年第四季台南的土地資料，使用console.log可以看到有八千多筆的資料有如期的被正確載入如下圖
 
-![](https://i.imgur.com/bdRJArB.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_07.png)
 
 
 ## 分類區域—d3.group群組化
 這邊可以使用d3的一個API叫做group先行群組化，我們將用行政區來分組
 具體說明可以看到官方API文件的範例group的第一個參數帶入該陣列，第二個參數可以是一個function此時的d參數是陣列裡面的資料，使用callback函數的方式把你要依據的分組方式給對應出來，官方的範例是取陣列中的資料key是name的值
-![](https://i.imgur.com/Fm8PGo5.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_08.png)
 
 另外官方網站有提到關於group轉換後的是InternMap的資料類型
 ，簡單的說他轉換後的資料會變成像是Map的資料格式，但比原生的Javascript又多了一些功能其說明可以參考下面
 
-![](https://i.imgur.com/zjhf7a8.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_09.png)
 
 
 > [Interning介紹](https://github.com/d3/d3-array/blob/v3.0.4/README.md#interning)
@@ -115,17 +115,17 @@ console.log(tainanGeojson);
 ```
 
 轉換完畢就可以使用使用console可以看到如下圖
-![](https://i.imgur.com/HcUEFKd.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_10.png)
 ## 新增geojson的properties欄位
 我們希望新增一個資料欄位是房屋土地的平均價格以便之後再進行繪製地圖的時候可以使用d3的data()函數得到該筆資料，由於資料有8千多筆，這裡也會使用到d3內建計算統計的mean()函數這裡先簡單說明一下
 
 ### d3.mean()計算平均數
 官方提到可以計算陣列裡面的平均數，另外也可以輸入一個函數來指定要訪問陣列的元素裡，物件的某一個屬性。
-![](https://i.imgur.com/hEjnGMj.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_11.png)
 
 官方範例如下圖
 
-![](https://i.imgur.com/3WhZz2M.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_12.png)
 
 > [d3.mean()](https://github.com/d3/d3-array/blob/v3.0.4/README.md#mean)
 
@@ -144,7 +144,7 @@ tainanGeojson.forEach(function(el){
 
 如果看不懂的話可以看下圖理解
 
-![](https://i.imgur.com/bbjgjhY.jpg)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_13.png)
 
 不熟for of 可以參考MDN
 > [for of的MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)

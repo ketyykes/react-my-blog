@@ -24,7 +24,7 @@ svg.append("rect")
 
 其中官方文件如下圖
 
-![](https://i.imgur.com/6RJGad9.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_01.png)
 > [d3-transition官方API文件](https://github.com/d3/d3-transition/tree/v3.0.1#d3-transition)
 
 這時候我們要考慮的地方是<font color="red">`transition()`</font>要放在到哪個位置，依據官方的文件說明，前面**要有一個selection**，也就是你所選擇的元素，後方需要帶入要改變的樣式，因此依據指示我們可以放在<font color="red">`append()`</font>的後面
@@ -90,13 +90,13 @@ svg.append("rect")
 ```
 
 函數圖形如下
-![](https://i.imgur.com/19hI06h.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_02.png)
 這邊帶入的就是線性的動畫，雖然官方文件寫參數值帶入t，但筆者觀看原始碼後線性所轉回的值與原先是一樣的情況，基本上你帶入99所呈現的畫面應當不會有所差別。
 [D3day13-4](https://codepen.io/ketyykes/pen/RwgrmNm)
 
 Linear原始碼如下
 
-![](https://i.imgur.com/eUSczu1.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_03.png)
 
 > [官方easeLinear說明](https://github.com/d3/d3-ease#easeLinear)
 > 
@@ -108,7 +108,7 @@ Linear原始碼如下
 ### easePolyIn()
 這邊官方說明就有提到t數值會改變動畫的效果
 官方原文如下
-![](https://i.imgur.com/XzdDtk2.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_04.png)
 
 程式碼如下
 ```javascript{numberLines: true}
@@ -127,7 +127,7 @@ Linear原始碼如下
 [D3day13-5](https://codepen.io/ketyykes/pen/BaZjEYe)
 函數圖型如下
 
-![](https://i.imgur.com/t57VsHA.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_05.png)
 
 
 [官方easePolyIn說明](https://github.com/d3/d3-ease#easePolyIn)
@@ -141,7 +141,7 @@ Linear原始碼如下
 因此如果你想嘗試使用<font color="red">`d3.easeElasticInOut()`</font>這個函數的話
 由於函數圖型有超出原本的區間，因此會造成寬高變成負值就會輸出錯誤。
 
-![](https://i.imgur.com/QxwCbeQ.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_06.png)
 
 另外D3的作者有發表關於其他範例，可以參考d3作者所用的範例，它所用的範例是改變位移的屬性，因此也就能更加瞭解每個函式直接的差別。
 

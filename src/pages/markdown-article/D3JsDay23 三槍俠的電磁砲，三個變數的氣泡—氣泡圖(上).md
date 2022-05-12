@@ -111,7 +111,7 @@ house.forEach(el => {
 
 console出來的資料如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211008/20125095TvATbSoWcY.png](https://ithelp.ithome.com.tw/upload/images/20211008/20125095TvATbSoWcY.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211008_01.png)
 
 ## selection.node()介紹
 取得HTML元素雖然可以使用原生Js的`getElementById`，不過這邊介紹一個在d3的select底下的一個方法，`selection.node()`
@@ -123,7 +123,7 @@ console.log(d3.select("#min-bulid").node()===document.getElementById("min-bulid"
 ```
 這邊可以發現透過d3的`selecttion.node()`的API和`document.getElementById()`的方法所得到的內容是相等的情形如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211008/20125095ejaP1NDfhA.png](https://ithelp.ithome.com.tw/upload/images/20211008/20125095ejaP1NDfhA.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211008_02.png)
 
 
 > [selection.node()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_nodes)
@@ -175,11 +175,11 @@ console.log(gY.call(axisY));
 
 這邊觀看回傳的東西可以發現`axisY(gY)`回傳的是**undefined**，但是`Y.call(axisY)`可以回傳一個物件，所以當我們執行`axisY(gY)`或`gY.call(axisY)`的時候雖然都可以將座標軸繪製到網頁畫面上，但是使用call的方式會回傳物件以便後續給函式繼續接續方法鏈。
 
-![https://ithelp.ithome.com.tw/upload/images/20211008/20125095fB6aiZbLcp.png](https://ithelp.ithome.com.tw/upload/images/20211008/20125095fB6aiZbLcp.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211008_03.png)
 
 這邊也可以觀看官方文件的說明，他表示下列兩種執行方式都是一樣的結果，如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211008/20125095jvRJ0XD8ar.png](https://ithelp.ithome.com.tw/upload/images/20211008/20125095jvRJ0XD8ar.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211008_04.png)
 
 > [參考selction.call](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_call)
 
@@ -192,7 +192,7 @@ gY.transition().duration(1000).call(axisY);
 
 呈現結果如下圖
 
-![](https://i.postimg.cc/DysdFK6v/gif23public01.gif)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211008_05.gif)
 
 ## 繪製圓圈圈
 接下來我們進行繪製圓型
@@ -213,7 +213,7 @@ gCircle.selectAll("circle")
 
 到此為止應當可以映射出圓點如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211009/20125095YLMq4fmVV6.jpg](https://ithelp.ithome.com.tw/upload/images/20211009/20125095YLMq4fmVV6.jpg)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211008_06.png)
 
 ## 小總結
 

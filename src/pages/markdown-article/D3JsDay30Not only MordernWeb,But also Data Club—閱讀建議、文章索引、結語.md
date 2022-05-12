@@ -5,9 +5,9 @@ date: 2021-10-15T13:31:00.000Z
 ---
 
 ## 繪製自己鐵人賽文章資料所構成的圖表
-最後一天就來做個本次文章系列的總結吧，我用puppteer爬取了我前29天的文章字數，帶入d3呈現了視覺化圖表如下圖
+最後一天就來做個本次文章系列的總結吧，我用puppteer爬取了我前29天的文章字數，帶入d3呈現了視覺化圖表如下圖!
 
-![](https://i.imgur.com/RFrdcXx.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211015_01.png)
 
 這邊附上一些先前沒用過的函式的程式碼簡單講解一下
 ```javascript{numberLines: true}

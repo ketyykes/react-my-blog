@@ -1,5 +1,5 @@
 ---
-title: Day14不想圖表被冰凍，那就做一點互動—事件互動
+title: D3JsDay14不想圖表被冰凍，那就做一點互動—事件互動
 slug: 2021-09-29T10:05:54.000Z
 date: 2021-09-29T10:05:54.000Z
 ---
@@ -15,7 +15,7 @@ date: 2021-09-29T10:05:54.000Z
 ## 監聽器
 首先我們要有一個所選取的元素，在後面透過方法鏈的方式添加要執行的函式，這邊可以直接就範例學習即可，例如我們預做出一個當按鈕按下去就會產生隨機的長條圖，我們可以先把按鈕和長條圖準備好
 創建好的範例如下
-```javascript{numberLines: true}
+```html{numberLines: true}
 <style>
 .btn {
       padding: 8px;
@@ -116,7 +116,7 @@ date: 2021-09-29T10:05:54.000Z
 
 這時候按下按鈕會發現它將會再次新增一筆，所以我們一直按的話會看到下圖
 
-![](https://i.imgur.com/KLO9rka.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210929_01.png)
 
 因此我們在執行render function的時候要先把先前的svg給移除掉，另外希望畫面載的時候有一個長條圖，因此可以先執行一次render()
 
@@ -168,7 +168,7 @@ svg.selectAll("rect")
 
 如下圖
 
-![](https://i.imgur.com/c1GyzkP.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210929_02.png)
 
 所以我們得在添加關於離開元素的時候的程式碼，程式碼如下
 ```javascript{numberLines: true}

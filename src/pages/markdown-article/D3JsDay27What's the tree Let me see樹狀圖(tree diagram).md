@@ -69,13 +69,13 @@ const hierarchyData = d3.hierarchy(treeData, function(d){
 console.log(hierarchyData);
 ```
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095itoqaHxSgR.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095itoqaHxSgR.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_01.png)
 > 這邊值得一提的是官網說可以指定要訪問哪一個欄位當作children來走訪生成，如果沒有指定的話就會預設值是訪問d.children的欄位，由於我們原始資料treeData就有children這個key，因此就算沒有在hierarchy函數內設定function的話也會預設訪問children這個key。
 
 
 接下來觀看`console.log`後可以發現`hierarchy()`將會把整個原先的物件轉換後增加一些key來說明階層關係，物件最外層的就是對應到剛剛原始資料的最外層，展開裡面可以發現紀錄了**depth**和**height**和**x**與**y**
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/201250951xkqCZ4kIE.png](https://ithelp.ithome.com.tw/upload/images/20211012/201250951xkqCZ4kIE.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_02.png)
 
 接下來我們要設置樹的大小，這邊設定**size**的寬是**800**和高**600**
 ```javascript{numberLines: true}
@@ -87,7 +87,7 @@ const tree = d3.tree().size([800,600]);
 使用tree的佈局產生樹枝的頭(**source**)和尾(**target**)
 官網API說明如下
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095p9aNh3Ggv5.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095p9aNh3Ggv5.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_03.png)
 
 
 將轉換後的**階層化數據**帶入成**tree**布局後使用`links()`，這邊可以使用`console.log`來觀看其經過轉換函式的樣貌
@@ -96,7 +96,7 @@ console.log(tree(hierarchyData).links());
 ```
 觀看開發者人員工具將會生成一個陣列儲存每個節的**source**和**target**
 如下圖
-![https://ithelp.ithome.com.tw/upload/images/20211012/201250951vVR5BFnTP.png](https://ithelp.ithome.com.tw/upload/images/20211012/201250951vVR5BFnTP.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_04.png)
 
 
 > [d3官方link說明](https://github.com/d3/d3-hierarchy/blob/v3.0.1/README.md#node_links)
@@ -131,14 +131,14 @@ g.selectAll("line").data(tree(hierarchyData).links())
 ```
 
 如下圖
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095x5W7CdTfPE.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095x5W7CdTfPE.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_05.png)
 
 ## 製作節點—使用descendants()
 接下來使用`node.descendants()`來製作節點
 
 官方API指出會產生所有後代節點的陣列，換句話說就是將剛剛的hierarchyData做扁平化處理
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095Y1Fmb8pIyw.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095Y1Fmb8pIyw.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_06.png)
 
 可以撰寫程式碼觀看內容
 ```javascript{numberLines: true}
@@ -147,7 +147,7 @@ console.log(tree(hierarchyData).descendants());
 
 如下圖可以發現它將所有子節點給取出做成一個陣列了
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/201250954w9NuwevL4.png](https://ithelp.ithome.com.tw/upload/images/20211012/201250954w9NuwevL4.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_07.png)
 
 ## 畫出節點
 接下來我們在svg插入一個g元素裡面預計使用join生成許多g後把資料綁定在上面以便裡面放入circle和text顯示節點樣貌和內容。
@@ -182,7 +182,7 @@ console.log(tree(hierarchyData).descendants());
   .text(function(d) {return d.data.name})
 ```
 最後你應該會看到如下圖
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095TGuVT50lew.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095TGuVT50lew.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_08.png)
 
 ## 樹枝(節)做成曲線—使用linkVertical()
 ### 方法一 手寫curve
@@ -207,14 +207,14 @@ g.selectAll("path")
 
 接下來應該會看到如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095xaD0v2Phs4.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095xaD0v2Phs4.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_09.png)
 
 ### 方法二 使用link產生器 —linkVertical()
 這邊主要介紹第二種方法使用[linkVertical](https://github.com/d3/d3-shape/blob/v3.0.1/README.md#linkVertical)
 
 官方API說明它將會回傳**Link產生器**，用來呈現樹狀圖的顯示
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095VjiGdjETjC.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095VjiGdjETjC.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_10.png)
 
 
 可以先撰寫以下程式碼觀看呈現樣貌會比較好理解
@@ -240,7 +240,7 @@ g.selectAll("path")
 ```
 之後你應當會看到如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095oZzx4EVO92.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095oZzx4EVO92.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_11.png)
 
 因此我們要繪製這種圖形的時候先備資料含有source和target的物件來作為線段的起始點和終點，還記得剛剛我們使用tree(hierarchyData).links()所轉換的資料嗎?其中的key就含有**source**和**target**
 
@@ -260,13 +260,13 @@ g.selectAll("path").data(tree(hierarchyData)
 
 其實就是將原本的資料轉換成**path**的**M、C**的相關數值而已如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095bWH6BEeNHk.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095bWH6BEeNHk.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_12.png)
 
 最後呈現應該會和剛剛手寫的圖一樣
 ## 水平樹狀圖範例
 除了垂直的樹狀圖以外也可以使用`linkHorizontal()`產生水平的樹狀圖，這裡使用樹狀圖來呈現web的子集技術如下圖
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/201250956koMehgjZ9.png](https://ithelp.ithome.com.tw/upload/images/20211012/201250956koMehgjZ9.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_13.png)
 
 程式碼如下
 ```
@@ -373,7 +373,7 @@ g.selectAll("path").data(tree(hierarchyData)
 ## image樹狀圖範例
 另外svg裡面也可以帶入image，使用`<image>`標籤，資料物件裡面涵蓋image的URL就可以呈現，如下圖使用樹狀圖來表示蕨類植物的父子關係，線的style改變顏色，可能代表蕨類有是長子或是不孕等等情況
 
-![https://ithelp.ithome.com.tw/upload/images/20211012/20125095E5c4DEIWj2.png](https://ithelp.ithome.com.tw/upload/images/20211012/20125095E5c4DEIWj2.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_14.png)
 
 > 圖片來源：[Unsplash](https://unsplash.com/s/photos/fern)
 

@@ -18,7 +18,7 @@ date: 2021-10-01T06:05:23.000Z
 
 > [D3jeo官方API文件](https://github.com/d3/d3-geo/tree/v3.0.1)提到如下圖
 
-![](https://i.imgur.com/ApnJjAg.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_01.png)
 
 D3的作者也進行了開源專案讓**shp**轉換成**geojson**可以參考以下連結
 > [D3作者開源專案轉換shapefile](https://github.com/mbostock/shapefile)
@@ -27,35 +27,35 @@ D3的作者也進行了開源專案讓**shp**轉換成**geojson**可以參考以
 
 首先進到[mapshaper](https://mapshaper.org/)網站之後將從政府開放平台資料下載的檔案解壓縮之後的**shp**拖曳到畫面當中，按下**import**
 
-![](https://i.imgur.com/U24Ucel.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_02.png)
 
 基本上會看到預覽圖如下
 
-![](https://i.imgur.com/qpQgvJ8.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_03.png)
 
 另外可以點擊右上角的**simplify**做壓縮
 
-![](https://i.imgur.com/cbFrIz7.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_04.png)
 
 看到這個畫面之後按**Apply**
 
-![](https://i.imgur.com/j1VfBsy.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_05.png)
 
 這時候畫面上方會多一個可以拉動0到100%的設定如下圖
 
-![](https://i.imgur.com/bzjtI1R.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_06.png)
 
 你可以嘗試著拉動它這邊拉動至0%試試看如下圖，~~你就知道為什麼台灣會被說像番薯了~~
 
-![](https://i.imgur.com/QNrtLXy.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_07.png)
 
 這裡我們調整大概80%左右如下圖
 
-![](https://i.imgur.com/LNSqium.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_08.png)
 
 按下右上角的**Export**應該會看到如下圖
 
-![](https://i.imgur.com/eWOYBwM.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_09.png)
 
 這裡我們選擇**topoJson**按下**export**之後應該就會開始下載了，做到這一步基本上你會得到一個json檔案
 
@@ -66,7 +66,7 @@ D3的作者也進行了開源專案讓**shp**轉換成**geojson**可以參考以
 我們剛剛輸出的是**topojson**先前提到整體檔案會比**geojson**來的小，當我們後續要撰寫程式碼的時候也必須將**topojso**n轉換成**geojson**這邊可以使用CDN的方式也就是載入連結的方式引入到腳本中或是**npm安裝**，我們使用CDN的方式
 基本上打開下面的網頁滾動到下方把這行複製到你的網頁的<font color="red">`head`</font>裡面就可以了。
 
-![](https://i.imgur.com/VJkbqX6.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_10.png)
 
 > [topojson轉換](https://github.com/topojson/topojson)
 
@@ -107,7 +107,7 @@ g.selectAll("path")
 
 如下圖
 
-![](https://i.imgur.com/O7LXC4U.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_11.png)
  
 > [d3-geoInstalling](https://github.com/d3/d3-geo/tree/v3.0.1#installing)
 
@@ -121,23 +121,22 @@ console.log(typeof(projection));
 
 如下圖
 
-![](https://i.imgur.com/68xKo80.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_12.png)
 
 官方API文件說明是將球面的多邊形幾何轉換成平面的多邊形幾何，簡單說就是先前地理知識將球影投影到平面上的意思
 
 官方說明如下圖
 
-![](https://i.imgur.com/iTSlUb5.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_13.png)
 
 > [d3Projection官方說明](https://github.com/d3/d3-geo/blob/v3.0.1/README.md#projections)
 
 ## geopath函式介紹
 
 我們先看官方API說明如下圖
-![](https://i.imgur.com/QkcT2iX.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_14.png)
 
 1. 需要知道的第一點是官方提到這裡是一個路徑產生器，可以指定投影方式，我們上一個部分介紹到的projection將會派上用場
-
 1. 需要知道的第二點是這一行說明**Renders the given object, which may be any GeoJSON feature or geometry object:**這邊意思是<font color="red">`path函式`</font>要進行轉換的時候需要帶入的是**GeoJSON**的**feature**先記得這個說明之後會用到
 
 > [d3的geojson官方API](https://github.com/d3/d3-geo/blob/v3.0.1/README.md#geoPath)
@@ -152,11 +151,11 @@ console.log(typeof(projection));
 
 [topojsonAPI文件](https://github.com/topojson/topojson#manipulation-topojson-client)
 
-![](https://i.imgur.com/VEPUm4b.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_15.png)
 
 官方有提到接受物件如果是**GeometryCollection**會將每個幾何圖形映射到**Feature**
 
-![](https://i.imgur.com/ieQb8Yh.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_16.png)
 
 這時候我們撰寫程式碼，一樣使用先前提到的json載入資料方式來載入世界地圖，然後觀看一下<font color="red">`console.log`</font>的內容
 
@@ -166,7 +165,7 @@ d3.json("World_Countries.json").then(function(topojsonData) {
 })
 ```
 
-![](https://i.imgur.com/QZboLND.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_17.png)
 
 如上圖打開<font color="red">`console.log`</font>看**objects**的**World_Countries**那一欄顯示裡面的東西是**GeometryCollection**正是我們需要的東西。
 
@@ -206,6 +205,6 @@ d3.json("World_Countries.json")
 
 明天再來教學如何美化這個地圖和顯示地圖相關區域
 
-![](https://i.imgur.com/xcyMwJz.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_18.png)
 
 ###### tags: `D3Js`

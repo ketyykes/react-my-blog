@@ -16,35 +16,35 @@ date: 2021-10-14T13:41:00.000Z
 
 如下圖
 
-![](https://i.imgur.com/ZMvrHAU.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_01.png)
 ### 轉換成JSON
 到**Convert HTML Tables To JSON**網站按下**Ctrl+V**將剛剛複製的HTML貼到**HTML Code**的下方空白處
 如下圖
-![](https://i.imgur.com/J1ostVs.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_02.png)
 
 
 網頁滾動至底下就可以看到它就會自動幫你轉成**JSON格式**
 
 如下圖
 
-![](https://i.imgur.com/FyKvhe8.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_03.png)
 
 
 ### 更改JSON物件的key值
 但是通常有時候**JSON**裡面的**object**的**key**不是你想要的名稱該怎麼辦？
 我們回到剛剛的找到`<th>`表頭的地方把原先的洲別改成你想要的名稱
-![](https://i.imgur.com/7sDZQqP.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_04.png)
 
 改完名稱後如下圖
 
-![](https://i.imgur.com/vfngSY9.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_05.png)
 ### HTML Table轉換到JSON完成
 最後查看轉換後的JSON的呈現狀況
 如下圖
-![](https://i.imgur.com/tYV7yhq.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_06.png)
 
 確定沒有問題之後就可以按下底下的**Download Result**下載下來了
-![](https://i.imgur.com/n8pxKQB.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_07.png)
 
 > [洲—維基百科](https://zh.wikipedia.org/wiki/%E6%B4%B2)
 > [Convert HTML Tables To JSON](https://www.convertjson.com/html-table-to-json.htm)
@@ -64,7 +64,7 @@ date: 2021-10-14T13:41:00.000Z
 `d3.quantile`和`d3.median`
 如下圖
 
-![](https://i.imgur.com/Y4gAA6l.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_08.png)
 
 > [d3StatisticsAPI](https://github.com/d3/d3/blob/main/API.md#statistics)
 
@@ -136,7 +136,7 @@ boxPlotG
 
 如下圖
 
-![](https://i.imgur.com/2WRkIk4.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_09.png)
 
 
 接下來我們將繪製盒鬚圖的盒子的部分，由於一個`<rect>`的**x,y**是來自於左上角作為起始點，之後再繪製高度和寬度，因此我們將剛剛的盒子中心必須向左偏移，因為盒子對稱的關係所以將盒子的寬度除以2作為偏移量，另外依照盒鬚圖的定義帶入q3的值透過比例尺轉換作為y的位置，其盒鬚圖的高度就是四分位距
@@ -153,7 +153,7 @@ boxPlotG
 ```
 之後你應當可以看到如下圖
 
-![](https://i.imgur.com/srcFx3t.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_10.png)
 
 接下來我們要繪製盒鬚圖的最小值和最大值和中位數，把剛剛所算出的這三個數字帶入成一個陣列，用d3的資料綁定把這三筆資料綁定到`<line>`上就可以簡單的劃出這三條線了。
 其中x位置要向左偏移，其原理與剛剛的`<rect>`同理。
@@ -173,7 +173,7 @@ boxPlotG
 
 最後應當可以看到下圖
 
-![](https://i.imgur.com/2LXusp6.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_11.png)
 
 
 值得一提的是文章字數並沒有負值，所以在此例子當中呈現最小值為負值也顯得有些奇怪。
@@ -195,7 +195,7 @@ circleG.selectAll("circle").data(dataSort)
 
 呈現結果如下圖
 
-![](https://i.imgur.com/9teXDCF.png)
+![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211014_12.png)
 
 ## 小小小結語
 期望本次的實作可以讓大家了解資料判讀時的重要性，不要若入**統計陷阱區**。
