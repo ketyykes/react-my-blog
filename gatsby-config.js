@@ -30,5 +30,15 @@ module.exports = {
         path: `${__dirname}/src/pages/markdown-article`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `slider`,
+        path: `${__dirname}/src/images/slider`,
+      },
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };
