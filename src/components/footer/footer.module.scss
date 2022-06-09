@@ -1,0 +1,13 @@
+@import "../../styles/mixin";
+@import "../../styles/color";
+.container-xxl {
+  @include container(1200px, 1.6);
+}
+.copyright {
+  @include text_white_shadow;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 60px;
+  text-align: center;
+  background: $main_color;
+}

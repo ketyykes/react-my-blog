@@ -1,21 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 import PhotoSlider from '../components/slider/PhotoSlider'
-import * as styles from "../styles/index.module.scss";
-const Index = ({ data }) => {
-  const { width, image_height, slider_height } = styles;
+import * as styles from "../styles/pages-styles/index.module.scss"
+import PortfolioTab from '../components/portfolio/PortfolioTab';
 
+const Index = ({ data }) => {
   return (
     <>
       <Header />
       <PhotoSlider />
-
-      {/* <StaticImage src="../images/slider/slider03.jpg" width={600} alt="test" /> */}
+      <PortfolioTab />
       <Footer />
-      {/* <Layout/> */}
-      {/* <p>{title}:{description}</p> */}
     </>
   )
 }

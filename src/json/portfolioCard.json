@@ -1,0 +1,38 @@
+{
+    "frontEndCardArray": [
+        {
+            "cardHead": "LineBot天氣",
+            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+        },
+        {
+            "cardHead": "LineBot天氣",
+            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+        },
+        {
+            "cardHead": "LineBot天氣",
+            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+        },
+        {
+            "cardHead": "LineBot天氣",
+            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+        }
+    ],
+    "backEndCardArray": [
+        {
+            "cardHead": "LineBotPtt",
+            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/BackEnd/lineBotPtt.jpg"
+        }
+    ],
+    "otherCardArray": [
+        {
+            "cardHead": "",
+            "cardContent": "",
+            "cardImageSrc": ""
+        }
+    ]
+}

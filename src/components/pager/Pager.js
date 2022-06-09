@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "../styles/components-styles/pager.module.scss";
+import * as styles from "./pager.module.scss";
 import { Link } from "gatsby";
 
 const Pager = ({ currentPage, allmarkdownArticle, perPage }) => {

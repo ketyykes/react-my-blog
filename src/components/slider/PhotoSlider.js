@@ -1,43 +1,47 @@
-import React from 'react'
-import NextArrow from './NextArrow'
-import PreArrow from './NextArrow'
+import React , { useEffect ,useRef} from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 import Slider from "react-slick";
-import * as styles from "./slider.module.scss";
+import * as styles from "./photoSlider.module.scss";
+import {init} from 'ityped';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
 const PhotoSlider = () => {
   const { image_height, photo_slider } = styles;
+  const textRef = useRef();
+  useEffect(() => {
+    init(textRef.current,{
+      showCurso:false, 
+      strings: ["水土曜來了"],
+      typeSpeed:500,
+      backDelay: 500,
+      backSpeed:100,
+      cursorChar: "",
+    })
+    console.log(textRef);
+  },[]);
   const settings = {
-    dots: true,
+    arrows:false,
+    dots: false,
     fade: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PreArrow />,
-    appendDots: dots => (
-      <div>
-        <ul style={{ backgroundColor: "rgba(255,255,255,0.2)" }}> {dots} </ul>
-      </div>
-    ),
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed:5000,
+    pauseOnHover: false,
   };
   return (
     <div className={photo_slider}>
       <Slider {...settings} >
-        <div >
           <StaticImage className={image_height} src="../../images/slider/slider01.jpg" alt="slider" />
-        </div>
-        <div >
           <StaticImage className={image_height} src="../../images/slider/slider02.jpg" alt="slider" />
-        </div>
-        <div >
           <StaticImage className={image_height} src="../../images/slider/slider03.jpg" alt="slider" />
-        </div>
       </Slider>
+      <h1>歡迎來到<br/>
+      <span ref={textRef}></span></h1>
     </div>
   )
 }

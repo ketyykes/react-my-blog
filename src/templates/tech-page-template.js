@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Layout from "../components/Layout";
-import Pager from "../components/Pager";
+import Layout from "../components/layout/Layout";
+import Pager from "../components/pager/Pager";
 import { graphql, Link } from "gatsby";
 import * as styles from "../styles/templates-styles/tech-page.module.scss";
 const dayjs = require("dayjs");
@@ -12,15 +12,10 @@ const TechPageTemplate= ({ pageContext, data }) => {
   const allmarkdownArticle = data.allMarkdownRemark.nodes;
   const { perPage, currentPage } = pageContext;
   const { content, card } = styles;
-
   const [allItem, setAllItem] = useState(
     allmarkdownArticle.slice(perPage*(currentPage-1), perPage * currentPage)
     );
-    
     console.log(allItem);
-
-
-
   return (
     <>
       <Layout>

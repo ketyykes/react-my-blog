@@ -15,6 +15,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.1",
     "dayjs": "^1.10.8",
     "gatsby": "^4.5.2",
     "gatsby-plugin-image": "^2.14.1",
@@ -22,9 +25,11 @@
     "gatsby-plugin-sharp": "^4.14.1",
     "gatsby-remark-prismjs": "^6.12.1",
     "gatsby-source-filesystem": "^4.14.0",
+    "gatsby-transformer-json": "^4.15.0",
     "gatsby-transformer-remark": "^5.14.0",
     "gatsby-transformer-sharp": "^4.14.0",
     "install": "^0.13.0",
+    "ityped": "^1.0.3",
     "npm": "^8.10.0",
     "prismjs": "^1.28.0",
     "react": "^17.0.1",

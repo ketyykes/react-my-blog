@@ -7,6 +7,7 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -35,6 +36,13 @@ module.exports = {
       options: {
         name: `slider`,
         path: `${__dirname}/src/images/slider`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "portfolioCard",
+        path: `${__dirname}/src/json`,
       },
     },
     `gatsby-plugin-image`,
