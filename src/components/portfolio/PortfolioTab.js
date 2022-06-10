@@ -3,10 +3,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Container from '@mui/material/Container';
 import PortfolioTabPanel from './PortfolioTabPanel';
-import * as styles from "./portfolioTab.module.scss";
 import { styled } from '@mui/material/styles';
 import { graphql, useStaticQuery } from "gatsby";
-import SimpleDialogDemo from '../SimpleDialogDemo'
 const CustomTabs = styled(Tabs)({
   '.MuiTabs-flexContainer': {
     justifyContent: 'center'
@@ -16,7 +14,6 @@ const PortfolioTab = () => {
   const handleTabs = (e, val) => {
     setValue(val);
   }
-  const { tab, m0auto } = styles
   //query json資料夾裡面的json
   const data = useStaticQuery(graphql`
     {
@@ -52,7 +49,6 @@ const PortfolioTab = () => {
       <PortfolioTabPanel value={value} index={0} data={frontEndCardArray}></PortfolioTabPanel>
       <PortfolioTabPanel value={value} index={1} data={backEndCardArray}></PortfolioTabPanel>
       <PortfolioTabPanel value={value} index={2} data={otherCardArray}></PortfolioTabPanel>
-      <SimpleDialogDemo />
     </Container>
   )
 }

@@ -1,19 +1,9 @@
 import React, { useState } from 'react'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
-import CardHeader from '@mui/material/CardHeader';
-import * as styles from "./portfolioTabPanel.module.scss";
+import { Card, Grid, CardContent, CardHeader, Typography } from '@mui/material';
 import { StaticImage, GatbyImage } from "gatsby-plugin-image";
-
+import ImageDialogs from './ImageDialogs';
 
 const PortfolioTabPanel = ({ index, value, data }) => {
-  const { card, card_content, whole_img } = styles;
-  const [wholeImg, setWholeImage] = useState(false);
-  const imageHandler = () => {
-    setWholeImage(true);
-    console.log("tst");
-  }
   return (
     <div>{
       value === index && (
@@ -21,12 +11,14 @@ const PortfolioTabPanel = ({ index, value, data }) => {
           {
             data.map((cardItemObject, index) => (
               <Grid item xs={12} lg={4} xl={3} md={6} key={index}>
-                <Card className={card}>
-                  <CardHeader title={cardItemObject.cardHead} >
+                <Card sx={{ borderRadius: "20px", mt: 2 }}>
+                  <CardHeader title={cardItemObject.cardHead} sx={{ textAlign: 'center' }} >
                   </CardHeader>
-                  <CardContent className={card_content}>
-                    <img src={cardItemObject.cardImageSrc} className={whole_img} onClick={imageHandler} />
-                    {cardItemObject.cardContent}
+                  <CardContent >
+                    <ImageDialogs cardItemObject={cardItemObject} />
+                    <Typography variant="body1" sx={{ mt: 2 }}>
+                      {cardItemObject.cardContent}
+                    </Typography>
                   </CardContent>
                 </Card>
               </Grid>

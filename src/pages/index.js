@@ -5,7 +5,6 @@ import Footer from '../components/footer/Footer';
 import PhotoSlider from '../components/slider/PhotoSlider'
 import * as styles from "../styles/pages-styles/index.module.scss"
 import PortfolioTab from '../components/portfolio/PortfolioTab';
-
 const Index = ({ data }) => {
   return (
     <>

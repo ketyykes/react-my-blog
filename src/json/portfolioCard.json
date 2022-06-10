@@ -1,24 +1,19 @@
 {
     "frontEndCardArray": [
         {
-            "cardHead": "LineBot天氣",
+            "cardHead": "台南美食地圖",
             "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg"
         },
         {
-            "cardHead": "LineBot天氣",
+            "cardHead": "台南美食地圖",
             "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg"
         },
         {
-            "cardHead": "LineBot天氣",
+            "cardHead": "台南美食地圖",
             "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
-        },
-        {
-            "cardHead": "LineBot天氣",
-            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg"
         }
     ],
     "backEndCardArray": [
@@ -30,9 +25,9 @@
     ],
     "otherCardArray": [
         {
-            "cardHead": "",
-            "cardContent": "",
-            "cardImageSrc": ""
+            "cardHead": "LineBot天氣",
+            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
         }
     ]
 }
