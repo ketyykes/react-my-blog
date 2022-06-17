@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import { Button, Dialog, DialogTitle, DialogContent, IconButton, Box, useMediaQuery } from '@mui/material/';
+import { Button, Dialog, DialogTitle, DialogContent, IconButton, Skeleton, useMediaQuery } from '@mui/material/';
 import CloseIcon from '@mui/icons-material/Close';
 import { styled } from '@mui/material/styles';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import * as styles from "./imageDialogs.module.scss";
 
 export default function ImageDialogs({ cardItemObject }) {
-    const { card_image, wrap_image } = styles;
+    const { card_image } = styles;
     const [open, setOpen] = useState(false);
     const handleClickOpen = () => { setOpen(true) };
+    const [loaded, setLoaded] = useState(false);
+    const loadEventHandler = () => {
+        setLoaded(true);
+        console.log('test');
+    }
     const handleClose = () => {
         setOpen(false);
     };
-    const matches = useMediaQuery('(min-width:576px)');
-    console.log(matches);
+    const minWidthBoolean = useMediaQuery('(min-width:576px)');
     const CustomDialog = styled(Dialog)({
         '.MuiDialogTitle-root': {
             textAlign: 'center',
@@ -25,13 +29,13 @@ export default function ImageDialogs({ cardItemObject }) {
             borderRadius: '16px'
         }
     });
+
     return (
         <>
             <div className={card_image} >
-                <div className={wrap_image}>
-                    <img src={cardItemObject.cardImageSrc} />
-                </div>
-                {matches ? (<Button onClick={handleClickOpen} >
+                <img style={{ display: loaded ? 'block' : 'none' }} src={cardItemObject.cardImageSrc} alt={cardItemObject.cardHead} onLoad={loadEventHandler} />
+                {loaded ? "" : (<Skeleton variant="rectangular" sx={{ width: "100%", height: "100px" }} />)}
+                {minWidthBoolean ? (<Button onClick={handleClickOpen} >
                     <ZoomOutMapIcon />
                 </Button>) : null
                 }

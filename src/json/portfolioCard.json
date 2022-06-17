@@ -2,32 +2,35 @@
     "frontEndCardArray": [
         {
             "cardHead": "台南美食地圖",
-            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg"
+            "cardContent": "網站全程使用Bootstrap5和vanilla Javascript並使用其API自定義顏色，資料來源是openData下載的JSON檔案，透過fetch相對路徑的JSON檔案後結合結合Leaflet的CDN讓使用者可以搜尋台南美食",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg",
+            "webSrc": "https://ketyykes.github.io/tainanFoodMap/",
+            "remark": ""
         },
         {
-            "cardHead": "台南美食地圖",
-            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg"
-        },
-        {
-            "cardHead": "台南美食地圖",
-            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg"
+            "cardHead": "台灣2022四月份縣市covid19趨勢圖",
+            "cardContent": "網站全程使用Bootstrap5和vanilla Javascript並使用其API自定義顏色，資料來源是openData下載的JSON檔案，透過fetch相對路徑的JSON檔案後結合結合Leaflet的CDN讓使用者可以搜尋台南美食",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg",
+            "webSrc": "https://ketyykes.github.io/react-covid19-taiwan-chartjs/",
+            "remark": ""
         }
     ],
     "backEndCardArray": [
         {
             "cardHead": "LineBotPtt",
-            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/BackEnd/lineBotPtt.jpg"
+            "cardContent": "使用官方lineBotSDK的NodeJs版結合puppeteer和Express部署到Heroku，當使用者輸入'ptt'到對話框的時候，將會即時爬ptt網頁版的熱門看板並回傳前5則文章到對話框，如果還沒爬完將會回傳'資料還沒抓回來'。",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/BackEnd/lineBotPtt.jpg",
+            "webSrc": "",
+            "remark": ""
         }
     ],
     "otherCardArray": [
         {
             "cardHead": "LineBot天氣",
-            "cardContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime, cumque facere possimus architecto nisi. Impedit dolor nihil exercitationem tempore accusamus error repellendus consequatur, quidem eum sint asperiores voluptas autem?,",
-            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg"
+            "cardContent": "使用氣象資料開放平台API結合Google的AppScript其內部語言使用Javascript，得到所有天氣的JSON後解析使用者輸入的縣市並計算距離當下三小時與六小時內的氣象，最後使用Line官方的flex message格式回傳。",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/Other/lineBotWeather.jpg",
+            "webSrc": "",
+            "remark": ""
         }
     ]
 }

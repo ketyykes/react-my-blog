@@ -7,10 +7,10 @@ const PortfolioTabPanel = ({ index, value, data }) => {
   return (
     <div>{
       value === index && (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{justifyContent:"center"}}>
           {
             data.map((cardItemObject, index) => (
-              <Grid item xs={12} lg={4} xl={3} md={6} key={index}>
+              <Grid item xs={12} lg={4} xl={3} md={6} key={index} >
                 <Card sx={{ borderRadius: "20px", mt: 2 }}>
                   <CardHeader title={cardItemObject.cardHead} sx={{ textAlign: 'center' }} >
                   </CardHeader>
