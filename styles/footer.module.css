@@ -1,0 +1,15 @@
+.container-xxl {
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+.copyright {
+  color: white;
+  text-shadow: black 0.05rem 0.05rem;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 60px;
+  text-align: center;
+  background: #4296d1e0;
+}
+/*# sourceMappingURL=footer.module.css.map */

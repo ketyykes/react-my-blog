@@ -3,8 +3,8 @@ import { graphql } from 'gatsby'
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import PhotoSlider from '../components/slider/PhotoSlider'
-import * as styles from "../styles/pages-styles/index.module.scss"
 import PortfolioTab from '../components/portfolio/PortfolioTab';
+import * as styles from "../styles/pages-styles/index.module.scss"
 const Index = ({ data }) => {
   return (
     <>

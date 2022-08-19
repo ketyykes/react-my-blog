@@ -1,10 +1,9 @@
 import React from 'react'
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-import * as styles from "../styles/pages-styles/notfound.module.scss"
+import { not_found } from "../styles/pages-styles/notfound.module.scss"
 
 const NotFound = () => {
-    const { not_found } = styles;
     return (
         <>
             <Header />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import * as styles from "./navbar.module.scss";
 import "../../styles/global.scss";
+import * as styles from "./navbar.module.scss";
 const Navbar = () => {
   // console.log(styles);
   const { navbar, navbarHome, icon, ham, line, iconTxt ,menuShow,menuNoshow} = styles;

@@ -4,8 +4,6 @@ import Pager from "../components/pager/Pager";
 import { graphql, Link } from "gatsby";
 import * as styles from "../styles/templates-styles/tech-page.module.scss";
 const dayjs = require("dayjs");
-
-
 const TechPageTemplate= ({ pageContext, data }) => {
   console.log(pageContext);
   console.log(data);

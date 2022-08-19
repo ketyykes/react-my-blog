@@ -1,27 +1,26 @@
 import React from 'react'
 import Layout from '../components/layout/Layout'
-import * as styles from "../styles/templates-styles/article-template.module.scss";
+import { articleContent } from "../styles/templates-styles/article-template.module.scss";
 const dayjs = require('dayjs')
 // import {graphql} from 'gatsby'
-const articleTemplate = ({pageContext}) => {
+const articleTemplate = ({ pageContext }) => {
   // console.log(data);
-  const {html,title,date} = pageContext;
+  const { html, title, date } = pageContext;
   const fomateDate = dayjs(date).format('YYYY-MM-DD ddd');
   // const {title} = frontmatter;
   // console.log(pageContext);
-    const { articleContent} = styles;
   return (
     <Layout>
-        <div className={articleContent}>
-            <h2>{title}</h2>
-            <h3>{fomateDate}</h3>
-            <div dangerouslySetInnerHTML={{__html:html}}/>
-        </div>
+      <div className={articleContent}>
+        <h2>{title}</h2>
+        <h3>{fomateDate}</h3>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
     </Layout>
   )
 }
 
-export default  articleTemplate;
+export default articleTemplate;
 
 // export const query = graphql`
 // query articleTechQuery {
