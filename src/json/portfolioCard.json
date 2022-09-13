@@ -1,6 +1,13 @@
 {
     "frontEndCardArray": [
         {
+            "cardHead": "水土曜來了技術文章",
+            "cardContent": "部落格從零開始建置Gatsby，部分使用Material UI",
+            "cardImageSrc": "https: //filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/blog.jpg",
+            "webSrc": "https://mars-economic.netlify.app/",
+            "remark": ""
+        },
+        {
             "cardHead": "台南美食地圖",
             "cardContent": "網站全程使用Bootstrap5和vanilla Javascript並使用其API自定義顏色，資料來源是openData下載的JSON檔案，透過fetch相對路徑的JSON檔案後結合結合Leaflet的CDN讓使用者可以搜尋台南美食",
             "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg",
@@ -9,22 +16,29 @@
         },
         {
             "cardHead": "台灣2022四月份縣市covid19趨勢圖",
-            "cardContent": "網址站使用react和reactChartJs結合material UI，使用者可以選擇縣市查看折線圖，X軸表示日期，Y軸表示感染人數。",
+            "cardContent": "網站使用react和reactChartJs結合material UI，使用者可以選擇縣市查看折線圖，X軸表示日期，Y軸表示感染人數。",
             "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/covid19_taiwan-2022-04.jpg",
             "webSrc": "https://ketyykes.github.io/react-covid19-taiwan-chartjs/",
             "remark": ""
         },
         {
             "cardHead": "台灣從covid19有資料以來到2022/05的圓餅長條圖",
-            "cardContent": "網址站使用vanilla Javascript和ChartJs建置，使用者可以查從covid所有紀錄到2022/05的感染狀況，包含男女比例的感染人數的圓餅圖、各鄉鎮、縣市的長條圖、該縣市年齡層分布的長條圖。",
+            "cardContent": "網站使用vanilla Javascript和ChartJs建置，使用者可以查從covid所有紀錄到2022/05的感染狀況，包含男女比例的感染人數的圓餅圖、各鄉鎮、縣市的長條圖、該縣市年齡層分布的長條圖。",
             "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/covid19_vanilla_chartJS.jpg",
             "webSrc": "https://ketyykes.github.io/react-covid19-taiwan-chartjs/",
             "remark": ""
         },
         {
             "cardHead": "2020用css繪製奧運決勝點",
-            "cardContent": "網址站使用scss和flex排版，RWD響應式斷點設置768px，在768px以下的時候將會顯示設置好的scss函式將其px除以2。",
+            "cardContent": "網站使用scss和flex排版，RWD響應式斷點設置768px，在768px以下的時候將會顯示設置好的scss函式將其px除以2。",
             "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/victory_point.jpg",
+            "webSrc": "https://ketyykes.github.io/victory-point/",
+            "remark": ""
+        },
+        {
+            "cardHead": "Taiwan visit",
+            "cardContent": "使用react、redux、react-leaflet、axios、dayjs，使用者可以查詢台灣旅遊的資訊。",
+            "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/f2e_taiwan_travel.jpg",
             "webSrc": "https://ketyykes.github.io/victory-point/",
             "remark": ""
         }
