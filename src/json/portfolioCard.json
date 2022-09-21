@@ -2,14 +2,14 @@
     "frontEndCardArray": [
         {
             "cardHead": "水土曜來了技術文章",
-            "cardContent": "部落格從零開始建置Gatsby，部分使用Material UI",
+            "cardContent": "部落格從零開始建置Gatsby，部分使用Material UI，添加prismjs使程式碼語法高亮，使用remark轉譯並且使用createPages自動生成頁面檔。",
             "cardImageSrc": "https: //filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/blog.jpg",
             "webSrc": "https://mars-economic.netlify.app/",
             "remark": ""
         },
         {
             "cardHead": "台南美食地圖",
-            "cardContent": "網站全程使用Bootstrap5和vanilla Javascript並使用其API自定義顏色，資料來源是openData下載的JSON檔案，透過fetch相對路徑的JSON檔案後結合結合Leaflet的CDN讓使用者可以搜尋台南美食",
+            "cardContent": "網站全程使用Bootstrap5和vanilla Javascript並使用其API自定義顏色，資料來源是openData下載的JSON檔案，透過fetch相對路徑的JSON檔案後結合Leaflet的CDN讓使用者可以搜尋台南美食",
             "cardImageSrc": "https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/Portfolio/FrontEnd/tainan_foo_map.jpg",
             "webSrc": "https://ketyykes.github.io/tainanFoodMap/",
             "remark": ""
