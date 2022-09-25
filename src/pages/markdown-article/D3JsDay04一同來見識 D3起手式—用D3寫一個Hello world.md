@@ -1,16 +1,18 @@
 ---
-title: D3JsDay04一同來見識 D3起手式—用D3寫一個Hello world 
+title: D3JsDay04一同來見識 D3起手式—用D3寫一個Hello world
 slug: 2021-09-19T05:52:54.000Z
 date: 2021-09-19T05:52:54.000Z
 ---
 
-## 如何開始D3js
-### 方法一 使用CDN
-請google搜尋D3Js到D3Js的官方網站。
+## 如何開始 D3js
+
+### 方法一 使用 CDN
+
+請 google 搜尋 D3Js 到 D3Js 的官方網站。
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_01.jpg)
 滑鼠滾輪到下方處
 複製<font color="blue">`<script src="https://d3js.org/d3.v7.min.js"></script>`</font>
-[D3Js官方網站](https://d3js.org/)
+[D3Js 官方網站](https://d3js.org/)
 
 ```html{numberLines: true}
 <!DOCTYPE html>
@@ -26,12 +28,13 @@ date: 2021-09-19T05:52:54.000Z
 </body>
 </html>
 ```
-把它複製貼到你的HTML頁面就可以了
+
+把它複製貼到你的 HTML 頁面就可以了
+
 ### 方法二 去官方網站下載壓縮檔
+
 另外也可以在下方<font color="blue">`d3-7.0.1.tgz`</font>下載
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_02.jpg)
-
-
 
 解壓縮之後會看到如下圖
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_03.jpg)
@@ -42,22 +45,27 @@ date: 2021-09-19T05:52:54.000Z
 把<b>d3.js</b>或者<b>d3.min.js</b>擇一複製到你的專案資料夾底下就可以了
 
 ### 方法三 npm install d3
-有用<font color="red">`npm`</font>(node套件包管理工具)的人也可以使用<font color="red">`npm install d3`</font>就會自動下載d3的資源包了。
+
+有用<font color="red">`npm`</font>(node 套件包管理工具)的人也可以使用<font color="red">`npm install d3`</font>就會自動下載 d3 的資源包了。
 
 #### 檢測是否有安裝成功
-使用開發者人員工具的console欄位鍵入<font color="red">`d3.version`</font>
+
+使用開發者人員工具的 console 欄位鍵入<font color="red">`d3.version`</font>
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_05.jpg)
 
-#### 第一個d3
-有用過jQuery的人起手式大概很熟悉的是$字號做開頭，d3是類似的方式，使用d3來做開頭後續使用<font color="red">`方法鏈(method chain)`</font>的方式來實作每個步驟。
+#### 第一個 d3
+
+有用過 jQuery 的人起手式大概很熟悉的是$字號做開頭，d3 是類似的方式，使用 d3 來做開頭後續使用<font color="red">`方法鏈(method chain)`</font>的方式來實作每個步驟。
 
 先直接看以下程式碼
+
 ```javascript{numberLines: true}
 <script>
   d3.select("body").append("div");
 </script>
 ```
-可以看到先選擇了<font color="red">`body`</font>這個tag，然後在裡面插入<font color="red">`div`</font>，於是打開開發者人員工具
+
+可以看到先選擇了<font color="red">`body`</font>這個 tag，然後在裡面插入<font color="red">`div`</font>，於是打開開發者人員工具
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_06.jpg)
 
@@ -80,10 +88,12 @@ date: 2021-09-19T05:52:54.000Z
 因此如果想要選取多個元素要改用<font color="red">`selectAll()`</font>來選取多個元素
 
 程式碼變成以下
+
 ```html{numberLines: true}
 d3.selectAll(".hello").append("div");
 ```
-當打開開發者人員工具就可以發現成功插入兩個div元素了。
+
+當打開開發者人員工具就可以發現成功插入兩個 div 元素了。
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_08.jpg)
 
@@ -95,17 +105,13 @@ d3.selectAll(".hello").append("div");
 
 畫面就會出現如下面
 
-![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_09.jpg)
----
+## ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210919_09.jpg)
 
-以上介紹如何安裝D3和撰寫一個Hello World下一篇將會使用D3來畫出一些簡單的圖表
+以上介紹如何安裝 D3 和撰寫一個 Hello World 下一篇將會使用 D3 來畫出一些簡單的圖表
 
+參考 API 文件說明
 
-
-
-參考API文件說明
-
-[API文件參考select()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#select)
-[API文件參考append()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_append)
-[API文件參考selectAll()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_selectAll)
-[API文件參考text()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_text)
+[API 文件參考 select()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#select)
+[API 文件參考 append()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_append)
+[API 文件參考 selectAll()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_selectAll)
+[API 文件參考 text()](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#selection_text)

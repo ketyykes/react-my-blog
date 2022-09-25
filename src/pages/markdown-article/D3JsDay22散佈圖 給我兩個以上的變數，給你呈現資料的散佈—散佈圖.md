@@ -227,6 +227,3 @@ joinText.text((d) => {
             .attr("font-size",9);
     });
 ```
-
-
-###### tags: `D3Js`

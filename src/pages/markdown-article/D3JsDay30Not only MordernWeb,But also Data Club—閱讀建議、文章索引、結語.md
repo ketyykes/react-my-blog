@@ -35,14 +35,14 @@ let deviation = Math.round(d3.deviation(sortByDate,d=>(d.articleStrNum)*100))/10
 
 以下附上表格和連結作為閱讀建議和文章綱要
 
-| 文章 | 概要|
-| -------- | -------- |
-|  Day1~Day2   | D3、資料視覺化簡介|
-|Day3~Day12  | D3核心(入門篇)|
-| Day13~Day14    |D3動畫、事件(進階篇) |
-| Day15~Day21 |D3繪製地圖(進階篇) |
-| Day22~Day27、Day29 |圖表製作教學及範例(進階篇) |
-| Day28~Day29    |擷取資料(特別篇)|
+| 文章               | 概要                       |
+| ------------------ | -------------------------- |
+| Day1~Day2          | D3、資料視覺化簡介         |
+| Day3~Day12         | D3核心(入門篇)             |
+| Day13~Day14        | D3動畫、事件(進階篇)       |
+| Day15~Day21        | D3繪製地圖(進階篇)         |
+| Day22~Day27、Day29 | 圖表製作教學及範例(進階篇) |
+| Day28~Day29        | 擷取資料(特別篇)           |
 
 
 ## D3、資料視覺化簡介
@@ -92,29 +92,29 @@ let deviation = Math.round(d3.deviation(sortByDate,d=>(d.articleStrNum)*100))/10
 
 這邊也附上索引值來方便大家查看，如果對於某些函式忘記如何使用，我這邊已經整理好第一次被使用到該函式或是有撰寫該函式說明的文章都呈現在下方表格了。
 
-|                      d3API                   | 文章名稱                                                                                                           |
-|:-----------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------- |
-|   `select()、selectAll()、selection.append()、selection.text()`   | [Day04一同來見識 D3起手式—用D3寫Helloworld](https://ithelp.ithome.com.tw/articles/10267374)                   |
-|                        ` selection.attr()`                        | [Day05Bar拉BarBarBar，作伙來畫吧—畫個bar chart長條圖](https://ithelp.ithome.com.tw/articles/10268424)         |
-|                        `selection.style()`                        |           [Day06這包什麼餡，原來是折線—繪製折線圖](https://ithelp.ithome.com.tw/articles/10269143)            |
-| `d3.text()、d3.json()、d3.csv()、d3.dsv()、d3.image()、d3.html()` | [Day08做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data](https://ithelp.ithome.com.tw/articles/10270548) |
-| `selection.data()、selection.datum()、` | [Day09 資料元素來綁定，讓你元素有內定—資料綁定](https://ithelp.ithome.com.tw/articles/10271215) |
-|                       `selection.enter()、selection.exit()、 selection.join`|[Day10遇到元素資料不相等，用函式解決高人一等](https://ithelp.ithome.com.tw/articles/10271954)|
-|`d3.scaleLinear()、continuous.clamp、d3.max()、d3.min()、continuous.domain()、continuous.range() ` | [Day11 觀測時候別鐵齒，拿出你的比例尺](https://ithelp.ithome.com.tw/articles/10272615) |
-|`d3.axisTop()、d3.axisRight、d3.axisBottom、d3.axisLeft()、axis.ticks()、axis.tickFormat()`     | [Day12完成製作的壓軸，畫出圖表座標軸](https://ithelp.ithome.com.tw/articles/10273251) |
-|`selection.transition()、transition.attr()、transition.delay()、transition.duration()、d3.easeLinear()、d3.easePolyIn()` | [Day13 讓資料擁有過渡動畫，讓各位觀眾看見神話—過渡動畫](https://ithelp.ithome.com.tw/articles/10273867) |
-|`selection.on()、d3.randomInt()、selection.remove()` | [Day14不想圖表被冰凍，那就做一點互動—事件互動](https://ithelp.ithome.com.tw/articles/10274553) |
-|`geoEqualEarth()、geoPath()、d3.geoMercator()、projection()、topojson.feature()` | [Day16 It's map birth,It's from path—生成地圖](https://ithelp.ithome.com.tw/articles/10272615) |
-|`d3.scaleSequential()、d3.hsl()、color.formatRgb()、projection.center()、projection.rotate()、projection.scale()、d3.zoom()` | [Day17 Fill the color,Zoom in on center—地圖各項操作及填色](https://ithelp.ithome.com.tw/articles/10276314) |
-|`selection.html()、` | [Day19 地圖加入了事件，地點資料就呈現—為地圖加入互動事件](https://ithelp.ithome.com.tw/articles/10277317) |
-|`d3.group()、d3.mean()` | [Day20筆畫面量彩色圖塗色 彩亮面畫筆—地理面量圖(上)](https://ithelp.ithome.com.tw/articles/10277812) |
-|`d3.interpolateRdYlGn()、d3.scaleSequential()` | [Day21筆畫面量彩色圖，塗色彩亮面畫筆—地理面量圖(下)](https://ithelp.ithome.com.tw/articles/10278303) |
-|`tickSize()、tickSizeOuter()、tickSizeInner()` | [Day22給我兩個以上的變數，給你呈現資料的散佈—散佈圖](https://ithelp.ithome.com.tw/articles/10278770) |
-|`selection.node()、selection.call()` | [Day23 三槍俠的電磁砲，三個變數的氣泡—氣泡圖(上)](https://ithelp.ithome.com.tw/articles/10279062) |
-|`d3.arc()、arc.innerRadius()、arc.outerRadius()、arc.startAngle()、arc.endAngle()、arc.cornerRadius()、d3.pie()` | [Day25圈圈圓圓圈圈，甜甜黏黏甜甜—圓餅圖與環圈圖](https://ithelp.ithome.com.tw/articles/10280156) |
-|`d3.pie().value()、d3.schemeTableau10、transition.attrTween()` | [Day26圓圈圖的實戰力，直轄市人口比例-帶入真實資料做圓圈圖](https://ithelp.ithome.com.tw/articles/10280477) |
-|`d3.hierarchy()、node.links()、d3.tree()、tree.size()、node.descendants()、d3.linkVertical、d3.linkHorizontal()、` | [Day27What's the tree?Let me see—樹狀圖(tree diagram)](https://ithelp.ithome.com.tw/articles/10280825) |
-|`continuous.nice()` | [統計學的陷阱區，用資料繪製盒鬚—爬蟲D3做成D3(下)](https://ithelp.ithome.com.tw/articles/10281613) |
+|                                                            d3API                                                             | 文章名稱                                                                                                     |
+| :--------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------- |
+|                                `select()、selectAll()、selection.append()、selection.text()`                                 | [Day04一同來見識 D3起手式—用D3寫Helloworld](https://ithelp.ithome.com.tw/articles/10267374)                  |
+|                                                     ` selection.attr()`                                                      | [Day05Bar拉BarBarBar，作伙來畫吧—畫個bar chart長條圖](https://ithelp.ithome.com.tw/articles/10268424)        |
+|                                                     `selection.style()`                                                      | [Day06這包什麼餡，原來是折線—繪製折線圖](https://ithelp.ithome.com.tw/articles/10269143)                     |
+|                              `d3.text()、d3.json()、d3.csv()、d3.dsv()、d3.image()、d3.html()`                               | [Day08做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data](https://ithelp.ithome.com.tw/articles/10270548) |
+|                                           `selection.data()、selection.datum()、`                                            | [Day09 資料元素來綁定，讓你元素有內定—資料綁定](https://ithelp.ithome.com.tw/articles/10271215)              |
+|                                    `selection.enter()、selection.exit()、 selection.join`                                    | [Day10遇到元素資料不相等，用函式解決高人一等](https://ithelp.ithome.com.tw/articles/10271954)                |
+|              `d3.scaleLinear()、continuous.clamp、d3.max()、d3.min()、continuous.domain()、continuous.range() `              | [Day11 觀測時候別鐵齒，拿出你的比例尺](https://ithelp.ithome.com.tw/articles/10272615)                       |
+|                 `d3.axisTop()、d3.axisRight、d3.axisBottom、d3.axisLeft()、axis.ticks()、axis.tickFormat()`                  | [Day12完成製作的壓軸，畫出圖表座標軸](https://ithelp.ithome.com.tw/articles/10273251)                        |
+|   `selection.transition()、transition.attr()、transition.delay()、transition.duration()、d3.easeLinear()、d3.easePolyIn()`   | [Day13 讓資料擁有過渡動畫，讓各位觀眾看見神話—過渡動畫](https://ithelp.ithome.com.tw/articles/10273867)      |
+|                                     `selection.on()、d3.randomInt()、selection.remove()`                                     | [Day14不想圖表被冰凍，那就做一點互動—事件互動](https://ithelp.ithome.com.tw/articles/10274553)               |
+|                       `geoEqualEarth()、geoPath()、d3.geoMercator()、projection()、topojson.feature()`                       | [Day16 It's map birth,It's from path—生成地圖](https://ithelp.ithome.com.tw/articles/10272615)               |
+| `d3.scaleSequential()、d3.hsl()、color.formatRgb()、projection.center()、projection.rotate()、projection.scale()、d3.zoom()` | [Day17 Fill the color,Zoom in on center—地圖各項操作及填色](https://ithelp.ithome.com.tw/articles/10276314)  |
+|                                                     `selection.html()、`                                                     | [Day19 地圖加入了事件，地點資料就呈現—為地圖加入互動事件](https://ithelp.ithome.com.tw/articles/10277317)    |
+|                                                   `d3.group()、d3.mean()`                                                    | [Day20筆畫面量彩色圖塗色 彩亮面畫筆—地理面量圖(上)](https://ithelp.ithome.com.tw/articles/10277812)          |
+|                                        `d3.interpolateRdYlGn()、d3.scaleSequential()`                                        | [Day21筆畫面量彩色圖，塗色彩亮面畫筆—地理面量圖(下)](https://ithelp.ithome.com.tw/articles/10278303)         |
+|                                        `tickSize()、tickSizeOuter()、tickSizeInner()`                                        | [Day22給我兩個以上的變數，給你呈現資料的散佈—散佈圖](https://ithelp.ithome.com.tw/articles/10278770)         |
+|                                             `selection.node()、selection.call()`                                             | [Day23 三槍俠的電磁砲，三個變數的氣泡—氣泡圖(上)](https://ithelp.ithome.com.tw/articles/10279062)            |
+|       `d3.arc()、arc.innerRadius()、arc.outerRadius()、arc.startAngle()、arc.endAngle()、arc.cornerRadius()、d3.pie()`       | [Day25圈圈圓圓圈圈，甜甜黏黏甜甜—圓餅圖與環圈圖](https://ithelp.ithome.com.tw/articles/10280156)             |
+|                                `d3.pie().value()、d3.schemeTableau10、transition.attrTween()`                                | [Day26圓圈圖的實戰力，直轄市人口比例-帶入真實資料做圓圈圖](https://ithelp.ithome.com.tw/articles/10280477)   |
+|      `d3.hierarchy()、node.links()、d3.tree()、tree.size()、node.descendants()、d3.linkVertical、d3.linkHorizontal()、`      | [Day27What's the tree?Let me see—樹狀圖(tree diagram)](https://ithelp.ithome.com.tw/articles/10280825)       |
+|                                                     `continuous.nice()`                                                      | [統計學的陷阱區，用資料繪製盒鬚—爬蟲D3做成D3(下)](https://ithelp.ithome.com.tw/articles/10281613)            |
 
 
 ## 感謝與結語

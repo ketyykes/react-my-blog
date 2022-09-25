@@ -218,5 +218,3 @@ d3.select(this).style("fill", "darkgreen");
 </body>
 ```
 
-
-###### tags: `D3Js`

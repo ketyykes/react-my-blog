@@ -56,13 +56,13 @@ const arc = d3.arc().innerRadius(0).outerRadius(100).startAngle(0).endAngle(2*Ma
 
 
 
-| 函式  | 設置內容|
-| -------- | -------- | 
-| innerRadius()     | 圓形的內半徑     | 
-| outerRadius()     | 圓形的外半徑     | 
-| startAngle()     | 圓形起始角度 | 
-| endAngle()     | 圓形結束角度     | 
-| cornerRadius()     | 圓角的邊角半徑 | 
+| 函式           | 設置內容       |
+| -------------- | -------------- |
+| innerRadius()  | 圓形的內半徑   |
+| outerRadius()  | 圓形的外半徑   |
+| startAngle()   | 圓形起始角度   |
+| endAngle()     | 圓形結束角度   |
+| cornerRadius() | 圓角的邊角半徑 |
 
 ## pie函式
 
@@ -157,4 +157,3 @@ svg.append("g")
 3. 在svg繪圖，綁定的資料是由pie將原始資料轉換後的數值，path屬性的d所帶入的數值是arc轉換剛剛綁定的資料
 4. 依據生成圖形適當的添加stroke屬性、顏色等等
 
-###### tags: `D3Js`

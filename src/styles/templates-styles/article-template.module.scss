@@ -8,10 +8,7 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // padding: 10px;
-  // @include responsive;
-  // box-sizing: border-box;
-  // @include responsive;
+  padding: 50px 20px;
   @each $i in $element {
     #{$i} {
       margin-top: 1rem;
@@ -25,7 +22,10 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
       text-align: center;
     }
   }
-
+  blockquote {
+    margin-left: 50px;
+    border-left: 5px solid $code_background_color;
+  }
   img {
     max-width: 100%;
     display: block;
@@ -36,11 +36,10 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
   p {
     font-size: 1rem;
     line-height: 2;
-    padding: 0 50px;
+    padding: 0 10px;
   }
-  
+
   a {
-    display: block;
     color: $main_color;
     &:hover {
       color: $secondary_color;

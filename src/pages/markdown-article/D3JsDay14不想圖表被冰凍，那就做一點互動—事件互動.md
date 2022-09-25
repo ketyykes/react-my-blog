@@ -4,14 +4,12 @@ slug: 2021-09-29T10:05:54.000Z
 date: 2021-09-29T10:05:54.000Z
 ---
 
-# D3JsDay14不想圖表被冰凍，那就做一點互動—事件互動
 
 什麼是互動?簡單說希望能夠讓使用者允許監聽和分派事件，用比較白話的一點方式舉例就是當我們滑鼠按下某個元素的時候，圖表會呈現某些樣貌，**監聽就是滑鼠按下**的意思，**委派就是讓圖表呈現某些樣貌，**
 
-> 對應到的原生Js說明可以參考
-[Event reference-MDN](https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events)
+> 對應到的原生Js說明可以參考[Event reference-MDN](https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events)
 其他更多說明也可以參考d3JSAPI文件
-[官方API事件處理](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#handling-events)
+> [官方API事件處理](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#handling-events)
 ## 監聽器
 首先我們要有一個所選取的元素，在後面透過方法鏈的方式添加要執行的函式，這邊可以直接就範例學習即可，例如我們預做出一個當按鈕按下去就會產生隨機的長條圖，我們可以先把按鈕和長條圖準備好
 創建好的範例如下

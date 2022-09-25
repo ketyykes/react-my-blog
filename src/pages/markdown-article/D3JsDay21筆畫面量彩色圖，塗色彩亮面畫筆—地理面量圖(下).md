@@ -223,5 +223,3 @@ d3.json("taiwanDistrict.json")
 
 實際效果如下
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_10.gif)
-
-###### tags: `D3Js`

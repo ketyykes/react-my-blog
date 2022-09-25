@@ -206,5 +206,3 @@ d3.json("World_Countries.json")
 明天再來教學如何美化這個地圖和顯示地圖相關區域
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211001_18.png)
-
-###### tags: `D3Js`

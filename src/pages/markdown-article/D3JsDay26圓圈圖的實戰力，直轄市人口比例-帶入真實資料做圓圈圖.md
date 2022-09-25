@@ -279,4 +279,3 @@ svg.append("g").html(`
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_15.gif)
 
-###### tags: `D3Js`
