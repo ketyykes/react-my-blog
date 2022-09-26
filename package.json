@@ -42,5 +42,8 @@
   },
   "volta": {
     "node": "16.15.1"
+  },
+  "devDependencies": {
+    "gatsby-plugin-netlify": "^5.0.1"
   }
 }
