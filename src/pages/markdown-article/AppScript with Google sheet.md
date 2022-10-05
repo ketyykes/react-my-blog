@@ -1,8 +1,9 @@
 ---
 title: AppScript with Google sheet
-slug: 2022-01-28T19:35:00.000Z
-date: 2022-01-28T19:35:00.000Z
+slug: 2021-02-01T02:31:00.000Z
+date: 2021-02-01T02:31:00.000Z
 ---
+
 
 ## 創建 google sheet
 
