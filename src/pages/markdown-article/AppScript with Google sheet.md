@@ -1,7 +1,7 @@
 ---
 title: AppScript with Google sheet
-slug: 2021-02-01T02:31:00.000Z
-date: 2021-02-01T02:31:00.000Z
+slug: 2022-02-01T02:31:00.000Z
+date: 2022-02-01T02:31:00.000Z
 ---
 
 
