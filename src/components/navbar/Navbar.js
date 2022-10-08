@@ -3,13 +3,11 @@ import { Link } from "gatsby";
 import "../../styles/global.scss";
 import * as styles from "./navbar.module.scss";
 const Navbar = () => {
-  // console.log(styles);
   const { navbar, navbarHome, icon, ham, line, iconTxt ,menuShow,menuNoshow} = styles;
   const [hamburger, setHamburger] = useState(false);
   const hamHandler = ()=>{
     setHamburger(!hamburger);
   }
-  // console.log(navbar);
   return (
       <nav className={`${navbar}`}>
         <div className={ham} onClick={hamHandler} role = "button"  tabIndex={0} onKeyDown={hamHandler}>

@@ -163,7 +163,7 @@ function completeFunction(e) {
 
 這邊使用[單文件組件](https://staging-cn.vuejs.org/guide/scaling-up/sfc.html)的方式建置代辦事項，並且將整個 to do list 做為一個**component**(其實要拆分 component 還是可以拆得更細，但不在這次主要討論範疇因此先暫且不拆)，因此在 src 的資料夾底下結構大致如下
 
-```bash=
+```bash
 │  App.vue
 │  main.js
 │
@@ -262,7 +262,7 @@ export default {
 
 在 React 方面在命令提式字元使用<span class="red">`npx create-react-app XXX`</span>的方式可以快速建立一個專案捆包，其 src 資料夾結構大致如下
 
-```bash=
+```bash
 │  App.js
 │  index.js
 │

@@ -4,10 +4,10 @@ import * as styles from "./banner.module.scss";
 
 const Banner = () => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Navbar />
       <h2 className={styles.headerH2}>水土曜來了</h2>
-    </div>
+    </header>
   );
 };
 export default Banner;

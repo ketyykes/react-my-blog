@@ -2,22 +2,12 @@ import React from "react";
 import "../../styles/global.scss";
 import Footer from "../footer/Footer";
 import Banner from "../banner/Banner";
-import { graphql, useStaticQuery } from "gatsby";
+import Head from "../head/Head";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          description
-          title
-        }
-      }
-    }
-  `);
-  // console.log(data);
   return (
     <>
+      <Head />
       <Banner />
       <div className="container">{children}</div>
       <Footer />

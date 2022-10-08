@@ -4,16 +4,13 @@ import Pager from "../components/pager/Pager";
 import { graphql, Link } from "gatsby";
 import * as styles from "../styles/templates-styles/tech-page.module.scss";
 const dayjs = require("dayjs");
-const TechPageTemplate= ({ pageContext, data }) => {
-  console.log(pageContext);
-  console.log(data);
+const TechPageTemplate = ({ pageContext, data }) => {
   const allmarkdownArticle = data.allMarkdownRemark.nodes;
   const { perPage, currentPage } = pageContext;
   const { content, card } = styles;
   const [allItem, setAllItem] = useState(
-    allmarkdownArticle.slice(perPage*(currentPage-1), perPage * currentPage)
-    );
-    console.log(allItem);
+    allmarkdownArticle.slice(perPage * (currentPage - 1), perPage * currentPage)
+  );
   return (
     <>
       <Layout>
@@ -33,7 +30,7 @@ const TechPageTemplate= ({ pageContext, data }) => {
               <p>{dayjs(article.frontmatter.date).format("YYYY-MM-DD ddd")}</p>
             </div>
           ))}
-           <Pager
+          <Pager
             allItem={allItem}
             setAllItem={setAllItem}
             allmarkdownArticle={allmarkdownArticle}

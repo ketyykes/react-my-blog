@@ -39,7 +39,7 @@ Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著�
 
 例如我們在src的資料夾內有`app.js`和`data.js`和index.html如下
 
-```bash=
+```bash
 └─src
     app.js
     data.js
@@ -47,7 +47,7 @@ Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著�
 ```
 
 在index.html的`script`使用`type=module`的方式如下
-```htmlmixed=
+```html
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -62,12 +62,12 @@ Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著�
 ```
 
 在`data.js`底下程式碼如下
-```javascript=
+```javascript
 export const data=[1,2,3,4,5,6,7,8];
 ```
 
 在`app.js`程式碼如下
-```javascript=
+```javascript
 import { data } from './data.js'
 console.log(data);
 ```
@@ -101,14 +101,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#st
 
 這裡假設命名了一隻檔案叫做`fn.js`
 檔案內容如下
-```javascript=
+```javascript
 export default function (name) {
   console.log(name);
 }
 ```
 
 在另一支檔案`app.js`裡面就是import直接使用，程式碼如下
-```javascript=
+```javascript
 import fn from "./fn.js";
 fn("Danny");
 ```
@@ -117,7 +117,7 @@ fn("Danny");
 
 上面示範如何預設匯出function 我們可能一隻檔案有很多function，因此可以使用具名匯出範例如下
 
-```javascript=
+```javascript
 export function sayHello() {
   console.log("Hello");
 }
@@ -127,7 +127,7 @@ export function sayMyName(name) {
 ```
 
 在app.js使用大括弧的方式引入如下
-```javascript=
+```javascript
 import { sayHello, sayMyName } from "./fn.js";
 sayHello();//Hello
 sayMyName("Danny");//Hi I am Danny
@@ -136,7 +136,7 @@ sayMyName("Danny");//Hi I am Danny
 ## default匯出就像具名匯出？
 
 這次原本的`data.js`以下片段
-```javascript=
+```javascript
 export const array = [1, 2, 3, 4, 5, 6, 7, 8];
 export function sayMyName(name) {
   console.log(name);
@@ -148,7 +148,7 @@ export default function () {
 在app.js改成以下片段
 
 我們使用`*`表示全部引入的意思，他會包含default和具名匯出的東西。
-```javascript=
+```javascript
 import * as myModule from "./data.js";
 console.log(myModule);
 ```
@@ -159,7 +159,7 @@ console.log(myModule);
 
 這時候我們就可以解構賦值的方式將其提取出來使用
 程式碼如下
-```javascript=
+```javascript
 import * as myModule from "./data.js";
 console.log(myModule);
 const { array, sayMyName } = myModule;
@@ -182,7 +182,7 @@ sayMyName("Danny");
 ### 包裹成物件匯出
 
 另外如果想要export多個函式卻又不想要一直撰寫`export`這個關鍵字的時候，可以使用包裹成物件的形式預設匯出
-```javascript=
+```javascript
 const foo = () => console.log('你好')
 const foo2 = () => console.log('安安')
 const foo3 = () => console.log('安安你好')
@@ -190,7 +190,7 @@ export default { foo, foo2, foo3 }
 ```
 
 另一隻app.js檔案
-```javascript=
+```javascript
 import hiModule from "./data.js";
 console.log(hiModule);
 const { foo, foo2, foo3 } = hiModule; //解構賦值把函式取出
@@ -210,14 +210,14 @@ foo3();
 > 比較方便記憶的方式是as是英文alias的簡寫，而alias的中文有化名、別名的意思
 
 我們的data.js裡面有以下內容
-```javascript=
+```javascript
 export const data=[1,2,3,4,5,6,7,8];
 export function sayMyName(name){
     return console.log(name);
 }
 ```
 引入的app.js，這時候可以看到下面的sayMyName被取名成say了。
-```javascript=
+```javascript
 import {data,sayMyName as say }from './data.js';
 console.log(data);
 say("Tom");
@@ -226,7 +226,7 @@ say("Tom");
 如果我們在原本的檔案當中不寫**export**關鍵字的話，一樣可以在其他要使用的地方引入，只是這樣的做法就被稱為**side effect模組**
 
 原本的`data.js`不寫入export
-```javascript=
+```javascript
 function hello(){
     console.log("hello");
 }
@@ -235,7 +235,7 @@ hello();
 
 在`app.js`引入
 
-```javascript=
+```javascript
 import("./data.js");
 ```
 
@@ -250,7 +250,7 @@ import("./data.js");
 先前提到`*`具有全部的意思，因此我們可以使用`*`，將其他模組的內容一次載入再導出整合成一支檔案。
 
 在`test.js`
-```javascript=
+```javascript
 export const a = 1;
 export const b = [2,3];
 export default function(){
@@ -260,13 +260,13 @@ export default function(){
 
 需要注意的地方是 在`data.js`，**雖然export`*` 但其實並沒有導出`test.js`的default。**
 
-```javascript=
+```javascript
 export * from  './test.js';  // 匯出此種方法並不會匯出在test的default
 ```
 
 在`app.js`撰寫如下
 
-```javascript=
+```javascript
 import * as module from "./data.js"
 console.log(module);
 const { a , b }= module;//使用解構賦值方式將其取出
@@ -280,7 +280,7 @@ const { a , b }= module;//使用解構賦值方式將其取出
 
 為了能夠在重新導出的時候也包含了原先在test的defautl的內容，因此`data.js`必須改成如下
 
-```javascript=
+```javascript
 export * from "./test.js"; // 匯出此種方法並不會匯出在test的default
 //要匯出default的話要寫以下片段
 export { default } from "./test.js";
@@ -299,13 +299,13 @@ const { a, b, test } = module; //使用解構賦值方式將其取出
 另外我們一樣可以使用as的方式將預設模組導入之後再取名導出
 再data.js的內容改成如下
 
-```javascript=
+```javascript
 export * from "./test.js"; // 匯出此種方法並不會匯出在test的default
 //要匯出default的話要寫以下片段
 export { default as test} from "./test.js";
 ```
 在app.js的檔案使用大括號的方式就能夠如期使用，內容如下
-```javascript=
+```javascript
 import { a, b, test } from "./data.js";
 console.log(a);
 console.log(b);
@@ -318,7 +318,7 @@ test();
 ### component拆分
 在React中(或其他框架)我們可以透過module的方式做到**component的檔案拆分**。
 例如以下就是將各個網頁上的component實際切分出的資料夾形式
-```bash=
+```bash
 ├─API
 ├─component
 │  ├─Aside
@@ -358,7 +358,7 @@ import { Aside, Header, Banner, Footer } from '../../component'
 
 ### 將資料抽離出撰寫邏輯的檔案
 例如我們需要在撰寫邏輯程式碼的，地方減少程式碼量，增加可讀性，這個時候就可以將資料統整成一支檔案，舉例如下
-```javascript=
+```javascript
 export const JapaneseCharacter = [
   {
     hiragana: "あ",

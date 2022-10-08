@@ -1,14 +1,11 @@
-import React from 'react'
-import Layout from '../components/layout/Layout'
+import React from "react";
+import Layout from "../components/layout/Layout";
 import { articleContent } from "../styles/templates-styles/article-template.module.scss";
-const dayjs = require('dayjs')
+const dayjs = require("dayjs");
 // import {graphql} from 'gatsby'
 const articleTemplate = ({ pageContext }) => {
-  // console.log(data);
   const { html, title, date } = pageContext;
-  const fomateDate = dayjs(date).format('YYYY-MM-DD ddd');
-  // const {title} = frontmatter;
-  // console.log(pageContext);
+  const fomateDate = dayjs(date).format("YYYY-MM-DD ddd");
   return (
     <Layout>
       <div className={articleContent}>
@@ -17,8 +14,8 @@ const articleTemplate = ({ pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export default articleTemplate;
 
@@ -35,10 +32,3 @@ export default articleTemplate;
 //     }
 // }
 // `
-
-
-
-
-
-
-
