@@ -4,12 +4,10 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import PhotoSlider from "../components/slider/PhotoSlider";
 import PortfolioTab from "../components/portfolio/PortfolioTab";
-import Head from "../components/head/Head";
 
 const Index = ({ data }) => {
   return (
     <>
-      <Head />
       <Header />
       <PhotoSlider />
       <PortfolioTab />
@@ -18,6 +16,7 @@ const Index = ({ data }) => {
   );
 };
 export default Index;
+
 export const query = graphql`
   query QuerySlider {
     allFile(
