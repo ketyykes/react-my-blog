@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/Layout";
 import Pager from "../components/pager/Pager";
+import Seo from "../components/seo/Seo";
 import { graphql, Link } from "gatsby";
 import * as styles from "../styles/templates-styles/tech-page.module.scss";
 const dayjs = require("dayjs");
@@ -13,6 +14,7 @@ const TechPageTemplate = ({ pageContext, data }) => {
   );
   return (
     <>
+      <Seo title="Tech-page" />
       <Layout>
         <div className={content}>
           {allItem.map((article, index) => (

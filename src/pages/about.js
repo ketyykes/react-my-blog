@@ -2,11 +2,12 @@ import React from "react";
 import Layout from "../components/layout/Layout";
 import * as styles from "../styles/pages-styles/about.module.scss";
 import AvatarImg from "../images/avatar-about.jpg";
-
+import Seo from "../components/seo/Seo";
 const About = () => {
   const { wrapAbout, avatarAbout } = styles;
   return (
     <>
+      <Seo title="About" />
       <Layout>
         <div className={wrapAbout}>
           <div className={avatarAbout}>
