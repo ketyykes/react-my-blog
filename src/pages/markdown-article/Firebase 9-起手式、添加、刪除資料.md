@@ -12,6 +12,9 @@ Firebase 節省掉後端複雜的服務器建置，作為 NodeJs 及 MongoDB 的
 ## version8 與 9 的差別
 
 官網說明如下
+
+<br>
+
 Firebase provides two SDK versions for Web apps:
 
 - Version 8. This is the JavaScript interface that Firebase has maintained for several years and is familiar to Web developers with existing Firebase apps. Because Firebase will remove support for this version after one major release cycle, new apps should instead adopt version 9.
@@ -24,8 +27,8 @@ Firebase provides two SDK versions for Web apps:
 
 ## Firebase 官網建立新專案
 
-> [firebase 官方網站](https://firebase.google.com/)
-> ![](https://i.imgur.com/NdNtXJB.png)
+[firebase 官方網站](https://firebase.google.com/)
+![](https://i.imgur.com/NdNtXJB.png)
 
 右上角點**Go to console**(或點**Get started**)
 
