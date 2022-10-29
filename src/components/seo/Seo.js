@@ -18,7 +18,6 @@ function Seo({ description, title, children }) {
   );
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
