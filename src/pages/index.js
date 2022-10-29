@@ -9,7 +9,6 @@ import PortfolioTab from "../components/portfolio/PortfolioTab";
 const Index = ({ data }) => {
   return (
     <>
-      <Seo title="Home" />
       <Header />
       <PhotoSlider />
       <PortfolioTab />
@@ -17,8 +16,9 @@ const Index = ({ data }) => {
     </>
   );
 };
-export default Index;
 
+export default Index;
+export const Head = () => <Seo title="Home" />;
 export const query = graphql`
   query QuerySlider {
     allFile(

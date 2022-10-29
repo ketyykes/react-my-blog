@@ -9,7 +9,6 @@ const articleTemplate = ({ pageContext }) => {
   const fomateDate = dayjs(date).format("YYYY-MM-DD ddd");
   return (
     <>
-      <Seo title="Article" />
       <Layout>
         <div className={articleContent}>
           <h2>{title}</h2>
@@ -21,4 +20,5 @@ const articleTemplate = ({ pageContext }) => {
   );
 };
 
+export const Head = () => <Seo title="Article" />;
 export default articleTemplate;

@@ -7,7 +7,6 @@ const About = () => {
   const { wrapAbout, avatarAbout } = styles;
   return (
     <>
-      <Seo title="About" />
       <Layout>
         <div className={wrapAbout}>
           <div className={avatarAbout}>
@@ -25,3 +24,4 @@ const About = () => {
 };
 
 export default About;
+export const Head = () => <Seo title="About" />;
