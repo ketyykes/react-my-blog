@@ -56,5 +56,17 @@ module.exports = {
         lang: "zh-Hant-TW",
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `水土曜來了`,
+        short_name: `水土曜來了`,
+        start_url: `/`,
+        background_color: `#469ad5`,
+        theme_color: `#4296d11f`,
+        display: `standalone`,
+        icon: `src/images/myBlogIcon.png`,
+      },
+    },
   ],
 };

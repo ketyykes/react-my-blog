@@ -3,7 +3,6 @@ import Layout from "../components/layout/Layout";
 import Seo from "../components/seo/Seo";
 import { articleContent } from "../styles/templates-styles/article-template.module.scss";
 const dayjs = require("dayjs");
-// import {graphql} from 'gatsby'
 const articleTemplate = ({ pageContext }) => {
   const { html, title, date } = pageContext;
   const fomateDate = dayjs(date).format("YYYY-MM-DD ddd");
