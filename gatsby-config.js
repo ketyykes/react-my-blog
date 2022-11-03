@@ -68,5 +68,6 @@ module.exports = {
         icon: `src/images/myBlogIcon.png`,
       },
     },
+    `gatsby-plugin-catch-links`,
   ],
 };

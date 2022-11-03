@@ -137,7 +137,7 @@ background-color:#d3d3d3;
 
 ### AppScirpt 和 webhook 內容
 
-> 更多 App script 相關說明可以參考[使用 App Script 串接 GoogleSheet 發送 API](https://hackmd.io/xxKys1K5S_aQDV7evLFggA)
+> 更多 App script 相關說明可以參考[使用 App Script 串接 GoogleSheet 發送 API](/tech-page/2022-01-26%20Wed)
 
 ## Line 傳過來的訊息 JSON
 

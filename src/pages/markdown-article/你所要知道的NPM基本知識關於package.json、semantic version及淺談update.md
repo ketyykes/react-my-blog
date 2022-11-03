@@ -24,6 +24,7 @@ background-color:#d3d3d3;
 
 npm全名**node package manager**
 
+
 當下載node JS的時候安裝的時候，一直按下一步下一步會預選默認安裝NPM
 
 以下是下載後安裝時會出現的圖
@@ -54,7 +55,7 @@ terminal輸入 npm -v(查看npm版本號)
 ## 初始化npm 建立package.json檔案
 <span class="red rem25">npm init</span> 大致上會問幾個問題
 如下
-```bash=
+```bash
 package name: (你的package名稱)
 version: (1.0.0)
 description:
@@ -126,7 +127,7 @@ About to write to 你的檔案路徑
 <span class="gray">**dependencies**</span>增加了`"bootstrap": "^5.0.2"`
 也就是<span class="red">`這個project必須有bootstrap這個module才不會運行異常`</span>
 
-```javascript=
+```javascript
 {
   "name": "your-project-name",
   "version": "1.0.0",
@@ -149,7 +150,7 @@ About to write to 你的檔案路徑
 剛剛我們安裝了bootstrap，我們再安裝express輸入`npm i express`
 這時候打開package.json會看到dependencies多了express，換句話說透過**npm安裝模組**會加入到package.json的檔案中，**成為該專案的依賴項**。
 
-```javascript=
+```javascript
 {
   "name": "your-project-name",
   "version": "1.0.0",
@@ -207,7 +208,7 @@ About to write to 你的檔案路徑
 
 express這個modules也仰賴其他modules，因此打開裡面的**package-lock.json**，可以看到在初次安裝的時候鎖定的版本號，並且也能從中得知express仰賴其他的modules
 
-```javascript=
+```javascript
  "node_modules/body-parser": {
       "version": "1.19.0",
       "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.19.0.tgz",

@@ -1,7 +1,7 @@
 ---
 title: ESModule模組—用法、實用技巧
-slug: 2022-09-23T03:35:00.000Z
-date: 2022-09-23T03:35:00.000Z
+slug: 2022-09-24T03:35:00.000Z
+date: 2022-09-24T03:35:00.000Z
 ---
 
 Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著時間的推演，一個網頁擁有大量複雜的腳本需要被執行，直到近年網頁所涵蓋的Javascript腳本越來越多，勢必要考慮將Javascript模組拆分，因此慢慢衍生一些模組化系統，在ES6之前比較知名的有CommonJS和AMD(Asynchronous Module Definition)，ComonJS主要是設計給伺服器端的Node.js使用，AMD的目標則是給瀏覽器端，近年制定Javascript標準的[ECMAScript](https://zh.wikipedia.org/zh-tw/ECMAScript)在2015年將模組化的語法納入到標準當中，因此被稱為ES6 Moudle(ESM)。

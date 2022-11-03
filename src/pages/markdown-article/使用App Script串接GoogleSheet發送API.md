@@ -18,7 +18,6 @@ background-color:#d3d3d3;
 }
 </style>
 
-# 使用 App Script 串接 GoogleSheet 發送 API
 
 ## 從 Google 雲端硬碟建立 App Script 並印出 Hello World
 
