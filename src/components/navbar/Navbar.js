@@ -22,7 +22,7 @@ const Navbar = () => {
       >
         <span className={line}></span>
       </div>
-      <div className="container-xxl">
+      <div>
         <h1 className={navbarHome}>
           <Link to="/">
             <span className={icon}>☿♄</span>

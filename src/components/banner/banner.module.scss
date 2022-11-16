@@ -1,24 +1,24 @@
-@import '../../styles/mixin';
+@import "../../styles/mixin";
 .header {
-    position: relative;
-    background: url("../../images/banner-night.jpg");
-    min-height: 95vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    .header-h2 {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      @include text_white_shadow;
-      color: white;
-      font-size: 100px;
-      white-space: nowrap;
-      @include tablet{
-        font-size: 50px;
-      }
+  position: relative;
+  background: url("../../images/banner-night.jpg");
+  min-height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .header-h2 {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    @include text_white_shadow;
+    color: white;
+    font-size: 100px;
+    white-space: nowrap;
+    @include tablet {
+      font-size: 50px;
     }
   }
+}
