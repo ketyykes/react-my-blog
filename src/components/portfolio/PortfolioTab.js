@@ -42,7 +42,7 @@ const PortfolioTab = () => {
   } = data;
   const [value, setValue] = useState(0);
   return (
-    <Container maxWidth="xl" sx={{ m: 2 }}>
+    <Container maxWidth="xl" sx={{ p: 2 }}>
       <CustomTabs value={value} onChange={handleTabs}>
         <Tab label="Front-end"></Tab>
         <Tab label="Backend"></Tab>
