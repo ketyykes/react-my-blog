@@ -21,10 +21,21 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
       padding: 0 50px;
       text-align: center;
     }
+    @include mobile {
+      h#{$i} {
+        font-size: (1.75rem - (0.125rem * $i));
+        padding: 0 25px;
+        text-align: center;
+      }
+    }
   }
+
   blockquote {
     margin-left: 50px;
     border-left: 5px solid $code_background_color;
+    @include mobile {
+      margin-left: 25px;
+    }
   }
   img {
     max-width: 100%;
