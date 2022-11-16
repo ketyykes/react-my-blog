@@ -141,19 +141,3 @@ html {
   background: $body_color;
   font-family: $entire_font_family;
 }
-
-.container { 
-  margin: 0 auto;
-  max-width: 1200px;
-  @media (max-width: 768px) {
-    max-width: 720px;
-  }
-  @media (max-width: 576px) {
-    max-width: 540px;
-  }
-}
-.container-xxl {
-  margin: 0 auto;
-  max-width: 1920px;
-  // @include container(1200px, 1.6);
-}
