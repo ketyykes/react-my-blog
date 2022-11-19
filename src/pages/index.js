@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import Layout from "../components/layout/Layout";
 import Seo from "../components/seo/Seo";
 import PhotoSlider from "../components/slider/PhotoSlider";
 import PortfolioTab from "../components/portfolio/PortfolioTab";
@@ -9,10 +8,9 @@ import PortfolioTab from "../components/portfolio/PortfolioTab";
 const Index = ({ data }) => {
   return (
     <>
-      <Header />
-      <PhotoSlider />
-      <PortfolioTab />
-      <Footer />
+      <Layout>
+        <PortfolioTab />
+      </Layout>
     </>
   );
 };
