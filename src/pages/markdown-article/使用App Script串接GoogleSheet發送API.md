@@ -205,7 +205,7 @@ function doPost(e) {
 
 e 會回傳的內容如下
 
-```json=
+```json
 {
     "contextPath": "",
     "queryString": "",
@@ -232,7 +232,7 @@ e 會回傳的內容如下
 
 e 的回傳結果如下
 
-```json=
+```json
 {
     "postData": {
         "contents": "fruit=apple&price=100",
@@ -265,7 +265,7 @@ e 的回傳結果如下
 
 e 的回傳結果如下
 
-```json=
+```json
 {
     "parameter": {},
     "contextPath": "",

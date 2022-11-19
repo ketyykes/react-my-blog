@@ -266,7 +266,7 @@ export const fetchData = async () => {
 ### 巢狀解構所需的內容
 
 我們在接後端伺服器所回傳的api大致如下
-```json=
+```json
 { data : { name : "小明" , age : 17 } }
 ```
 這邊可以巢狀解構的方式

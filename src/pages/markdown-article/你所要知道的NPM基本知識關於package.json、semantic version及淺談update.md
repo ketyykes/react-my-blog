@@ -72,7 +72,7 @@ About to write to 你的檔案路徑
 
 如果覺得創建的時候每次都要按下這些冗長的問題很麻煩的話，<span class="red rem25">npm init -y</span> 可以省略按Enter跳過步驟<span class="rem25 gray">啟用預設值</span>
 最後就會產生一個package.json如下
-```json=
+```json
 {
   "name": "你的專案名字",
   "version": "1.0.0",
@@ -245,7 +245,7 @@ express這個modules也仰賴其他modules，因此打開裡面的**package-lock
 例如`輸入npm uninstall express`和`npm uninstall bootstrap`
 
 打開node_modules資料夾就只會剩下大致如下
-```bash=
+```bash
 ├─node_modules
 │  │  .package-lock.json
 │  │

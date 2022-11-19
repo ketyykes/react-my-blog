@@ -119,7 +119,7 @@ function App() {
 
 上面的語法相當於我們在使用vanilla javascript的下面的語法
 
-```javascript!
+```javascript
 const divElement = document.querySelector(".test")
 ```
 ## focus效果範例

@@ -144,7 +144,7 @@ module.exports = {
 ### App.js
 
 App.js的內容如下
-```jsx=
+```jsx
 import React from "react";
 const App = () => {
   return <div>測試</div>;
