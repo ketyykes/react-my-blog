@@ -1,14 +1,18 @@
 import React from "react";
-import { Banner, Footer } from "../";
+import { Banner, Footer, Navbar, Header } from "../";
 
 const Layout = ({ children }) => {
-  return (
-    <>
-      <Banner />
-      <div>{children}</div>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Header>
+				<Banner>
+					<Navbar />
+				</Banner>
+			</Header>
+			<div>{children}</div>
+			<Footer />
+		</>
+	);
 };
 
 export default Layout;

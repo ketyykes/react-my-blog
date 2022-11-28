@@ -1,11 +1,6 @@
-import React from 'react'
-import Navbar from "../navbar/Navbar";
-const Header = () => {
-    return (
-        <header >
-            <Navbar />
-        </header>
-    )
-}
+import React from "react";
+const Header = ({ children }) => {
+	return <header>{children}</header>;
+};
 
-export default Header
+export default Header;
