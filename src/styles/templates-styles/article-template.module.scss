@@ -9,6 +9,11 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
+  max-width: 1200px;
+  @include tablet {
+    max-width: 660px;
+  }
+  margin: 0 auto;
   @each $i in $element {
     #{$i} {
       margin-top: 1rem;

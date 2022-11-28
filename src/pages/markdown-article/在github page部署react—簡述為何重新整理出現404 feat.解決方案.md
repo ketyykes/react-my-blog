@@ -88,7 +88,7 @@ npm install --save gh-pages
 首先複製404的html檔案到我們的專案中，如果我們的專案不是使用自定義的domain的話，換句話說使用原本的<span class="red gray bdrs">username.github.io/repo-name</span>，然後就得將檔案內的變數改成1，如果使用reactRoute的化需要添加repo-name到BrowserRouter下，例如<span class="red gray bdrs">&lt;BrowserRouter basename="/repo-name"/&gt;.</span>
 
 在404.html的程式碼內容如下
-```javascript=
+```javascript
 var pathSegmentsToKeep = 0;//如果是不是自定義的網域就把0改成1
 var l = window.location;
 l.replace(

@@ -1,6 +1,5 @@
 import React from "react";
-import Layout from "../components/layout/Layout";
-import Seo from "../components/seo/Seo";
+import { Layout, Seo } from "../components";
 import { articleContent } from "../styles/templates-styles/article-template.module.scss";
 const dayjs = require("dayjs");
 const articleTemplate = ({ pageContext }) => {

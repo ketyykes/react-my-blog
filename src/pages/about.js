@@ -1,8 +1,7 @@
 import React from "react";
-import Layout from "../components/layout/Layout";
+import { Layout, Seo } from "../components";
 import * as styles from "../styles/pages-styles/about.module.scss";
 import AvatarImg from "../images/avatar-about.jpg";
-import Seo from "../components/seo/Seo";
 const About = () => {
   const { wrapAbout, avatarAbout } = styles;
   return (

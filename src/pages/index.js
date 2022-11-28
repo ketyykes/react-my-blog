@@ -1,9 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout/Layout";
+import { Layout, PortfolioTab } from "../components/index";
 import Seo from "../components/seo/Seo";
-import PhotoSlider from "../components/slider/PhotoSlider";
-import PortfolioTab from "../components/portfolio/PortfolioTab";
 
 const Index = ({ data }) => {
   return (

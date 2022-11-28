@@ -1,7 +1,5 @@
 import React from "react";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
-import Seo from "../components/seo/Seo";
+import { Header, Footer, Seo } from "../components";
 import { not_found } from "../styles/pages-styles/notfound.module.scss";
 
 const NotFound = () => {

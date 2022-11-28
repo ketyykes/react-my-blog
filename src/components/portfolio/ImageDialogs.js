@@ -26,6 +26,7 @@ export default function ImageDialogs({ cardItemObject }) {
   const handleClose = () => {
     setOpen(false);
   };
+
   const minWidthBoolean = useMediaQuery("(min-width:576px)");
   const CustomDialog = styled(Dialog)({
     ".MuiDialogTitle-root": {
