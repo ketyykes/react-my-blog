@@ -8,16 +8,16 @@ import {
 
 const Album = () => {
 	const currentMedia = {
-		mobile: useMediaQuery(" ( width < 576px ) "),
-		tablet: useMediaQuery(" (577px <= width <= 768px) "),
-		desktopLg: useMediaQuery(" (769px <= width <= 992px) "),
-		desktopXl: useMediaQuery(" ( width > 993px ) "),
+		isMobile: useMediaQuery(" ( width < 576px ) "),
+		isTablet: useMediaQuery(" (577px <= width <= 768px) "),
+		isDesktopLg: useMediaQuery(" (769px <= width <= 992px) "),
+		isDesktopXl: useMediaQuery(" ( width > 993px ) "),
 	};
-	const imageListCol = (({ mobile, tablet, desktopLg, desktopXl }) => {
-		if (mobile) return 1;
-		if (tablet) return 2;
-		if (desktopLg) return 3;
-		if (desktopXl) return 4;
+	const imageListCol = (({ isMobile, isTablet, isDesktopLg, isDesktopXl }) => {
+		if (isMobile) return 1;
+		if (isTablet) return 2;
+		if (isDesktopLg) return 3;
+		if (isDesktopXl) return 4;
 	})(currentMedia);
 	return (
 		<Container maxWidth="false" sx={{ p: 1 }}>
