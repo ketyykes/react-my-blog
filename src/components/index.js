@@ -8,3 +8,4 @@ export { default as PortfolioTab } from "./portfolio/PortfolioTab";
 export { default as Seo } from "./seo/Seo";
 export { default as PhotoSlider } from "./slider/PhotoSlider";
 export { default as Album } from "./album/Album";
+export { default as CircularPercentProgress } from "./circularPercentProgress/CircularPercentProgress.js";
