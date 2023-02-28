@@ -19,9 +19,10 @@ export default function ImageDialogs({ cardItemObject }) {
 	const handleClickOpen = () => {
 		setOpen(true);
 	};
-	const [loaded, setLoaded] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const loadEventHandler = () => {
-		setLoaded(true);
+		console.log("t");
+		setLoading(false);
 	};
 	const handleClose = () => {
 		setOpen(false);
@@ -44,14 +45,12 @@ export default function ImageDialogs({ cardItemObject }) {
 		<>
 			<div className={card_image}>
 				<img
-					style={{ display: loaded ? "block" : "none" }}
+					style={{ display: loading ? "none" : "block" }}
 					src={cardItemObject.cardImageSrc}
 					alt={cardItemObject.cardHead}
 					onLoad={loadEventHandler}
 				/>
-				{loaded ? (
-					""
-				) : (
+				{loading && (
 					<Skeleton
 						variant="rectangular"
 						sx={{ width: "100%", height: "140px" }}
