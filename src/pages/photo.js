@@ -10,4 +10,4 @@ const Photo = () => {
 };
 
 export default Photo;
-export const Head = () => <Seo title="Home" />;
+export const Head = () => <Seo title="Photo" />;
