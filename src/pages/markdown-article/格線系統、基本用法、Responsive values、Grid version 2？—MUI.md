@@ -31,7 +31,7 @@ date: 2022-12-07T03:35:00.000Z
 
 我們引入**Grid**後，然後再父層的**Grid component**添加**container**作為容器使用，在子層的時候添加**item**作為**props**使用，以物件的形式傳入**Grid component**裡面，由於是12欄的設計，當我們撰寫`xs={12}`也就是相當於佔滿12欄，同理我們撰寫`xs={8}`就是相當佔滿8欄
 
-```javascript=
+```javascript
 import React from "react";
 import Grid from "@mui/material/Grid";
 import "./Div.css";
@@ -60,7 +60,7 @@ export default BasicGrid;
 
 我們可以透過設置斷點的方式讓滿不同的螢幕寬度的時候佔滿的欄數發生變化，在一個Grid同時設置`xs={12}`和`md={6}`的時候，螢幕在大於900px的時候會佔滿的欄數就是6格，觀看以下程式碼
 
-```javascript=
+```javascript
 import React from "react";
 import Grid from "@mui/material/Grid";
 import "./Div.css";
@@ -96,7 +96,7 @@ export default BasicGrid;
 
 觀看以下程式碼
 
-```javascript=
+```javascript
 import React from "react";
 import Grid from "@mui/material/Grid";
 import "./Div.css";
@@ -156,7 +156,7 @@ export default BasicGrid;
 - 巢狀grid不再有深度限制
 - disableEqualOverflow的屬性將可以在較小的viewport禁用水平卷軸
 
-```javascript=
+```javascript
 import Grid from '@mui/material/Unstable_Grid2';
 ```
 

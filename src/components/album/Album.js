@@ -24,11 +24,13 @@ const Album = () => {
 		if (isDesktopXl) return 4;
 	})(currentMedia);
 
+	const IMAGE_AMOUNT = 97;
+
 	function percentage(partialValue, totalValue) {
 		return (100 * partialValue) / totalValue;
 	}
 	const onComplete = () => {
-		setProgress((prev) => prev + percentage(1, 97));
+		setProgress((prev) => prev + percentage(1, IMAGE_AMOUNT));
 		if (progress > 98) {
 			setLoading(false);
 		}
@@ -41,10 +43,13 @@ const Album = () => {
 				</Box>
 			)}
 			<ImageList variant="masonry" cols={imageListCol} gap={100}>
-				{Array.from({ length: 97 }).map((_, index) => (
+				{Array.from({ length: IMAGE_AMOUNT }).map((_, index) => (
 					<ImageListItem key={index}>
 						<img
-							src={`https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/instagram_post/igpo${index}.jpg`}
+							src={`https://res.cloudinary.com/deqqrzo3t/image/upload/v1678350386/my-blog/instagram_post/igpo-${
+								index + 1
+							}.jpg
+							`}
 							alt={`instagram_post${index}`}
 							onLoad={onComplete}
 							style={{

@@ -28,7 +28,7 @@ date: 2022-12-14T11:30:00.000Z
 
 首先我們觀看以下的資料夾結構。
 
-```bash=
+```bash
 ├─images
 │      icon.png
 │
@@ -38,7 +38,7 @@ date: 2022-12-14T11:30:00.000Z
 ```
 
 我們在此添加了一個hello.js
-```bash=
+```bash
 ├─images
 │      icon.png
 │
@@ -78,7 +78,7 @@ export default hello;
 
 例如在hello.js頁面檔如下
 
-```javascript=
+```javascript
 import React from "react";
 
 const hello = () => {
@@ -124,7 +124,7 @@ gatsby提供了`Link的component`來實作跳轉頁面
 
 如下程式碼藉由Link component的方式，我們就能夠跳轉到某個路由了。
 
-```javascript=
+```javascript
 import React from "react";
 import { Link } from "gatsby";
 const hello = () => {
