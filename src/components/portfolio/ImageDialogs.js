@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
 	Button,
 	Dialog,
@@ -16,10 +16,14 @@ import * as styles from "./imageDialogs.module.scss";
 export default function ImageDialogs({ cardItemObject }) {
 	const { card_image } = styles;
 	const [open, setOpen] = useState(false);
-	const handleClickOpen = () => {
-		setOpen(true);
-	};
 	const [loading, setLoading] = useState(true);
+	const imageRef = useRef(null);
+
+	useEffect(() => {
+		if (imageRef?.current?.complete) {
+			setLoading(false);
+		}
+	}, []);
 	const loadEventHandler = (e) => {
 		if (e.target.complete === true) {
 			setLoading(false);
@@ -27,6 +31,10 @@ export default function ImageDialogs({ cardItemObject }) {
 	};
 	const handleClose = () => {
 		setOpen(false);
+	};
+
+	const handleClickOpen = () => {
+		setOpen(true);
 	};
 
 	const minWidthBoolean = useMediaQuery("(min-width:600px)");
@@ -46,6 +54,7 @@ export default function ImageDialogs({ cardItemObject }) {
 		<>
 			<div className={card_image}>
 				<img
+					ref={imageRef}
 					style={{ display: loading ? "none" : "block" }}
 					src={cardItemObject.cardImageSrc}
 					alt={cardItemObject.cardHead}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
 	Container,
 	ImageList,
@@ -25,17 +25,21 @@ const Album = () => {
 	})(currentMedia);
 
 	const IMAGE_AMOUNT = 97;
+	const imageRefs = useRef([]);
+	useEffect(() => {
+		if (imageRefs?.current?.every((el) => el.complete === true)) {
+			setLoading(false);
+		}
+	}, []);
 
 	function percentage(partialValue, totalValue) {
 		return (100 * partialValue) / totalValue;
 	}
+
 	const onComplete = (e) => {
 		if (e.target.complete) {
 			setProgress((prev) => prev + percentage(1, IMAGE_AMOUNT));
 		}
-		console.log(e.target.complete);
-		console.log("progress", progress);
-		console.log("loading", loading);
 		if (progress > 98) {
 			setLoading(false);
 		}
@@ -55,6 +59,7 @@ const Album = () => {
 								index + 1
 							}.jpg
 							`}
+							ref={(el) => (imageRefs.current[index] = el)}
 							alt={`instagram_post${index}`}
 							onLoad={onComplete}
 							style={{
