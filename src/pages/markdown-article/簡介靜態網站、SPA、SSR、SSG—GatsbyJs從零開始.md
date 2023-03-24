@@ -1,5 +1,5 @@
 ---
-title: 用createElement淺談為什麼react需要jsx
+title: 簡介靜態網站、SPA、SSR、SSG—GatsbyJs從零開始
 slug: 2022-12-10T07:34:00.000Z
 date: 2022-12-10T07:34:00.000Z
 ---
@@ -51,8 +51,8 @@ date: 2022-12-10T07:34:00.000Z
 
 ## Gatsby 和 Data
 - 可以使用很多不同的資料來源到你的網站
-- 例如WordPress,shopify,contentful,firebase,file system,
-- Gatsby 結合全部的資料源頭到GraphQL層
+- 例如WordPress,shopify,contentful,firebase,filesystem
+- Gatsby 結合全部的資料源頭到GraphQL層Gatsby 結合全部的資料源頭到GraphQL層
 好處是我們不需要在乎資料源頭是在哪裡，我們可以使用組件相同的方式查詢和訪問
 
 如下圖

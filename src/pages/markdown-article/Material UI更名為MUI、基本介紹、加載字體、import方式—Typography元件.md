@@ -54,7 +54,7 @@ Material UI預設不會加載任何字體，但預設Material UI是使用 Roboto
 
 ### 第一種方式—CDN引入字體
 
-```htmlmixed=
+```html
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

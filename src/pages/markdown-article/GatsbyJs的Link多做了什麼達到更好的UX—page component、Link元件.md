@@ -52,7 +52,7 @@ date: 2022-12-14T11:30:00.000Z
 
 在檔案裡面我們新增了一個函式如下
 
-```jsx=
+```jsx
 import React from "react";
 
 const hello = () => {

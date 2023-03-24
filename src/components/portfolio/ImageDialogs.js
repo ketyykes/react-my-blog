@@ -20,9 +20,10 @@ export default function ImageDialogs({ cardItemObject }) {
 		setOpen(true);
 	};
 	const [loading, setLoading] = useState(true);
-	const loadEventHandler = () => {
-		console.log("t");
-		setLoading(false);
+	const loadEventHandler = (e) => {
+		if (e.target.complete === true) {
+			setLoading(false);
+		}
 	};
 	const handleClose = () => {
 		setOpen(false);

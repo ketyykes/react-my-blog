@@ -26,6 +26,30 @@ background-color:#D3D3D3;
 .bdrs{
   border-radius: 4px;
 }
+@media (max-width: 576px) {
+  .rem25{
+    font-size:2rem;
+  }
+  .rem40{
+    font-size:3.0rem;
+  }
+  .rem50{
+    font-size:3.5rem;
+  }
+}
+.red {
+color:red;
+}
+.blue{
+color:blue;
+}
+.code{
+background-color:#f7f7f7;
+padding :4px;
+font-size:0.9rem;
+font-weight:700;
+}
+
 </style>
 
 先前提到撰寫一個react的應用程式就會需要以下步驟
@@ -49,16 +73,16 @@ background-color:#D3D3D3;
 
 依據官方指令只需要輸入以下指令就能創建一個"your project name"
 
-- <span class="red gray bdrs">npx create-react-app "your project name"</span>
-- <span class="red gray bdrs">cd "your project name"</span>
-- <span class="red gray bdrs">npm start</span>
+- <span class="red code">npx create-react-app "your project name"</span>
+- <span class="red code">cd "your project name"</span>
+- <span class="red code">npm start</span>
 
 另外如果你使用terminal已經cd到該資料夾了話，可以改用以下指令
 
-- <span class="red gray bdrs">npx create-react-app ./</span>
-- <span class="red gray bdrs">npm start</span>
+- <span class="red code">npx create-react-app ./</span>
+- <span class="red code">npm start</span>
 
-這時候輸入<span class="red gray bdrs">npm start</span>應當會開啟一個<span class="red">`http://localhost:3000/`</span>的server
+這時候輸入<span class="red code">npm start</span>應當會開啟一個<span class="red">`http://localhost:3000/`</span>的server
 
 如下圖
 
@@ -76,7 +100,7 @@ background-color:#D3D3D3;
 
 ## eject包含了什麼
 透過以下的方式來理解上面講述的重點
-我們嘗試著<span class="red gray bdrs">npm run eject</span>來暴露自定義設定檔
+我們嘗試著<span class="red code">npm run eject</span>來暴露自定義設定檔
 
 在package.json檔案能發現他所擁有的依賴項包含以下
 

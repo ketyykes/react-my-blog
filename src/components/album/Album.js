@@ -29,8 +29,13 @@ const Album = () => {
 	function percentage(partialValue, totalValue) {
 		return (100 * partialValue) / totalValue;
 	}
-	const onComplete = () => {
-		setProgress((prev) => prev + percentage(1, IMAGE_AMOUNT));
+	const onComplete = (e) => {
+		if (e.target.complete) {
+			setProgress((prev) => prev + percentage(1, IMAGE_AMOUNT));
+		}
+		console.log(e.target.complete);
+		console.log("progress", progress);
+		console.log("loading", loading);
 		if (progress > 98) {
 			setLoading(false);
 		}

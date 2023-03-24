@@ -3,6 +3,40 @@ title:  什麼是GraphQL—使用GatsbyJs的graphql模組獲取資料
 slug: 2022-12-17T13:31:00.000Z
 date: 2022-12-17T13:31:00.000Z
 ---
+<style> 
+.rem25{
+font-size:2.5rem;
+}
+.rem40{
+font-size:4.0rem;
+}
+.rem50{
+  font-size:5.0rem;
+}
+@media (max-width: 576px) {
+  .rem25{
+    font-size:2rem;
+  }
+  .rem40{
+    font-size:3.0rem;
+  }
+  .rem50{
+    font-size:3.5rem;
+  }
+}
+.red {
+color:red;
+}
+.blue{
+color:blue;
+}
+.code{
+background-color:#f7f7f7;
+padding :4px;
+font-size:0.9rem;
+font-weight:700;
+}
+</style>
 
 本文提及以下內容
 
@@ -61,7 +95,7 @@ GatsbyJs將其添加至內容網格中(content mesh)
 
 這是一個可以在開發時期造訪的網頁，也是當我們建置一個gatsbyJs專案的時候會時常使用到的網頁。
 
-在我們npm run start的時候除了你所建置的gatsby網頁以外，將會有另一個網址`http://localhost:8000/___graphql`
+在我們npm run start的時候除了你所建置的gatsby網頁以外，將會有另一個網址<span class="code">http://localhost:8000/___graphql</span>
 
 如下圖
 
@@ -99,7 +133,9 @@ module.exports = {
 
 ### 使用GraphiQL工具選擇對應的資料
 
-npm run start後進入`http://localhost:8000/___graphql`頁面
+npm run start後
+<br>
+進入<span class="code">http://localhost:8000/___graphql</span>頁面
 
 在左側選擇site→siteMetadata→description和title
 

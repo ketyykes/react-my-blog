@@ -4,82 +4,101 @@
 $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 
 .article-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  max-width: 1200px;
-  @include tablet {
-    max-width: 660px;
-  }
-  margin: 0 auto;
-  @each $i in $element {
-    #{$i} {
-      margin-top: 1rem;
-      max-width: 100%;
-    }
-  }
-  @for $i from 1 to 6 {
-    h#{$i} {
-      font-size: (2.5rem - (0.25rem * $i));
-      padding: 0 50px;
-      text-align: center;
-    }
-    @include mobile {
-      h#{$i} {
-        font-size: (1.75rem - (0.125rem * $i));
-        padding: 0 25px;
-        text-align: center;
-      }
-    }
-  }
+	word-break: break-all;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 20px;
+	max-width: 1200px;
+	@include tablet {
+		max-width: 660px;
+	}
+	margin: 0 auto;
+	@each $i in $element {
+		#{$i} {
+			margin-top: 1rem;
+			max-width: 100%;
+		}
+	}
+	@for $i from 1 to 6 {
+		h#{$i} {
+			font-size: (2.5rem - (0.25rem * $i));
+			padding: 0 50px;
+			text-align: center;
+		}
+		@include mobile {
+			h#{$i} {
+				font-size: (1.75rem - (0.125rem * $i));
+				padding: 0 25px;
+				text-align: center;
+			}
+		}
+	}
+	h2 {
+		line-height: 1.25;
+	}
+	blockquote {
+		margin-left: 3rem;
+		border-left: 5px solid $code_background_color;
+		> ul {
+			margin-left: 1rem;
+		}
+		@include tablet {
+			margin-left: 2rem;
+		}
+	}
+	img {
+		max-width: 100%;
+		display: block;
+	}
+	code {
+		max-width: 90%;
+	}
+	p {
+		font-size: 1rem;
+		line-height: 2;
+		padding: 0 10px;
+	}
 
-  blockquote {
-    margin-left: 50px;
-    border-left: 5px solid $code_background_color;
-    @include mobile {
-      margin-left: 25px;
-    }
-  }
-  img {
-    max-width: 100%;
-    display: block;
-  }
-  code {
-    max-width: 90%;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 2;
-    padding: 0 10px;
-  }
-
-  a {
-    color: $main_color;
-    &:hover {
-      color: $secondary_color;
-    }
-  }
-  b {
-    font-weight: 700;
-  }
-  li {
-    list-style: disc;
-    list-style-position: inside;
-  }
-  table {
-    line-height: 1.5;
-    a {
-      margin-top: 0;
-    }
-    td {
-      border: 1px solid $code_background_color;
-      padding: 10px;
-    }
-    th {
-      border: 1px solid $code_background_color;
-      padding: 10px;
-    }
-  }
+	a {
+		color: $main_color;
+		&:hover {
+			color: $secondary_color;
+		}
+	}
+	b {
+		font-weight: 700;
+	}
+	li {
+		list-style: disc;
+		list-style-position: inside;
+		line-height: 2;
+		> ul {
+			padding-left: 2rem;
+			> li {
+				list-style: circle;
+				> ul {
+					padding-left: 1rem;
+					> li {
+						list-style: square;
+					}
+				}
+			}
+		}
+	}
+	table {
+		line-height: 1.5;
+		a {
+			margin-top: 0;
+		}
+		td {
+			border: 1px solid $code_background_color;
+			padding: 10px;
+		}
+		th {
+			border: 1px solid $code_background_color;
+			padding: 10px;
+		}
+	}
 }
