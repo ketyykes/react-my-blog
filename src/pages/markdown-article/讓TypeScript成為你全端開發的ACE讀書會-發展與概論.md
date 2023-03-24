@@ -273,5 +273,3 @@ tsc
 ```javascript
 // @ts-check
 ```
-
-###### tags: `` `typescript`

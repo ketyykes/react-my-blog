@@ -372,6 +372,3 @@ enum Color {Red,Blue,Green,Yellow,White}
 
 [tsdoc-Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 
-
-
-###### tags: `讓TypeScript成為你全端開發的ACE` `typescript`
