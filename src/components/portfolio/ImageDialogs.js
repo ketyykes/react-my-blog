@@ -55,6 +55,7 @@ export default function ImageDialogs({ cardItemObject }) {
 			<div className={card_image}>
 				<img
 					ref={imageRef}
+					decoding="async"
 					style={{ display: loading ? "none" : "block" }}
 					src={cardItemObject.cardImageSrc}
 					alt={cardItemObject.cardHead}
