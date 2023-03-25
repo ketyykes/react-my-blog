@@ -26,10 +26,14 @@ const Album = () => {
 
 	const IMAGE_AMOUNT = 97;
 	const imageRefs = useRef([]);
+
 	useEffect(() => {
-		if (imageRefs?.current?.every((el) => el.complete === true)) {
-			setLoading(false);
-		}
+		const timer = setInterval(() => {
+			if (imageRefs?.current?.every((el) => el.complete === true)) {
+				setLoading(false);
+			}
+		}, 1000);
+		return () => clearInterval(timer);
 	}, []);
 
 	function percentage(partialValue, totalValue) {
@@ -40,9 +44,9 @@ const Album = () => {
 		if (e.target.complete) {
 			setProgress((prev) => prev + percentage(1, IMAGE_AMOUNT));
 		}
-		if (progress > 98) {
-			setLoading(false);
-		}
+		// if (progress > 98) {
+		// 	setLoading(false);
+		// }
 	};
 	return (
 		<Container maxWidth="false" sx={{ p: 10 }}>
@@ -59,6 +63,7 @@ const Album = () => {
 								index + 1
 							}.jpg
 							`}
+							decoding="async"
 							ref={(el) => (imageRefs.current[index] = el)}
 							alt={`instagram_post${index}`}
 							onLoad={onComplete}
