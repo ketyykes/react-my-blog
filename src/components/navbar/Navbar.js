@@ -45,17 +45,17 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link activeClassName={activeNavbar} to="/about">
+						<Link activeClassName={activeNavbar} to="/about/">
 							關於我
 						</Link>
 					</li>
 					<li>
-						<Link activeClassName={activeNavbar} to="/tech-page">
+						<Link activeClassName={activeNavbar} to="/tech-page/">
 							技術文章
 						</Link>
 					</li>
 					<li>
-						<Link activeClassName={activeNavbar} to="/photo">
+						<Link activeClassName={activeNavbar} to="/photo/">
 							攝影集
 						</Link>
 					</li>

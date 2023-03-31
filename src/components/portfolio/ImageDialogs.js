@@ -7,6 +7,7 @@ import {
 	IconButton,
 	Skeleton,
 	useMediaQuery,
+	Zoom,
 } from "@mui/material/";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
@@ -36,6 +37,9 @@ export default function ImageDialogs({ cardItemObject }) {
 	const handleClickOpen = () => {
 		setOpen(true);
 	};
+	const Transition = React.forwardRef(function Transition(props, ref) {
+		return <Zoom ref={ref} {...props} />;
+	});
 
 	const minWidthBoolean = useMediaQuery("(min-width:600px)");
 	const CustomDialog = styled(Dialog)({
@@ -49,7 +53,6 @@ export default function ImageDialogs({ cardItemObject }) {
 			borderRadius: "16px",
 		},
 	});
-
 	return (
 		<>
 			<div className={card_image}>
@@ -77,7 +80,9 @@ export default function ImageDialogs({ cardItemObject }) {
 				fullWidth={true}
 				maxWidth={"xl"}
 				onClose={handleClose}
+				keepMounted
 				open={open}
+				TransitionComponent={Transition}
 			>
 				<DialogTitle>
 					{cardItemObject.cardHead}
