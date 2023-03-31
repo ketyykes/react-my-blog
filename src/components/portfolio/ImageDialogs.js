@@ -12,10 +12,9 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
-import * as styles from "./imageDialogs.module.scss";
+import { cardImage } from "./imageDialogs.module.scss";
 
 export default function ImageDialogs({ cardItemObject }) {
-	const { card_image } = styles;
 	const [open, setOpen] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const imageRef = useRef(null);
@@ -55,7 +54,7 @@ export default function ImageDialogs({ cardItemObject }) {
 	});
 	return (
 		<>
-			<div className={card_image}>
+			<div className={cardImage}>
 				<img
 					ref={imageRef}
 					decoding="async"

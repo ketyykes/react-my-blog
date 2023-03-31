@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Layout, Seo } from "../components";
 import { Skeleton } from "@mui/material/";
-import * as styles from "../styles/pages-styles/about.module.scss";
+import {
+	wrapAbout,
+	avatarAbout,
+} from "../styles/pages-styles/about.module.scss";
 import AvatarImg from "../images/avatar-about.jpg";
 const About = () => {
-	const { wrapAbout, avatarAbout } = styles;
 	const imageRef = useRef(null);
 	const [loading, setLoading] = useState(true);
 

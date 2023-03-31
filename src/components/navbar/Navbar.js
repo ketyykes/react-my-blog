@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import "../../styles/global.scss";
-import * as styles from "./navbar.module.scss";
+import {
+	navbar,
+	navbarHome,
+	icon,
+	ham,
+	line,
+	iconTxt,
+	menuShow,
+	menuNoshow,
+	activeNavbar,
+} from "./navbar.module.scss";
+
 const Navbar = () => {
-	const {
-		navbar,
-		navbarHome,
-		icon,
-		ham,
-		line,
-		iconTxt,
-		menuShow,
-		menuNoshow,
-		activeNavbar,
-	} = styles;
 	const [hamburger, setHamburger] = useState(false);
 	const hamHandler = () => {
 		setHamburger(!hamburger);
