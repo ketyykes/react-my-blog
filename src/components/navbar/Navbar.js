@@ -3,8 +3,17 @@ import { Link } from "gatsby";
 import "../../styles/global.scss";
 import * as styles from "./navbar.module.scss";
 const Navbar = () => {
-	const { navbar, navbarHome, icon, ham, line, iconTxt, menuShow, menuNoshow } =
-		styles;
+	const {
+		navbar,
+		navbarHome,
+		icon,
+		ham,
+		line,
+		iconTxt,
+		menuShow,
+		menuNoshow,
+		activeNavbar,
+	} = styles;
 	const [hamburger, setHamburger] = useState(false);
 	const hamHandler = () => {
 		setHamburger(!hamburger);
@@ -31,16 +40,24 @@ const Navbar = () => {
 				</h1>
 				<ul className={`${hamburger ? menuShow : menuNoshow}`}>
 					<li>
-						<Link to="/">首頁</Link>
+						<Link activeClassName={activeNavbar} to="/">
+							首頁
+						</Link>
 					</li>
 					<li>
-						<Link to="/about">關於我</Link>
+						<Link activeClassName={activeNavbar} to="/about">
+							關於我
+						</Link>
 					</li>
 					<li>
-						<Link to="/tech-page">技術文章</Link>
+						<Link activeClassName={activeNavbar} to="/tech-page">
+							技術文章
+						</Link>
 					</li>
 					<li>
-						<Link to="/photo">攝影集</Link>
+						<Link activeClassName={activeNavbar} to="/photo">
+							攝影集
+						</Link>
 					</li>
 				</ul>
 			</div>
