@@ -1,32 +1,32 @@
 @import "../../styles/mixin";
 
 .image_height {
-  max-height: calc(100vh - 72px);
+	max-height: calc(100vh - 72px);
 }
 .photo_slider {
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 60px;
-  position: relative;
-  h1 {
-    text-align: center;
-    line-height: 1.2;
-    border-radius: 16px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 72px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 30px;
-    @include tablet {
-      padding: 15px;
-      font-size: 36px;
-    }
-    @include mobile {
-      padding: 15px;
-      font-size: 24px;
-    }
-  }
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 60px;
+	position: relative;
+	h1 {
+		text-align: center;
+		line-height: 1.2;
+		border-radius: 16px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 72px;
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+		padding: 30px;
+		@include tablet {
+			padding: 15px;
+			font-size: 36px;
+		}
+		@include mobile {
+			padding: 15px;
+			font-size: 24px;
+		}
+	}
 }

@@ -1,16 +1,32 @@
-import React from "react";
-import { Layout, Seo, Header, Navbar } from "../components";
+import React, { useState, useEffect, useRef } from "react";
+import { Layout, Seo } from "../components";
+import { Skeleton } from "@mui/material/";
 import * as styles from "../styles/pages-styles/about.module.scss";
 import AvatarImg from "../images/avatar-about.jpg";
 const About = () => {
 	const { wrapAbout, avatarAbout } = styles;
-	console.log(AvatarImg);
+	const imageRef = useRef(null);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		if (imageRef?.current?.complete) {
+			setLoading(false);
+		}
+	}, []);
 	return (
 		<>
 			<Layout>
 				<div className={wrapAbout}>
 					<div className={avatarAbout}>
-						<img decoding="async" src={AvatarImg} alt="avatar" />
+						<img
+							decoding="async"
+							ref={imageRef}
+							style={{ display: loading ? "none" : "inline" }}
+							src={AvatarImg}
+							alt="avatar"
+							onLoad={() => setLoading(false)}
+						/>
+						{loading && <Skeleton variant="rectangular" height="525px" />}
 					</div>
 					<h2>關於我</h2>
 					<p>
