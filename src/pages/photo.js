@@ -3,7 +3,7 @@ import { Layout, Seo, Album } from "../components";
 
 const Photo = () => {
 	return (
-		<Layout>
+		<Layout banner={true}>
 			<Album />
 		</Layout>
 	);

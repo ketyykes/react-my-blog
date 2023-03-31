@@ -1,13 +1,18 @@
 import React from "react";
-import { Banner, Footer, Navbar, Header } from "../";
+import { Banner, Footer, Navbar, Header } from "..";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, banner }) => {
+	console.log(banner);
 	return (
 		<>
 			<Header>
-				<Banner>
+				{banner ? (
+					<Banner>
+						<Navbar />
+					</Banner>
+				) : (
 					<Navbar />
-				</Banner>
+				)}
 			</Header>
 			<div>{children}</div>
 			<Footer />

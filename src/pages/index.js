@@ -6,7 +6,7 @@ import Seo from "../components/seo/Seo";
 const Index = ({ data }) => {
 	return (
 		<>
-			<Layout>
+			<Layout banner={true}>
 				<PortfolioTab />
 			</Layout>
 		</>
