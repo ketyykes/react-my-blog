@@ -149,7 +149,7 @@ import Button from '@mui/material/Button';
 
 接下來的範例僅撰寫jsx的部分，將會省略import和return的程式碼
 
-```html
+```jsx
 <div>
   <Typography>
     測試
@@ -164,7 +164,7 @@ import Button from '@mui/material/Button';
 ### variant屬性
 在Typography的屬性帶入variant，值設定為h1的話可以讓最後顯示的標籤變成h1標籤
 
-```html=
+```jsx
 <div>
   <Typography variant="h1">
     Create page

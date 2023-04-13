@@ -209,7 +209,7 @@ tsc --init
 
 打開ts-config可以透過以下的內容設定要轉譯的Js版本
 
-```javascript=
+```javascript
 //以上省略
 "target": "es2016", 
    /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
@@ -245,7 +245,7 @@ tsc
 如下圖
 更改了輸入的路徑為src資料夾
 更改了輸出的路徑為dist資料夾
-```json=
+```json
     "rootDir": "./src", /* Specify the root folder within your source files. */
 
     "outDir": "./dist", /* Specify an output folder for all emitted files. */

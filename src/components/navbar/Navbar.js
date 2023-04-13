@@ -59,6 +59,11 @@ const Navbar = () => {
 							攝影集
 						</Link>
 					</li>
+					<li>
+						<Link activeClassName={activeNavbar} to="/tags/">
+							標籤
+						</Link>
+					</li>
 				</ul>
 			</div>
 		</nav>

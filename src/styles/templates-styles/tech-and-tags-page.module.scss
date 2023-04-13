@@ -1,0 +1,34 @@
+@import "../mixin";
+@import "../color";
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.card {
+	padding: 10px 0;
+	h3 {
+		margin: 10px 0;
+		a {
+			color: $main_color;
+			font-size: 1.5rem;
+			&:hover {
+				color: $secondary_color;
+			}
+			@include tablet {
+				font-size: 1.25rem;
+			}
+			line-height: 1.5;
+		}
+	}
+	text-align: left;
+	width: 660px;
+	@include tablet {
+		width: 320px;
+	}
+	p {
+		@include tablet {
+			font-size: 0.75rem;
+		}
+	}
+}

@@ -106,7 +106,7 @@ date: 2022-12-10T07:34:00.000Z
 
 可以打開`package.json`檔案，他會預先幫你安裝的東西如下。
 
-```json=
+```json
 {
   "name": "test",
   "version": "1.0.0",
