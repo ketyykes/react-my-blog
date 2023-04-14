@@ -1,11 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-	Container,
-	ImageList,
-	ImageListItem,
-	useMediaQuery,
-	Box,
-} from "@mui/material";
+import { ImageList, ImageListItem, useMediaQuery, Box } from "@mui/material";
 import CircularPercentProgress from "../circularPercentProgress/CircularPercentProgress";
 
 const Album = () => {
@@ -49,7 +43,7 @@ const Album = () => {
 		// }
 	};
 	return (
-		<Container maxWidth="false" sx={{ p: 10 }}>
+		<>
 			{loading && (
 				<Box sx={{ display: "flex", justifyContent: "center" }}>
 					<CircularPercentProgress value={progress} />
@@ -75,7 +69,7 @@ const Album = () => {
 					</ImageListItem>
 				))}
 			</ImageList>
-		</Container>
+		</>
 	);
 };
 

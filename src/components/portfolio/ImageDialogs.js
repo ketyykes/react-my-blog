@@ -8,9 +8,9 @@ import {
 	Skeleton,
 	useMediaQuery,
 	Zoom,
+	styled,
 } from "@mui/material/";
 import CloseIcon from "@mui/icons-material/Close";
-import { styled } from "@mui/material/styles";
 import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
 import { cardImage } from "./imageDialogs.module.scss";
 

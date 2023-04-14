@@ -1,11 +1,13 @@
 @import "../../styles/mixin";
 @import "../../styles/color";
 .navbar {
-	position: sticky;
+	position: fixed;
 	top: 0;
 	z-index: 2;
 	padding: 20px 20px;
 	background: $main_color;
+	width: 100%;
+	box-sizing: border-box;
 	& > div {
 		display: flex;
 		align-items: center;
@@ -76,6 +78,9 @@
 		&:hover {
 			transform: scale(1.1);
 		}
+		&:hover::after {
+			transform: scaleX(0);
+		}
 	}
 }
 
@@ -88,7 +93,7 @@
 
 @include tablet {
 	.menu-show {
-		max-height: 250px;
+		max-height: 330px;
 	}
 	.menu-noshow {
 		max-height: 0px;

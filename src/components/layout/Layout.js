@@ -1,5 +1,6 @@
 import React from "react";
 import { Banner, Footer, Navbar, Header } from "..";
+import { Container } from "@mui/material";
 
 const Layout = ({ children, banner }) => {
 	return (
@@ -13,7 +14,9 @@ const Layout = ({ children, banner }) => {
 					<Navbar />
 				)}
 			</Header>
-			<div>{children}</div>
+			<Container maxWidth="false" sx={{ py: 10 }}>
+				{children}
+			</Container>
 			<Footer />
 		</>
 	);

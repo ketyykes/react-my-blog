@@ -18,14 +18,21 @@
 			@include tablet {
 				font-size: 1.25rem;
 			}
+			@include mobile {
+				font-size: 1rem;
+			}
 			line-height: 1.5;
 		}
 	}
 	text-align: left;
-	width: 660px;
+	width: 750px;
 	@include tablet {
-		width: 320px;
+		width: 500px;
 	}
+	@include mobile {
+		width: 300px;
+	}
+
 	p {
 		@include tablet {
 			font-size: 0.75rem;

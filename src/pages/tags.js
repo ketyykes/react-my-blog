@@ -2,7 +2,7 @@ import * as React from "react";
 import _ from "lodash";
 import { graphql, Link } from "gatsby";
 import { Layout, Seo } from "../components";
-import { Button, Container } from "@mui/material/";
+import { Button } from "@mui/material/";
 import LabelIcon from "@mui/icons-material/Label";
 
 const TagsPage = ({
@@ -12,23 +12,21 @@ const TagsPage = ({
 }) => {
 	return (
 		<Layout banner={true}>
-			<Container maxWidth="false" sx={{ p: 10 }}>
-				{group.map((el, index) => {
-					const tagPath = `/tags/${_.kebabCase(el.fieldValue)}/`;
-					return (
-						<Button
-							key={index}
-							variant="contained"
-							startIcon={<LabelIcon />}
-							sx={{ background: "#4296d1e0", m: 1 }}
-						>
-							<Link to={tagPath} style={{ color: "#ffffff" }}>
-								{el.fieldValue} ( {el.totalCount} )
-							</Link>
-						</Button>
-					);
-				})}
-			</Container>
+			{group.map((el, index) => {
+				const tagPath = `/tags/${_.kebabCase(el.fieldValue)}/`;
+				return (
+					<Button
+						key={index}
+						variant="contained"
+						startIcon={<LabelIcon />}
+						sx={{ background: "#4296d1e0", m: 1 }}
+					>
+						<Link to={tagPath} style={{ color: "#ffffff" }}>
+							{el.fieldValue} ( {el.totalCount} )
+						</Link>
+					</Button>
+				);
+			})}
 		</Layout>
 	);
 };
