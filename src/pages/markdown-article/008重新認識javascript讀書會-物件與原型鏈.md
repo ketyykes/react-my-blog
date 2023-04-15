@@ -1,7 +1,8 @@
 ---
-title: 008重新認識javascript讀書會-物件與原型鏈
+title: 008重新認識Javascript讀書會-物件與原型鏈
 slug: 2022-04-01T14:32:00.000Z
 date: 2022-04-01T14:32:00.000Z
+tags: [008重新認識Javascript讀書會,"Javascript"]
 ---
 <style> 
 .rem25{

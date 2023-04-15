@@ -2,6 +2,7 @@
 title: Javascript—new 關鍵字
 slug: 2021-11-25T13:31:00.000Z
 date: 2021-11-25T13:31:00.000Z
+tags: ["Javascript"]
 ---
 
 <style> 

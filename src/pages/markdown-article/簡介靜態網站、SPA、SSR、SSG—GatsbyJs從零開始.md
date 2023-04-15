@@ -2,6 +2,7 @@
 title: 簡介靜態網站、SPA、SSR、SSG—GatsbyJs從零開始
 slug: 2022-12-10T07:34:00.000Z
 date: 2022-12-10T07:34:00.000Z
+tags: ["Gatsby.js","React"]
 ---
 
 本文提及以下重點

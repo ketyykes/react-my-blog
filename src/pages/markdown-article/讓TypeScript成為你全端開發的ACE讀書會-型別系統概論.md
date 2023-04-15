@@ -2,6 +2,7 @@
 title: 讓TypeScript成為你全端開發的ACE讀書會-型別系統概論
 slug: 2023-03-04T13:31:00.000Z
 date: 2023-03-04T13:31:00.000Z
+tags: ["TypeScript"]
 ---
 
 本篇參與讓TypeScript成為你全端開發的ACE讀書會所做的筆記加上自己所蒐尋的資料理解後所構成的筆記。

@@ -2,6 +2,7 @@
 title: D3JsDay08做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data
 slug: 2021-09-23T11:25:54.000Z
 date: 2021-09-23T11:25:54.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 ## 淺談原始碼
@@ -37,14 +38,14 @@ function dsv(delimiter, input, init, row) {
 ## 常見的擷取元素
 
 這邊以常見的擷取檔案來做簡單說明
-| 函式| 說明 |
-| -------- | -------- |
-| d3.text(input[, init]) | 擷取 txt 檔案，並解析為 UTF-8 的編碼字串 |
-| d3.json(input[, init]) | 擷取 JSON 檔案並且解析之後放入物件中 |
-| d3.csv(input[, init][, row]) | 擷取資源最後一個帶入的參數可以設定選用轉換函式 |
-| d3.dsv(delimiter, input[, init][, row]) | 傳入一個分隔符號，最後的參數可以帶入轉換函式 |
-| d3.image(input[, init]) | 擷取資源後解析成為 HTML 的 img 元素 |
-| d3.html(input[, init]) | 擷取資源後解析成為 HTMLDocument 的元素 |
+| 函式                                    | 說明                                           |
+| --------------------------------------- | ---------------------------------------------- |
+| d3.text(input[, init])                  | 擷取 txt 檔案，並解析為 UTF-8 的編碼字串       |
+| d3.json(input[, init])                  | 擷取 JSON 檔案並且解析之後放入物件中           |
+| d3.csv(input[, init][, row])            | 擷取資源最後一個帶入的參數可以設定選用轉換函式 |
+| d3.dsv(delimiter, input[, init][, row]) | 傳入一個分隔符號，最後的參數可以帶入轉換函式   |
+| d3.image(input[, init])                 | 擷取資源後解析成為 HTML 的 img 元素            |
+| d3.html(input[, init])                  | 擷取資源後解析成為 HTMLDocument 的元素         |
 
 其他可以 fetch 的資料參見官方 API 說明
 

@@ -2,6 +2,7 @@
 title: D3JsDay02 學學D3JS  技能提高SSS—為什麼D3
 slug: 2021-09-17T08:52:54.000Z
 date: 2021-09-17T08:52:54.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 關於資料視覺化的工具一般使用者最先接觸的可能是<b>Microsoft Excel</b>工具，後來在程式語言當中常見的是<b>Python Matplotlib</b>和<b>R 語言</b>，另外商業界常見的<b>Power BI</b>、<b>Tableau</b>。

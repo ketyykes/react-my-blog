@@ -2,6 +2,7 @@
 title: Google Cloud雲端運算、Serverless簡介—以AppEngine部署解決CORS的App為例
 slug: 2022-11-10T13:31:00.000Z
 date: 2022-11-10T13:31:00.000Z
+tags: ["AppEngine","Deploy","Backend"]
 ---
 
 <style> 
@@ -423,5 +424,3 @@ env_variables:
 - [App Engine standard environment pricing](https://cloud.google.com/appengine/pricing#standard_instance_pricing)
 - [GCP官方文檔-超過額度的定價規則](https://cloud.google.com/appengine/pricing#standard_instance_pricing)
   該文檔內容也包含計算機可以試算一下
-
-###### tags: `想知道嗎`

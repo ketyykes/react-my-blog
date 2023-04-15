@@ -2,6 +2,7 @@
 title: 解決propDrilling問題—簡化consumer的useContext
 slug: 2022-11-05T11:30:00.000Z
 date: 2022-11-05T11:30:00.000Z
+tags: ["React"]
 ---
 
 <style>

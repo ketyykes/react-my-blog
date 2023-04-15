@@ -2,6 +2,7 @@
 title: D3JsDay16 It's map birth,It's from path—生出地圖
 slug: 2021-10-01T06:05:23.000Z
 date: 2021-10-01T06:05:23.000Z
+tags: ["D3.js","GeoJSON","Javascript"]
 ---
 
 

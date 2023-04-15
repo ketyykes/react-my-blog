@@ -2,6 +2,7 @@
 title: D3JsDay17 Fill the color,Zoom in on center—地圖各項操作及填色
 slug: 2021-10-02T06:45:23.000Z
 date: 2021-10-02T06:45:23.000Z
+tags: ["D3.js","GeoJSON","Javascript"]
 ---
 
 ## 改變path的樣貌

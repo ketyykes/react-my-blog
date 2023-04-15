@@ -2,6 +2,7 @@
 title: React—function component的各種點記法(dot notation) JSX的使用技巧
 slug: 2022-10-19T13:31:00.000Z
 date: 2022-10-19T13:31:00.000Z
+tags: ["React"]
 ---
 
 <style> 

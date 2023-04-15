@@ -2,6 +2,7 @@
 title: 從安裝webpack理解react與react-dom(without JSX)
 slug: 2022-10-01T13:31:00.000Z
 date: 2022-10-01T13:31:00.000Z
+tags: ["React","Webpack"]
 ---
 
 本文章將安裝webpack和react library，實現一個最簡單的react App(不使用JSX)，從中間接解釋安裝的library背後所做的事情，每個標題將後會有安裝指令和一些解釋。

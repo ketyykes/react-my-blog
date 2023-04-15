@@ -2,6 +2,7 @@
 title: React route—useNavigate介紹、控制history stack、傳遞參數、重新導向
 slug: 2022-11-30T13:31:00.000Z
 date: 2022-11-30T13:31:00.000Z
+tags: ["React"]
 ---
 
 本文提及以下內容

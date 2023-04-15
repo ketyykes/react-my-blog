@@ -2,6 +2,7 @@
 title: 解構賦值Destructuring assignment—為什麼需要和用途
 slug: 2022-09-14T09:35:00.000Z
 date: 2022-09-14T09:35:00.000Z
+tags: ["Javascript","React"]
 ---
 
 什麼是**解構賦值**?根據[MDN-Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)的說法，他是一種把陣列或物件解開擷取成為獨立的變數。

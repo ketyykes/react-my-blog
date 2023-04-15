@@ -2,6 +2,7 @@
 title: 在github page部署react—簡述為何重新整理出現404 feat.解決方案
 slug: 2022-10-12T07:49:37.000Z
 date: 2022-10-12T07:49:37.000Z
+tags: ["React","Deploy"]
 ---
 
 <style> 

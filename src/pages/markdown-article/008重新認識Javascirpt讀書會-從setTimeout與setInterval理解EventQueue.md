@@ -2,6 +2,7 @@
 title: 008重新認識Javascirpt讀書會-從setTimeout與setInterval理解EventQueue
 slug: 2022-02-13T06:55:00.000Z
 date: 2022-02-13T06:55:00.000Z
+tags: [008重新認識Javascript讀書會,"Javascript"]
 ---
 
 本篇為參與 0 陷阱！0 誤解！8 天重新認識 Javascript 讀書會的導讀內容加上自己所蒐尋的資料後所構成的文章。

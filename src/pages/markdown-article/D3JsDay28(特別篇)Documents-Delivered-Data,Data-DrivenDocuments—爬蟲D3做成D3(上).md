@@ -2,6 +2,7 @@
 title: D3JsDay28(特別篇)Documents-Delivered-Data,Data-DrivenDocuments—爬蟲D3做成D3(上)
 slug: 2021-10-13T13:21:00.000Z
 date: 2021-10-13T13:21:00.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 ## 沒有資料就沒有燃料，沒有燃料就變成廢料—淺談特別篇

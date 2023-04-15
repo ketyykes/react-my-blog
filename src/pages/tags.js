@@ -10,6 +10,7 @@ const TagsPage = ({
 		allMarkdownRemark: { group },
 	},
 }) => {
+	console.log(group);
 	return (
 		<Layout banner={true}>
 			{group.map((el, index) => {
@@ -19,7 +20,7 @@ const TagsPage = ({
 						key={index}
 						variant="contained"
 						startIcon={<LabelIcon />}
-						sx={{ background: "#4296d1e0", m: 1 }}
+						sx={{ background: "#4296d1e0", m: 1, textTransform: "none" }}
 					>
 						<Link to={tagPath} style={{ color: "#ffffff" }}>
 							{el.fieldValue} ( {el.totalCount} )

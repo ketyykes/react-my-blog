@@ -2,6 +2,7 @@
 title: Firebase 9-起手式、添加、刪除資料
 slug: 2021-12-30T13:31:00.000Z
 date: 2021-12-30T13:31:00.000Z
+tags: ["Firebase","Javascript"]
 ---
 
 Firebase 節省掉後端複雜的服務器建置，作為 NodeJs 及 MongoDB 的另外一種替代品，使我們製作產品的時候更專注於前端開發大部分的功能對於小型個人網站可以免費使用。

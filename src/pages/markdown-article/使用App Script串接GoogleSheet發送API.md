@@ -2,6 +2,7 @@
 title: 使用App Script串接GoogleSheet發送API
 slug: 2022-01-26T08:30:00.000Z
 date: 2022-01-26T08:30:00.000Z
+tags: ["App Script","Google Sheet","Javascript"]
 ---
 <style> 
 .rem25{

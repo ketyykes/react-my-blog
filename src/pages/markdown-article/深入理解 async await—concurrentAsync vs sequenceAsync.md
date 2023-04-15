@@ -2,6 +2,7 @@
 title: 深入理解 async await—concurrentAsync vs sequenceAsync
 slug: 2022-08-10T01:10:00.000Z
 date: 2022-08-10T01:10:00.000Z
+tags: ["Javascript"]
 ---
 
 <style> 

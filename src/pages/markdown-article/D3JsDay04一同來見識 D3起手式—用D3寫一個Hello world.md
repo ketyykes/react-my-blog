@@ -2,6 +2,7 @@
 title: D3JsDay04一同來見識 D3起手式—用D3寫一個Hello world
 slug: 2021-09-19T05:52:54.000Z
 date: 2021-09-19T05:52:54.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 ## 如何開始 D3js

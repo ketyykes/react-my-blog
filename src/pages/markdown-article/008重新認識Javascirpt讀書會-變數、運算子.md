@@ -2,6 +2,7 @@
 title: 008重新認識Javascirpt讀書會-變數、運算子
 slug: 2022-02-13T06:55:00.000Z
 date: 2022-02-13T06:55:00.000Z
+tags: [008重新認識Javascript讀書會,"Javascript"]
 ---
 
 <style>

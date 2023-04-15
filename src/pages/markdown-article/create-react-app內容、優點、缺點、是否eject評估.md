@@ -2,6 +2,7 @@
 title: create-react-app內容、優點、缺點、是否eject評估
 slug: 2022-10-08T07:49:37.000Z
 date: 2022-10-08T07:49:37.000Z
+tags: ["React"]
 ---
 
 <style> 

@@ -2,6 +2,7 @@
 title: webpack一堆筆記
 slug: 2021-11-15T07:49:37.000Z
 date: 2021-11-15T07:49:37.000Z
+tags: ["Webpack"]
 ---
 
 指令輸入`npm install webpack webpack-cli --save-dev` 開始安裝

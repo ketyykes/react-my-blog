@@ -2,6 +2,7 @@
 title: D3JsDay12完成製作的壓軸，畫出圖表座標軸
 slug: 2021-09-27T08:10:54.000Z
 date: 2021-09-27T08:10:54.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 

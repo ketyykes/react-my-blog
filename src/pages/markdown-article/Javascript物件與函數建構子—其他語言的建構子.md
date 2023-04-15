@@ -2,6 +2,7 @@
 title: Javascript物件與函數建構子—其他語言的建構子
 slug: 2021-12-02T11:30:00.000Z
 date: 2021-12-02T11:30:00.000Z
+tags: ["Javascript"]
 ---
 
 | 基於類的（Java）                                         | 基於原型的（JavaScript）                                                                           |

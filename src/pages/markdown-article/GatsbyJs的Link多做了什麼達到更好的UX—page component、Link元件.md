@@ -2,6 +2,7 @@
 title: GatsbyJs的Link多做了什麼達到更好的UX?—page component、Link元件
 slug: 2022-12-14T11:30:00.000Z
 date: 2022-12-14T11:30:00.000Z
+tags: ["Gatsby.js","React"]
 ---
 
 本文提及以下內容

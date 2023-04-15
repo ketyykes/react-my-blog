@@ -2,6 +2,7 @@
 title: 什麼是Flux設計、實作簡單ATM範例了解Redux三大原則feat.vanilla Javascript
 slug: 2022-11-23T09:34:00.000Z
 date: 2022-11-23T09:34:00.000Z
+tags: ["Javascript"]
 ---
 
 本文提及以下內容

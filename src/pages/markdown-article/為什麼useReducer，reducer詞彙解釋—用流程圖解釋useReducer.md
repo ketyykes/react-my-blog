@@ -2,6 +2,7 @@
 title: 為什麼useReducer，reducer詞彙解釋—用流程圖解釋useReducer
 slug: 2022-11-09T01:10:00.000Z
 date: 2022-11-09T01:10:00.000Z
+tags: ["React"]
 ---
 
 <style> 

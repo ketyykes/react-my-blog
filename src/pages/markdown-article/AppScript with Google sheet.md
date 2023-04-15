@@ -1,7 +1,8 @@
 ---
-title: AppScript with Google sheet
+title: App Script with Google sheet
 slug: 2022-02-01T02:31:00.000Z
 date: 2022-02-01T02:31:00.000Z
+tags: ["App Script","Google Sheet","Javascript"]
 ---
 
 

@@ -2,6 +2,7 @@
 title: D3JsDay05Bar拉BarBarBar，作伙來畫吧—畫個bar chart長條圖
 slug: 2021-09-20T09:05:54.000Z
 date: 2021-09-20T09:05:54.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 ## 用D3繪製長條圖

@@ -2,6 +2,7 @@
 title: 淺談原生 component 自創標籤，以<god-button>為例
 slug: 2021-06-23T03:35:00.000Z
 date: 2021-06-23T03:35:00.000Z
+tags: ["Javascript"]
 ---
 <style> 
 .rem25{

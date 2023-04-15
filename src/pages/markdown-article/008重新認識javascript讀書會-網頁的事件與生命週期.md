@@ -1,7 +1,8 @@
 ---
-title: 008重新認識javascript讀書會-網頁的事件與生命週期
+title: 008重新認識Javascript讀書會-網頁的事件與生命週期
 slug: 2022-01-22T04:00:00.000Z
 date: 2022-01-22T04:00:00.000Z
+tags: [008重新認識Javascript讀書會,"Javascript"]
 ---
 
 <style> 

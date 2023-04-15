@@ -2,6 +2,7 @@
 title: AppScript Lock service–避免 concurrency、多用戶執行時資料被同時覆寫等等
 slug: 2022-03-23T13:31:00.000Z
 date: 2022-03-23T13:31:00.000Z
+tags: ["App Script","Backend"]
 ---
 
 ## 用途

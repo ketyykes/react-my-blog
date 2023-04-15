@@ -2,6 +2,7 @@
 title: Google sheet 建立資料庫
 slug: 2021-05-01T13:31:00.000Z
 date: 2021-05-01T13:31:00.000Z
+tags: ["Google Sheet","Backend"]
 ---
 
 到 google drive 建立 google 試算表

@@ -2,6 +2,7 @@
 title: 你所要知道的NPM基本知識關於package.json、semantic version及淺談update
 slug: 2022-09-17T12:11:00.000Z
 date: 2022-09-17T12:11:00.000Z
+tags: ["Javascript","Node.js"]
 ---
 
 <style> 

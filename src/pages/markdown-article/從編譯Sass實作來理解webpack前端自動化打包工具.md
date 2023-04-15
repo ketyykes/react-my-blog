@@ -2,6 +2,7 @@
 title: 從編譯Sass實作來理解webpack前端自動化打包工具
 slug: 2022-09-28T11:30:00.000Z
 date: 2022-09-28T11:30:00.000Z
+tags: ["Webpack"]
 ---
 
 ![](https://i.imgur.com/Zpr8dDG.png)

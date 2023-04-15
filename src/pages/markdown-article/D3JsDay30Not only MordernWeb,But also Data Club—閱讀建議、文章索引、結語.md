@@ -2,6 +2,7 @@
 title: D3JsDay30Not only MordernWeb,But also Data Club—閱讀建議、文章索引、結語
 slug: 2021-10-15T13:31:00.000Z
 date: 2021-10-15T13:31:00.000Z
+tags: ["D3.js","Javascript"]
 ---
 
 ## 繪製自己鐵人賽文章資料所構成的圖表

@@ -1,7 +1,8 @@
 ---
-title: 008重新認識javascript讀書會-透過DOM API查找與遍歷節點
+title: 008重新認識Javascript讀書會-透過DOM API查找與遍歷節點
 slug: 2021-12-31T07:24:00.000Z
 date: 2021-12-31T07:24:00.000Z
+tags: [008重新認識Javascript讀書會,"Javascript"]
 ---
 
 本篇為參與 0 陷阱！0 誤解！8 天重新認識 Javascript 讀書會的導讀內容加上自己所蒐尋的資料後所構成的文章。

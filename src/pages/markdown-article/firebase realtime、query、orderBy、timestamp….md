@@ -2,6 +2,7 @@
 title: firebase realtime、query、orderBy、timestamp...
 slug: 2022-01-02T13:31:00.000Z
 date: 2022-01-02T13:31:00.000Z
+tags: ["Firebase","Javascript"]
 ---
 
 ## 使用 realtime

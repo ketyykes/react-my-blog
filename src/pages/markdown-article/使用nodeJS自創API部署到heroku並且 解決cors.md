@@ -1,7 +1,8 @@
 ---
-title: 使用 nodeJS 自創 API 部署到 heroku 並且 解決 cors
+title: 使用 Node.js 自創 API 部署到 heroku 並且 解決 cors
 slug: 2021-07-16T07:55:00.000Z
 date: 2021-07-16T07:55:00.000Z
+tags: ["Node.js","Deploy","Javascript","Beckend"]
 ---
 
 <style> 
@@ -22,13 +23,13 @@ background-color:#d3d3d3;
 
 以下是紀錄最簡易部署方式並非最好的做法，可能造成冗 code，僅作為操作筆記用。
 
-- 下載 nodejs
+- 下載 Node.js
 - 下載 heroku cli
 
 使用 terminal cd 到對應的資料夾
 然後
 
-1. npm install express-generator -g <br>創建一個 ejs 的 nodejs 名叫做 myapp 伺服器
+1. npm install express-generator -g <br>創建一個 ejs 的 Node.js 名叫做 myapp 伺服器
 2. express --view=ejs myapp <br>可以自己取名字不一定要叫 myapp
 3. cd myapp<br>移動到該資料夾
 4. npm install
@@ -132,7 +133,7 @@ module.exports = app;
 
 1.開啟 postman 擷取遠端資料按下 send 後
 ![](https://i.imgur.com/f38ThBW.png) 2.再按下右邊 code
-![](https://i.imgur.com/GCRenIg.png) 3.左邊選擇 nodeJs axios 複製程式碼
+![](https://i.imgur.com/GCRenIg.png) 3.左邊選擇 Node.js axios 複製程式碼
 
 ![](https://i.imgur.com/zA2fNxQ.png)
 

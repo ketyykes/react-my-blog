@@ -2,6 +2,7 @@
 title: React route如何運作、建立404的路由、巢狀路由、動態路由
 slug: 2022-11-26T13:31:00.000Z
 date: 2022-11-26T13:31:00.000Z
+tags: ["React"]
 ---
 
 <style>

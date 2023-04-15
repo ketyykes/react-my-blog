@@ -2,7 +2,7 @@
 title: 008重新認識Javascirpt讀書會-Class語法糖
 slug: 2022-04-09T14:55:00.000Z
 date: 2022-04-09T14:55:00.000Z
-tags: ["Javascript","008重新認識javascript"]
+tags: [008重新認識Javascript讀書會,"Javascript"]
 ---
 <style> 
 .rem25{

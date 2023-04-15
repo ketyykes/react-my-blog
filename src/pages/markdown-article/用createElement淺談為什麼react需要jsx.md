@@ -1,7 +1,8 @@
 ---
-title: 用createElement淺談為什麼react需要jsx
+title: 用createElement淺談為什麼 react 需要jsx
 slug: 2022-10-05T07:34:00.000Z
 date: 2022-10-05T07:34:00.000Z
+tags: ["React","Webpack"]
 ---
 
 
