@@ -2,7 +2,7 @@
 title: 使用 Node.js 自創 API 部署到 heroku 並且 解決 cors
 slug: 2021-07-16T07:55:00.000Z
 date: 2021-07-16T07:55:00.000Z
-tags: ["Node.js","Deploy","Javascript","Beckend"]
+tags: ["Node.js","Deploy","Javascript","Backend"]
 ---
 
 <style> 
