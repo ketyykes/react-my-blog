@@ -219,7 +219,7 @@ import Button from '@mui/material/Button';
 
 ## 小結
 
-Material UI(更名為MUI)提供了一個良好的開發體驗，程式的複用性要點使我們不必自己造輪子，希望透過本篇介紹能夠讓大家初步認識Material UI。![/images/emoticon/emoticon41.gif](/images/emoticon/emoticon41.gif)
+Material UI(更名為MUI)提供了一個良好的開發體驗，程式的複用性要點使我們不必自己造輪子，希望透過本篇介紹能夠讓大家初步認識Material UI。
 
 ##### 參考資料
 
