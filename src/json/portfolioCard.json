@@ -2,7 +2,7 @@
     "frontEndCardArray": [
         {
             "cardHead": "水土曜來了技術文章",
-            "cardContent": "部落格從零開始建置Gatsby，部分使用Material UI，添加prismjs使程式碼語法高亮，使用remark轉譯並且使用createPages自動生成頁面檔。",
+            "cardContent": "部落格從零開始建置Gatsby，引入了 Prismjs 使語法高亮，配置 Gatsby 套件使 markdown 轉譯 html，攝影集部分加入spinner和進度百分比以避免 CLS，手刻 ham 選單和展開動畫，引入 MUI 並部署至 Netlify，使用 CloudFlare 域名註冊",
             "cardImageSrc": "https://res.cloudinary.com/deqqrzo3t/image/upload/v1678352745/my-blog/Portfolio/FrontEnd/blog.jpg",
             "webSrc": "https://mars-economic.netlify.app/",
             "remark": ""
@@ -23,7 +23,7 @@
         },
         {
             "cardHead": "台灣2022四月份縣市covid19趨勢圖",
-            "cardContent": "使用react和reactChartJs結合material UI，使用者可以選擇縣市查看折線圖，X軸表示日期，Y軸表示感染人數。",
+            "cardContent": "使用react和reactChartJs結合 MUI 搭配 Grid System 並加入css module 實作 UI 介面與樣式，原始資料曾使用使用 NodeJs fs 模組搭配 Day.js 重新輸出成 JSON 檔以便整理資料的屬性與值，使用者可以選擇縣市查看折線圖，X軸表示日期，Y軸表示感染人數。",
             "cardImageSrc": "https://res.cloudinary.com/deqqrzo3t/image/upload/v1678352745/my-blog/Portfolio/FrontEnd/covid19_taiwan202204.jpg",
             "webSrc": "https://ketyykes.github.io/react-covid19-taiwan-chartjs/",
             "remark": ""
@@ -44,7 +44,7 @@
         },
         {
             "cardHead": "柴犬介紹網—祿蔣",
-            "cardContent": "全程使用css，依照網頁架構排序css順序，使用js製作layout以達到復用header、footer，使用position實作手機板選單側邊滑入效果，使用js點擊卡片可以放大。",
+            "cardContent": "全程使用css，依照網頁架構排序css順序，使用 Javascript 製作 layout 達到複用，使用position實作手機板選單側邊滑入效果，使用 Javascript 點擊卡片可以放大圖片。",
             "cardImageSrc": "https://res.cloudinary.com/deqqrzo3t/image/upload/v1678352745/my-blog/Portfolio/FrontEnd/shiba.jpg",
             "webSrc": "https://ketyykes.github.io/shiba/",
             "remark": ""

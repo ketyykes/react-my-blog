@@ -4,15 +4,18 @@ import { graphql, Link } from "gatsby";
 import { Layout, Seo } from "../components";
 import { Button } from "@mui/material/";
 import LabelIcon from "@mui/icons-material/Label";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const TagsPage = ({
 	data: {
 		allMarkdownRemark: { group },
 	},
 }) => {
-	console.log(group);
 	return (
 		<Layout banner={true}>
+			<AnchorLink to="#test" title="Our team">
+				<span>Check out our team!</span>
+			</AnchorLink>
 			{group.map((el, index) => {
 				const tagPath = `/tags/${_.kebabCase(el.fieldValue)}/`;
 				return (
@@ -28,6 +31,7 @@ const TagsPage = ({
 					</Button>
 				);
 			})}
+			<div id="test">測試</div>
 		</Layout>
 	);
 };

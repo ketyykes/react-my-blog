@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/styles/usage.module.scss"
-    ],
-    "names": [],
-    "file": "usage.module.css"
-}

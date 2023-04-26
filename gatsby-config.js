@@ -70,5 +70,12 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-catch-links`,
+		{
+			resolve: "gatsby-plugin-anchor-links",
+			options: {
+				offset: 3000,
+				duration: 100,
+			},
+		},
 	],
 };

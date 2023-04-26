@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,MAAM;CACjB;;AACD,AAAA,aAAa,CAAA;EACT,UAAU,EAAE,kBAAkB;CACjC",
-    "sources": [
-        "../src/images/slider/slider.module.scss"
-    ],
-    "names": [],
-    "file": "slider.module.css"
-}
