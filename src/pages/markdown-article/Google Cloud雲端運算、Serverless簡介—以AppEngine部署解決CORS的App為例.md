@@ -24,6 +24,12 @@ color:red;
 .gray{
 background-color:#F5F5F5;
 }
+.code{
+background-color:#f7f7f7;
+padding :4px;
+font-size:0.9rem;
+font-weight:700;
+}
 </style>
 
 本文依序提及以下內容
@@ -144,9 +150,9 @@ Google搜尋關鍵字打 google App engine
 
 因此會跳出以下的錯誤
 
-:::danger
+<p class="code red">
 Access to fetch at ‘http://localhost:3000/' from origin ‘http://localhost:8081' has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. If an opaque response serves your needs, set the request’s mode to ‘no-cors’ to fetch the resource with CORS disabled.
-:::
+</p>
 
 因此本範例也提供自己開設後端伺服器轉發給前端的解決方案搭配**GCP App Engine**
 

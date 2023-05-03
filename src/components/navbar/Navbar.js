@@ -18,6 +18,12 @@ const Navbar = () => {
 	const hamHandler = () => {
 		setHamburger(!hamburger);
 	};
+
+	const option = {
+		root: null,
+		rootMargin: "0px 0px 0px 0px",
+		threshold: 0.0,
+	};
 	return (
 		<nav className={`${navbar}`}>
 			<div

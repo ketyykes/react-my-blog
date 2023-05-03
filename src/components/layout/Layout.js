@@ -14,7 +14,10 @@ const Layout = ({ children, banner }) => {
 					<Navbar />
 				)}
 			</Header>
-			<Container maxWidth="false" sx={{ py: 10 }}>
+			<Container
+				maxWidth="false"
+				sx={{ py: 10, minHeight: "calc(100vh - 60px)" }}
+			>
 				{children}
 			</Container>
 			<Footer />
