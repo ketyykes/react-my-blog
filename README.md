@@ -1,54 +1,74 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# 部落格-水土曜來了
 
-## 🚀 Quick start
+在日語當中，水曜日和土曜日分別代表星期三和星期六的意思，另外也分別代表水星和土星之意，在占星學當中水星象徵個人的心智活動及邏輯思維，土星則有隱含著 困難、壓力、磨練等等的意思，而這個技術部落格呼應的就是邏輯思考，筆記這些過程也間接表示遇到程式上面的BUG。
 
-1.  **Create a Gatsby site.**
+## Screenshot
+![App Screenshot](https://res.cloudinary.com/deqqrzo3t/image/upload/v1678352745/my-blog/Portfolio/FrontEnd/blog.jpg)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Demo
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+[水土曜來了部落格網址](https://wedsatcoming.com/tech-page/)
 
-2.  **Start developing.**
+## Folder Structure
 
-    Navigate into your new site’s directory and start it up.
+src資料夾結構
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+```bash
+├─components
+│  ├─album
+│  ├─banner
+│  ├─circularPercentProgress
+│  ├─footer
+│  ├─header
+│  ├─layout
+│  ├─navbar
+│  ├─pager
+│  ├─portfolio
+│  ├─seo
+│  └─slider
+├─images
+│  ├─portfolio
+│  └─slider
+├─json
+├─pages
+│  └─markdown-article
+├─styles
+│  ├─pages-styles
+│  └─templates-styles
+└─templates
+```
+## Deployment
 
-3.  **Open the code and start customizing!**
+node與npm版本參考
 
-    Your site is now running at http://localhost:8000!
+```javascript
+"node": "16.15.1",
+"npm": "9.1.2"
+```
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+```bash
+npm run start
+```
 
-4.  **Learn more**
+## Features
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- 引入 Prismjs 使語法高亮
+- 配置 Gatsby 套件使 markdown 轉譯 html 
+- 部落格攝影集部分加入spinner和進度百分比以避免 CLS
+- 手刻 ham 選單和展開動畫
+- 引入 MUI 並部署至 Netlify 
+- 使用 CloudFlare 域名註冊
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Tech Stack
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+**Front-end:** React, Gatsby.js, MUI , SCSS 
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+**Service:** Netlify , Cloudfare Domain Registration ,cloudinary
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Color Reference
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| main_color | ![#4296d1](https://via.placeholder.com/10/4296d1?text=+) #4296d1 |
+| secondary_color| ![#1d5a85](https://via.placeholder.com/10/1d5a85?text=+) #1d5a85 |
+| body_color | ![#4296d11f](https://via.placeholder.com/10/4296d11f?text=+)#4296d11f |
