@@ -31,11 +31,23 @@ font-weight:700;
 
 ## 不再使用Create React App？
 
-目前React官方網站的 Start a New React Project 章節的安裝方式圍繞在SSR或SSG的框架，若單純想建立SPA的話在2023年的今天，傾向使用其他Framework，至於原因可以參考[Create React App Alternatives in 2023](https://blog.javascripttoday.com/blog/create-react-app-alternatives/))一文提到幾點
+本文提及以下內容
+- 不再使用Create React App
+- 如何選擇創建React Application in 2023
+- 開始創建vite專案
+- 使用CSS module
+- 經過hash的css class名稱
+- 使用駝峰式引用含有dash的css Class 名稱
+- 在vite中使用SCSS
+- 使用scss module
+- 全域共用變數載入至jsx或scss module
+
+
+目前React官方網站的 Start a New React Project 章節的安裝方式圍繞在SSR或SSG的框架，若單純想建立SPA的話在2023年的今天，傾向使用其他Framework，至於原因可以參考[Create React App Alternatives in 2023](https://blog.javascripttoday.com/blog/create-react-app-alternatives/)一文提到幾點
 
 1. 緩慢的開發體驗
-1. 對於市面上受歡迎的工具難以設定
-1. 有更好的選則
+2. 對於市面上受歡迎的工具難以設定
+3. 有更好的選擇
 
 對於相關議題有興趣的也可以觀看[Create React App is Dead?](https://dev.to/thevinitgupta/create-react-app-is-dead-3igo)
 
@@ -128,7 +140,7 @@ export default App
 
 ![](https://i.imgur.com/OcUjdgl.png)
 
-## 使用駝峰式引用含有dash的css name
+## 使用駝峰式引用含有dash的css Class 名稱
 在撰寫CSS當中我們很常使用**dash**(也就是-符號)來**做為class的name**，但是在Javascript當中如果物件的名字包含了**dash**的話就得**撰寫中括號來取值**(也就是<span class="code">sytles['title-h1']</span>)，因此我們可以藉由vite讓我們引入css的class到jsx更為方便。
 
 在**vite.config.js**當中設定如下
@@ -164,7 +176,7 @@ export default App
 > 備註1 更多設定方式可以參考[vite-css module](https://cn.vitejs.dev/config/shared-options.html#css-modules)<br>
 > 備註2：官方的vite也有提及到底層的實踐技術是來自於[postcss-modules](https://cn.vitejs.dev/config/shared-options.html#css-modules)
 
-## 巢狀CSS — scss
+## 在vite中使用SCSS
 
 另外<span class="blue">為了撰寫巢狀css</span>的方式，我們也會<span class="blue">安裝sass</span>在**Terminal**輸入<span class="red code">npm i -D sass</span>
 
@@ -316,7 +328,7 @@ export default defineConfig({
 
 ##### 參考資料
 
-- [Day 15: 在 Vue 專案使用 Sass/SCSS +共用變數 (feat. Vite)](https://ithelp.ithome.com.tw/articles/10301528)\
+- [Day 15: 在 Vue 專案使用 Sass/SCSS +共用變數 (feat. Vite)](https://ithelp.ithome.com.tw/articles/10301528)
 - [Create React App is Dead?](https://dev.to/thevinitgupta/create-react-app-is-dead-3igo)
 - [將 Vite 加入現有 React 專案](https://huybn.medium.com/add-vite-to-existing-react-project-75725c223495)
 - [The React Docs Are Wrong (If You Are Trying To Learn React)](https://www.youtube.com/watch?v=KCEVIY0Z3xY&t=222s&ab_channel=WebDevSimplified)
