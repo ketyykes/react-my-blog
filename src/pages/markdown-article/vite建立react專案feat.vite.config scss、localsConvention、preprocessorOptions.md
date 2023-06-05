@@ -323,8 +323,8 @@ export default defineConfig({
 });
 ```
 
->補充說明
-若對於@use為什麼要使用as *的話可以觀看 [SCSS Choosing a Namespace](https://sass-lang.com/documentation/at-rules/use#choosing-a-namespace) 的官方說明
+>補充說明<br>
+>若對於@use為什麼要使用as *的話可以觀看 [SCSS Choosing a Namespace](https://sass-lang.com/documentation/at-rules/use#choosing-a-namespace) 的官方說明
 
 ##### 參考資料
 
