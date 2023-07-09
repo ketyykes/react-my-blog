@@ -145,7 +145,7 @@ const  projection = d3.geoMercator()
 
 上述第2行綁定事件之後後面callback函式裡面可以代入要執行的動作，我們藉由所抓取的**zoom事件**來對應要改變屬性transform。
 
-另外記得的一點是創建一個zoom的行為的時候記得要掛載到某個元素上面
+另外記得的一點是建立一個zoom的行為的時候記得要掛載到某個元素上面
 官方說明如下圖
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211002_07.png)

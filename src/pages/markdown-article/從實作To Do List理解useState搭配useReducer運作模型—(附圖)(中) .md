@@ -69,16 +69,16 @@ background-color:#d3d3d3;
         toDoReducer.js
 ```
 
-我們將創建一個<span class="green">store資料夾</span>用來<span class="green">儲存handler的邏輯以及listData的state</span>，其中包含三個檔案<span class="blue">**toDoActionCreator**、**toDoContext**、**toDoReducer**</span>
+我們將建立一個<span class="green">store資料夾</span>用來<span class="green">儲存handler的邏輯以及listData的state</span>，其中包含三個檔案<span class="blue">**toDoActionCreator**、**toDoContext**、**toDoReducer**</span>
 
 ## 程式碼部分
 
 ### toDoContext檔案
 
-這個檔案僅用來創建一個context，稍後將會引入至App的檔案裡
+這個檔案僅用來建立一個context，稍後將會引入至App的檔案裡
 ```javascript
 import { createContext } from "react";
-//用來創建一個context
+//用來建立一個context
 const toDoContext = createContext();
 export default toDoContext;
 ```
@@ -181,7 +181,7 @@ export default App
 ```
 
 ### AddToDo檔案
-這裡先引入useContext，將toDoContext所建立的<span class="green">context給放入到useContext的參數中，就能簡單的提取出裡面的值</span>，這邊我們提取listDispatch，另外也要引入ActionCreator，其預計用來製造action的物件，將listDispatch放到onClick事件函式當中，當按下add的時候就會使用listDispatch派發action，其透過接收input參數給actionCreator作為payload的用途。
+這裡先引入useContext，將toDoContext所建立的<span class="green">context給放入到useContext的參數中，就能簡單的提取出裡面的值</span>，這邊我們提取listDispatch，另外也要引入ActionCreator，其預計用來製造action的物件，將listDispatch放到onClick事件函式當中，當按下add的時候就會使用listDispatch分派action，其透過接收input參數給actionCreator作為payload的用途。
 
 ```javascript
 import { useState, useContext } from 'react';

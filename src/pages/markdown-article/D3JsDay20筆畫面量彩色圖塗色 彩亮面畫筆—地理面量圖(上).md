@@ -70,7 +70,7 @@ geojson.forEach(function(el) {
 })
 console.log(tainanGeojson);
 ```
-我們先創建一個陣列叫做tainanGeojson，然後對原本轉換完的geojson遍歷然後把元素裡面的properties.COUNTYNAME臺南市給添加到tainanGeojson的陣列裡面最後
+我們先建立一個陣列叫做tainanGeojson，然後對原本轉換完的geojson遍歷然後把元素裡面的properties.COUNTYNAME臺南市給添加到tainanGeojson的陣列裡面最後
 這時候可以用console.log檢查裡面的東西是不是都為臺南市
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_06.png)
@@ -92,7 +92,7 @@ console.log(tainanGeojson);
 
 ## 分類區域—d3.group群組化
 這邊可以使用d3的一個API叫做group先行群組化，我們將用行政區來分組
-具體說明可以看到官方API文件的範例group的第一個參數帶入該陣列，第二個參數可以是一個function此時的d參數是陣列裡面的資料，使用callback函數的方式把你要依據的分組方式給對應出來，官方的範例是取陣列中的資料key是name的值
+具體說明可以看到官方API文件的範例group的第一個參數帶入該陣列，第二個參數可以是一個function此時的d參數是陣列裡面的資料，使用callback函式的方式把你要依據的分組方式給對應出來，官方的範例是取陣列中的資料key是name的值
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_08.png)
 
 另外官方網站有提到關於group轉換後的是InternMap的資料類型
@@ -118,10 +118,10 @@ console.log(tainanGeojson);
 轉換完畢就可以使用使用console可以看到如下圖
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_10.png)
 ## 新增geojson的properties欄位
-我們希望新增一個資料欄位是房屋土地的平均價格以便之後再進行繪製地圖的時候可以使用d3的data()函數得到該筆資料，由於資料有8千多筆，這裡也會使用到d3內建計算統計的mean()函數這裡先簡單說明一下
+我們希望新增一個資料欄位是房屋土地的平均價格以便之後再進行繪製地圖的時候可以使用d3的data()函式得到該筆資料，由於資料有8千多筆，這裡也會使用到d3內建計算統計的mean()函式這裡先簡單說明一下
 
 ### d3.mean()計算平均數
-官方提到可以計算陣列裡面的平均數，另外也可以輸入一個函數來指定要訪問陣列的元素裡，物件的某一個屬性。
+官方提到可以計算陣列裡面的平均數，另外也可以輸入一個函式來指定要訪問陣列的元素裡，物件的某一個屬性。
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211005_11.png)
 
 官方範例如下圖

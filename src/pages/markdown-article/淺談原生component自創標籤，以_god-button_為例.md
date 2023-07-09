@@ -77,7 +77,7 @@ class WordCount extends HTMLParagraphElement {
 > - super()只能在 constructor()中執行
 > - 子類別的 constructor()呼叫 super 之前，this 是沒有指向的，會跑出 Refference Error
 
-創建一個自創按鈕並撰寫 CSS
+建立一個自創按鈕並撰寫 CSS
 
 <span class="rem50 gray">來看 Example1</span>
 
@@ -91,7 +91,7 @@ class ohMyGodButton extends HTMLElement {
         super();
         //影子元件開啟
         this.attachShadow({mode:"open"});
-        //創建一個"喔我的按鈕"div
+        //建立一個"喔我的按鈕"div
         this.ohMyBtn=document.createElement("div");
         //增加CSS樣式(但是這樣不夠優雅)
         this.ohMyBtn.style.display="inline-block";
@@ -111,7 +111,7 @@ window.customElements.define("god-button",ohMyGodButton);
 透過直接撰寫 style 然後在裡面寫一般的常見的 CSS 寫法優雅多了。
 ![](https://i.imgur.com/Fn7pnT6.png)
 
-## 用創建一個 < style>標籤的方式撰寫(比較優雅唷)
+## 用建立一個 < style>標籤的方式撰寫(比較優雅唷)
 
 <span class="rem50 gray">來看 Example2</span>
 
@@ -124,7 +124,7 @@ class ohMyGodButton extends HTMLElement {
     //影子元件開啟
     this.attachShadow({mode:"open"});
 
-    //創建一個"喔我的按鈕"div
+    //建立一個"喔我的按鈕"div
     this.ohMyBtn=document.createElement("div");
 
     //增加CSS樣式
@@ -141,7 +141,7 @@ class ohMyGodButton extends HTMLElement {
     this.ohMyBtn.textContent ="我的按鈕";
     //放入style標籤到shadow底下
     this.shadowRoot.appendChild(this.ohMyStyle);
-     //創建一個CSS的class名叫btn
+     //建立一個CSS的class名叫btn
     this.ohMyBtn.className ="btn";
     //放入該div標籤到shadow底下
     this.shadowRoot.appendChild(this.ohMyBtn);
@@ -158,7 +158,7 @@ window.customElements.define("god-button",ohMyGodButton);
 
 ## 互不衝突
 
-當我在外面創建一個按鈕而且名字也叫 btn 的 class 的時候並不會影響 god-button 裡面的元素
+當我在外面建立一個按鈕而且名字也叫 btn 的 class 的時候並不會影響 god-button 裡面的元素
 
 當我在裡面添加一個 class 名叫做 red 把元素樣式寫在外面的時候也不會影響
 
@@ -196,11 +196,11 @@ window.customElements.define("god-button",ohMyGodButton);
           this.shadowRoot.appendChild(this.ohMyStyle);
       }
       render(){
-          //創建一個"喔我的按鈕"div
+          //建立一個"喔我的按鈕"div
           this.ohMyBtn=document.createElement("div");
           //添加按鈕內的字
           this.ohMyBtn.textContent ="我的按鈕";
-          //創建一個CSS的class名叫btn
+          //建立一個CSS的class名叫btn
           this.ohMyBtn.className ="btn";
           //放入該div標籤到shadow底下
           this.shadowRoot.appendChild(this.ohMyBtn);
@@ -248,9 +248,9 @@ window.customElements.define("god-button",ohMyGodButton);
             this.shadowRoot.appendChild(this.ohMyStyle);
         }
         render(){
-            //創建一個"喔我的按鈕"div
+            //建立一個"喔我的按鈕"div
             this.ohMyBtn=document.createElement("div");
-            //創建一個CSS的class名叫btn
+            //建立一個CSS的class名叫btn
             this.ohMyBtn.className ="btn";
             //得到按鈕的屬性叫做txt並寫入到按鈕的文字當中
             this.ohMyBtn.setAttribute("txt","哈哈");
@@ -286,7 +286,7 @@ window.customElements.define("god-button",ohMyGodButton);
 [生命週期 MDN](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements#%E4%BD%BF%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0)
 [MDN 生命週期範例](https://mdn.github.io/web-components-examples/life-cycle-callbacks/)
 
-需要的是，如果在元素屬性變化後，需要觸發 attributeChangedCallback 這個函數的時候，你必須這個監聽這個。可以通過定義 observedAttributes()獲取函數來實現，observedAttributes()函數可以包含一個返回語句，返回一個 數組，包含了需要監聽的屬性名稱：
+需要的是，如果在元素屬性變化後，需要觸發 attributeChangedCallback 這個函式的時候，你必須這個監聽這個。可以通過定義 observedAttributes()獲取函式來實現，observedAttributes()函式可以包含一個回傳語句，回傳一個 數組，包含了需要監聽的屬性名稱：
 
 參見第 11 行和第 26 行
 
@@ -332,9 +332,9 @@ class ohMyGodButton extends HTMLElement {
         if(this.ohMyBtn){
             this.ohMyBtn.remove();
         }
-        //創建一個"喔我的按鈕"div
+        //建立一個"喔我的按鈕"div
         this.ohMyBtn=document.createElement("div");
-        //創建一個CSS的class名叫btn
+        //建立一個CSS的class名叫btn
         this.ohMyBtn.className ="btn pink";
         //得到按鈕的屬性叫做txt並寫入到按鈕的文字當中
         this.ohMyBtn.textContent=this.getAttribute("txt");

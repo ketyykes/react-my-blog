@@ -48,7 +48,7 @@ tags: ["D3.js","Javascript"]
     }
 }
 ```
-可以發現與Javascript的物件可以儲存的內容有著十分類似的樣貌，但是<font color="red">Javascript的物件可以儲存函式</font>，然而JSON僅是儲存資料因此不能儲存函式，另外JSON在資料交換的時候必須使用<font color="red">`UTF-8的格式`</font>，也可以使用Unicode16進位跳脫字元序列，若你在網路上下載的JSON資料以文字檔打開的時候的文字類似像<font color="red">`\u0041`</font>這樣類型的話，並不是出現亂碼的狀況，而使它使用了十六進位的跳脫字元序列，你在console.log欄位的話就能看出原本的字符。
+可以發現與Javascript的物件可以儲存的內容有著十分類似的樣貌，但是<font color="red">Javascript的物件可以儲存函式</font>，然而JSON僅是儲存資料因此不能儲存函式，另外JSON在資料交換的時候必須使用<font color="red">`UTF-8的格式`</font>，也可以使用Unicode16進位跳脫字元序列，若你在網路上下載的JSON資料以文字檔打開的時候的文字類似像<font color="red">`\u0041`</font>這樣類型的話，並不是出現亂碼的狀況，而使它使用了十六進位的跳脫字元序列，你在console.log欄位的話就能看出原本的字元。
 如下圖
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210922_04.png)

@@ -24,7 +24,7 @@ background-color:#d3d3d3;
 
 ## 點記法render
 
-官方文檔中說明可以使用Dot Notation 的方式，下列引自於官方文檔
+官方文件中說明可以使用Dot Notation 的方式，下列引自於官方文件
 
 ```jsx
 import React from 'react';
@@ -86,13 +86,13 @@ export default Layout
 </Layout>
 ```
 
-### 全部導入的方式來使用點記法
+### 全部匯入的方式來使用點記法
 
 我們可以透過<span class="red">import * as name</span>的方式也能比較好在日後觀看程式碼的地方直覺知道是屬於同類型的東西
 
 程式碼如下
 
-首先導出的檔案命名叫做<span class="red">Layout.js</span>
+首先匯出的檔案命名叫做<span class="red">Layout.js</span>
 
 ```jsx
 import React from 'react'

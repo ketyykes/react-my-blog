@@ -719,7 +719,7 @@ bootstrap5 使用 start 和 end 來取代之前的 left 和 right
 亦可使用負的 margin(padding 不行)
 使用方法請參考官方文件
 
-這些負值的 margin 在默認情況下是禁用的，但可以通過在 Sass 中設置 $enable-negative-margins: true 以啟用。
+這些負值的 margin 在預設情況下是禁用的，但可以通過在 Sass 中設置 $enable-negative-margins: true 以啟用。
 
 語法與預設的、正值 margin 通用類別幾乎相同，在所需的大小前加入 n
 例如 mt-n1

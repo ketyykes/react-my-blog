@@ -14,7 +14,7 @@ tags: ["D3.js","Javascript"]
 ```javascript{numberLines: true}
 let firstDay = Date.parse(sortByDate[0].postTime);
 let lastDay = Date.parse(sortByDate[sortByDate.length-1].postTime); //轉換從1970-1-1 00:00:00 UTC到該時間的毫秒數
-const scaleX  = d3.scaleTime().domain([firstDay,lastDay]).range([0,1200]).nice(); //創建以時間構成的比例尺，裡面的值須帶入1970-1-1 00:00:00UTC到該時間的毫秒數
+const scaleX  = d3.scaleTime().domain([firstDay,lastDay]).range([0,1200]).nice(); //建立以時間構成的比例尺，裡面的值須帶入1970-1-1 00:00:00UTC到該時間的毫秒數
 const axisX =  d3.axisBottom(scaleX).tickFormat(d3.timeFormat("%Y-%m-%d")).ticks(40).tickSize(-600); //timeFormate轉換日期顯示的樣式
 ```
 

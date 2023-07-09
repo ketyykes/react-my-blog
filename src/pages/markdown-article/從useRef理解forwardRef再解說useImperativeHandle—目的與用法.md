@@ -190,5 +190,5 @@ export default function App() {
 - [useImperativeHandle Hook Ultimate Guide](https://blog.webdevsimplified.com/2022-06/use-imperative-handle/)
 - [React Hooks: 使用 useImperativeHandle 來跟子元件互動](https://z3388638.medium.com/react-hooks-%E4%BD%BF%E7%94%A8-useimperativehandle-%E4%BE%86%E8%B7%9F%E5%AD%90%E5%85%83%E4%BB%B6%E4%BA%92%E5%8B%95-2b543bec3e8a)
 - [最陌生的hooks: useImperativeHandle](https://segmentfault.com/a/1190000040758640)
-- [react-官方文檔](https://reactjs.org/docs/hooks-reference.html#useimperativehandle)
-- [react-beta官方文檔](https://beta.reactjs.org/apis/react/useRef#referencing-a-value-with-a-ref)
+- [react-官方文件](https://reactjs.org/docs/hooks-reference.html#useimperativehandle)
+- [react-beta官方文件](https://beta.reactjs.org/apis/react/useRef#referencing-a-value-with-a-ref)

@@ -207,7 +207,7 @@ return arc(d);
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211011_13.png)
 
-換句話說就是第二個參數要接收一個**callback函式**，裡面要**return一個插值器函數(interpolate)**，然後在根據時間**t(t將會介於0~1逐漸增加)**來對當前的元素內容修改值
+換句話說就是第二個參數要接收一個**callback函式**，裡面要**return一個插值器函式(interpolate)**，然後在根據時間**t(t將會介於0~1逐漸增加)**來對當前的元素內容修改值
 
 我們直接觀看程式碼
 ```javascript{numberLines: true}

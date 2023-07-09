@@ -42,14 +42,14 @@ font-weight:700;
       - 支付系統
   - LIFF with Message API的各種應用
   - LIFF函式介紹
-    - 與LIFF應用程式交互時的輔助函式
+    - 與LIFF應用程式互動時的輔助函式
     - liff特點函式介紹
 - 其他參考資料
 
 ## 什麼是Channel?
 
 Channel使服務提供商能夠使用 LINE 平台提供的功能。
-要開發使用LINE平台的服務，首先得創建一個頻道。
+要開發使用LINE平台的服務，首先得建立一個頻道。
 
 ![](https://i.imgur.com/69gwZ3K.png)
 
@@ -77,7 +77,7 @@ Channel使服務提供商能夠使用 LINE 平台提供的功能。
 
 當前的LINE Front-end Framework（LIFF）是一個開放式的平台，它可以讓開發者使用Web技術，像是HTML、CSS、和JavaScript，建立LINE應用程式，在LINE對話框開啟的網頁或LINE App中與LINE進行互動。能夠與LINE聊天機器人（chatbot）或LINE Pay等等服務進行整合。
 
-另外LIFF可以說是基於Line Login底下的一種應用，也就是說在LIFF的函式庫中有許多需要先創建Login的Channel然後先行登入後才能使用其函式。
+另外LIFF可以說是基於Line Login底下的一種應用，也就是說在LIFF的函式庫中有許多需要先建立Login的Channel然後先行登入後才能使用其函式。
 
 ### Line login
 
@@ -207,7 +207,7 @@ Message API主要內容是作為訊息回復，其中文字部分的回覆可以
 
 ## LIFF函式介紹
 
-### 與LIFF應用程式交互時的輔助函式
+### 與LIFF應用程式互動時的輔助函式
 
 建立LIFF應用程式時，可以透過以下的函式用來先行檢查無法使用的原因或者限定使用者必須在某些版本後方可使用以及建立更好的LIFF體驗等等
 
@@ -275,7 +275,7 @@ liff.sendMessages() 方法可讓使用者代表自己在聊天畫面中傳送訊
 
 #### scanCodeV2
 
-liff.scanCodeV2()可以啟動二維碼掃描器並獲取二維碼中的字符串。要啟用2D碼掃描器，請在LINE開發者控制台上開啟"Scan QR"。
+liff.scanCodeV2()可以啟動二維碼掃描器並獲取二維碼中的字元串。要啟用2D碼掃描器，請在LINE開發者控制台上開啟"Scan QR"。
 
 如下圖
 
@@ -287,7 +287,7 @@ liff.scanCodeV2()可以啟動二維碼掃描器並獲取二維碼中的字符串
 
 若要啟用LIFF的2D碼掃描器，必須在LINE開發者控制台上開啟"Scan QR"，並在程式中呼叫liff.scanCodeV2()。此時，LINE應用程式會啟動相機功能，用戶可以掃描QR code並獲取相應的內容。這些內容以Promise物件形式回傳，可供後續的處理。
 
-為了實現掃描器功能，liff.scanCodeV2()使用了WebRTC技術，它可以透過支援WebRTC API的外部瀏覽器的方式開啟鏡頭。在掃描過程中，API會使用jsQR的函式庫將圖像中的QR code解碼成字符串，並返回結果。
+為了實現掃描器功能，liff.scanCodeV2()使用了WebRTC技術，它可以透過支援WebRTC API的外部瀏覽器的方式開啟鏡頭。在掃描過程中，API會使用jsQR的函式庫將圖像中的QR code解碼成字元串，並回傳結果。
 
 除了用戶自己使用掃描器功能外，開發者還可以將掃描到的QR code內容傳送到服務商的伺服器上進行處理。這為一些應用場景提供了便利，例如舉辦實際跑點掃描QR code之類的活動，並使用掃描器來進行資料的收集。
 

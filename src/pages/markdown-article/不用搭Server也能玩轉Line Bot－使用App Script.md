@@ -60,7 +60,7 @@ background-color:#d3d3d3;
 
 > [](https://developers.line.biz/en/docs/line-developers-console/overview/)
 
-## 創建 channel
+## 建立 channel
 
 ### Step1-Create a new channel
 
@@ -96,9 +96,9 @@ background-color:#d3d3d3;
 
 ![](https://i.imgur.com/b5Jg9xw.png)
 
-## 創建頻道完成-加入好友
+## 建立頻道完成-加入好友
 
-創建完之後這時候就有你的頻道了
+建立完之後這時候就有你的頻道了
 
 ![](https://i.imgur.com/swhLxRW.jpg)
 
@@ -274,5 +274,5 @@ function doPost(e) {
 其他資料
 若想要用 NODE JS 建立的話 官方有文件照做可以建立簡單的聊天機器人並佈署到 heroku
 
-> [Line 官方使用 nodeJS 創建並佈署到 heroku](https://developers.line.biz/en/docs/messaging-api/nodejs-sample/)
+> [Line 官方使用 nodeJS 建立並佈署到 heroku](https://developers.line.biz/en/docs/messaging-api/nodejs-sample/)
 

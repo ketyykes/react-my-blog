@@ -41,7 +41,7 @@ const beverage = stateVariable[0];
 const setBeverage = StateVariable[1];
 ```
 
-> 更多可以參考React官方文檔當中提到**方括號是什麼意思**的段落，該部分有更多的解釋連結在此 [Tip: What Do Square Brackets Mean?](https://reactjs.org/docs/hooks-state.html#tip-what-do-square-brackets-mean)
+> 更多可以參考React官方文件當中提到**方括號是什麼意思**的段落，該部分有更多的解釋連結在此 [Tip: What Do Square Brackets Mean?](https://reactjs.org/docs/hooks-state.html#tip-what-do-square-brackets-mean)
 
 為了解決綜合以上所述的痛點，使用解構賦值便可以達到**簡化程式碼**及**提高閱讀性的目的**。
 
@@ -208,7 +208,7 @@ sayMyName( { name:"小明" , age :12 } )
 ### 給定預設值
 
 #### 解構的預設值
-由於函式的參數也能給定預設值，因此要注意給定解構賦值當中的預設值，而並非單指是設置函數參數的預設值
+由於函式的參數也能給定預設值，因此要注意給定解構賦值當中的預設值，而並非單指是設置函式參數的預設值
 ~~//也許小明剛出生所以是零歲?~~
 用法如下
 ```javascript
@@ -321,9 +321,9 @@ const afterData = data.map(({ positive, recovered, death,}) => ({
   deaths: death,
 }))
 ```
-### 無需要了解函數的參數帶入順序
+### 無需要了解函式的參數帶入順序
 
-假設當我們要帶入多個參數到函數當中的時候，例如下列計算BMI的方式，當我們參數改成接受物件，並且在函式的參數當中解構，就可以不用擔心第一個參數是體重還是第二個參數是體重，換句話說就可以**不用理會參數順序**的狀況。
+假設當我們要帶入多個參數到函式當中的時候，例如下列計算BMI的方式，當我們參數改成接受物件，並且在函式的參數當中解構，就可以不用擔心第一個參數是體重還是第二個參數是體重，換句話說就可以**不用理會參數順序**的狀況。
 ```javascript
 function caculator({ weight, height }){
   let BMI = weight / Math.pow(height, 2);

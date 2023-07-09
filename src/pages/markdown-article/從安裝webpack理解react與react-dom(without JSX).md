@@ -16,7 +16,7 @@ tags: ["React","Webpack"]
 
 ## 建置資料夾
 
-在開始前我們不免透過npm來安裝react，透過前幾天的範例首先記得`npm init -y`來開始一個project，並且創建src資料夾與內容如下圖
+在開始前我們不免透過npm來安裝react，透過前幾天的範例首先記得`npm init -y`來開始一個project，並且建立src資料夾與內容如下圖
 
 ![](https://i.imgur.com/tVawFBd.png)
 
@@ -27,7 +27,7 @@ tags: ["React","Webpack"]
 ### 什麼是DOM
 
 瀏覽器藉由HTML的標記語言建立了**DOM**(Document Object Model)文件物件模型，也就是當瀏覽器在讀取HTML元素的時候，就會被解析成DOM元素。
-一個網頁是一個文檔(document)，他可以被瀏覽器視窗顯示或是做為Html原始碼顯示
+一個網頁是一個文件(document)，他可以被瀏覽器視窗顯示或是做為Html原始碼顯示
 例如
 以下Html原始碼
 ```html
@@ -54,7 +54,7 @@ tags: ["React","Webpack"]
 此時所看到的內容如下圖
 ![](https://i.imgur.com/m0ARfdY.png)
 
-對比這兩張圖指的是同一個文檔(document)
+對比這兩張圖指的是同一個文件(document)
 
 文件物件模型(document object model)提供了一個接口使我們像物件導向一般表示網頁，透過程式語言存取和修改以改變最後呈現的網頁畫面。
 

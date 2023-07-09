@@ -29,7 +29,7 @@ background-color:#d3d3d3;
 使用 terminal cd 到對應的資料夾
 然後
 
-1. npm install express-generator -g <br>創建一個 ejs 的 Node.js 名叫做 myapp 伺服器
+1. npm install express-generator -g <br>建立一個 ejs 的 Node.js 名叫做 myapp 伺服器
 2. express --view=ejs myapp <br>可以自己取名字不一定要叫 myapp
 3. cd myapp<br>移動到該資料夾
 4. npm install
@@ -39,7 +39,7 @@ background-color:#d3d3d3;
 <font color="red">`注意`</font>
 如果之前已經全域安裝過，也就是已經執行過 npm install exrpess-generator -g 的話就從第二步開始
 
-## 創建一個 api 路由
+## 建立一個 api 路由
 
 ![](https://i.imgur.com/TMsW4hc.png)
 
@@ -190,12 +190,12 @@ module.exports = router;
 
 - 取一個 app name 的名字
 
-回到終端機，由於 heroku 是可以透過 git 指令創建遠端伺服器
+回到終端機，由於 heroku 是可以透過 git 指令建立遠端伺服器
 
-接下來創建一個 git 連結遠端數據庫
+接下來建立一個 git 連結遠端資料庫
 
 - 輸入<span class="red">git init</span>
-- 輸入<span class="red">heroku git:remote -a `<你的遠端數據庫名字>`</span>
+- 輸入<span class="red">heroku git:remote -a `<你的遠端資料庫名字>`</span>
 - 輸入<span class="red">git add .</span>
 - 輸入<span class="red">git commit -m "你的該分支名字"</span>
 

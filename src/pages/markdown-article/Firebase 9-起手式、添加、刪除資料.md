@@ -5,7 +5,7 @@ date: 2021-12-30T13:31:00.000Z
 tags: ["Firebase","Javascript"]
 ---
 
-Firebase 節省掉後端複雜的服務器建置，作為 NodeJs 及 MongoDB 的另外一種替代品，使我們製作產品的時候更專注於前端開發大部分的功能對於小型個人網站可以免費使用。
+Firebase 節省掉後端複雜的伺服器建置，作為 NodeJs 及 MongoDB 的另外一種替代品，使我們製作產品的時候更專注於前端開發大部分的功能對於小型個人網站可以免費使用。
 
 > [官網的範例程式碼](https://firebase.google.com/docs/firestore/quickstart#swift) 
 > [firebaseLite](https://firebase.google.com/docs/firestore/solutions/firestore-lite)
@@ -93,7 +93,7 @@ initializeApp(firebaseConfig)//將設定參數帶入初始化function
 
 ![](https://i.imgur.com/7HpeHId.png)
 
-接下來我們點選左邊的**FireStore DataBase**就可以看到資料庫被分成**集合(collection)**和**文檔(document)**
+接下來我們點選左邊的**FireStore DataBase**就可以看到資料庫被分成**集合(collection)**和**文件(document)**
 
 ![](https://i.imgur.com/zXS5lfN.jpg)
 

@@ -246,9 +246,9 @@ import("./data.js");
 
 有時候我們會有多個模組，我們可以也可以透過一個檔案的方式將多個模組的檔案整合成一支檔案。
 
-### 使用`*`縮寫導入後導出
+### 使用`*`縮寫匯入後匯出
 
-先前提到`*`具有全部的意思，因此我們可以使用`*`，將其他模組的內容一次載入再導出整合成一支檔案。
+先前提到`*`具有全部的意思，因此我們可以使用`*`，將其他模組的內容一次載入再匯出整合成一支檔案。
 
 在`test.js`
 ```javascript
@@ -259,7 +259,7 @@ export default function(){
 }
 ```
 
-需要注意的地方是 在`data.js`，**雖然export`*` 但其實並沒有導出`test.js`的default。**
+需要注意的地方是 在`data.js`，**雖然export`*` 但其實並沒有匯出`test.js`的default。**
 
 ```javascript
 export * from  './test.js';  // 匯出此種方法並不會匯出在test的default
@@ -277,9 +277,9 @@ const { a , b }= module;//使用解構賦值方式將其取出
 
 ![](https://i.imgur.com/K65aE8a.png)
 
-### 導入預設模組再導出
+### 匯入預設模組再匯出
 
-為了能夠在重新導出的時候也包含了原先在test的defautl的內容，因此`data.js`必須改成如下
+為了能夠在重新匯出的時候也包含了原先在test的defautl的內容，因此`data.js`必須改成如下
 
 ```javascript
 export * from "./test.js"; // 匯出此種方法並不會匯出在test的default
@@ -287,7 +287,7 @@ export * from "./test.js"; // 匯出此種方法並不會匯出在test的default
 export { default } from "./test.js";
 ```
 
-在`app.js`撰寫成以下片段，就能如期的使用剛剛在test所導出的function
+在`app.js`撰寫成以下片段，就能如期的使用剛剛在test所匯出的function
 
 ```javascript
 import fn, * as module from "./data.js";
@@ -296,8 +296,8 @@ fn();
 const { a, b, test } = module; //使用解構賦值方式將其取出
 ```
 
-### 導入預設模組再取名導出
-另外我們一樣可以使用as的方式將預設模組導入之後再取名導出
+### 匯入預設模組再取名匯出
+另外我們一樣可以使用as的方式將預設模組匯入之後再取名匯出
 再data.js的內容改成如下
 
 ```javascript
@@ -341,7 +341,7 @@ test();
 ```
 ### 整合component到index.js檔案
 
-在React中(或其他框架中)，我們可以**透過整合模組的技巧，創建一支index.js，簡化引入時候的程式碼**。
+在React中(或其他框架中)，我們可以**透過整合模組的技巧，建立一支index.js，簡化引入時候的程式碼**。
 
 ```javascript
 export { default as Banner } from "./Banner/Banner";

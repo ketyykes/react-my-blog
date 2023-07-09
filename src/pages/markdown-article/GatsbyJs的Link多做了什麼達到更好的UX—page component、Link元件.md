@@ -9,7 +9,7 @@ tags: ["Gatsby.js","React"]
 
 - Gatsby建立頁面檔
 - 添加頁面Title
-- Link元件預加載preloading原理
+- Link元件預載preloading原理
 - Link Component使用方式
 
 ## GatsbyJs建立頁面檔
@@ -19,7 +19,7 @@ tags: ["Gatsby.js","React"]
 > Pages created in the src/pages directory use the name of the file as the route for the page.
 > For example, if you had a file called src/pages/garden-gnomes.js, you could access that page at localhost:8000/garden-gnomes.
 
-大致意思是頁面檔只要建立在`src/pages`的資料底下就能夠創建`pages component`。
+大致意思是頁面檔只要建立在`src/pages`的資料底下就能夠建立`pages component`。
 
 接下來將會開始進入實作環節。
 
@@ -101,23 +101,23 @@ export const Head = () => (
 
 ![](https://i.imgur.com/ltqwQlX.png)
 
-## 預加載Link元件的原理
+## 預載Link元件的原理
 
 gatsby提供了`Link的component`來實作跳轉頁面
 
-- 預先加載(proeloading)
-  - 使用者需要跳轉頁面的時候能夠預先加載資源
+- 預先載入(proeloading)
+  - 使用者需要跳轉頁面的時候能夠預先載入資源
 
 以下方為兩個階段
 
-1. 使用`Intersection Observer API`低優先級預先加載
+1. 使用`Intersection Observer API`低優先級預先載入
     - Link component進入到使用者的viewport，他會開始以低優先權的方式索取該頁面的資源檔
-2. `onMouseOver event事件`轉為高優先級加載更新
-    -  onMouseOver event滑入Link時候將會轉為高優先級加載更新資源。
+2. `onMouseOver event事件`轉為高優先級載入更新
+    -  onMouseOver event滑入Link時候將會轉為高優先級載入更新資源。
 
-上述兩個預加載階段的實現式確保在點擊跳轉頁面的時候能夠更迅速的準備好render。
+上述兩個預載入階段的實現是確保在點擊跳轉頁面的時候能夠更迅速的準備好render。
 
-使用Gatsby與先前提到[React route如何運作、建立404的路由、巢狀路由、動態路由](https://ithelp.ithome.com.tw/articles/10306082)的react route不一樣的地方是他幫我們多加處理了預加載以至於當我們在使用gatsby可以達到更好的UX。
+使用Gatsby與先前提到[React route如何運作、建立404的路由、巢狀路由、動態路由](https://ithelp.ithome.com.tw/articles/10306082)的react route不一樣的地方是他幫我們多加處理了預載入以至於當我們在使用gatsby可以達到更好的UX。
 
 ## Link Component使用方式
 

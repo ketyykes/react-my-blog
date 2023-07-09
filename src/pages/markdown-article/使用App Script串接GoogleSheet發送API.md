@@ -120,7 +120,7 @@ function doGet(e) {
 }
 ```
 
-我們嘗試創建一 object 裡面含有 name 和 age 並且設定 Mime 的類型要 JSON 檔案格式，因此程式碼如下
+我們嘗試建立一 object 裡面含有 name 和 age 並且設定 Mime 的類型要 JSON 檔案格式，因此程式碼如下
 
 ```javascript{numberLines: true}
 function doGet(e) {

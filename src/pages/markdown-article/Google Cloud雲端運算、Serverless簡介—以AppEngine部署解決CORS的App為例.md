@@ -139,8 +139,8 @@ Google搜尋關鍵字打 google App engine
 
 另外安裝完畢後可以**添加PATH環境變數**，以便在打開Terminal的時候可以在其他地方使用**gcloud開頭的指令**
 
-依據官方文檔安裝CLI網址如下
-[GCP官方文檔-Install the gcloud CLI](https://cloud.google.com/sdk/docs/install)
+依據官方文件安裝CLI網址如下
+[GCP官方文件-Install the gcloud CLI](https://cloud.google.com/sdk/docs/install)
 
 ## 建置Node.js專案以express解決cors為例
 
@@ -162,7 +162,7 @@ Access to fetch at ‘http://localhost:3000/' from origin ‘http://localhost:80
 
 ### Step1.初始化專案
 
-在已經創建的專案資料夾使用terminal開啟後輸入以下指令
+在已經建立的專案資料夾使用terminal開啟後輸入以下指令
 <span class="red gray">&nbsp;npm init -y&nbsp;</span>
 其內容表示初始化npm專案
 <span class="red gray">-y</span>表示其專案設定例如專案名字、作者等等都使用預設值
@@ -422,11 +422,11 @@ env_variables:
   官方NodeJs部署教學
 - [gcloud projects list-官方文件](https://cloud.google.com/sdk/gcloud/reference/projects/list)
   gcloud project的其他指令
-- [GCP官方文檔-configuration file](https://cloud.google.com/appengine/docs/standard/reference/app-yaml?tab=node.js)
+- [GCP官方文件-configuration file](https://cloud.google.com/appengine/docs/standard/reference/app-yaml?tab=node.js)
   包含更多除了app.yam可配置的選項的文件
 - [Google App Engine Instance Hours and Free Quotas](https://stackoverflow.com/questions/70979864/google-app-engine-instance-hours-and-free-quotas)
-- [GCP官方文檔-Standard環境提供的額度](https://cloud.google.com/appengine/docs/standard/quotas#Instances)
+- [GCP官方文件-Standard環境提供的額度](https://cloud.google.com/appengine/docs/standard/quotas#Instances)
   其中也包含上下文也包含其他環境或服務的額度 
 - [App Engine standard environment pricing](https://cloud.google.com/appengine/pricing#standard_instance_pricing)
-- [GCP官方文檔-超過額度的定價規則](https://cloud.google.com/appengine/pricing#standard_instance_pricing)
-  該文檔內容也包含計算機可以試算一下
+- [GCP官方文件-超過額度的定價規則](https://cloud.google.com/appengine/pricing#standard_instance_pricing)
+  該文件內容也包含計算機可以試算一下

@@ -43,7 +43,7 @@ console.log(d3.scaleSequential().domain([minNum, maxNum])(64774));
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211006_03.png)
 
-如上圖官方scaleSequential說明中，除了上次提到可以在scaleSequential()放入自行轉換函數以外，API另個說明也可以帶入d3-scale-chromaticAPI裡面的Diverging中的顏色
+如上圖官方scaleSequential說明中，除了上次提到可以在scaleSequential()放入自行轉換函式以外，API另個說明也可以帶入d3-scale-chromaticAPI裡面的Diverging中的顏色
 
 這裡我們取[interpolateRdYlGn](https://github.com/d3/d3-scale-chromatic/blob/main/README.md#interpolateRdYlGn)這個插值器
 
@@ -52,8 +52,8 @@ console.log(d3.scaleSequential().domain([minNum, maxNum])(64774));
 > [scaleSequential官方說明](https://github.com/d3/d3-scale#scaleSequential)
 > [Diverging官方document](https://github.com/d3/d3-scale-chromatic/blob/main/README.md#diverging)
 
-因此使用fill填色的時候加入轉換函數來將價錢高低轉換成顏色
-另外值得一提的是宣告轉換函數的時候，這邊希望是房價土地平均價數字高的呈現紅色、數字低的呈現綠色，因此顏色轉換函數的domain使用maxNum做為下限，minNum做為上限
+因此使用fill填色的時候加入轉換函式來將價錢高低轉換成顏色
+另外值得一提的是宣告轉換函式的時候，這邊希望是房價土地平均價數字高的呈現紅色、數字低的呈現綠色，因此顏色轉換函式的domain使用maxNum做為下限，minNum做為上限
 程式碼如下
 ```javascript{numberLines: true}
 let maxNum = d3.max(tainanGeojson,(d)=>(d.properties.HOUSEPRICE));
@@ -131,7 +131,7 @@ svg #tooltip{
 
 ## 為地圖加入動畫
 
-我們可以在畫面載入的時候依照房價由低到高填入到行政區域顏色，因此構想是先進行資料排序，然後接在transition()的時候，使用delay函數，每次延遲的時間取決於資料的索引值來填充色彩。具體作法如下
+我們可以在畫面載入的時候依照房價由低到高填入到行政區域顏色，因此構想是先進行資料排序，然後接在transition()的時候，使用delay函式，每次延遲的時間取決於資料的索引值來填充色彩。具體作法如下
 這邊使用d3.sort來排列函式裡面指定要依照哪項資料排列
 
 > [d3.sort](https://github.com/d3/d3-array/blob/v3.0.4/README.md#sort)

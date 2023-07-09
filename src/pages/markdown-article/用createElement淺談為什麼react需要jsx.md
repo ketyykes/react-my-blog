@@ -18,7 +18,7 @@ tags: ["React","Webpack"]
 
 
 [從安裝webpack理解react與react-dom(without JSX)](/tech-page/2022-10-01%20Sat)的文章內容在**createElement**的解釋並沒有多作探討，因此這裡解釋一下**createElement**函式的參數。
-依據官方文檔[React Top-Level API-createelement](https://reactjs.org/docs/react-api.html#createelement)
+依據官方文件[React Top-Level API-createelement](https://reactjs.org/docs/react-api.html#createelement)
 **createElement**可以接受參數如下
 ```javascript
 React.createElement(

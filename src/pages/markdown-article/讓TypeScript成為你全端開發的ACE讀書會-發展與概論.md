@@ -195,9 +195,9 @@ Typescript定義檔 typescript(Definition file)具備以下相關東西
 npm install -g typescript
 ```
 
-#### 創建ts-config檔案
+#### 建立ts-config檔案
 
-藉由創建ts-config的檔案，其內容為編譯相關的設定，例如要編譯成的Javascript版本、是否產生sourceMap(方便瀏覽器查看ts原始檔案為哪一行code)等等
+藉由建立ts-config的檔案，其內容為編譯相關的設定，例如要編譯成的Javascript版本、是否產生sourceMap(方便瀏覽器查看ts原始檔案為哪一行code)等等
 
 在terminal輸入以下指令
 ```bash
@@ -232,7 +232,7 @@ tsc helloworld.ts
 
 ##### 方法二
 
-如果已經創建**ts-config**檔案的話，可以透過cd移動到對應的資料夾直接輸入<span class="red code">tsc</span>按下<kbd>enter</kbd>即可編譯該資料夾底下的所有檔案
+如果已經建立**ts-config**檔案的話，可以透過cd移動到對應的資料夾直接輸入<span class="red code">tsc</span>按下<kbd>enter</kbd>即可編譯該資料夾底下的所有檔案
 
 ```bash
 tsc

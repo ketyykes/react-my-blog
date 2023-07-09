@@ -72,7 +72,7 @@ font-weight:700;
 
 ## 開始使用create-react-app
 
-依據官方指令只需要輸入以下指令就能創建一個"your project name"
+依據官方指令只需要輸入以下指令就能建立一個"your project name"
 
 - <span class="red code">npx create-react-app "your project name"</span>
 - <span class="red code">cd "your project name"</span>

@@ -238,7 +238,7 @@ null 代表的是<font class="red">「(此變數可能曾經有值，可能沒�
 
 「An object is a collection of properties and has a single prototype object.」
 
-一個物件可以是個零至多種屬性的集合，而屬性是鍵 (key) 與值 (value) 之間的關聯。 一個屬性的「值」可以是某個基本型別，也可以是另一個物件，甚至可以是一個函數。
+一個物件可以是個零至多種屬性的集合，而屬性是鍵 (key) 與值 (value) 之間的關聯。 一個屬性的「值」可以是某個基本型別，也可以是另一個物件，甚至可以是一個函式。
 物件可以是瀏覽器預先定義好的，當然也可以是由自己定義物件的屬性與內容。
 
 ### 物件及屬性
@@ -375,7 +375,7 @@ NaN 系列
 
 **_以 number 、boolean 、 object 的情況來說，轉型時會去呼叫它們的 .toString() 的 「原型方法」
 去取得對應的字串。
-而 null 與 undefined 則是透過 JavaScript 的 String() 函數來將它們分別轉為 "null" 與 "undefined"。_**
+而 null 與 undefined 則是透過 JavaScript 的 String() 函式來將它們分別轉為 "null" 與 "undefined"。_**
 
 當很長的運算式時會有數字和字串混搭時
 ![](https://i.imgur.com/sQ0JLnn.png)

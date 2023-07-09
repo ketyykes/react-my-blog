@@ -177,9 +177,9 @@ function completeFunction(e) {
 
 ### Template
 
-在 toDo 的 vue 檔案裡面寫了[模板語法](https://staging-cn.vuejs.org/guide/essentials/template-syntax.html)，該語法是基於 HTML 模板所構成的東西，可以被一般瀏覽器和 HTML 解析器解析，Vue 再將其編譯成 Javascript 並結合**響應式系統(Reactivity)**，如果想要寫得像 react 的渲染函式或式 JSX 的話，vue 也可以達到，可以參見官方的[渲染函數&JSX](https://staging-cn.vuejs.org/guide/extras/render-function.html)，不過官方也提到這樣做將不能得到與模板相同的編譯優化。
+在 toDo 的 vue 檔案裡面寫了[模板語法](https://staging-cn.vuejs.org/guide/essentials/template-syntax.html)，該語法是基於 HTML 模板所構成的東西，可以被一般瀏覽器和 HTML 解析器解析，Vue 再將其編譯成 Javascript 並結合**響應式系統(Reactivity)**，如果想要寫得像 react 的渲染函式或式 JSX 的話，vue 也可以達到，可以參見官方的[渲染函式&JSX](https://staging-cn.vuejs.org/guide/extras/render-function.html)，不過官方也提到這樣做將不能得到與模板相同的編譯優化。
 
-另外官方使用 vue-cli 鷹架所建置出來的內容也是默認使用模板系統(備註)
+另外官方使用 vue-cli 鷹架所建置出來的內容也是預設使用模板系統(備註)
 
 這邊會在**template**裡面除了常見的 html 的標籤以外，也會嵌入一些**vue 語法**，像是<span class="red">`v-model、v-on、v-for、v-bind`</span>等等，在程式碼旁邊將會撰寫簡單說明如下
 
@@ -207,13 +207,13 @@ function completeFunction(e) {
 </template>
 ```
 
-> 官方也是推薦使用模板系統撰寫，更多資訊可以參考官方文件[模板 vs 渲染函數](https://staging-cn.vuejs.org/guide/extras/rendering-mechanism.html#template-vs-render-functions)
+> 官方也是推薦使用模板系統撰寫，更多資訊可以參考官方文件[模板 vs 渲染函式](https://staging-cn.vuejs.org/guide/extras/rendering-mechanism.html#template-vs-render-functions)
 
 ### Reactivity Fundamentals(響應式)
 
-透過響應式的方式來宣告元件的狀態，換句話說結合**template**撰寫的內容在元件創建實體的時候會使用這邊的函式。更多可以參考[響應式基礎](https://staging-cn.vuejs.org/guide/essentials/reactivity-fundamentals.html)
+透過響應式的方式來宣告元件的狀態，換句話說結合**template**撰寫的內容在元件建立實體的時候會使用這邊的函式。更多可以參考[響應式基礎](https://staging-cn.vuejs.org/guide/essentials/reactivity-fundamentals.html)
 
-- data()函數
+- data()函式
   - 原先的**template**也有**listArray**和**input**變數，這些變數就是參照我們在**data 函式**裡面定義的內容
 - methods 物件
   - 這邊可以對元件添加方法，**method**可以說是包含很多方法的物件，已剛剛的 template 為例就是在`<span class="red">v-on</span>`的地方要觸發的事件函式，值得一提的地方式透過**this.變數名稱**來指向 data 裡面的變數。

@@ -13,7 +13,7 @@ tags: ["D3.js","Javascript"]
 
 先看以下範例
 
-首先我們先創建一個陣列，然後使用for迴圈以陣列長度作為迴圈數，之後依序添加<font color="red">`div`</font>這邊有一個特別的<font color="red">`datum()`</font>函式，我們嘗試著將每一筆的陣列內容放入函式當中當作參數，最後加入<font color="red">`text()`</font>函式在其中放入一個**回呼函式**參數加入d並且**return**出來就可以看到畫面呈現。
+首先我們先建立一個陣列，然後使用for迴圈以陣列長度作為迴圈數，之後依序添加<font color="red">`div`</font>這邊有一個特別的<font color="red">`datum()`</font>函式，我們嘗試著將每一筆的陣列內容放入函式當中當作參數，最後加入<font color="red">`text()`</font>函式在其中放入一個**回呼函式**參數加入d並且**return**出來就可以看到畫面呈現。
 ```javascript{numberLines: true}
 const arr = [7,2,5,4,13];
 for(let i=0; i<arr.length; i++){    
@@ -120,7 +120,7 @@ const arr = [7,2,5,4,13];
 
 ## 關於data和text的函式的其他說明
 ### text()函式介紹
-<font color="red">`text`</font>在綁定之後 **函數** 可以擁有三個參數，第一個參數是<font color="red">`d`</font>表示<font color="red">`data`</font>的意思，第二個參數是<font color="red">`i`</font>表示陣列的<font color="red">`索引值`</font>，第三個參數表示當前綁定的群組節點
+<font color="red">`text`</font>在綁定之後 **函式** 可以擁有三個參數，第一個參數是<font color="red">`d`</font>表示<font color="red">`data`</font>的意思，第二個參數是<font color="red">`i`</font>表示陣列的<font color="red">`索引值`</font>，第三個參數表示當前綁定的群組節點
 
 你可以將下列程式碼執行看看並且開啟開發者人員工具。
 ```javascript{numberLines: true}

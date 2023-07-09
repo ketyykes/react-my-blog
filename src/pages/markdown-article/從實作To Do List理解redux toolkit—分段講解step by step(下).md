@@ -70,10 +70,10 @@ background-color:#d3d3d3;
 
 我們將分段講解toDOSlice檔案
 
-#### <span class="rem25">Step1：創建initialState物件</span>
+#### <span class="rem25">Step1：建立initialState物件</span>
 
 這裡先從redux的toolkit <span class="green">引入createSlice</span>
-創建一個inistialState稍後將帶入createSlice物件
+建立一個inistialState稍後將帶入createSlice物件
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -95,7 +95,7 @@ const initialState = {
 ```
 
 #### <span class="rem25">Step2：設定createSlice</span>
-<span class="green">createSlcie為一個函式</span>，其參數要帶入物件，將剛剛創建的initialState作為key和value帶入，另外也需要給一個name和reducers物件其撰寫方式如下
+<span class="green">createSlcie為一個函式</span>，其參數要帶入物件，將剛剛建立的initialState作為key和value帶入，另外也需要給一個name和reducers物件其撰寫方式如下
 
 ```javascript
 export const toDoSlice = createSlice({
@@ -122,13 +122,13 @@ export const toDoSlice = createSlice({
     },
 })
 ```
-#### <span class="rem25">Step3：導出toDoSlice創建的reducer和actionCreator</span>
-將addToDo和deleteToDo和completeToDo導出稍後的useDispatch將會用到。
-另外也會將toDoSlice.reducer設為default導出，等等configureStore將會使用。
+#### <span class="rem25">Step3：匯出toDoSlice建立的reducer和actionCreator</span>
+將addToDo和deleteToDo和completeToDo匯出稍後的useDispatch將會用到。
+另外也會將toDoSlice.reducer設為default匯出，等等configureStore將會使用。
 
 ```javascript
 export const { addToDo, deleteToDo, completeToDo } = toDoSlice.actions;
-//將toDoSlice.reducer設為default導出，等等configureStore將會使用
+//將toDoSlice.reducer設為default匯出，等等configureStore將會使用
 export default toDoSlice.reducer
 ```
 
@@ -157,7 +157,7 @@ import toDoReducer from './toDoSlice';
 //     reducer
 // })
 
-// 方法二 直接在物件裡面宣告一個key為reducer值為你所創建的reducer
+// 方法二 直接在物件裡面宣告一個key為reducer值為你所建立的reducer
 //透過configureStore的方式設定store將
 const store = configureStore({
     reducer: {
@@ -188,7 +188,7 @@ root.render(
 ```
 ### AddToDo檔案
 
-<span class="green">引入useDispatch作為用來派發事件的函式</span>，其引入addToDo是從toDoSlice導出的actionCreator函式，addToDo帶入的參數就是payload。
+<span class="green">引入useDispatch作為用來分派事件的函式</span>，其引入addToDo是從toDoSlice匯出的actionCreator函式，addToDo帶入的參數就是payload。
 
 ```jsx
 import { useState } from 'react';
@@ -199,7 +199,7 @@ const AddToDo = () => {
   const margin0Auto = { width: "300px", margin: "0 auto" };
   const textAlign = { textAlign: "center" };
 
-  //引入useDispach作為稍後派發事件使用
+  //引入useDispach作為稍後分派事件使用
   const dispatch = useDispatch();
 
   //使用Controlled component
@@ -261,7 +261,7 @@ export default ListToDo
 這邊的toDoReducer是來自於我們store的configureStore的key值，而state就是當初initialState的值
 
 ### ToDoItem檔案
-最後同理引入deleteToDo和completeToDo這兩個acitonCreator函式透過useDispatch派發action
+最後同理引入deleteToDo和completeToDo這兩個acitonCreator函式透過useDispatch分派action
 
 ```jsx
 import { deleteToDo, completeToDo } from '../../store/toDoSlice'

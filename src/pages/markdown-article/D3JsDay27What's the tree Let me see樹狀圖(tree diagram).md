@@ -71,7 +71,7 @@ console.log(hierarchyData);
 ```
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211012_01.png)
-> 這邊值得一提的是官網說可以指定要訪問哪一個欄位當作children來走訪生成，如果沒有指定的話就會預設值是訪問d.children的欄位，由於我們原始資料treeData就有children這個key，因此就算沒有在hierarchy函數內設定function的話也會預設訪問children這個key。
+> 這邊值得一提的是官網說可以指定要訪問哪一個欄位當作children來走訪生成，如果沒有指定的話就會預設值是訪問d.children的欄位，由於我們原始資料treeData就有children這個key，因此就算沒有在hierarchy函式內設定function的話也會預設訪問children這個key。
 
 
 接下來觀看`console.log`後可以發現`hierarchy()`將會把整個原先的物件轉換後增加一些key來說明階層關係，物件最外層的就是對應到剛剛原始資料的最外層，展開裡面可以發現紀錄了**depth**和**height**和**x**與**y**
@@ -153,7 +153,7 @@ console.log(tree(hierarchyData).descendants());
 ## 畫出節點
 接下來我們在svg插入一個g元素裡面預計使用join生成許多g後把資料綁定在上面以便裡面放入circle和text顯示節點樣貌和內容。
 
-在剛剛創建class名為g-node的元素選取起來後插入circle和text記得微調一下text的位置讓它不要和circle重疊即可
+在剛剛建立class名為g-node的元素選取起來後插入circle和text記得微調一下text的位置讓它不要和circle重疊即可
 
 具體程式碼如下
 ```javascript{numberLines: true}
@@ -334,7 +334,7 @@ g.selectAll("path").data(tree(hierarchyData)
       g = svg
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    //創建一個水平link產生器
+    //建立一個水平link產生器
     let linkMkr = d3
       .linkHorizontal()
       .x((d) => d.y)

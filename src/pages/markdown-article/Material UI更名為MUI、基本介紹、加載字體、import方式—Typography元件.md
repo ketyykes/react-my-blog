@@ -1,5 +1,5 @@
 ---
-title: Material UI更名為MUI、基本介紹、加載字體、import方式—Typography元件
+title: Material UI更名為MUI、基本介紹、載入字體、import方式—Typography元件
 slug: 2022-12-03T13:31:00.000Z
 date: 2022-12-03T13:31:00.000Z
 tags: ["React","UI Framework"]
@@ -9,7 +9,7 @@ tags: ["React","UI Framework"]
 - Material Design
 - 更名MUI
 - Material UI優點
-- 加載字體方法
+- 載入字體方法
 - import元件的方法
 - Typography-排版組件
 ## Material Design
@@ -49,9 +49,9 @@ npm install @mui/material @mui/styled-engine-sc styled-components
 
 比較需要注意的地方是如果網站是SSR(server side render)的專案，例如next.js，則強烈建議使用emotion，否則可能會遇到一些babel轉譯的問題詳細可以觀看官方的[How to switch to styled-components](https://mui.com/material-ui/guides/styled-engine/#how-to-switch-to-styled-components)的部分
 
-## 加載字體方法
+## 載入字體方法
 
-Material UI預設不會加載任何字體，但預設Material UI是使用 Roboto的字體選項，因此如果想要加載字體可以透過兩種方式實現
+Material UI預設不會載入任何字體，但預設Material UI是使用 Roboto的字體選項，因此如果想要載入字體可以透過兩種方式實現
 
 ### 第一種方式—CDN引入字體
 
@@ -96,7 +96,7 @@ Material UI預設不會加載任何字體，但預設Material UI是使用 Roboto
 npm install @fontsource/roboto
 ```
 
-之後加載在程式進入點
+之後載入在程式進入點
 
 在index.js檔案撰寫如下
 
@@ -131,8 +131,7 @@ import { Typography } from '@mui/material';
 
 使用大括號的方式會讓效能降低一點點(備註)，但可以簡潔程式碼，尤其是當有許多元件要載入的時候就不必撰寫如下import許多不同的行數
 
-> 備註：更多說明可以參考[Bundle size matters
-](https://mui.com/material-ui/guides/minimizing-bundle-size/)章節
+> 備註：更多說明可以參考[Bundle size matters](https://mui.com/material-ui/guides/minimizing-bundle-size/)章節
 
 ```javascript
 import Typography from '@mui/material/Typography';
@@ -146,7 +145,7 @@ import Button from '@mui/material/Button';
 - 官方文件：[MaterialUI-Typography](https://mui.com/zh/material-ui/react-typography/)
 - 可用API：[Typography API](https://mui.com/zh/material-ui/api/typography/)
 
-## 創建一個基本的Typography組件
+## 建立一個基本的Typography組件
 
 接下來的範例僅撰寫jsx的部分，將會省略import和return的程式碼
 

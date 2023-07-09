@@ -23,7 +23,7 @@ background-color:#d3d3d3;
 
 ## in 關鍵字-MDN 範例
 
-如果指定的屬性在指定的物件或其原型鏈中，則 in 運算子返回 true。
+如果指定的屬性在指定的物件或其原型鏈中，則 in 運算子回傳 true。
 
 ```javascript{numberLines: true}
 const car = { make: 'Honda', model: 'Accord', year: 1998 };
@@ -320,7 +320,7 @@ console.log( Person.__proto__ === Function.prototype );   // true
 前面說過，「每一個函式被建立之後，都會自動產生一個 prototype 的屬性」，但這並 "不" 代表這個 prototype 屬性就是這個函式的原型物件，而是透過 new 這個函式「建構」出來的物件會有個 [[prototype]] 的隱藏屬性，會指向建構函式的 prototype 屬性。
 
 換句話說
-prototype 這個屬性的意思是後來其他透過此函數所 new 出的物件所擁有的方法和屬性會在這裡找的到，因此
+prototype 這個屬性的意思是後來其他透過此函式所 new 出的物件所擁有的方法和屬性會在這裡找的到，因此
 console.log( p.**proto ** === Person.prototype );
 
 ## Object.create()

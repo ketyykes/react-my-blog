@@ -28,7 +28,7 @@ background-color:#d3d3d3;
 
 ## 為什麼需要useReducer
 
-**useReducer**與**useState**有相似之處，允許客製化**state**的邏輯部份。如果想要管理複雜的狀態邏輯，**useReducer**可以幫助你**達到關注點分離**(separate the concerns)，將其分成渲染和狀態管理，換句話說，也就是在**component檔案僅負責渲染UI**和**派發事件**，而複雜的邏輯計算管理狀態的部分可以再抽離出成另個檔案。
+**useReducer**與**useState**有相似之處，允許客製化**state**的邏輯部份。如果想要管理複雜的狀態邏輯，**useReducer**可以幫助你**達到關注點分離**(separate the concerns)，將其分成渲染和狀態管理，換句話說，也就是在**component檔案僅負責渲染UI**和**分派事件**，而複雜的邏輯計算管理狀態的部分可以再抽離出成另個檔案。
 
 
 ## 關於reducer詞彙
@@ -163,7 +163,7 @@ function Counter() {
 }
 ```
 
-透過init這個函式可以讓下次re-render的時候避免再次消耗計算效能，另外如果創建初始狀態的init函式不需要任何引數計算的話，可以將useReducer的第二個參數設為null
+透過init這個函式可以讓下次re-render的時候避免再次消耗計算效能，另外如果建立初始狀態的init函式不需要任何引數計算的話，可以將useReducer的第二個參數設為null
 如下
 
 ```jsx

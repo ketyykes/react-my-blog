@@ -71,7 +71,7 @@ onSnapshot(q, (el) => {
 
 如果沒有指定排序的情況，預設是使用 id 排序，然而 id 是隨機產生，所以排序也有點像沒有被排序的樣貌
 
-> [官方文檔排序範例](https://firebase.google.com/docs/firestore/query-data/order-limit-data) > [官方建立索引教學](https://firebase.google.com/docs/firestore/query-data/indexing?authuser=0#use_the_firebase_console) > [官方建立索引使用 CLI 教學](https://firebase.google.com/docs/firestore/query-data/indexing?authuser=0#use_the_firebase_cli)
+> [官方文件排序範例](https://firebase.google.com/docs/firestore/query-data/order-limit-data) > [官方建立索引教學](https://firebase.google.com/docs/firestore/query-data/indexing?authuser=0#use_the_firebase_console) > [官方建立索引使用 CLI 教學](https://firebase.google.com/docs/firestore/query-data/indexing?authuser=0#use_the_firebase_cli)
 
 在排序之前先去 firebase 控制台的 firestore database 然後選擇索引
 
@@ -171,7 +171,7 @@ addScreenForm.addEventListener("submit", (e) => {
 之後就會有 timestamp 的物件如下圖
 ![](https://i.imgur.com/yWAFioO.png)
 
-> [官方文檔 serverTimestamp](https://firebase.google.com/docs/firestore/manage-data/add-data#server_timestamp)
+> [官方文件 serverTimestamp](https://firebase.google.com/docs/firestore/manage-data/add-data#server_timestamp)
 
 ## fetch 單一的資料
 

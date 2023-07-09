@@ -83,10 +83,10 @@ tags: ["Gatsby.js","React"]
 
 在npm安裝完畢之後可以輸入`gatsby --version`，如果出現了版本號，表示安裝成功。
 
-另外可以查看可用的命令
+另外可以查看可用的指令
 `gatsby --help`
 
-## 創建一個gatsby基本頁面
+## 建立一個gatsby基本頁面
 
 [Gatsby new](https://www.gatsbyjs.com/docs/tutorial/part-1/)
 先前安裝完gatsbyCLI後，在terminal輸入`gatsby new`

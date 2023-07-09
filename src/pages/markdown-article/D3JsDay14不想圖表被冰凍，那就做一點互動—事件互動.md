@@ -12,8 +12,8 @@ tags: ["D3.js","Javascript"]
 其他更多說明也可以參考d3JSAPI文件
 > [官方API事件處理](https://github.com/d3/d3-selection/blob/v3.0.0/README.md#handling-events)
 ## 監聽器
-首先我們要有一個所選取的元素，在後面透過方法鏈的方式添加要執行的函式，這邊可以直接就範例學習即可，例如我們預做出一個當按鈕按下去就會產生隨機的長條圖，我們可以先把按鈕和長條圖準備好
-創建好的範例如下
+首先我們要有一個所選取的元素，在後面透過方法鏈的方式加入要執行的函式，這邊可以直接就範例學習即可，例如我們預做出一個當按鈕按下去就會產生隨機的長條圖，我們可以先把按鈕和長條圖準備好
+建立好的範例如下
 ```html{numberLines: true}
 <style>
 .btn {
@@ -77,7 +77,7 @@ tags: ["D3.js","Javascript"]
 [d3Day14-1](https://codepen.io/ketyykes/pen/xxrOGjJ)
 
 ### randomInt()、svg屬性transform() 補充說明
-> 這裡用到了<font color="red"> `randomInt()`</font>的方法，簡單說是創建一個函式，這個函式執行後會回傳隨機的整數，randomInt()裡面填的數值是最小值和最大值，根據範例就可以產生出最小值50，最大值400的隨機亂數，然後使用for迴圈將產生的數值使用array push到陣列當中，總共執行二十次。
+> 這裡用到了<font color="red"> `randomInt()`</font>的方法，簡單說是建立一個函式，這個函式執行後會回傳隨機的整數，randomInt()裡面填的數值是最小值和最大值，根據範例就可以產生出最小值50，最大值400的隨機亂數，然後使用for迴圈將產生的數值使用array push到陣列當中，總共執行二十次。
 > [d3官方文件randomInt](https://github.com/d3/d3-random#randomInt)
 
 > 補充二第58行的地方 <font color="red"> `g.attr("transform", "translate(0,40)")`</font>的地方使用了transform，有時候我們渲染出來的座標與圖表位置沒有對應到的時候可以使用這個屬性來調整它，可以參考[MDN-SVG-transform](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)
@@ -146,7 +146,7 @@ tags: ["D3.js","Javascript"]
 
 延續前幾天的程式碼我們希望可以再滑鼠滑入到某個 <font color="red"> `<rect>`</font>的時候列出對應到的人口實際數字，另外添加過渡動畫改變長條圖的顏色，當滑鼠移出該rect的時候變回來。
 
-因此我們再前幾天的程式碼後面添加以下片段
+因此我們再前幾天的程式碼後面加入以下片段
 ```javascript{numberLines: true}
 svg.selectAll("rect")
   .on("mouseenter", function () {

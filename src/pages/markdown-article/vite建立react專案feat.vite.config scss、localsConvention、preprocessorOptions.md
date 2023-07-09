@@ -33,8 +33,8 @@ font-weight:700;
 
 本文提及以下內容
 - 不再使用Create React App
-- 如何選擇創建React Application in 2023
-- 開始創建vite專案
+- 如何選擇建立React Application in 2023
+- 開始建立vite專案
 - 使用CSS module
 - 經過hash的css class名稱
 - 使用駝峰式引用含有dash的css Class 名稱
@@ -51,15 +51,15 @@ font-weight:700;
 
 對於相關議題有興趣的也可以觀看[Create React App is Dead?](https://dev.to/thevinitgupta/create-react-app-is-dead-3igo)
 
-## 如何選擇創建React Application in 2023
+## 如何選擇建立React Application in 2023
 
 至於目前React.dev官方網站建立React的方式大多數是SSR(server site render)或SSG(server side generator)的Framework，例如Gatsby.js、Next.js、Remix等等。
 
 對於剛初學React的人在使用學習這些框架的同時可能會包含一些非React相關的東西在該框架當中，因此若只是想單純學習React的人也許就會無法分辨哪些是屬於React，哪些則是屬於該框架，目前社群或者知名Youtuber Kyle在[The React Docs Are Wrong (If You Are Trying To Learn React)](https://www.youtube.com/watch?v=KCEVIY0Z3xY&t=222s&ab_channel=WebDevSimplified)的影片中則是推薦使用Vite作為學習React的開始
 
-由於**vite**使用了**ES module**作為編譯方式使得網頁加載的時候即時編譯，另外採用較少的設置、簡單的設計原則，也支持各種主流的前端框架，對於想要自定義的部分也可以透過插件或是中間件來自行擴充，換句話說相比於**Create React App**對於伺服器的啟動速度和開發體驗以及創建完畢的初始library相比都是較為輕量及快速的選擇方案。
+由於**vite**使用了**ES module**作為編譯方式使得網頁載入的時候即時編譯，另外採用較少的設置、簡單的設計原則，也支持各種主流的前端框架，對於想要自定義的部分也可以透過插件或是中間件來自行擴充，換句話說相比於**Create React App**對於伺服器的啟動速度和開發體驗以及建立完畢的初始library相比都是較為輕量及快速的選擇方案。
 
-## 開始創建vite專案
+## 開始建立vite專案
 
 在terminal中輸入以下指令
 
@@ -225,7 +225,7 @@ export default App
 
 ## 使用scss module
 
-先前提到css module，在scss中我們一樣可以創建scss module，我們在src當中建立一個<span class="red ">app.module.scss</span>，此時src的檔案內容如下
+先前提到css module，在scss中我們一樣可以建立scss module，我們在src當中建立一個<span class="red ">app.module.scss</span>，此時src的檔案內容如下
 
 ```bash
 App.jsx

@@ -9,7 +9,7 @@ tags: ["D3.js","Javascript"]
 transition這個翻譯成**過渡**的意思，一個吸引人的圖表當中，加入了一點動畫成分和過渡的轉變能吸引使用者的目光，也讓觀看者有預期心理畫面將要轉換，另外也使得圖表更有質感。
 
 
-首先我們先創建一個rect以寬50高300的長方形。
+首先我們先建立一個rect以寬50高300的長方形。
 ```javascript{numberLines: true}
 const svg = d3.select("body")
             .append("svg")
@@ -90,7 +90,7 @@ svg.append("rect")
     .attr("fill","orange");
 ```
 
-函數圖形如下
+函式圖形如下
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_02.png)
 這邊帶入的就是線性的動畫，雖然官方文件寫參數值帶入t，但筆者觀看原始碼後線性所轉回的值與原先是一樣的情況，基本上你帶入99所呈現的畫面應當不會有所差別。
 [D3day13-4](https://codepen.io/ketyykes/pen/RwgrmNm)
@@ -126,21 +126,21 @@ Linear原始碼如下
 ```
 
 [D3day13-5](https://codepen.io/ketyykes/pen/BaZjEYe)
-函數圖型如下
+函式圖型如下
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_05.png)
 
 
 [官方easePolyIn說明](https://github.com/d3/d3-ease#easePolyIn)
 
-其他更多的函數可以參考官方API文件
+其他更多的函式可以參考官方API文件
 
 
 > [easeAPI官方文件](https://github.com/d3/d3-ease#_ease)
 
-值得注意的一點是有些函數並不適用於每個屬性像是這個長條圖有寬和高
-因此如果你想嘗試使用<font color="red">`d3.easeElasticInOut()`</font>這個函數的話
-由於函數圖型有超出原本的區間，因此會造成寬高變成負值就會輸出錯誤。
+值得注意的一點是有些函式並不適用於每個屬性像是這個長條圖有寬和高
+因此如果你想嘗試使用<font color="red">`d3.easeElasticInOut()`</font>這個函式的話
+由於函式圖型有超出原本的區間，因此會造成寬高變成負值就會輸出錯誤。
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210928_06.png)
 

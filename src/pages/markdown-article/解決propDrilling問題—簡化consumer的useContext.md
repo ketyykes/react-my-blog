@@ -24,7 +24,7 @@ background-color:#d3d3d3;
 
 - props傳遞的遇到什麼問題—propDrilling
 - 使用context解決propDrilling
-  - Setp1 創建context環境-createContext()
+  - Setp1 建立context環境-createContext()
   - Setp2 使用所建立的context將值設定給Provider
   - Step3 使用Consumer提取值
 - 使用useContext注意事項
@@ -112,7 +112,7 @@ export default Elevator3
 
 另外**useContext**只是**Context.Consumer**的語法糖，稍後會提到解釋。
 
-### Setp1 創建context環境-createContext()
+### Setp1 建立context環境-createContext()
 首先我們先引入createContext，他是用來製造context的函式。
 這邊我將檔案給分離出來命名成createUseContext.js
 程式碼如下
@@ -122,7 +122,7 @@ export const UserContext = createContext();
 ```
 
 ### Setp2 使用所建立的context將值設定給Provider
-第二步引入剛剛所創建的檔案後，將準備值提供給Provider。
+第二步引入剛剛所建立的檔案後，將準備值提供給Provider。
 
 使用方式是先將剛剛所建立的context帶入到jsx裡面，透過物件取值提取Provider並設定props屬性為value，而value的值是你要共用的值，以下面範例所指的共用的值就是user這個變數。
 

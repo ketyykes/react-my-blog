@@ -37,7 +37,7 @@ npm全名**node package manager**
 1. node js runtime Node Js執行(當然需要安裝)
 2. Npm 套件管理工具 (NPM相關套件時所需)
 3. 線上文件捷徑(不一定需要)
-4. add to path (添加到環境變數主要使用cli執行node命令)
+4. add to path (添加到環境變數主要使用cli執行node指令)
 
 當安裝完畢的時候想要知道是否有下載npm成功的話，可以在
 terminal輸入 npm -v(查看npm版本號)
@@ -71,7 +71,7 @@ About to write to 你的檔案路徑
 
 基本上如果沒有要特別設定的話，就是一直按<kbd>Enter</kbd><kbd>Enter</kbd><kbd>Enter</kbd>，這些日後可以在package.json檔案修改。
 
-如果覺得創建的時候每次都要按下這些冗長的問題很麻煩的話，<span class="red rem25">npm init -y</span> 可以省略按Enter跳過步驟<span class="rem25 gray">啟用預設值</span>
+如果覺得建立的時候每次都要按下這些冗長的問題很麻煩的話，<span class="red rem25">npm init -y</span> 可以省略按Enter跳過步驟<span class="rem25 gray">啟用預設值</span>
 最後就會產生一個package.json如下
 ```json
 {

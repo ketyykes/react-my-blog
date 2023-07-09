@@ -65,7 +65,7 @@ window.addEventListener('load', function() {
 ```javascript{numberLines: true}
 window.onbeforeunload = function(event) {
 
-    // 返回要顯示給使用者看的提醒文字
+    // 回傳要顯示給使用者看的提醒文字
      return '你寫什麼都沒用了'; //但是IE有用
 };
 ```
@@ -186,7 +186,7 @@ const keyboard = document.getElementById("keyboard");
 
 ### 使用 event.code
 
-不論使用[QWERTY 鍵盤](https://zh.wikipedia.org/wiki/QWERTY%E9%8D%B5%E7%9B%A4)或是[其他鍵盤配置](https://zh.wikipedia.org/wiki/%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80#%E6%B3%95%E5%9B%BD)接返回該鍵盤實體，換句話說如果不是使用 QWERTY 配置的方式就會出現非預期輸入的字符
+不論使用[QWERTY 鍵盤](https://zh.wikipedia.org/wiki/QWERTY%E9%8D%B5%E7%9B%A4)或是[其他鍵盤配置](https://zh.wikipedia.org/wiki/%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80#%E6%B3%95%E5%9B%BD)接回傳該鍵盤實體，換句話說如果不是使用 QWERTY 配置的方式就會出現非預期輸入的字元
 
 ## 表單相關事件
 

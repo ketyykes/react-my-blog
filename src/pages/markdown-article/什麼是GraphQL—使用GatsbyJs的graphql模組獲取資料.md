@@ -55,7 +55,7 @@ font-weight:700;
 - 靈活性
   - GraphQL可以根據client端定義的資料結果從server端拿取對應的資料
 - 減少冗於資料
-  - 從伺服器端返回的資料皆為客戶端所請求的格式，相對於REST可能有些屬性並非客戶端需要的內容
+  - 從伺服器端回傳的資料皆為客戶端所請求的格式，相對於REST可能有些屬性並非客戶端需要的內容
 
 例如希望得到文章ID、標題、留言日期等等
 
@@ -82,9 +82,9 @@ GraphQL 組成方式為以下兩種
 - GraphQL API 
   - 資料來自本身的檔案系統，例如project內的md檔、
   - 資料來自於CMS內容管理系統，例如airtable、contentful、wordpress等等
-  - 自行創建schemas從不同的API
+  - 自行建立schemas從不同的API
 
-GatsbyJs將會透過這些檔案或者貼文來創建GraphQL API
+GatsbyJs將會透過這些檔案或者貼文來建立GraphQL API
 GatsbyJs將其添加至內容網格中(content mesh)
 
 

@@ -108,9 +108,9 @@ react框架為了統一管理這些事件處理，所以用state這個特別的�
 因此為了讓資料可以正確被渲染，這時候我們就要使用react其中一個hook叫做<span class="red">useState</span>。
 
 
-根據官方[基礎的 Hook](https://zh-hant.reactjs.org/docs/hooks-reference.html#usestate)的文檔
+根據官方[基礎的 Hook](https://zh-hant.reactjs.org/docs/hooks-reference.html#usestate)的文件
 
-以下節錄自官方文檔
+以下節錄自官方文件
 
 > useState將會回傳一個state 的值，以及更新 state 的 function。
 > 在首次 render時，回傳的state的值會跟第一個參數（initialState）一樣。
@@ -150,7 +150,7 @@ const App = () => {
 //以下省略
 ```
 
-如果對於解構賦值不太理解的也可以參考官方文檔[方括號代表什麼](https://zh-hant.reactjs.org/docs/hooks-state.html#tip-what-do-square-brackets-mean)或是之前撰寫[解構賦值Destructuring assignment—為什麼需要和用途](https://ithelp.ithome.com.tw/articles/10292493)的文章
+如果對於解構賦值不太理解的也可以參考官方文件[方括號代表什麼](https://zh-hant.reactjs.org/docs/hooks-state.html#tip-what-do-square-brackets-mean)或是之前撰寫[解構賦值Destructuring assignment—為什麼需要和用途](https://ithelp.ithome.com.tw/articles/10292493)的文章
 
 
 這時候123就會設定成state的初始值，setNumber是用來改變number值的函式。
@@ -247,9 +247,9 @@ export default App
 
 ## state初始值-使用lazy initialzer
 
-根據官方文檔的解說
+根據官方文件的解說
 
-> initialState 參數只會在初始 render 時使用，在後續 render 時會被忽略。如果初始 state 需要通過複雜的計算來獲得，你可以傳入一個 function，該 function 只會在初始 render 時被調用
+> initialState 參數只會在初始 render 時使用，在後續 render 時會被忽略。如果初始 state 需要通過複雜的計算來獲得，你可以傳入一個 function，該 function 只會在初始 render 時被呼叫
 
 ### useState初始值傳入一個函式呼叫
 

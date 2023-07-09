@@ -58,8 +58,8 @@ axisY(g);
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210927_05.png)
 
 
-## ticks()函數
-如果當你渲染出來的軸線需要刻度多一些的時候我們可以用ticks函數來幫我們將座標軸的刻度數量增加，當然沒有設定的時候是預設tick(10)，這邊數字的意思大致是拆分十等分，但是D3Js會根據你的資料來切分，所以有可能你tick(20)他切分了18等分，並不會剛好完全等於你所切分的函式。
+## ticks()函式
+如果當你渲染出來的軸線需要刻度多一些的時候我們可以用ticks函式來幫我們將座標軸的刻度數量增加，當然沒有設定的時候是預設tick(10)，這邊數字的意思大致是拆分十等分，但是D3Js會根據你的資料來切分，所以有可能你tick(20)他切分了18等分，並不會剛好完全等於你所切分的函式。
 
 程式碼如下
 ```javascript{numberLines: true}
@@ -72,7 +72,7 @@ axisY(g);
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20210927_06.png)
 
-## tickFormat()函數
+## tickFormat()函式
 有時候我們希望使用者在觀看軸線的時候不需要這麼多的零，可以自訂義軸的文字地顯示內容，這時候我就可以用tickFormat()函式來做出你想要的格式，例如我們將所有的資料除以1萬之後加入"萬"
 觀看以下程式碼
 ```javascript{numberLines: true}

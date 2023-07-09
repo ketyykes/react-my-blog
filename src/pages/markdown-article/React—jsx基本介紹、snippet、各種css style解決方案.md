@@ -80,7 +80,7 @@ export default App;
 
 ![keyWaring](https://i.imgur.com/sImZg4m.png)
 
-因此我們只需要加入key就能解除這個警告了，需要注意的是key必須是唯一的，通常會使用UUID的方式，當沒有UUID的時候可以使用index，但可能會有一些其他的問題，可以參考官方文檔解釋。
+因此我們只需要加入key就能解除這個警告了，需要注意的是key必須是唯一的，通常會使用UUID的方式，當沒有UUID的時候可以使用index，但可能會有一些其他的問題，可以參考官方文件解釋。
 
 官方解釋
 > 我們並不建議你使用索引作為 key，尤其如果項目的順序會改變的話。這會對效能產生不好的影響，也可能會讓 component state 產生問題。請參考 Robin Pokorny 這篇深入剖析使用索引作為 key 的負面效應ㄧ文。如果你選擇不明確分配 key 到列表項目時，React 預設將會使用索引作為 key。
@@ -264,5 +264,5 @@ export default App;
 
 ##### 參考資料
 
-- [React官方文檔](https://zh-hant.reactjs.org/docs/introducing-jsx.html)
+- [React官方文件](https://zh-hant.reactjs.org/docs/introducing-jsx.html)
 - [Different Ways to Write CSS in React](https://css-tricks.com/different-ways-to-write-css-in-react/)

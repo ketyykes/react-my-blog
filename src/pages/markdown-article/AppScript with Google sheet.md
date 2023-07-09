@@ -6,9 +6,9 @@ tags: ["App Script","Google Sheet","Javascript"]
 ---
 
 
-## 創建 google sheet
+## 建立 google sheet
 
-創建一個 Sheet，會問你審查權限之類的基本上都是允許就對了。
+建立一個 Sheet，會問你審查權限之類的基本上都是允許就對了。
 
 ```javascript{numberLines: true}
 function myFunction() {
@@ -19,7 +19,7 @@ function myFunction() {
 ## AppScript 訪問 GoogleSheet 的三種方式
 
 ```javascript{numberLines: true}
-//第一種創建一個新的sheet並打開
+//第一種建立一個新的sheet並打開
 SpreadsheetApp.create(name,[rows,columns])
 //第二種藉由Id打開sheet
 SpreadsheetApp.openByid(id)

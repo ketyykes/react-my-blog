@@ -78,7 +78,7 @@ cd移動到你要安裝套件的資料夾之後輸入
 
 ## 撰寫第一支瀏覽器自動化程式
 
-安裝完畢後，接下來就可著手開始寫js，我們創建一個叫做index.js的檔案
+安裝完畢後，接下來就可著手開始寫js，我們建立一個叫做index.js的檔案
 
 這邊我們要引入**module** 
 
@@ -221,7 +221,7 @@ scrape().then(function (data) {
   }).catch(error => console.log(error.message));
 ```
 
-我們創建一個Object來放所得到的資料，需要注意的地方是由於JSON格式必須為字串，因此使用`JSON.stringify`先將物件轉成字串，最後使用剛剛引入的**fs module**來寫入
+我們建立一個Object來放所得到的資料，需要注意的地方是由於JSON格式必須為字串，因此使用`JSON.stringify`先將物件轉成字串，最後使用剛剛引入的**fs module**來寫入
 ### fs.writeFile()函式
 1. 第一個帶入的是檔案名稱
 1. 第二個是要寫入的資料

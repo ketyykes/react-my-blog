@@ -316,7 +316,7 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[hash][name][ext]' //創建至images資料夾且自動產生hash和原檔案名稱和副檔名
+                    filename: 'images/[hash][name][ext]' //建立至images資料夾且自動產生hash和原檔案名稱和副檔名
                   },
                 },
 

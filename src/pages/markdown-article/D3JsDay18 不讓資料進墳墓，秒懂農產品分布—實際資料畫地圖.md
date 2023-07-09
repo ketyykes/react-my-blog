@@ -124,7 +124,7 @@ d3.json("farm-product-map.json").then(function(product){
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_04.png)
 
-因此我們可以得知要帶入的是[longitude, latitude]，他將會正確地返回一個轉換後的 svg 位置
+因此我們可以得知要帶入的是[longitude, latitude]，他將會正確地回傳一個轉換後的 svg 位置
 ，我們可以試著插入 console.log(projection([d.Longitude,d.Latitude]));程式碼在問號的區域，之後看主控台如下
 
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/gatsby_image/ithome_2021/20211003_05.png)

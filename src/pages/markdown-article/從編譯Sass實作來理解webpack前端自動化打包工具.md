@@ -6,7 +6,7 @@ tags: ["Webpack"]
 ---
 
 ![](https://i.imgur.com/Zpr8dDG.png)
-> 圖片來源：[webpack官方文檔](https://webpack.js.org/)
+> 圖片來源：[webpack官方文件](https://webpack.js.org/)
 ## 什麼是webpack 
 現代化的前端技術與以往不同，不僅是只有基本的HTML、CSS、Javascript，很多時候我們撰寫的內容是需要經由編譯，像是你可能會看到的副檔名包含SASS中的sass或scss、React中的jsx、Vue當中的vue，諸如此類的內容，瀏覽器並沒有辦法理解這些副檔名。甚至有些東西我們希望能夠預先處理後再變成實際網頁渲染的東西，例如將圖片壓縮檔案大小、程式碼刪除空白以便使檔案容量降低，讓眾多的Javascript檔案整合成單一檔案，因此也造就了自動化工具的產生。
 
@@ -37,9 +37,9 @@ Webpack就是處理類似上述事情的前端自動化打包工具。
 
 接下來我們開始實作一個可以編譯sass和自動化生成模板的webpack設定吧
 
-### 創建src資料夾
+### 建立src資料夾
 
-我們預計在src資料夾創建一些檔案如下
+我們預計在src資料夾建立一些檔案如下
 ```bash
 ├─js
 │      index.js
@@ -136,7 +136,7 @@ module.exports = {
 };
 ```
 ### Step.7 撰寫scss將其載入到index.js
-在我們剛剛創建的scss資料夾創建`all.scss`檔案以及在js資料夾創建`index.js`
+在我們剛剛建立的scss資料夾建立`all.scss`檔案以及在js資料夾建立`index.js`
 
 在`index.js`的檔案
 ```javascript
@@ -182,7 +182,7 @@ body div{text-align:center;color:red}
 希望透過編譯scss的過程的範例實作能夠理解到webpack一些核心概念和原理，也希望對大家有幫助。
 
 ##### 參考資料
-- [webpack官方文檔](https://webpack.js.org/)
+- [webpack官方文件](https://webpack.js.org/)
 - [NPM cross-env](https://www.npmjs.com/package/cross-env)
 - [Node.js document-path](https://nodejs.org/api/path.html)
 - [關於 Webpack，它是什麼？能夠做什麼？為什麼？怎麼做？](https://askie.today/what-is-webpack/)

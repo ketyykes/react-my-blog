@@ -302,10 +302,10 @@ obj2.fn1();
 
 使用 new 的時候會發生四件事情
 
-創建一個空的簡單 JavaScript 物件（即{}）；
-為步驟 1 新創建的物件添加屬性**proto**，將該屬性鏈接至建構子函式的原型對象 ；
-將步驟 1 新創建的對象作為 this 的上下文 ；
-如果該函數沒有回傳物件，則返回 this。
+建立一個空的簡單 JavaScript 物件（即{}）；
+為步驟 1 新建立的物件添加屬性**proto**，將該屬性鏈接至建構子函式的原型對象 ；
+將步驟 1 新建立的對象作為 this 的上下文 ；
+如果該函式沒有回傳物件，則回傳 this。
 
 > [new MDN 運算子](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new) 
 > [new 關鍵字筆記](https://hackmd.io/k--nD40LRzGcnhU9jgSpAA?view)
