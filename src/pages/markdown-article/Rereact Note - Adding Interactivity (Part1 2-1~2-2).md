@@ -117,9 +117,9 @@ export default function Button() {
 
 事件處理器中傳遞的函式必須是傳遞而不是被呼叫。例如：
 
-| passing a function (correct)     | calling a function (incorrect)     |
-| -------------------------------- | ---------------------------------- |
-| `<button onClick={handleClick}>` | `<button onClick={handleClick()}>` |
+| passing a function (correct)         | calling a function (incorrect)         |
+| ------------------------------------ | -------------------------------------- |
+| &lt;button onClick={handleClick}&gt; | &lt;button onClick={handleClick()}&gt; |
 
 由於JSX都會執行一次，如果帶入的是一個函式的話，當初次渲染的時候到這個Component的時候就會執行
 

@@ -300,12 +300,14 @@ let obj3 = {
 以下是常見陣列操作的參考表。當處理React狀態中的陣列時，應避免使用左列中的方法，而應使用右列中的方法：
 
 
-|           | 避免變異(mutates)陣列               | 推薦回傳新陣列                                                                                                      |
-| --------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| adding    | `push`, `unshift`                   | `concat`, `[...arr]` spread syntax ([example](https://react.dev/learn/updating-arrays-in-state#adding-to-an-array)) |
-| removing  | `pop`, `shift`, `splice`            | `filter`, `slice` ([example](https://react.dev/learn/updating-arrays-in-state#removing-from-an-array))              |
-| replacing | `splice`, `arr[i] = ...` assignment | `map` ([example](https://react.dev/learn/updating-arrays-in-state#replacing-items-in-an-array))                     |
-| sorting   | `reverse`, `sort`                   | 先行複製 ([example](https://react.dev/learn/updating-arrays-in-state#making-other-changes-to-an-array))             |
+
+|           | 避免變異(mutates)陣列                                                                                        | 推薦回傳新陣列                                                                                                                                                              |
+| --------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| adding    | <span class="red code">push</span>, <span class="red code">unshift</span>                                    | <span class="red code">concat</span>, <span class="red code">[...arr]</span> spread syntax ([example](https://react.dev/learn/updating-arrays-in-state#adding-to-an-array)) |
+| removing  | <span class="red code">pop</span>, <span class="red code">shift</span>, <span class="red code">splice</span> | <span class="red code">filter</span>, <span class="red code">slice</span> ([example](https://react.dev/learn/updating-arrays-in-state#removing-from-an-array))              |
+| replacing | <span class="red code">splice</span>, <span class="red code">arr[i] = ...</span> assignment                  | <span class="red code">map</span> ([example](https://react.dev/learn/updating-arrays-in-state#replacing-items-in-an-array))                                                 |
+| sorting   | <span class="red code">reverse</span>, <span class="red code">sort</span>                                    | 先行複製 ([example](https://react.dev/learn/updating-arrays-in-state#making-other-changes-to-an-array))                                                                     |
+
 
 ## slice和splice在名稱上相似，但實際上有很大的不同
 

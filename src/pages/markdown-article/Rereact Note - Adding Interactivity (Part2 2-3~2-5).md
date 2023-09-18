@@ -160,9 +160,9 @@ function sendMessage(message) {
 
 當您點擊按鈕時，會發生以下情況：
 
-1. <span class="red">`onSubmit`</span>事件處理器執行。
-2. <span class="red">`setIsSent(true)`</span>將<span class="red">`isSent`</span>設置為<span class="red">`true`</span>並排隊進行新的渲染。
-3. React根據新的<span class="red">`isSent`</span>值重新渲染組件。
+1. <span class="red code">onSubmit</span>事件處理器執行。
+2. <span class="red code">setIsSent(true)</span>將<span class="red code">isSent</span>設置為<span class="red code">true</span>並排隊進行新的渲染。
+3. React根據新的<span class="red code">isSent</span>值重新渲染組件。
 
 渲染意思是React正在呼叫你的Component，他的Local variable、Prps、State都是渲染時(呼叫時)計算得出
 
