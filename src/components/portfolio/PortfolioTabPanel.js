@@ -7,7 +7,6 @@ import {
 	useMediaQuery,
 	ImageList,
 	ImageListItem,
-	Box,
 } from "@mui/material";
 import ImageDialogs from "./ImageDialogs";
 

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
-import "../../styles/global.scss";
+import React, { useState } from "react"
+import { Link } from "gatsby"
+import "../../styles/global.scss"
 import {
 	navbar,
 	navbarHome,
@@ -11,19 +11,14 @@ import {
 	menuShow,
 	menuNoshow,
 	activeNavbar,
-} from "./navbar.module.scss";
+} from "./navbar.module.scss"
 
 const Navbar = () => {
-	const [hamburger, setHamburger] = useState(false);
+	const [hamburger, setHamburger] = useState(false)
 	const hamHandler = () => {
-		setHamburger(!hamburger);
-	};
+		setHamburger(!hamburger)
+	}
 
-	const option = {
-		root: null,
-		rootMargin: "0px 0px 0px 0px",
-		threshold: 0.0,
-	};
 	return (
 		<nav className={`${navbar}`}>
 			<div
@@ -73,7 +68,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 		</nav>
-	);
-};
+	)
+}
 
-export default Navbar;
+export default Navbar
