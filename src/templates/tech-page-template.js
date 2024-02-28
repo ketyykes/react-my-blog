@@ -47,7 +47,7 @@ export default TechPageTemplate;
 export const Head = () => <Seo title="Tech-page" />;
 export const query = graphql`
 	{
-		allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+		allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
 			nodes {
 				frontmatter {
 					title

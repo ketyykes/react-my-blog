@@ -46,7 +46,7 @@ export const Head = ({ pageContext: { tag } }) => <Seo title={tag} />;
 export const tagPageQuery = graphql`
 	query TagPage($tag: String) {
 		allMarkdownRemark(
-			sort: { fields: [frontmatter___date], order: DESC }
+			sort: { frontmatter: { date: DESC } }
 			filter: { frontmatter: { tags: { in: [$tag] } } }
 		) {
 			totalCount
