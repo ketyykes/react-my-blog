@@ -2,7 +2,6 @@ const _ = require("lodash");
 const path = require("path");
 const util = require("util");
 const dayjs = require("dayjs");
-const { TagSharp } = require("@mui/icons-material");
 exports.createPages = async ({ graphql, actions }) => {
 	const { data } = await graphql(`
 		query articleTechQuery {
@@ -16,14 +15,14 @@ exports.createPages = async ({ graphql, actions }) => {
 						tags
 					}
 				}
-				group(field: frontmatter___tags) {
+				group(field: { frontmatter: { tags: SELECT } }) {
 					fieldValue
 				}
 			}
 		}
 	`);
 
-	//markdown轉成html頁面
+	//markdown 轉成 html 頁面
 	data.allMarkdownRemark.nodes.forEach((node) => {
 		actions.createPage({
 			path:
