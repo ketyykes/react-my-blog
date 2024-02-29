@@ -24,13 +24,16 @@ const Layout = ({ children, banner }) => {
 				)}
 			</Header>
 			<Container maxWidth="false">
-				<IconButton
-					sx={{ margin: "2px auto", display: "block" }}
-					onClick={scrollToNextScreen}
-				>
-					<ArrowCircleDownIcon />
-				</IconButton>
-				<Box sx={{ py: 10, minHeight: "calc(100vh - 60px)" }} component="div">
+				{banner && (
+					<IconButton
+						sx={{ margin: "2px auto", display: "block" }}
+						onClick={scrollToNextScreen}
+					>
+						<ArrowCircleDownIcon />
+					</IconButton>
+				)}
+
+				<Box sx={{ py: 6, minHeight: "calc(100vh - 60px)" }} component="div">
 					{children}
 				</Box>
 			</Container>
