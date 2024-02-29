@@ -1,24 +1,38 @@
 import React from "react";
 import { Banner, Footer, Navbar, Header } from "..";
-import { Container } from "@mui/material";
+import { Container, Box, IconButton } from "@mui/material";
+import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
 const Layout = ({ children, banner }) => {
+	const scrollToNextScreen = () => {
+		const nextScreenY = window.innerHeight;
+		window.scrollTo({
+			top: nextScreenY,
+			behavior: "smooth",
+		});
+	};
 	return (
 		<>
 			<Header>
 				{banner ? (
-					<Banner>
+					<>
 						<Navbar />
-					</Banner>
+						<Banner />
+					</>
 				) : (
 					<Navbar />
 				)}
 			</Header>
-			<Container
-				maxWidth="false"
-				sx={{ py: 10, minHeight: "calc(100vh - 60px)" }}
-			>
-				{children}
+			<Container maxWidth="false">
+				<IconButton
+					sx={{ margin: "2px auto", display: "block" }}
+					onClick={scrollToNextScreen}
+				>
+					<ArrowCircleDownIcon />
+				</IconButton>
+				<Box sx={{ py: 10, minHeight: "calc(100vh - 60px)" }} component="div">
+					{children}
+				</Box>
 			</Container>
 			<Footer />
 		</>

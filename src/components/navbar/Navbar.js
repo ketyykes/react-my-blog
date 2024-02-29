@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import "../../styles/global.scss"
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "gatsby";
+import "../../styles/global.scss";
 import {
 	navbar,
 	navbarHome,
@@ -11,16 +11,46 @@ import {
 	menuShow,
 	menuNoshow,
 	activeNavbar,
-} from "./navbar.module.scss"
+} from "./navbar.module.scss";
 
 const Navbar = () => {
-	const [hamburger, setHamburger] = useState(false)
+	const [hamburger, setHamburger] = useState(false);
 	const hamHandler = () => {
-		setHamburger(!hamburger)
-	}
+		setHamburger(!hamburger);
+	};
+	const [showNavbar, setShowNavbar] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const controlNavbar = () => {
+		if (typeof window !== "undefined") {
+			if (window.scrollY < lastScrollY) {
+				setShowNavbar(true);
+			} else {
+				setShowNavbar(false);
+			}
+			setLastScrollY(window.scrollY);
+		}
+	};
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			window.addEventListener("scroll", controlNavbar);
+
+			return () => {
+				window.removeEventListener("scroll", controlNavbar);
+			};
+		}
+	}, [lastScrollY]);
 
 	return (
-		<nav className={`${navbar}`}>
+		<nav
+			className={navbar}
+			style={{
+				position: "fixed",
+				top: showNavbar ? "0" : "-100px",
+				transition: "top 0.3s",
+			}}
+		>
 			<div
 				className={ham}
 				onClick={hamHandler}
@@ -39,7 +69,7 @@ const Navbar = () => {
 						<span className={iconTxt}>水土曜來了</span>
 					</Link>
 				</h1>
-				<ul className={`${hamburger ? menuShow : menuNoshow}`}>
+				<ul className={hamburger ? menuShow : menuNoshow}>
 					<li>
 						<Link activeClassName={activeNavbar} to="/">
 							首頁
@@ -68,7 +98,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 		</nav>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;
