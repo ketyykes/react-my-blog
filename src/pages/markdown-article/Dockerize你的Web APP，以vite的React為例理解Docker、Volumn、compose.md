@@ -289,7 +289,7 @@ CMD ["pnpm", "run", "dev"]
 
 建立.dockerignore 檔案，用於避免 COPY 或 ADD 指令時將該檔案放入映像檔中
 
-```bash=
+```bash
 Dockerfile
 .dockerignore
 node_modules
