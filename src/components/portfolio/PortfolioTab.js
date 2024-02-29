@@ -11,7 +11,7 @@ const PortfolioTab = () => {
 	const handleTabs = (e, val) => {
 		setValue(val);
 	};
-	//query json資料夾裡面的json
+	//query json 資料夾裡面的 json
 	const data = useStaticQuery(graphql`
 		{
 			jsonJson {
@@ -39,7 +39,8 @@ const PortfolioTab = () => {
 	} = data;
 	const [value, setValue] = useState(0);
 	return (
-		<Container maxWidth="xl" sx={{ p: 2 }}>
+		// <Container maxWidth="xl" sx={{ p: 2 }}>
+		<>
 			<CustomTabs value={value} onChange={handleTabs}>
 				<Tab label="Front-end"></Tab>
 				<Tab label="Backend"></Tab>
@@ -60,7 +61,8 @@ const PortfolioTab = () => {
 				index={2}
 				data={otherCardArray}
 			></PortfolioTabPanel>
-		</Container>
+		</>
+		// </Container>
 	);
 };
 export default PortfolioTab;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import "../../styles/global.scss";
 import {
@@ -11,6 +11,8 @@ import {
 	menuShow,
 	menuNoshow,
 	activeNavbar,
+	top0,
+	topHidden,
 } from "./navbar.module.scss";
 
 const Navbar = () => {
@@ -40,17 +42,10 @@ const Navbar = () => {
 				window.removeEventListener("scroll", controlNavbar);
 			};
 		}
-	}, [lastScrollY]);
+	}, [lastScrollY, controlNavbar]);
 
 	return (
-		<nav
-			className={navbar}
-			style={{
-				position: "fixed",
-				top: showNavbar ? "0" : "-100px",
-				transition: "top 0.3s",
-			}}
-		>
+		<nav className={`${navbar} ${showNavbar ? top0 : topHidden}`}>
 			<div
 				className={ham}
 				onClick={hamHandler}
