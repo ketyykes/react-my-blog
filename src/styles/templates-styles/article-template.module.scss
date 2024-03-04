@@ -88,6 +88,7 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 		}
 	}
 	table {
+		margin: 1rem auto;
 		line-height: 1.5;
 		a {
 			margin-top: 0;
@@ -100,5 +101,12 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 			border: 1px solid $code_background_color;
 			padding: 10px;
 		}
+	}
+	:global(code.language-text.language-text.language-text) {
+		padding: 2px 4px;
+		font-size: 90%;
+		color: #c7254e;
+		background-color: #f9f2f4;
+		border-radius: 4px;
 	}
 }
