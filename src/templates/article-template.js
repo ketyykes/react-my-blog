@@ -7,13 +7,13 @@ import { articleContent } from "../styles/templates-styles/article-template.modu
 const dayjs = require("dayjs");
 const articleTemplate = ({ pageContext }) => {
 	const { html, title, date } = pageContext;
-	const fomateDate = dayjs(date).format("YYYY-MM-DD ddd");
+	const formateDate = dayjs(date).format("YYYY-MM-DD ddd");
 	return (
 		<>
 			<Layout>
 				<div className={articleContent}>
 					<h2>{title}</h2>
-					<h3>{fomateDate}</h3>
+					<h3>{formateDate}</h3>
 					<div dangerouslySetInnerHTML={{ __html: html }} />
 				</div>
 			</Layout>
