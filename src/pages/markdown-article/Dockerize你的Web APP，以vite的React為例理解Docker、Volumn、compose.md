@@ -1,7 +1,7 @@
 ---
 title: Dockerize 你的 Web APP，以 vite 的 React 為例理解 Docker、Volume、compose
-slug: 2024-01-28T06:10:23.000Z
-date: 2024-01-28T06:10:23.000Z
+slug: 2024-01-27T06:10:23.000Z
+date: 2024-01-27T06:10:23.000Z
 tags: ["Docker","Backend"]
 ---
 
@@ -85,7 +85,7 @@ Docker 是一個開源容器化平台，讓開發人員可以將應用程式及�
 > Docker 是一個開放原始碼的開放平臺軟體，用於開發應用、交付（shipping）應用和執行應用。Docker 允許使用者將基礎設施（Infrastructure）中的應用單獨分割出來，形成更小的顆粒（容器），從而提高交付軟體的速度。
 
 參考下圖
-![](https://hackmd.io/_uploads/rJwQ2Zt22.png)
+![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_af2b6ecb6a38069d04bf21c6e51f13a3.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1709549832&Signature=QH4UUeinv1BXSm7VlsmVqgGN9pg%3D)
 > 圖片來自[docker 官方文件-container 章節](https://www.docker.com/resources/what-container/)
 
 其中 AppA 和 AppB 和 AppC 可能的舉例像是 Node app、React app、Mongodb 等等的應用程式。
@@ -388,13 +388,13 @@ docker build -f Dockerfile.dev -t my-react:dev .
 
 ### 使用 -v 或 --mount 指令
 
-1. **使用 `-v` 選項**:
+**使用 `-v` 選項**:
    ```bash
    docker run -v /path/to/host/src:/path/in/container/src [其他選項] [映像名稱]
    ```
    這裡，`/path/to/host/src` 是您主機上的目錄，`/path/in/container/src` 是容器內的目錄。這個命令會將主機上的 `/path/to/host/src` 目錄掛載到容器的 `/path/in/container/src` 目錄。
 
-2. **使用 `--mount` 選項**（更為明確和推薦的方式）:
+**使用 `--mount` 選項**（更為明確和推薦的方式）:
    ```bash
    docker run --mount type=bind,source=/path/to/host/src,target=/path/in/container/src [其他選項] [映像名稱]
    ```
