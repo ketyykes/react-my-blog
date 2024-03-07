@@ -435,7 +435,7 @@ Docker 中的支持不同的 `type`，用於指定掛載的類型。通常有以
 
 執行以下程式碼
 
-```
+```bash
 docker run -v ./src:/app/src -d -p 3000:5173 my-react:dev
 ```
 
