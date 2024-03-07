@@ -23,7 +23,7 @@ const Layout = ({ children, banner }) => {
 					<Navbar />
 				)}
 			</Header>
-			<Container maxWidth="false">
+			<Container maxWidth="false" component="main">
 				{banner && (
 					<IconButton
 						sx={{ margin: "2px auto", display: "block" }}
@@ -33,7 +33,10 @@ const Layout = ({ children, banner }) => {
 					</IconButton>
 				)}
 
-				<Box sx={{ py: 6, minHeight: "calc(100vh - 60px)" }} component="div">
+				<Box
+					sx={{ py: 6, minHeight: "calc(100vh - 60px)" }}
+					component="section"
+				>
 					{children}
 				</Box>
 			</Container>
