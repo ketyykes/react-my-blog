@@ -12,9 +12,9 @@ const articleTemplate = ({ pageContext }) => {
 		<>
 			<Layout>
 				<div className={articleContent}>
-					<h2>{title}</h2>
-					<h3>{formateDate}</h3>
-					<div dangerouslySetInnerHTML={{ __html: html }} />
+					<h1>{title}</h1>
+					<h2>{formateDate}</h2>
+					<article dangerouslySetInnerHTML={{ __html: html }} />
 				</div>
 			</Layout>
 		</>
