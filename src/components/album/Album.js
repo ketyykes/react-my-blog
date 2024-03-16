@@ -38,9 +38,6 @@ const Album = () => {
 		if (e.target.complete) {
 			setProgress((prev) => prev + percentage(1, IMAGE_AMOUNT));
 		}
-		// if (progress > 98) {
-		// 	setLoading(false);
-		// }
 	};
 	return (
 		<>
