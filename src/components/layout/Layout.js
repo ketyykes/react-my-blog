@@ -23,7 +23,7 @@ const Layout = ({ children, banner }) => {
 					<Navbar />
 				)}
 			</Header>
-			<Container maxWidth="false" component="main">
+			<Container maxWidth="false" component="main" sx={{ px: 0 }}>
 				{banner && (
 					<IconButton
 						sx={{ margin: "2px auto", display: "block" }}
