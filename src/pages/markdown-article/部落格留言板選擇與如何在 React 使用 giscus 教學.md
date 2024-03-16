@@ -40,6 +40,8 @@ font-weight:700;
 }
 </style>
 
+本文章將提及以下內容
+
 - 選擇官方推薦的 Disqus？
 - 其他留言系統 
 - Github 做為留言板
@@ -49,7 +51,7 @@ font-weight:700;
     - Step.1 設置 Github 與應用程式
     - Step.2 輸入 github name 與 repo name  
     - Step.3 選擇 mappign discussion 的方式
-      - #### mapping 簡單說明
+      - mapping 簡單說明
     - Step.4 選擇分類、佈景主題等等的配置
     - Step.5 得到 script 結果
   - 使用 giscus component
