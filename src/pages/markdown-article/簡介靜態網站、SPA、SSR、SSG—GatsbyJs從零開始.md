@@ -8,7 +8,7 @@ tags: ["Gatsby.js","React"]
 本文提及以下重點
 - GatsbyJS 介紹
 - 靜態網站
-- SPA 網頁 (Single Page Appliations)
+- SPA 網頁 (Single Page Application)
 - SSR 網頁 (Server Side Rendered)
 - Static site generator (gatsby)
 - Gatsby 和 Data
@@ -16,7 +16,7 @@ tags: ["Gatsby.js","React"]
 ## GatsbyJS 介紹
 
 - 使用 Static site generator (SSG) 靜態網站產生器
-  - 使用模板 (template) 和組件 (compenent) 和資料 (data)
+  - 使用模板 (template) 和組件 (component) 和資料 (data)
 - 使用 React 和 GraphQL 技術結合
 - Gatsby 稱他自己是現代網站產生器
 
@@ -30,7 +30,7 @@ tags: ["Gatsby.js","React"]
 *  難以更新和維護網頁 (由於有很多類似的 code 是在每一頁)
 *  載入新頁面的時候需要每次都和伺服器發出請求 (也造成網站下載過慢)
 *  通常不會包含動態的資料
-## SPA 網頁 (Single Page Appliations)
+## SPA 網頁 (Single Page Application)
 - 像是 React/Vue 網站
 - 只有對伺服器單次請求一個初始的頁面 (空值)
 - 除了 (routing 和 data) 是以外其他都是藉由 SPA 的機制在瀏覽器解析
@@ -69,13 +69,13 @@ tags: ["Gatsby.js","React"]
 ---
 ## 開始 Gatsby
 
-## 基礎知識
+### 基礎知識
 
 關於 Gatsby 官方提出你所需要的背景知識，包括但不限於 HTML、CSS、Javascript、command line、React、GraphQL
 
 另外也必須安裝如 Node.js v14.15 以上、Git、Gatsby CLI、Visual Studio Code
 
-## Gatsb 起手式 - 安裝 GatsbyCLI
+### Gatsby 起手式 - 安裝 GatsbyCLI
 
 首先全域安裝 gatsby 的 CLI
 
@@ -86,7 +86,7 @@ tags: ["Gatsby.js","React"]
 另外可以查看可用的指令
 `gatsby --help`
 
-## 建立一個 gatsby 基本頁面
+### 建立一個 Gatsby 基本頁面
 
 [Gatsby new](https://www.gatsbyjs.com/docs/tutorial/part-1/)
 先前安裝完 gatsbyCLI 後，在 terminal 輸入`gatsby new`
@@ -158,7 +158,8 @@ gatsby 預設的 port 是 8000 如果需要改變預設的 port 號可以在 pac
 ![](https://i.imgur.com/ivEXHg6.png)
 
 可以觀看 src 的資料夾內容如下
-```
+
+```bash
 ├─images
 │      icon.png
 │
