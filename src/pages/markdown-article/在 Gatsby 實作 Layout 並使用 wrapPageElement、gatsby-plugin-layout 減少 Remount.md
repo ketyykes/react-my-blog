@@ -52,13 +52,13 @@ Layout component 讓開發者能夠定義一個共用的界面框架，包括 He
         test.js
 ```
 
-- `components`資料夾包含了重用的 UI 元件，如`Layout.js`、`Navbar.js`和`Footer.js`。這些元件可以在多個頁面間共享，以確保界面一致性和程式碼的高效重用。
+- `components`資料夾包含了重用的 UI 元件，如`Layout.js`、`Navbar.js`和`Footer.js`。這些元件可以在多個頁面間使用，以確保界面一致性和程式碼的高效重用。
 - `images`資料夾用於存放網站使用的圖片資源，如標誌和背景圖片等。
 - `pages`資料夾包含了網站的各個頁面，每個文件對應一個路徑。Gatsby 會自動將這些 JavaScript 文件轉換為網站的頁面。
 
 ## 建立 Layout component
 
-Layout component 的主要作用是提供一個共用的框架，讓每個頁面都能嵌入其中，從而保持頁面的一致性和整潔性。在`Layout.js`中定義 Layout component 時，使用了 React 的`{children}`特性來插入子元件。這樣，任何被`<Layout>`和`</Layout>`包裹的內容都會被當做子元件渲染在指定的位置。
+Layout component 的主要作用是提供一個共用的框架，讓每個頁面都能嵌入其中，從而保持頁面的一致性和整潔性。在`Layout.js`中定義 Layout component 時，使用了 React 的`{children}`特性來插入子元件。這樣任何被`<Layout>`和`</Layout>`包裹的內容都會被當做子元件渲染在指定的位置。
 
 ```javascript
 import React from 'react';
@@ -68,9 +68,9 @@ import Footer from './Footer';
 const Layout = ({children}) => {
   return (
     <>
-      <Navbar />
+      <Navbar /> //先前有預先建立一個 Navbar component
       {children}
-      <Footer />
+      <Footer /> //先前有預先建立一個 Navbar component
     </>
   );
 };
@@ -168,67 +168,7 @@ exports.wrapPageElement = ({ element, props }) => {
 
 如此一來就可以讓 Gatsby 在每個頁面外自動包裹 Layout component，實現全局佈局且在頁面切換時不重新掛載。
 
-首先先建立如下的資料夾結構
-
-```
-├─components
-│      Footer.js
-│      Layout.js
-│      Navbar.js
-│
-├─images
-│      icon.png
-│
-└─pages
-        404.js
-        about.js
-        index.js
-        test.js
-```
-
-## 建立 component 帶入 children 參數
-
-我們可能有 header 和 footer，因此可以建立一個**Layout**的**component**，內容如下，其中函式內帶入{children}，這樣的方式是用來準備等等接收一些 tag 裡面的參數。(可看下一部分的範例比較好理解)
-
-
-備註：**建立 Component 的時候命名強烈建議使用大寫表示**
-
-```javascript=
-import React from 'react';
-import Layout from './Footer'
-import Navbar from './Navbar'
-const Layout = ({children}) => {
-  return 
-  <>
-    <Navbar /> //我們先前有預先建立一個 Navbar component
-        {children}
-    <Layout /> //我們先前有預先建立一個 Navbar component
-
-  </>;
-};
-export default Layout;
-```
-
-## 引用 component 並加入內容傳遞給該 component
-
-在首頁裡面建立如下的程式碼，在`<Layout>`和`</Layout>`中間插入你想要寫的內容，這時候就會傳遞給 Layout component，然後透過{children}的方式接收到參數再選擇你要渲染的位置
-
-```javascript=
-import React from 'react'
-import Layout from '../components/Layout'
-const IndexPage = () => {
-  return (
-    <>
-        <Layout>
-          這是首頁的內容
-        </Layout>
-    </>
-  )
-}
-export default IndexPage
-```
-
 ##### 參考資料
 
-> [Layout 官方文件](https://www.gatsbyjs.com/docs/how-to/routing/layout-components/)
-> [gatsby-plugin-layout](https://www.gatsbyjs.com/plugins/gatsby-plugin-layout/)
+- [Layout 官方文件](https://www.gatsbyjs.com/docs/how-to/routing/layout-components/)
+- [gatsby-plugin-layout](https://www.gatsbyjs.com/plugins/gatsby-plugin-layout/)
