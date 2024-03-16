@@ -36,7 +36,7 @@ Layout component 讓開發者能夠定義一個共用的界面框架，包括 He
 
 首先先建立如下的資料夾結構
 
-```
+```bash
 ├─components
 │      Footer.js
 │      Layout.js
