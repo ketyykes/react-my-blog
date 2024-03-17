@@ -76,7 +76,9 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 	b {
 		font-weight: 700;
 	}
-
+	ol > li {
+		list-style: decimal;
+	}
 	li {
 		list-style: disc;
 		list-style-position: inside;
