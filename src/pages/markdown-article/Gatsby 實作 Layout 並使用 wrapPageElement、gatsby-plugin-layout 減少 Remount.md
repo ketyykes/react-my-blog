@@ -1,5 +1,5 @@
 ---
-title: 在 Gatsby 實作 Layout 並使用 wrapPageElement、gatsby-plugin-layout 減少 Remount
+title: Gatsby 實作 Layout 並使用 wrapPageElement、gatsby-plugin-layout 減少 Remount
 slug: 2022-01-19T13:31:00.000Z
 date: 2022-01-19T13:31:00.000Z
 tags: ["Gatsby.js","React"]
