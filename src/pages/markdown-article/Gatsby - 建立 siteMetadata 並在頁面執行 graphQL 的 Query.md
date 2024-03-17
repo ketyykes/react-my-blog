@@ -1,7 +1,7 @@
 ---
 title: Gatsby - 建立 siteMetadata 並在頁面執行 graphQL 的 Query
-slug: 2022-01-25T19:00:00.000Z
-date: 2022-01-25T19:00:00.000Z
+slug: 2022-01-27T12:00:00.000Z
+date: 2022-01-27T12:00:00.000Z
 tags: ["React","Gatsby.js"]
 ---
 
@@ -9,7 +9,7 @@ tags: ["React","Gatsby.js"]
 
 ## 建立站點資訊 (siteMetadata)
 
-在使用 Query 時，需注意命名衝突的問題。如果有多個 Query，命名必須不相同。我們可以在 `gatsby-config.js` 這個檔案中設定站點的資料 (siteMetadata)。
+我們可以在 `gatsby-config.js` 這個檔案中設定站點的資料 (siteMetadata)，值得一提的地方是在使用 Query 時，需注意命名衝突的問題。如果有多個 Query，命名必須不相同。。
 
 ```javascript
 module.exports = {
