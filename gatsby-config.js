@@ -61,12 +61,6 @@ module.exports = {
 		},
 		"gatsby-plugin-netlify",
 		{
-			resolve: "gatsby-plugin-html-attributes",
-			options: {
-				lang: "zh-Hant-TW",
-			},
-		},
-		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `水土曜來了`,
