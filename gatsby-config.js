@@ -48,8 +48,17 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-image`,
-		`gatsby-plugin-sharp`,
-		`gatsby-transformer-sharp`,
+		{
+			resolve: `gatsby-plugin-sharp`,
+			options: {
+				defaults: {
+					formats: [`auto`, `webp`],
+					quality: 50,
+					breakpoints: [576, 768, 1366, 1920],
+					backgroundColor: `transparent`,
+				},
+			},
+		}`gatsby-transformer-sharp`,
 		"gatsby-plugin-netlify",
 		{
 			resolve: "gatsby-plugin-html-attributes",
