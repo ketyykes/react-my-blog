@@ -58,7 +58,7 @@ module.exports = {
 					backgroundColor: `transparent`,
 				},
 			},
-		}`gatsby-transformer-sharp`,
+		},
 		"gatsby-plugin-netlify",
 		{
 			resolve: "gatsby-plugin-html-attributes",
