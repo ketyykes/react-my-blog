@@ -1,10 +1,9 @@
 import * as React from "react";
 import _ from "lodash";
 import { graphql, Link } from "gatsby";
-import { Layout, Seo } from "../components";
+import { Seo } from "../components";
 import { Button } from "@mui/material/";
 import LabelIcon from "@mui/icons-material/Label";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const TagsPage = ({
 	data: {
