@@ -12,34 +12,34 @@ const articleTemplate = ({ pageContext }) => {
 	const formateDate = dayjs(date).format("YYYY-MM-DD ddd");
 	return (
 		<>
-			<Layout>
-				<div className={articleContent}>
-					<h1>{title}</h1>
-					<h2>{formateDate}</h2>
-					<article dangerouslySetInnerHTML={{ __html: html }} />
+			{/* <Layout> */}
+			<div className={articleContent}>
+				<h1>{title}</h1>
+				<h2>{formateDate}</h2>
+				<article dangerouslySetInnerHTML={{ __html: html }} />
 
-					<Giscus
-						id="comments"
-						repo="ketyykes/react-my-blog"
-						repoId="R_kgDOG8KeJw"
-						term="Welcome to my wedsatcoming blog"
-						category="Announcements"
-						categoryId="DIC_kwDOG8KeJ84CdyXw"
-						mapping="og:title"
-						reactionsEnabled="1"
-						emitMetadata="0"
-						inputPosition="bottom"
-						theme="cobalt"
-						lang="zh-TW"
-						loading="lazy"
-					/>
-				</div>
-			</Layout>
+				<Giscus
+					id="comments"
+					repo="ketyykes/react-my-blog"
+					repoId="R_kgDOG8KeJw"
+					term="Welcome to my wedsatcoming blog"
+					category="Announcements"
+					categoryId="DIC_kwDOG8KeJ84CdyXw"
+					mapping="og:title"
+					reactionsEnabled="1"
+					emitMetadata="0"
+					inputPosition="bottom"
+					theme="cobalt"
+					lang="zh-TW"
+					loading="lazy"
+				/>
+			</div>
+			{/* </Layout> */}
 		</>
 	);
 };
 
-export const Head = ({ pageContext: { title } }) => {
-	return <Seo title={title} />;
+export const Head = ({ pageContext: { title, excerpt } }) => {
+	return <Seo title={title} description={excerpt} />;
 };
 export default articleTemplate;

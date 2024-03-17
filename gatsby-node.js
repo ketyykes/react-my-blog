@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
 						date
 						tags
 					}
+					excerpt
 				}
 				group(field: { frontmatter: { tags: SELECT } }) {
 					fieldValue
@@ -33,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
 				html: node.html,
 				title: node.frontmatter.title,
 				date: node.frontmatter.date,
+				excerpt: node.excerpt,
 			},
 		});
 	});
