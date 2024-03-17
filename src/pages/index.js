@@ -1,22 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout, PortfolioTab } from "../components/index";
+import { PortfolioTab } from "../components/index";
 import Seo from "../components/seo/Seo";
 
 const Index = ({ data }) => {
-	return (
-		<>
-			<Layout banner={true}>
-				<PortfolioTab />
-			</Layout>
-		</>
-	);
+	return <PortfolioTab />;
 };
 
 export default Index;
-export const Head = () => <Seo title="Home" />;
+export const Head = () => (
+	<>
+		<html lang="zh-Hant-TW" />
+		<Seo title="Home" />;
+	</>
+);
 
-//原先是給slider的graphql
+//原先是給 slider 的 graphql
 export const query = graphql`
 	query QuerySlider {
 		allFile(

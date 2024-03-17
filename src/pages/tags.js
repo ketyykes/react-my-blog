@@ -12,10 +12,7 @@ const TagsPage = ({
 	},
 }) => {
 	return (
-		<Layout banner={true}>
-			{/* <AnchorLink to="#test" title="Our team">
-				<span>Check out our team!</span>
-			</AnchorLink> */}
+		<>
 			{group.map((el, index) => {
 				const tagPath = `/tags/${_.kebabCase(el.fieldValue)}/`;
 				return (
@@ -31,14 +28,18 @@ const TagsPage = ({
 					</Button>
 				);
 			})}
-			{/* <div id="test">測試</div> */}
-		</Layout>
+		</>
 	);
 };
 
 export default TagsPage;
 
-export const Head = () => <Seo title="Tags" />;
+export const Head = () => (
+	<>
+		<html lang="zh-Hant-TW" />
+		<Seo title="Tags" />;
+	</>
+);
 
 export const tagPageQuery = graphql`
 	query TagsQuery {
@@ -48,7 +49,7 @@ export const tagPageQuery = graphql`
 			}
 		}
 		allMarkdownRemark(limit: 1000) {
-			group(field: {frontmatter: {tags: SELECT}}) {
+			group(field: { frontmatter: { tags: SELECT } }) {
 				fieldValue
 				totalCount
 			}

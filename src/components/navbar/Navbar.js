@@ -23,26 +23,24 @@ const Navbar = () => {
 	const [showNavbar, setShowNavbar] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
-	const controlNavbar = () => {
-		if (typeof window !== "undefined") {
-			if (window.scrollY < lastScrollY) {
-				setShowNavbar(true);
-			} else {
-				setShowNavbar(false);
-			}
-			setLastScrollY(window.scrollY);
-		}
-	};
-
 	useEffect(() => {
+		let ticking = false;
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY;
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					setShowNavbar(currentScrollY < lastScrollY);
+					setLastScrollY(currentScrollY);
+					ticking = false;
+				});
+				ticking = true;
+			}
+		};
 		if (typeof window !== "undefined") {
-			window.addEventListener("scroll", controlNavbar);
-
-			return () => {
-				window.removeEventListener("scroll", controlNavbar);
-			};
+			window.addEventListener("scroll", handleScroll);
+			return () => window.removeEventListener("scroll", handleScroll);
 		}
-	}, [lastScrollY, controlNavbar]);
+	}, [lastScrollY, setShowNavbar]);
 
 	return (
 		<nav className={`${navbar} ${showNavbar ? top0 : topHidden}`}>

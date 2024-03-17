@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Tab, Container, styled } from "@mui/material/";
+import { Tabs, Tab, styled } from "@mui/material/";
 import PortfolioTabPanel from "./PortfolioTabPanel";
 import { graphql, useStaticQuery } from "gatsby";
 const CustomTabs = styled(Tabs)({
@@ -39,30 +39,16 @@ const PortfolioTab = () => {
 	} = data;
 	const [value, setValue] = useState(0);
 	return (
-		// <Container maxWidth="xl" sx={{ p: 2 }}>
 		<>
 			<CustomTabs value={value} onChange={handleTabs}>
 				<Tab label="Front-end"></Tab>
 				<Tab label="Backend"></Tab>
 				<Tab label="Other"></Tab>
 			</CustomTabs>
-			<PortfolioTabPanel
-				value={value}
-				index={0}
-				data={frontEndCardArray}
-			></PortfolioTabPanel>
-			<PortfolioTabPanel
-				value={value}
-				index={1}
-				data={backEndCardArray}
-			></PortfolioTabPanel>
-			<PortfolioTabPanel
-				value={value}
-				index={2}
-				data={otherCardArray}
-			></PortfolioTabPanel>
+			<PortfolioTabPanel value={value} index={0} data={frontEndCardArray} />
+			<PortfolioTabPanel value={value} index={1} data={backEndCardArray} />
+			<PortfolioTabPanel value={value} index={2} data={otherCardArray} />
 		</>
-		// </Container>
 	);
 };
 export default PortfolioTab;

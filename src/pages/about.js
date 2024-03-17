@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Layout, Seo } from "../components";
+import { Seo } from "../components";
 import { Skeleton } from "@mui/material/";
 import {
 	wrapAbout,
@@ -16,30 +16,32 @@ const About = () => {
 		}
 	}, []);
 	return (
-	
-			<Layout>
-				<div className={wrapAbout}>
-					<div className={avatarAbout}>
-						<img
-							decoding="async"
-							ref={imageRef}
-							style={{ display: loading ? "none" : "inline" }}
-							src={AvatarImg}
-							alt="avatar"
-							onLoad={() => setLoading(false)}
-						/>
-						{loading && <Skeleton variant="rectangular" height="525px" />}
-					</div>
-					<h2>關於我</h2>
-					<p>
-						在日語當中，水曜日和土曜日分別代表星期三和星期六的意思，另外也分別代表水星和土星之意，在占星學當中水星象徵個人的心智活動及邏輯思維，土星則有隱含著
-						困難、壓力、磨練等等的意思，而這個技術部落格呼應的就是邏輯思考，筆記這些過程也間接表示遇到程式上面的 BUG。
-					</p>
-				</div>
-			</Layout>
-	
+		<div className={wrapAbout}>
+			<div className={avatarAbout}>
+				<img
+					decoding="async"
+					ref={imageRef}
+					style={{ display: loading ? "none" : "inline" }}
+					src={AvatarImg}
+					alt="avatar"
+					onLoad={() => setLoading(false)}
+				/>
+				{loading && <Skeleton variant="rectangular" height="525px" />}
+			</div>
+			<h2>關於我</h2>
+			<p>
+				在日語當中，水曜日和土曜日分別代表星期三和星期六的意思，另外也分別代表水星和土星之意，在占星學當中水星象徵個人的心智活動及邏輯思維，土星則有隱含著
+				困難、壓力、磨練等等的意思，而這個技術部落格呼應的就是邏輯思考，筆記這些過程也間接表示遇到程式上面的
+				BUG。
+			</p>
+		</div>
 	);
 };
 
 export default About;
-export const Head = () => <Seo title="About" />;
+export const Head = () => (
+	<>
+		<html lang="zh-Hant-TW" />
+		<Seo title="About" />;
+	</>
+);

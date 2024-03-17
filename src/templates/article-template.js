@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Seo } from "../components";
+import { Seo } from "../components";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "../../pre.css";
@@ -12,7 +12,6 @@ const articleTemplate = ({ pageContext }) => {
 	const formateDate = dayjs(date).format("YYYY-MM-DD ddd");
 	return (
 		<>
-			{/* <Layout> */}
 			<div className={articleContent}>
 				<h1>{title}</h1>
 				<h2>{formateDate}</h2>
@@ -34,12 +33,14 @@ const articleTemplate = ({ pageContext }) => {
 					loading="lazy"
 				/>
 			</div>
-			{/* </Layout> */}
 		</>
 	);
 };
 
-export const Head = ({ pageContext: { title, excerpt } }) => {
-	return <Seo title={title} description={excerpt} />;
-};
+export const Head = ({ pageContext: { title, excerpt } }) => (
+	<>
+		<html lang="zh-Hant-TW" />
+		<Seo title={title} description={excerpt} />;
+	</>
+);
 export default articleTemplate;

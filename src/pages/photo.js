@@ -1,13 +1,14 @@
 import React from "react";
-import { Layout, Seo, Album } from "../components";
+import { Seo, Album } from "../components";
 
 const Photo = () => {
-	return (
-		<Layout banner={true}>
-			<Album />
-		</Layout>
-	);
+	return <Album />;
 };
 
 export default Photo;
-export const Head = () => <Seo title="Photo" />;
+export const Head = () => (
+	<>
+		<html lang="zh-Hant-TW" />
+		<Seo title="Photo" />;
+	</>
+);
