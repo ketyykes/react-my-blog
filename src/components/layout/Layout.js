@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner, Footer, Navbar, Header } from "..";
+import { Banner, Footer, Header, Navbar } from "..";
 import { Container, Box, IconButton } from "@mui/material";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 

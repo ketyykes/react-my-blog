@@ -68,3 +68,15 @@ exports.createPages = async ({ graphql, actions }) => {
 		});
 	});
 };
+
+// 注意：因為以下 Webpack 設定完全忽略了警告，它可能會隱藏 Project 中，因為 CSS 順序打包的有效警告。
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+	if (stage === "build-javascript" || stage === "develop") {
+		const config = getConfig();
+		const miniCssExtractPlugin = config.plugins.find(
+			(plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
+		);
+		if (miniCssExtractPlugin) miniCssExtractPlugin.options.ignoreOrder = true;
+		actions.replaceWebpackConfig(config);
+	}
+};

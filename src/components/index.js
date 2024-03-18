@@ -1,11 +1,11 @@
+export { default as Album } from "./album/Album";
 export { default as Banner } from "./banner/Banner";
+export { default as CircularPercentProgress } from "./circularPercentProgress/CircularPercentProgress.js";
 export { default as Footer } from "./footer/Footer";
 export { default as Header } from "./header/Header";
 export { default as Layout } from "./layout/Layout";
 export { default as Navbar } from "./navbar/Navbar";
 export { default as Pager } from "./pager/Pager";
+export { default as PhotoSlider } from "./slider/PhotoSlider";
 export { default as PortfolioTab } from "./portfolio/PortfolioTab";
 export { default as Seo } from "./seo/Seo";
-export { default as PhotoSlider } from "./slider/PhotoSlider";
-export { default as Album } from "./album/Album";
-export { default as CircularPercentProgress } from "./circularPercentProgress/CircularPercentProgress.js";
