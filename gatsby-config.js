@@ -79,5 +79,21 @@ module.exports = {
 				duration: 100,
 			},
 		},
+		{
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: ["GA-G-LG43TDEXTF", "AW-CONVERSION_ID", "DC-FLOODIGHT_ID"],
+				gtagConfig: {
+					optimize_id: "",
+					anonymize_ip: true,
+					cookie_expires: 0,
+				},
+				pluginConfig: {
+					head: true,
+					respectDNT: false,
+					delayOnRouteUpdate: 50,
+				},
+			},
+		},
 	],
 };
