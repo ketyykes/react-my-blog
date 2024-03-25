@@ -5,11 +5,13 @@ import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
 const Layout = ({ children, banner }) => {
 	const scrollToNextScreen = () => {
-		const nextScreenY = window.innerHeight;
-		window.scrollTo({
-			top: nextScreenY,
-			behavior: "smooth",
-		});
+		if (typeof window !== "undefined") {
+			const nextScreenY = window.innerHeight;
+			window.scrollTo({
+				top: nextScreenY,
+				behavior: "smooth",
+			});
+		}
 	};
 	return (
 		<>
