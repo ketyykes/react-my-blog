@@ -30,7 +30,7 @@ const articleTemplate = ({ pageContext }) => {
 					inputPosition="bottom"
 					theme="cobalt"
 					lang="zh-TW"
-					loading="lazy"
+					data-strict="0"
 				/>
 			</div>
 		</>
