@@ -58,8 +58,8 @@ font-weight:700;
     - Step.1 安裝 giscus react library
     - Step.2 引入 Giscus component 
     - Step.3 輸入 script 結果到 props
+- 其他補充 - Don't Worry 404
 - 參考資料
-
 
 ## 選擇官方推薦的 Disqus？
 
