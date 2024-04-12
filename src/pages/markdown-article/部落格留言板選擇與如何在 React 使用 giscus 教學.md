@@ -192,6 +192,14 @@ script，依照官方解釋是 prop 名稱與 giscus 網站上顯示的 data- �
 
 ![image](https://hackmd.io/_uploads/r1J5cvuTp.png)
 
+## 其他補充 - Don't Worry 404
+
+
+當你製作完留言板完畢之後打開 devtool 發現了如下
+`GET https://giscus.app/api/discussions/api/discussions?repo=[使用者名稱]%2F[儲存庫名稱]&term=[網頁連結]&category=[類別]&number=[數字]&strict=[布林值]&first=[數字] 404 (Not Found)`錯誤
+<br>這不是一個程式 bug，而是當尚未建立討論時，正常反應。
+
+可以查看是否 github Discussions 是否已經建立，如果尚未建立則會出現錯誤，如果已經建立仍然出現錯誤的話才需要檢查過程當中有沒有哪個步驟操作錯誤。有興趣的讀者可以參考這篇 [404 Not Found，error: "Discussion not found"](https://github.com/giscus/giscus/issues/1204)的 issue
 ##### 參考資料
 
 - [giscus 官方網站](https://giscus.app/zh-TW)
