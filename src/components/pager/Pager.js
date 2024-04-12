@@ -1,26 +1,42 @@
 import React from "react";
-import * as styles from "./pager.module.scss";
-import { Link } from "gatsby";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+import { useMediaQuery } from "@mui/material";
+
+import { navigate } from "gatsby";
 
 const Pager = ({ currentPage, allmarkdownArticle, perPage }) => {
-  let totalPages = Math.ceil(allmarkdownArticle.length / perPage);
-  const { pageButton, pagination, pageButtonCurrent } = styles;
+	const totalPages = Math.ceil(allmarkdownArticle.length / perPage);
 
-  return (
-    <ul className={pagination}>
-      {Array.from({ length: totalPages }, (_, index) => (
-        <Link
-          className={`${currentPage == index + 1 ? pageButtonCurrent : ""}
-            ${pageButton}
-            `}
-          key={index}
-          to={index === 0 ? `/tech-page/` : `/tech-page/${index + 1}`}
-        >
-          {index + 1}
-        </Link>
-      ))}
-    </ul>
-  );
+	const currentMedia = {
+		isMobile: useMediaQuery(" ( width < 576px ) "),
+		isTablet: useMediaQuery(" (577px <= width <= 768px) "),
+		isDesktopLg: useMediaQuery(" (769px <= width <= 992px) "),
+		isDesktopXl: useMediaQuery(" ( width > 993px ) "),
+	};
+
+	const determineSize = (deviceInfo) => {
+		if (currentMedia.isMobile) return "small";
+		if (currentMedia.isTablet) return "medium";
+		if (currentMedia.isDesktopLg || deviceInfo.isDesktopXl) return "large";
+		return "medium";
+	};
+	const handleChange = (event, value) => {
+		const path = value === 1 ? "/tech-page/" : `/tech-page/${value}`;
+		navigate(path);
+	};
+
+	return (
+		<Stack spacing={2}>
+			<Pagination
+				count={totalPages}
+				page={currentPage}
+				onChange={handleChange}
+				color="primary"
+				size={determineSize(currentMedia)}
+			/>
+		</Stack>
+	);
 };
 
 export default Pager;
