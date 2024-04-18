@@ -19,16 +19,19 @@ const PortfolioTab = () => {
 					cardHead
 					cardContent
 					cardImageSrc
+					webSrc
 				}
 				frontEndCardArray {
 					cardContent
 					cardHead
 					cardImageSrc
+					webSrc
 				}
 				otherCardArray {
 					cardContent
 					cardHead
 					cardImageSrc
+					webSrc
 				}
 			}
 		}
