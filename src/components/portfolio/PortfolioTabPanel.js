@@ -7,6 +7,9 @@ import {
 	useMediaQuery,
 	ImageList,
 	ImageListItem,
+	Button,
+	CardActions,
+	Link,
 } from "@mui/material";
 import ImageDialogs from "./ImageDialogs";
 
@@ -17,6 +20,7 @@ const PortfolioTabPanel = ({ index, value, data }) => {
 		isDesktopXl: useMediaQuery(" (993px <= width <= 1440px) "),
 		isDesktopXXl: useMediaQuery(" ( width > 1441px ) "),
 	};
+	console.log(data);
 
 	const imageListCol = (({
 		// isMobile,
@@ -31,7 +35,6 @@ const PortfolioTabPanel = ({ index, value, data }) => {
 		if (isDesktopXXl) return 4;
 		return 1;
 	})(currentMedia);
-
 	if (value === index) {
 		return (
 			<div style={{ marginTop: imageListCol * 10 }}>
@@ -58,6 +61,22 @@ const PortfolioTabPanel = ({ index, value, data }) => {
 										<Typography variant="body1" sx={{ mt: 2 }}>
 											{cardItemObject.cardContent}
 										</Typography>
+										{cardItemObject.webSrc !== "" && (
+											<CardActions>
+												<Button
+													variant="contained"
+													sx={{
+														margin: "10px auto 0",
+														display: "block",
+													}}
+													onClick={() => {
+														window.open(cardItemObject.webSrc, "_blank");
+													}}
+												>
+													點我觀看
+												</Button>
+											</CardActions>
+										)}
 									</CardContent>
 								</Card>
 							</ImageListItem>
