@@ -80,6 +80,13 @@
             "cardImageSrc": "https://res.cloudinary.com/deqqrzo3t/image/upload/v1678352745/my-blog/Portfolio/Other/llmRAG.jpg",
             "webSrc": "https://llm-qa-nextjs.vercel.app/",
             "remark": ""
+        },
+        {
+            "cardHead": "React 前端工程教學專案",
+            "cardContent": "先前至大學舉辦 React 前端教學講座所製作的專案，在本教學專案中，主要運用 React 配合 MUI 建立電影清單應用頁面。利用 React Router 實現路由管理，另外使用 Axios 與 TMDB API 請求，並通過 JSON Server 模擬後端以進行 CRUD 操作以儲存喜愛的電影與待看的內容。適合 React 開發的初學者參考。",
+            "cardImageSrc": "https://res.cloudinary.com/deqqrzo3t/image/upload/v1713777193/my-blog/Portfolio/Other/tmdb.png",
+            "webSrc": "https://github.com/ketyykes/cjcu-react-mui",
+            "remark": ""
         }
     ]
 }
