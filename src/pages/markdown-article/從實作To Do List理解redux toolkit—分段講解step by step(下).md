@@ -73,7 +73,7 @@ background-color:#d3d3d3;
 #### <span class="rem25">Step1：建立 initialState 物件</span>
 
 這裡先從 redux 的 toolkit <span class="green">引入 createSlice</span>
-建立一個 inistialState 稍後將帶入 createSlice 物件
+建立一個 initialState 稍後將帶入 createSlice 物件
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -199,7 +199,7 @@ const AddToDo = () => {
   const margin0Auto = { width: "300px", margin: "0 auto" };
   const textAlign = { textAlign: "center" };
 
-  //引入 useDispach 作為稍後分派事件使用
+  //引入 useDispatch 作為稍後分派事件使用
   const dispatch = useDispatch();
 
   //使用 Controlled component
@@ -261,7 +261,7 @@ export default ListToDo
 這邊的 toDoReducer 是來自於我們 store 的 configureStore 的 key 值，而 state 就是當初 initialState 的值
 
 ### ToDoItem 檔案
-最後同理引入 deleteToDo 和 completeToDo 這兩個 acitonCreator 函式透過 useDispatch 分派 action
+最後同理引入 deleteToDo 和 completeToDo 這兩個 actionCreator 函式透過 useDispatch 分派 action
 
 ```jsx
 import { deleteToDo, completeToDo } from '../../store/toDoSlice'
