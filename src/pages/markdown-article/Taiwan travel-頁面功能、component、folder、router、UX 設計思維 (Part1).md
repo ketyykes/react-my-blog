@@ -98,7 +98,7 @@ background-color:#d3d3d3;
 - react-leaflet
 - react-redux
 - redux-persist
-- fontawesome
+- fontAwesome
 - react-toolkit
 
 ## 資料夾的拆分方式
@@ -327,7 +327,7 @@ return (
 由於設計稿畫面呈現 SideBar 搜尋後和首頁點選更多景點的畫面差異不大，所以在 react-route 切分出<span class="red">`/search`</span>
 
 ### visitType、page 參數設定與 TDX API 類似
-其 visitType 和 City 參數也設定成和 TDX 的 API Route(如上圖) 類似，visitType 表示<span class="blue">**觀光種類**</span>為**ScenicSpot、Restaurant、Hotel**或者**Acitiviy**這四種 API 其中一種，city 表示某個縣市，如果想要搜尋全台參數則是帶入 all(在後面資料抽離的部分會顯示。
+其 visitType 和 City 參數也設定成和 TDX 的 API Route(如上圖) 類似，visitType 表示<span class="blue">**觀光種類**</span>為**ScenicSpot、Restaurant、Hotel**或者**Activity**這四種 API 其中一種，city 表示某個縣市，如果想要搜尋全台參數則是帶入 all(在後面資料抽離的部分會顯示。
 
 ### page 參數
 
@@ -369,7 +369,7 @@ return (
 
 
 #### FontAwesome 回上一頁
-使用<span class="blue">fontawesome</span>製作回上一頁的按鈕，一樣在**hover**的時候使用<span class="red">scale</span>語法微放大表示可供點擊。
+使用<span class="blue">fontAwesome</span>製作回上一頁的按鈕，一樣在**hover**的時候使用<span class="red">scale</span>語法微放大表示可供點擊。
 ![](https://filedn.eu/ll8NkasFkw1XVJBG2Fp9A1p/React-Taiwan-Visit/userExperienceGif/visitTransitionPrePage.gif)
 
 ### 更多景點的連結與卡片
