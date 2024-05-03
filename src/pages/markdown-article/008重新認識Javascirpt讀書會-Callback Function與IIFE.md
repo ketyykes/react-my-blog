@@ -1,8 +1,8 @@
 ---
-title: 008重新認識Javascirpt讀書會-Callback Function與IIFE
+title: 008 重新認識 Javascript 讀書會-Callback Function 與 IIFE
 slug: 2022-02-06T05:55:00.000Z
 date: 2022-02-06T05:55:00.000
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: [008 重新認識 Javascript 讀書會，"Javascript"]
 ---
 
 本篇為參與 0 陷阱！0 誤解！8 天重新認識 Javascript 讀書會的導讀內容加上自己所蒐尋的資料後所構成的文章。
@@ -52,7 +52,7 @@ slower()
 faster()
 ```
 
-由於在 200 微秒的時候才會將 money 存入 30，若執行上述程式碼 faser 就會先執行，但是此時 money 沒有值，因此先印出 I have null.
+由於在 200 微秒的時候才會將 money 存入 30，若執行上述程式碼 faster 就會先執行，但是此時 money 沒有值，因此先印出 I have null.
 
 > 引用自[JS20min Day — 18 關於回呼生活化 (Callback)](https://whien.medium.com/js20min-day-18-%E9%97%9C%E6%96%BC%E5%9B%9E%E5%91%BC%E7%94%9F%E6%B4%BB%E5%8C%96-callback-1a112db1a788)
 
@@ -97,7 +97,7 @@ void (console.log('HI!'));
 // console 主控台會印出 "HI"，然後回傳 undefined
 ```
 
-> [冷知識-你所不知道的-void/](https://kuro.tw/posts/2019/08/04/JS-%E5%86%B7%E7%9F%A5%E8%AD%98-%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84-void/)
+> [冷知識 - 你所不知道的-void/](https://kuro.tw/posts/2019/08/04/JS-%E5%86%B7%E7%9F%A5%E8%AD%98-%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84-void/)
 
 另外 Optional Chaining 透過 babel 編譯的時候可以發現 void 0 的身影。
 
