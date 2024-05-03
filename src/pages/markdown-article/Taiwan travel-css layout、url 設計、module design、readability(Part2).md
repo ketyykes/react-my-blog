@@ -226,7 +226,7 @@ const allThemeArray = [
 ]
 ```
   
-在 sibebar 實際要使用時候就能使用 map 的方式渲染出 UI 並且夾帶該資料，以精選主題的 UI 按鈕部分為例。
+在 sidebar 實際要使用時候就能使用 map 的方式渲染出 UI 並且夾帶該資料，以精選主題的 UI 按鈕部分為例。
 
 ```jsx
  {allThemeArray.map((themeItem, index) => (
