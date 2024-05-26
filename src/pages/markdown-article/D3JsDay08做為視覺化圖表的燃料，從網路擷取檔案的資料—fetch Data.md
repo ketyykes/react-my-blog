@@ -1,5 +1,5 @@
 ---
-title: D3JsDay08做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data
+title: D3JsDay08 做為視覺化圖表的燃料，從網路擷取檔案的資料—fetch Data
 slug: 2021-09-23T11:25:54.000Z
 date: 2021-09-23T11:25:54.000Z
 tags: ["D3.js","Javascript"]
