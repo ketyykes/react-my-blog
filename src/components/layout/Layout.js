@@ -36,7 +36,7 @@ const Layout = ({ children, banner }) => {
 				)}
 
 				<Box
-					sx={{ py: 6, minHeight: "calc(100vh - 156px)" }}
+					sx={{ py: 12, minHeight: "calc(100vh - 252px)" }}
 					component="section"
 				>
 					{children}
