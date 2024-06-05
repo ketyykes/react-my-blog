@@ -1,13 +1,13 @@
 ---
-title: 008重新認識Javascript讀書會-透過DOM API查找與遍歷節點
+title: 008 重新認識 Javascript 讀書會 - 透過 DOM API 查找與遍歷節點
 slug: 2021-12-31T07:24:00.000Z
 date: 2021-12-31T07:24:00.000Z
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: ["008 重新認識 Javascript 讀書會","Javascript"]
 ---
 
 本篇為參與 0 陷阱！0 誤解！8 天重新認識 Javascript 讀書會的導讀內容加上自己所蒐尋的資料後所構成的文章。
 
-- 瀏覽器會分析 HTML 後將其解析成**DOM(Document Object Model)文件物件模型**
+- 瀏覽器會分析 HTML 後將其解析成**DOM(Document Object Model) 文件物件模型**
 - DOM 是 W3C 制定的一個規範
 - 控制 DOM 等同於控制網頁
 
@@ -47,18 +47,18 @@ nodeType 得到的是一個數字，可以參考 MDN 對照內容知道是哪些
 
 > [MDNnodeType](https://developer.mozilla.org/zh-TW/docs/Web/API/Node/nodeType)
 
-## DOM 節點間的查找遍歷(traversing)
+## DOM 節點間的查找遍歷 (traversing)
 
 遍歷 traversing 可以翻譯成走訪，換句話說是透過某個節點當起始點，透過 DOM 的操作方法得到其他節點的一種行為。
 
 - 父子關係
-  每一個節點都會有個上層的節點，我們稱之為父節點(Parent node)，自己下層的節點稱之為子節點(child node)
+  每一個節點都會有個上層的節點，我們稱之為父節點 (Parent node)，自己下層的節點稱之為子節點 (child node)
 - 兄弟關係
-  有同一個「父節點」的節點，我們稱之為「兄弟姊妹」節點(Siblings node)
+  有同一個「父節點」的節點，我們稱之為「兄弟姊妹」節點 (Siblings node)
 
 ## Node.childNodes
 
-可以透過 node.hasChildNode()來檢查是否有子節點
+可以透過 node.hasChildNode() 來檢查是否有子節點
 
 ```javascript{numberLines: true}
 var node = document.querySelector('#hello');

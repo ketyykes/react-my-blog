@@ -1,8 +1,8 @@
 ---
-title: 008重新認識Javascript讀書會-物件與原型鏈
+title: 008 重新認識 Javascript 讀書會 - 物件與原型鏈
 slug: 2022-04-01T14:32:00.000Z
 date: 2022-04-01T14:32:00.000Z
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: ["008 重新認識 Javascript 讀書會","Javascript"]
 ---
 <style> 
 .rem25{
@@ -45,7 +45,7 @@ console.log(car.make);
 
 ## 物件與原型鏈
 
-JS 是基於原型的物件導向語言，沒有原生的 Class，必須透過原型(prototype) 來進行繼承的實作
+JS 是基於原型的物件導向語言，沒有原生的 Class，必須透過原型 (prototype) 來進行繼承的實作
 
 <div class=rem25>
 原型
@@ -132,13 +132,13 @@ Object.setPrototypeOf(rockman, cutman);
 // 指定 gutsman 為 cutman 的「原型」
 Object.setPrototypeOf(cutman, gutsman);
 
-// 這樣洛克人就可以順著「原型鏈」取得各種武器了!
+// 這樣洛克人就可以順著「原型鏈」取得各種武器了！
 console.log( 'buster' in rockman );       // true
 console.log( 'cutter' in rockman );       // true
 console.log( 'superArm' in rockman );     // true
 ```
 
-## 最頂層的原型物件: Object.prototype
+## 最頂層的原型物件：Object.prototype
 
 我們在某個物件存取一個不存在的屬性時，會繼續往它的「原型物件」<span class="red">[[prototype]] </span>順著原型鏈找到最頂層，會找到 <span>Object.prototype</span>才停，因為<span>Object.prototype</span>是 Javascript 所有物件的起源。
 換句話說，<span>Object.prototype</span>提供的方法，在 Javascript 所有物件都可呼叫它
@@ -166,7 +166,7 @@ var p2 = new Person();
 
 變數 p2 用 new 關鍵字建立一個物件，由於函式也是物件，所以可透過 prototype 來擴充透過這個函式所構成的物件。
 
-換句話說，p2 是基於 Person 的建構式所建立的物件，因此 p2 也能透過原型取得呼叫 sayHello()的能力。
+換句話說，p2 是基於 Person 的建構式所建立的物件，因此 p2 也能透過原型取得呼叫 sayHello() 的能力。
 
 ```javascript{numberLines: true}
 p2.sayHello();      // "Hi!"
@@ -188,7 +188,7 @@ Person.prototype.sayHello = function(){
 var p = new Person();
 ```
 
-p.sayHello()的結果是什麼
+p.sayHello() 的結果是什麼
 答案是 "Yo!"
 
 當 物件實體與它的原型有同樣屬性或方法時，會優先存取自己的屬性或方法，如果沒有才會順著原型鏈向上找。
@@ -201,7 +201,7 @@ p.sayHello()的結果是什麼
 
 1. 如果在原型物件或更上層的原型物件發現這個屬性且屬性描述是 writable 為 true 則會為這物件實體新增此方法或屬性。
 2. 同上，但若屬性描述的 writable 為 false，那物件實體則會多出一個唯讀屬性，且事後無法再新增或修改
-3. 同上，但若這個屬性其實是一個設值器(setter function)，那呼叫永遠是那個設值器，目標屬性也無法被重新定義。
+3. 同上，但若這個屬性其實是一個設值器 (setter function)，那呼叫永遠是那個設值器，目標屬性也無法被重新定義。
 
 透過 in 檢查原型鏈中是否有該屬性
 
@@ -233,7 +233,7 @@ p.sayHello();       // "Hi, I'm Kuro"
 像下面這張圖一樣，這就是我們介紹的原型鏈
 ![](https://i.imgur.com/gfgn5ap.png)
 
-透過「原型」來新增方法 (method)是在原型新增後馬上就可用。
+透過「原型」來新增方法 (method) 是在原型新增後馬上就可用。
 
 ```javascript{numberLines: true}
 var Person = function(name){
@@ -253,7 +253,7 @@ p.sayHelloWorld();  // "Hello, World!"
 
 上面程式碼也就是說透過<span class="red"> Person.prototype.sayHelloWorld </span>新增了對應的方法後，我們無需重新建物件 <span class="red">p</span>馬上就可以透過 p.sayHelloWorld() 來呼叫。
 
-這種手法，也是很多「Polyfill」用來增強擴充那些舊版本瀏覽器不支援的語法。 如 <span class="red">Array.prototype.find() </span>在 ES6 以前是不存在的，但我們可以透過檢查<span class="red"> Array.prototype.find </span>是否存在。
+這種手法，也是很多「Polyfill」用來增強擴充那些舊版本瀏覽器不支援的語法。如 <span class="red">Array.prototype.find() </span>在 ES6 以前是不存在的，但我們可以透過檢查<span class="red"> Array.prototype.find </span>是否存在。
 
 如果不存在就可以對 <span class="red"> Array.prototype </span>新增<span class="red"> find</span>方法，然後就可以直接使用。
 
@@ -343,8 +343,8 @@ p.name = 'Kuro';
 p.sayHello();   // "Hi, I'm Kuro"
 ```
 
-首先建立一個物件「原型」，透過 Object.create()來建立新的物件，此時新物件的原型就會是剛剛所建立的「原型」物件。
-Object.create()實作原理如下
+首先建立一個物件「原型」，透過 Object.create() 來建立新的物件，此時新物件的原型就會是剛剛所建立的「原型」物件。
+Object.create() 實作原理如下
 
 ```javascript{numberLines: true}
 Object.create = function (proto){
@@ -354,7 +354,7 @@ Object.create = function (proto){
 }
 ```
 
-當我們把原型物件作為參數傳入 proto， Object.create() 會回傳一個 new F()，也就是透過一個封裝過的建構式建構出來的物件，並把 prototype 指向作為參數的 proto
+當我們把原型物件作為參數傳入 proto，Object.create() 會回傳一個 new F()，也就是透過一個封裝過的建構式建構出來的物件，並把 prototype 指向作為參數的 proto
 
 ## 歸納 **proto ** 與 prototype 的關係
 
@@ -386,8 +386,8 @@ console.log( Function.prototype.__proto__ === Object.prototype );   // true
 
 我自己的解釋：
 
-prototype→ 自帶原型的物件　亞空間暫存物　後來透過 new 所建立的物件會來這個亞空間索取原型屬性和方法。
-**proto **→ 起源原型　真正的起源原型 透過這個**proto **成為接口或稱入口，會到他父層的亞空間索取 屬性和方法。
+prototype→ 自帶原型的物件 亞空間暫存物 後來透過 new 所建立的物件會來這個亞空間索取原型屬性和方法。
+**proto **→ 起源原型 真正的起源原型 透過這個**proto **成為接口或稱入口，會到他父層的亞空間索取 屬性和方法。
 
 ```javascript{numberLines: true}
 console.log( Function.prototype.__proto __ === Object.prototype );

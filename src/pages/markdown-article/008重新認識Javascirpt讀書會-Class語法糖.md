@@ -1,8 +1,8 @@
 ---
-title: 008重新認識Javascirpt讀書會-Class語法糖
+title: 008 重新認識 Javascirpt 讀書會-Class 語法糖
 slug: 2022-04-09T14:55:00.000Z
 date: 2022-04-09T14:55:00.000Z
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: ["008 重新認識 Javascript 讀書會","Javascript"]
 ---
 <style> 
 .rem25{
@@ -24,7 +24,7 @@ background-color:#d3d3d3;
 
 ## ES6 的語法糖
 
-Javascript 繼承方法是透過「原型」(prototype)來進行實作，並沒有原生的 class
+Javascript 繼承方法是透過「原型」(prototype) 來進行實作，並沒有原生的 class
 
 ES6 後有了 class，但仍是 prototype-based 的程式語言。
 
@@ -43,7 +43,7 @@ kuro.greeting();
 
 ```
 
-先定義一個建構子函式，透過先前介紹過的 prototype 將子方法 greeting()指定給 Person 原型。最後透過 new 來建立 Person 物件模擬 class
+先定義一個建構子函式，透過先前介紹過的 prototype 將子方法 greeting() 指定給 Person 原型。最後透過 new 來建立 Person 物件模擬 class
 
 基本上就是 <span class="red">prototype</span>與<span class="red">this</span>的各種組合
 
@@ -111,10 +111,10 @@ Person();
 
 ## class 與 constructor function 的差異
 
-- 函式可以被提升(hosting)而 class 不會被提升，這與 let 宣告變數的情況一樣，會出現「TDZ」暫時性死區()
+- 函式可以被提升 (hosting) 而 class 不會被提升，這與 let 宣告變數的情況一樣，會出現「TDZ」暫時性死區 ()
 - 直接呼叫 class 名稱，而不是透過 new 關鍵字呼叫建構子，會出現錯誤。
-- class 的區塊當中，所有程式碼，預設會自動進入嚴格模式(strict mode)，而且無法取消這個設定。
-- ES6 的 class 所定義的所有方法，預設都是無法被列舉(non-enumeralbe)的
+- class 的區塊當中，所有程式碼，預設會自動進入嚴格模式 (strict mode)，而且無法取消這個設定。
+- ES6 的 class 所定義的所有方法，預設都是無法被列舉 (non-enumeralbe) 的
 - 每個 class 會內建 constructor 方法，即使在宣告某個 class 時沒有寫上去
 
 <span class="red rem25">有趣的是</span>
@@ -203,7 +203,7 @@ console.log(Man.sayHello());
 
 答案是 Person 和 Man
 前面說過，this 關鍵字指的會是 class 本身而非實體，判斷 this 當下是依據呼叫當下。
-所以 Person.sayHello()自然是 Person，然後 Man 就會是 Man
+所以 Person.sayHello() 自然是 Person，然後 Man 就會是 Man
 
 ## 使用 super 關鍵字
 
@@ -283,7 +283,7 @@ class Person{
 
 ```
 
-> 語法糖： 1.之所以稱之為語法糖，給人的感覺就是很甜，很甜。 2.在相同功能下，語法糖的寫法會讓程式碼更加簡潔流暢，程式碼更加語義自然。寫得很爽，看起來也爽，就像吃了糖一樣。
+> 語法糖：1.之所以稱之為語法糖，給人的感覺就是很甜，很甜。2.在相同功能下，語法糖的寫法會讓程式碼更加簡潔流暢，程式碼更加語義自然。寫得很爽，看起來也爽，就像吃了糖一樣。
 
 > **維基百科的解釋**
 > 語法糖（英語：Syntactic sugar）是由英國電腦科學家彼得·蘭丁發明的一個術語，指電腦語言中添加的某種語法，這種語法對語言的功能沒有影響，但是更方便程式設計師使用。語法糖讓程式更加簡潔，有更高的可讀性。
@@ -293,7 +293,7 @@ class Person{
 ### 使用 function 建構子的方式來建立
 
 使用 for in 可以得到 name 和 hello
-另外用 Object.keys(Person.prototype)可以得到陣列裡面擁有 hello
+另外用 Object.keys(Person.prototype) 可以得到陣列裡面擁有 hello
 
 ```javascript{numberLines: true}
  function Person(){

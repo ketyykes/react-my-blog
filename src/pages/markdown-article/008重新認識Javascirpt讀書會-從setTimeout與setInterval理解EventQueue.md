@@ -1,8 +1,8 @@
 ---
-title: 008重新認識Javascirpt讀書會-從setTimeout與setInterval理解EventQueue
+title: 008 重新認識 Javascirpt 讀書會 - 從 setTimeout 與 setInterval 理解 EventQueue
 slug: 2022-02-13T06:55:00.000Z
 date: 2022-02-13T06:55:00.000Z
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: ["008 重新認識 Javascript 讀書會","Javascript"]
 ---
 
 本篇為參與 0 陷阱！0 誤解！8 天重新認識 Javascript 讀書會的導讀內容加上自己所蒐尋的資料後所構成的文章。
@@ -59,10 +59,10 @@ window.clearInterval(cancelSetInter);
 
 ---
 
-- Heap 就是記憶分配(memory allocation)
-- Stack 就是執行背景(execution)
+- Heap 就是記憶分配 (memory allocation)
+- Stack 就是執行背景 (execution)
 
-#### setTimeout、DOM、HTTP request 並不在 V8 引擎(以上這些都是非同步的東西)
+#### setTimeout、DOM、HTTP request 並不在 V8 引擎 (以上這些都是非同步的東西)
 
 下圖是 Javascript 的簡化示意圖
 ![](https://i.imgur.com/BgvdrX8.png)
@@ -115,10 +115,10 @@ foo();
 
 > [Huli 同步非同步、阻塞非阻塞、callback、event loop](https://blog.techbridge.cc/2019/10/05/javascript-async-sync-and-callback/)
 
-如果我們寫了幾個需要等待的同步的程式的話，瀏覽器畫面就會卡住也就是發生阻塞(block)
+如果我們寫了幾個需要等待的同步的程式的話，瀏覽器畫面就會卡住也就是發生阻塞 (block)
 ，**例如 一個很花時間的 while 迴圈**
 
-瀏覽器當中幾乎沒有阻塞式函式(blocking)，在 node 也是一樣，都是非同步(async)的函式
+瀏覽器當中幾乎沒有阻塞式函式 (blocking)，在 node 也是一樣，都是非同步 (async) 的函式
 
 ---
 

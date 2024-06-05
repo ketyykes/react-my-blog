@@ -1,8 +1,8 @@
 ---
-title: 008重新認識Javascirpt讀書會-What’s This in JavaScript
+title: 008 重新認識 Javascirpt 讀書會-What’s This in JavaScript
 slug: 2022-03-13T03:19:00.000Z
 date: 2022-03-13T03:19:00.000Z
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: ["008 重新認識 Javascript 讀書會","Javascript"]
 ---
 <style> 
 .rem25{
@@ -30,7 +30,7 @@ background-color:#d3d3d3;
 - JavaScript 的一個關鍵字。
 - function 執行，自動生成的一個內部物件。
 - 隨著 function 執行場合的不同，this 所指向的值，也會有所不同。
-- 在大多數的情況下， this 代表的就是呼叫 function 的物件
+- 在大多數的情況下，this 代表的就是呼叫 function 的物件
 
 ## 箭頭函式對 this 的影響
 
@@ -55,14 +55,14 @@ calculate.sum()
 ## this 的筆記
 
 ```javascript{numberLines: true}
-//1.全域下的this指的是window
+//1.全域下的 this 指的是 window
 var a = "全域";
 function fn(b){
 	console.log(this ===window);
 }
 fn('a');
 
-//2.物件下的this指的是物件本身
+//2.物件下的 this 指的是物件本身
 var myName = '全域';
 var obj ={
 	myName: '小明',
@@ -70,7 +70,7 @@ var obj ={
 	};
 }
 
-//3.物件下呼叫函式，如果是傳統函式，只看前面的那個物件(不看函式定義在哪和如何定義);
+//3.物件下呼叫函式，如果是傳統函式，只看前面的那個物件 (不看函式定義在哪和如何定義);
 var myName = '全域';
 function fn(){
 	console.log(this.myName);
@@ -83,7 +83,7 @@ obj.fn();
 
 //所以會印出小明
 
-//4.物件下呼叫函式，如果是傳統函式，只看前面的那個物件(不看函式定義在哪和如何定義);
+//4.物件下呼叫函式，如果是傳統函式，只看前面的那個物件 (不看函式定義在哪和如何定義);
 
 var myName = '全域';
 function fn() {
@@ -127,13 +127,13 @@ var obj = {
 	inner:{
 		myName: '小明家',
 		fn1:function(){
-				fn();//這行就是simple call 因為這裡呼叫fn前面沒有物件，因此this表示全域
+				fn();//這行就是 simple call 因為這裡呼叫 fn 前面沒有物件，因此 this 表示全域
 		}
 	}
 };
 obj.inner.fn1(); //印出全域
 
-//7.有setTimeout(也就是callback函式的話)
+//7.有 setTimeout(也就是 callback 函式的話)
 
 var myName = '全域';
 function fn() {
@@ -145,7 +145,7 @@ var obj = {
 		myName: '小明家',
 		fn1:function() {
 			setTimeout(
-				function(){ //這是一個callback基本上屬於simple call所以他的this看前面那個沒東西就是全域了
+				function(){ //這是一個 callback 基本上屬於 simple call 所以他的 this 看前面那個沒東西就是全域了
 				console.log(this.myName);
 			});
 		}
@@ -154,7 +154,7 @@ var obj = {
 obj.inner.fn1(); //印出全域
 
 
-//8.箭頭函式 是看函式如何定義，因為他沒有自己的this 寫一個立即箭頭函式當範例  (待理解中)
+//8.箭頭函式 是看函式如何定義，因為他沒有自己的 this 寫一個立即箭頭函式當範例  (待理解中)
 var myName = '全域';
 function fn() {
 	console.log(this.myName);
@@ -174,7 +174,7 @@ var obj = {
 obj.inner.fn1();
 //印出小明家
 
-//9.物件下需要使用this的話，直接在最前面做定義。
+//9.物件下需要使用 this 的話，直接在最前面做定義。
 var myName = '全域';
 function fn() {
 	console.log(this.myName);
@@ -201,7 +201,7 @@ obj.inner.fn1();
 
 
 
-//10.為什麼不使用obj變數去存取就好，反而要用this?? 因為obj可能會被串改而且也可能透過別的物件去存取到它，因此使用this才能確保選到當下自己的那個物件。
+//10.為什麼不使用 obj 變數去存取就好，反而要用 this?? 因為 obj 可能會被串改而且也可能透過別的物件去存取到它，因此使用 this 才能確保選到當下自己的那個物件。
 
 var myName = '全域';
 function fn() {
@@ -218,11 +218,11 @@ var obj2=obj;
 obj={};
 obj2.fn1();
 
-//印出空的東西，因為obj被重新賦值成空的物件，這時印出obj就會是空的。若用this就可以確保指到當前的物件。
+//印出空的東西，因為 obj 被重新賦值成空的物件，這時印出 obj 就會是空的。若用 this 就可以確保指到當前的物件。
 
-//simple call就是沒有透過某個物件去呼叫，例如寫hello();而不是寫obj.hello();
-//傳統函式的simple call基本上都是指向全域除非this被串改例如使用call,bind,apply
-//模組化的設計情況會常常用到this，因為要不斷地操作自己的這個物件，要選到他自己的話，寫this比較容易使用。
+//simple call 就是沒有透過某個物件去呼叫，例如寫 hello();而不是寫 obj.hello();
+//傳統函式的 simple call 基本上都是指向全域除非 this 被串改例如使用 call,bind,apply
+//模組化的設計情況會常常用到 this，因為要不斷地操作自己的這個物件，要選到他自己的話，寫 this 比較容易使用。
 ```
 
 ## this 的範例
@@ -295,7 +295,7 @@ var obj = {
 var obj2=obj;
 obj={};
 obj2.fn1();
-// this是obj還是obj2
+// this 是 obj 還是 obj2
 ```
 
 ## new 關鍵字
@@ -303,8 +303,8 @@ obj2.fn1();
 使用 new 的時候會發生四件事情
 
 建立一個空的簡單 JavaScript 物件（即{}）；
-為步驟 1 新建立的物件添加屬性**proto**，將該屬性鏈接至建構子函式的原型對象 ；
-將步驟 1 新建立的對象作為 this 的上下文 ；
+為步驟 1 新建立的物件添加屬性**proto**，將該屬性鏈接至建構子函式的原型對象；
+將步驟 1 新建立的對象作為 this 的上下文；
 如果該函式沒有回傳物件，則回傳 this。
 
 > [new MDN 運算子](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new) 
@@ -313,7 +313,7 @@ obj2.fn1();
 ## 思考 this 的步驟
 
 1. new?→ 建構出來的物件
-2. call()或 apply()?或是 bind()?→ 被指定的物件
-3. 被呼叫時是否在某個物件?→ 某個物件
+2. call() 或 apply()?或是 bind()?→ 被指定的物件
+3. 被呼叫時是否在某個物件？→ 某個物件
 4. 如果沒有以上條件 this 就是全域物件，在嚴格模式下就是 undefined
 

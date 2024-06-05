@@ -1,8 +1,8 @@
 ---
-title: 008重新認識Javascript讀書會-網頁的事件與生命週期
+title: 008 重新認識 Javascript 讀書會 - 網頁的事件與生命週期
 slug: 2022-01-22T04:00:00.000Z
 date: 2022-01-22T04:00:00.000Z
-tags: [008重新認識Javascript讀書會,"Javascript"]
+tags: ["008 重新認識 Javascript 讀書會","Javascript"]
 ---
 
 <style> 
@@ -56,7 +56,7 @@ window.addEventListener('load', function() {
 **unload**和**onbeforeunload**事件類似，兩者的差別在**beforeunload** 是在網頁被卸載「之前」觸發，而 **unload** 是在網頁被卸載「之後」觸發，所以如果我們想要跳出警告視窗提醒使用者是否離開，就得在 **beforeunload** 事件處理，而不是 **unload** ，因為此時網頁已經離開。
 
 <span class="rem25">~~換句話說 unload 事件觸發後就已經離開網頁了 QQ~~
-~~onbeforeunload 事件觸發後他就問你真的要離開我嗎?~~</span>
+~~onbeforeunload 事件觸發後他就問你真的要離開我嗎？~~</span>
 
 值得一提的是，過去我們在 beforeunload 事件可以自訂提示訊息，這個功能在 Chrome v51 (2016/04) 時被取消了，理由是防止 beforeunload 的自訂訊息被用來做為詐騙用途。
 
@@ -66,19 +66,19 @@ window.addEventListener('load', function() {
 window.onbeforeunload = function(event) {
 
     // 回傳要顯示給使用者看的提醒文字
-     return '你寫什麼都沒用了'; //但是IE有用
+     return '你寫什麼都沒用了'; //但是 IE 有用
 };
 ```
 
 ### error 事件：
 
 - error 事件在 document 或是圖片載入錯誤時觸發
-- error 適合使用 on-event handler 的寫法(多數事件建議使用「非侵入式 JavaScript」的寫法)
+- error 適合使用 on-event handler 的寫法 (多數事件建議使用「非侵入式 JavaScript」的寫法)
 
 看以下範例就能知道 on-event handler 的寫法
 
 ```javascript{numberLines: true}
-<img src="image.jpg" onerror="this.src='default.jpg'"> //將javascript寫在html裡面
+<img src="image.jpg" onerror="this.src='default.jpg'"> //將 javascript 寫在 html 裡面
 ```
 
 上述程式碼，當 image.jpg 這個圖檔不存在，就會觸發 error 事件。
@@ -90,7 +90,7 @@ window.onbeforeunload = function(event) {
 
 ### DOMContentLoaded 事件
 
-類似 load 事件，但是 DOMContentLoaded 事件是等待 DOM 結構完整讀取和解析被觸發(換句話說不需等待像是外部 css 檔案就會觸發，反之 load 需要)
+類似 load 事件，但是 DOMContentLoaded 事件是等待 DOM 結構完整讀取和解析被觸發 (換句話說不需等待像是外部 css 檔案就會觸發，反之 load 需要)
 
 > [DOMContentLoaded](https://developer.mozilla.org/zh-TW/docs/Web/API/Window/DOMContentLoaded_event)
 
@@ -127,16 +127,16 @@ window.onbeforeunload = function(event) {
     const outer = document.querySelector(".outer");
     const inner = document.querySelector(".inner");
         outer.addEventListener("mouseenter", function (event) {
-        console.log("我是Outer mouseenter");
+        console.log("我是 Outer mouseenter");
     });
         outer.addEventListener("mouseover", function (event) {
-        console.log("我是Outer mouseover");
+        console.log("我是 Outer mouseover");
     });
         inner.addEventListener("mouseenter", function (event) {
-        console.log("我是Inner mouseenter");
+        console.log("我是 Inner mouseenter");
     });
         inner.addEventListener("mouseover", function (event) {
-        console.log("我是Inner mouseover");
+        console.log("我是 Inner mouseover");
     });
 </script>
 ```
@@ -149,10 +149,10 @@ mouseout 有事件冒泡
 
 ## 鍵盤事件
 
-- keydown 事件: 「壓下」鍵盤按鍵時會觸發 keydown 事件。
-- keypress 事件: 除了 Shift, Fn, CapsLock 這三種按鍵外按住時會觸發，若按著不放則會連續觸發。
+- keydown 事件：「壓下」鍵盤按鍵時會觸發 keydown 事件。
+- keypress 事件：除了 Shift, Fn, CapsLock 這三種按鍵外按住時會觸發，若按著不放則會連續觸發。
   <span class="red">警告：由於此事件已被棄用，您應該使用 beforeinput 或 keydown 代替</span>
-- keyup 事件: 「放開」鍵盤按鍵時觸發。
+- keyup 事件：「放開」鍵盤按鍵時觸發。
 
 [MDN-keypress 棄用](https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event)
 
@@ -205,7 +205,7 @@ const keyboard = document.getElementById("keyboard");
 
 ### change
 
-change 事件： 當 **input、select、textarea、radio、checkbox** 等表單元素被改變時觸發。 但與 **input** 事件不同的是，**input** 事件會在輸入框輸入內容的當下觸發，而 **change** 事件則是在目前焦點離開輸入框後才觸發。
+change 事件：當 **input、select、textarea、radio、checkbox** 等表單元素被改變時觸發。但與 **input** 事件不同的是，**input** 事件會在輸入框輸入內容的當下觸發，而 **change** 事件則是在目前焦點離開輸入框後才觸發。
 
 ### 其他 form 相關事件
 
