@@ -45,7 +45,7 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 		margin-left: 3rem;
 		border-left: 5px solid $code_background_color;
 		> ul {
-			margin-left: 1rem;
+			margin-left: 2rem;
 		}
 		@include tablet {
 			margin-left: 2rem;
