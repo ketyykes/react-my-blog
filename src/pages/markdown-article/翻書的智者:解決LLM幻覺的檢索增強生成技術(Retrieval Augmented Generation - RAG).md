@@ -133,7 +133,7 @@ Retrieval 指的是一種處理過程，旨在從一個廣闊且結構化的資�
  - 試驗分割的數量
    - 不同的 Chunk 拆分策略也影響效果。適當大小的 Chunk 能夠確保每一塊內容都在 LLM 的處理範圍內，同時保留足夠的上下文訊息，較大的 Chunk 大小可能有益，但超過某一點後效益會遞減，過多的 Context 可能會引入雜訊。而過小的 Chunk 則可能缺乏足夠的 Context 支撐準確生成。
  - Overlap 設計
-   - 為了解決文字因為被分割成ㄓC hunk 後導致不連貫的問題，因此 Chunk 之間的重疊（Overlap）設計是提升 RAG 的一個方法，透過在相鄰 Chunk 之間建立一定量的重疊，可以使得每個 Chunk 在被單獨送入 LLM 進行處理時，仍然能夠帶有來自其前後 Chunk 的 Context 資訊。
+   - 為了解決文字因為被分割成 Chunk 後導致不連貫的問題，因此 Chunk 之間的重疊（Overlap）設計是提升 RAG 的一個方法，透過在相鄰 Chunk 之間建立一定量的重疊，可以使得每個 Chunk 在被單獨送入 LLM 進行處理時，仍然能夠帶有來自其前後 Chunk 的 Context 資訊。
 
 ### Embedding 到 vector database
 
