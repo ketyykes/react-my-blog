@@ -26,6 +26,7 @@ const Navbar = () => {
 		let ticking = false;
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
+			if (hamburger) return; // 如果漢堡選單打開，不執行下面的程式碼
 			if (!ticking) {
 				window.requestAnimationFrame(() => {
 					setShowNavbar(currentScrollY < lastScrollY);
@@ -39,7 +40,7 @@ const Navbar = () => {
 			window.addEventListener("scroll", handleScroll);
 			return () => window.removeEventListener("scroll", handleScroll);
 		}
-	}, [lastScrollY, setShowNavbar]);
+	}, [lastScrollY, setShowNavbar, hamburger]);
 
 	return (
 		<nav className={`${navbar} ${showNavbar ? top0 : topHidden}`}>
