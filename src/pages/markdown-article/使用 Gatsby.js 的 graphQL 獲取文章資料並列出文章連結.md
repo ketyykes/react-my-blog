@@ -35,7 +35,7 @@ query listArticleQuery {
 
 接下來，你需要在頁面 component 中使用 Page Query 來查詢上述的資料。首先，在 component 文件的頂部引入必要的模組：
 
-```javascript=
+```javascript
 import React from 'react'
 import Layout from '../components/Layout'
 import {graphql} from 'gatsby'
@@ -52,7 +52,7 @@ const yourPage = ({data}) => {
 
 最後，在 component 的底部，使用 `export const query = graphql` 語法來定義查詢語句：
 
-```javascript=
+```javascript
 export const query = graphql`
   query listArticleQuery {
     allMarkdownRemark {
@@ -82,7 +82,7 @@ import {graphql,Link} from 'gatsby'
 然後你可以使用 `Array.map` 方法將查詢到的文章資料渲染為連結和標題。需要注意的地方是你需要為每個連結提供一個唯一的 `key` 屬性值，而文章的 `id` 正好可以作為這個唯一值。
 另外`Link` component 的 `to` 屬性需要以斜線 `/` 開頭。
 
-```jsx=
+```jsx
 import React from 'react'
 import Layout from '../components/Layout'
 import {graphql,Link} from 'gatsby'
