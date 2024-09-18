@@ -9,7 +9,6 @@ import {
 	ImageListItem,
 	Button,
 	CardActions,
-	Link,
 } from "@mui/material";
 import ImageDialogs from "./ImageDialogs";
 
