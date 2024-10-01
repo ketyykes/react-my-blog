@@ -22,7 +22,15 @@ const Pager = ({ currentPage, allmarkdownArticle, perPage }) => {
 		return "medium";
 	};
 	const handleChange = (event, value) => {
-		const path = value === 1 ? "/tech-page/" : `/tech-page/${value}`;
+		// 取得當前 URL 的 query string
+		const params = new URLSearchParams(window.location.search);
+		const queryString = params.toString() ? `?${params.toString()}` : "";
+
+		// 根據分頁決定新的導航路徑
+		const path =
+			value === 1
+				? `/tech-page/${queryString}`
+				: `/tech-page/${value}${queryString}`;
 		navigate(path);
 	};
 
