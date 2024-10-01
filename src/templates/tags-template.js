@@ -3,38 +3,35 @@ import {
 	content,
 	card,
 } from "../styles/templates-styles/tech-and-tags-page.module.scss";
-import { Seo } from "../components/index.js";
+import { Seo, ArticleCard } from "../components/index.js";
 
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import dayjs from "dayjs";
-const tagsTemplate = ({ data }) => {
+const TagsTemplate = ({ data }) => {
 	const allTagMarkdownArticle = data.allMarkdownRemark.edges;
+
 	return (
 		<div className={content}>
 			{allTagMarkdownArticle.map(
 				({
 					node: {
-						frontmatter: { date: articleLink, title: articleTitle },
+						frontmatter: { date, title },
 						id,
 					},
 				}) => (
-					<div className={card} key={id}>
-						<h3>
-							<Link
-								to={"/tech-page/" + dayjs(articleLink).format("YYYY-MM-DD ddd")}
-							>
-								{articleTitle}
-							</Link>
-						</h3>
-						<p>{dayjs(articleLink).format("YYYY-MM-DD ddd")}</p>
-					</div>
+					<ArticleCard
+						key={id}
+						title={title}
+						date={date}
+						linkPath={`/tech-page/${dayjs(date).format("YYYY-MM-DD ddd")}`}
+					/>
 				)
 			)}
 		</div>
 	);
 };
 
-export default tagsTemplate;
+export default TagsTemplate;
 export const Head = ({ pageContext: { tag } }) => (
 	<>
 		<html lang="zh-Hant-TW" />
