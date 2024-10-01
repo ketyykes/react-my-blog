@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { card } from "./articleList.module.scss";
+import { card } from "./articleCard.module.scss";
 import dayjs from "dayjs";
 
 const ArticleCard = ({ title, date, linkPath }) => (
