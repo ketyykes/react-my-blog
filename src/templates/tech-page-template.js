@@ -35,7 +35,7 @@ const TechPageTemplate = ({ pageContext, data }) => {
 		if (currentPage > Math.ceil(filteredArticles.length / perPage)) {
 			navigateToFirstPage(searchValue);
 		}
-	}, [searchValue]);
+	}, [searchValue, currentPage, perPage, filteredArticles.length]);
 
 	return (
 		<div className={content}>
