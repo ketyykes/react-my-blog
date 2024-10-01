@@ -40,3 +40,12 @@
 		}
 	}
 }
+.input {
+	width: 750px;
+	@include tablet {
+		width: 500px;
+	}
+	@include mobile {
+		width: 300px;
+	}
+}
