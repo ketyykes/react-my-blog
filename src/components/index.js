@@ -9,3 +9,4 @@ export { default as Pager } from "./pager/Pager";
 export { default as PhotoSlider } from "./slider/PhotoSlider";
 export { default as PortfolioTab } from "./portfolio/PortfolioTab";
 export { default as Seo } from "./seo/Seo";
+export { default as ArticleList } from "./articleList/ArticleList.js";
