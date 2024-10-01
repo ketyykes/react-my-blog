@@ -9,4 +9,5 @@ export { default as Pager } from "./pager/Pager";
 export { default as PhotoSlider } from "./slider/PhotoSlider";
 export { default as PortfolioTab } from "./portfolio/PortfolioTab";
 export { default as Seo } from "./seo/Seo";
-export { default as ArticleList } from "./articleList/ArticleList.js";
+export { default as ArticleCard } from "./articleCard/ArticleCard.js";
+export { default as SearchInput } from "./searchInput/SearchInput";
