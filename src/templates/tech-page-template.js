@@ -14,8 +14,13 @@ const TechPageTemplate = ({ pageContext, data }) => {
 	const allMarkdownArticles = data.allMarkdownRemark.nodes;
 	const { perPage, currentPage } = pageContext;
 
-	const initialSearchValue =
-		new URLSearchParams(window.location.search).get("search") || "";
+	const isBrowser = () => typeof window !== "undefined";
+
+	let initialSearchValue = "";
+	if (isBrowser()) {
+		const searchParams = new URLSearchParams(window.location.search);
+		initialSearchValue = searchParams.get("search") || "";
+	}
 
 	const [inputValue, setInputValue] = useState(initialSearchValue);
 	const [searchValue, setSearchValue] = useState(initialSearchValue);
