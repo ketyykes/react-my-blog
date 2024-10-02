@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
-import { input } from "./SearchInput.module.scss";
+import { input } from "./searchInput.module.scss";
 
 // 搜尋輸入元件
 const SearchInput = ({ inputValue, setInputValue, onSearch }) => {
