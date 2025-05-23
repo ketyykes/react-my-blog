@@ -5,6 +5,42 @@ date: 2024-12-04T13:42:00.000Z
 tags: ["Javascript"]
 ---
 
+<style> 
+.rem25{
+font-size:2.5rem;
+}
+.rem40{
+font-size:4.0rem;
+}
+.rem50{
+  font-size:5.0rem;
+}
+@media (max-width: 576px) {
+  .rem25{
+    font-size:2rem;
+  }
+  .rem40{
+    font-size:3.0rem;
+  }
+  .rem50{
+    font-size:3.5rem;
+  }
+}
+.red {
+color:red;
+}
+.blue{
+color:blue;
+}
+.mycode{
+padding: 2px 4px;
+font-size: 90%;
+color: #c7254e;
+background-color: #f9f2f4;
+border-radius: 4px;
+}
+</style>
+
 ## 前言
 
 ECharts 是一款功能很強的開源資料視覺化工具，為開發者提供豐富的圖表類型與互動性設計。官方文件是學習 ECharts 的最佳資源。為了幫助讀者快速掌握核心概念與實踐技巧，本文根據 **推薦觀看指數** 將官方文件的內容進行整理與分類，並標註各章節的重要程度，協助讀者快速上手 EChart 的內容
