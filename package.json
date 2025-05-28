@@ -20,6 +20,7 @@
     "@giscus/react": "^3.0.0",
     "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.14",
+    "@netlify/plugin-gatsby": "^3.8.3",
     "dayjs": "^1.11.10",
     "gatsby": "^5.13.3",
     "gatsby-plugin-anchor-links": "^1.2.1",
