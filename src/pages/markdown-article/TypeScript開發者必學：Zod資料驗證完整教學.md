@@ -134,7 +134,7 @@ const userSchema = z.object({
 
 #### 驗證成功範例
 
-```typescript=
+```typescript
 //以上省略
 const userData = {
         name: 'John',
