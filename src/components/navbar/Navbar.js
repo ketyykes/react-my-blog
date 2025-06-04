@@ -13,6 +13,7 @@ import {
 	top0,
 	topHidden,
 } from "./navbar.module.scss";
+import NoteAltIcon from "@mui/icons-material/NoteAlt";
 
 const Navbar = () => {
 	const [hamburger, setHamburger] = useState(false);
@@ -87,6 +88,9 @@ const Navbar = () => {
 						<Link activeClassName={activeNavbar} to="/tags/">
 							標籤
 						</Link>
+					</li>
+					<li>
+						<a href="https://note.wedsatcoming.com">我的筆記站</a>
 					</li>
 				</ul>
 			</div>
