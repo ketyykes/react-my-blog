@@ -13,7 +13,6 @@ import {
 	top0,
 	topHidden,
 } from "./navbar.module.scss";
-import NoteAltIcon from "@mui/icons-material/NoteAlt";
 
 const Navbar = () => {
 	const [hamburger, setHamburger] = useState(false);
