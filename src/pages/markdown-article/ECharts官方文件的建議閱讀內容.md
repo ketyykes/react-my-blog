@@ -278,7 +278,7 @@ myChart.dispatchAction({
 
 以下範例展示了事件與動作的互動：
 
-```javascript=
+```javascript
 
 // 監聽點擊事件
 myChart.on('click', function (params) {

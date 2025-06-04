@@ -113,7 +113,7 @@ function add(a, b) {
 
 要在專案中啟用型別檢查與更完善的編輯器支援，只需要在專案根目錄建立一個名為 jsconfig.json 的檔案，撰寫以下最基本的設定：
 
-```jsonc=
+```jsonc
 {
   "compilerOptions": {
     "checkJs": true
