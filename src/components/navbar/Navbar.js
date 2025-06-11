@@ -88,6 +88,9 @@ const Navbar = () => {
 							標籤
 						</Link>
 					</li>
+					<li>
+						<a href="https://note.wedsatcoming.com">我的筆記站</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
