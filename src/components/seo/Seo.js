@@ -19,7 +19,6 @@ const Seo = ({
 		siteUrl,
 		image: defaultImage,
 		author,
-		twitterUsername,
 		keywords: defaultKeywords,
 		language,
 		locale,

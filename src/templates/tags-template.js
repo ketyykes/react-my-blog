@@ -1,8 +1,5 @@
 import React from "react";
-import {
-	content,
-	card,
-} from "../styles/templates-styles/tech-and-tags-page.module.scss";
+import { content } from "../styles/templates-styles/tech-and-tags-page.module.scss";
 import { Seo, ArticleCard } from "../components/index.js";
 
 import { graphql } from "gatsby";
