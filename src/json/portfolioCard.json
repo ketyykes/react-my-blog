@@ -78,7 +78,7 @@
             "cardHead": "LLM RAG(Retrieval-Augmented Generation)",
             "cardContent": "透過 LangChainJs 與 Google Embedding API 將其轉換為文本向量儲存在記憶體，使用者可以輸入問題，並根據文本向量和 prompt Template 後與 Google Gemini 結合回答使用者問題。",
             "cardImageSrc": "https://res.cloudinary.com/deqqrzo3t/image/upload/v1678352745/my-blog/Portfolio/Other/llmRAG.jpg",
-            "webSrc": "https://llm-qa-nextjs.vercel.app/",
+            "webSrc": "https://github.com/ketyykes/llm-QA-nextjs",
             "remark": ""
         },
         {
