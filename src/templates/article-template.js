@@ -37,10 +37,17 @@ const articleTemplate = ({ pageContext }) => {
 	);
 };
 
-export const Head = ({ pageContext: { title, excerpt } }) => (
+export const Head = ({ pageContext: { title, excerpt, date, tags, slug } }) => (
 	<>
 		<html lang="zh-Hant-TW" />
-		<Seo title={title} description={excerpt} />;
+		<Seo
+			title={title}
+			description={excerpt}
+			article={true}
+			publishedDate={date}
+			tags={tags || []}
+			pathname={slug}
+		/>
 	</>
 );
 export default articleTemplate;
