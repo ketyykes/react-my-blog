@@ -158,7 +158,7 @@ function sendMessage(message) {
 }
 ```
 
-當您點擊按鈕時，會發生以下情況：
+當你點擊按鈕時，會發生以下情況：
 
 1. <span class="red code">onSubmit</span>事件處理器執行。
 2. <span class="red code">setIsSent(true)</span>將<span class="red code">isSent</span>設置為<span class="red code">true</span>並排隊進行新的渲染。
@@ -168,7 +168,7 @@ function sendMessage(message) {
 
 重新渲染組件經過以下步驟
 
-1. React再次呼叫您的函式
+1. React再次呼叫你的函式
 1. 你的函式回傳一個新的JSX快照。
 1. React將更新螢幕以匹配你return的快照。
 
@@ -207,9 +207,9 @@ React準備在下一次渲染中將number更改為1。
 1. setNumber(number + 1)：此時number為0，所以setNumber(0 + 1)。
 React準備在下一次渲染中將number更改為1。
 
-儘管您**呼叫了三次setNumber(number + 1)**，但在此渲染的事件處理器中，number始終為0，因此您將狀態設置為1三次。這就是為什麼在事件處理器完成後，React使用number等於1重新渲染組件，而不是3。
+儘管你**呼叫了三次setNumber(number + 1)**，但在此渲染的事件處理器中，number始終為0，因此你將狀態設置為1三次。這就是為什麼在事件處理器完成後，React使用number等於1重新渲染組件，而不是3。
 
-您還可以通過在程式碼中將狀態變數替換為其值來將其可視化。
+你還可以通過在程式碼中將狀態變數替換為其值來將其可視化。
 
 以下為逐步講解
 
@@ -280,12 +280,12 @@ export default function Counter() {
 
 在處理setState前，React會將該事件處理器的所有程式碼都被執行。
 
-> 這可能讓您想起在餐廳點餐時服務員的行為。服務員不會在您點的第一道菜時就立即跑到廚房！相反，他們會讓您完成點菜，讓您對點菜做出更改，甚至接受桌上其他人的點菜。
+> 這可能讓你想起在餐廳點餐時服務員的行為。服務員不會在你點的第一道菜時就立即跑到廚房！相反，他們會讓你完成點菜，讓你對點菜做出更改，甚至接受桌上其他人的點菜。
 
 ## 下次渲染前多次更新相同的狀態
 
 
-您可以<span class="red">**傳遞一個函式**</span>，根據<span class="red">**隊列中的前一個狀態計算出下一個狀態**</span>
+你可以<span class="red">**傳遞一個函式**</span>，根據<span class="red">**隊列中的前一個狀態計算出下一個狀態**</span>
 
 ```jsx
 import { useState } from 'react';

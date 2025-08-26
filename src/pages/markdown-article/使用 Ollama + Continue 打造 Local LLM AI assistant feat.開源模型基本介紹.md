@@ -72,7 +72,7 @@ Ollama 的最大優勢在於它讓你能夠在個人電腦上，無需支付額�
 
 所需記憶體則需要根據你要執行的模型決定，（如下表）
 
-以下是支援的模型清單，您可以在 [ollama.com/library](https://ollama.com/library 'ollama model library') 下載：
+以下是支援的模型清單，你可以在 [ollama.com/library](https://ollama.com/library 'ollama model library') 下載：
 
 | 模型               | 參數  | 大小  | 下載命令                       |
 | ------------------ | ----- | ----- | ------------------------------ |

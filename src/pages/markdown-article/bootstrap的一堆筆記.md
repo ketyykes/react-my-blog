@@ -898,7 +898,7 @@ btn 不僅只限使用`<button>`，使用 input 和 a 也可以，但是 type �
 
 ### 巢狀結合下拉式選單
 
-當您想要下拉式功能表與群組按鈕混合時，只需要將 .btn-group 放在另一個 .btn-group 中。
+當你想要下拉式功能表與群組按鈕混合時，只需要將 .btn-group 放在另一個 .btn-group 中。
 
 ```html{numberLines: true}
 <div class="demo">

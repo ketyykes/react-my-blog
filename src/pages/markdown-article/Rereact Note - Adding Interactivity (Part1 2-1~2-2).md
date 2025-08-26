@@ -85,9 +85,9 @@ function Button({ onClick, children }) {
 
 ## 添加事件
 
-您可以按照以下三個步驟，在用戶點擊時使其顯示一條消息：
+你可以按照以下三個步驟，在用戶點擊時使其顯示一條消息：
 
-1. 在您的Button組件內宣告一個名為handleClick的函式。
+1. 在你的Button組件內宣告一個名為handleClick的函式。
 1. 在該函式內實現相應的邏輯（使用alert來顯示消息）。
 1. 將onClick={handleClick}添加到`<button>`的JSX中。
 
@@ -144,7 +144,7 @@ export default function Button() {
 
 ### 點擊才呼叫
 
-如果您想要在inline方式定義事件處理器，可以像以下方式將其包裹在匿名函式中
+如果你想要在inline方式定義事件處理器，可以像以下方式將其包裹在匿名函式中
 
 ```jsx
 <button onClick={() => alert('You clicked me!')}>
@@ -245,7 +245,7 @@ export default function Toolbar() {
 
 ## 請使用button、不要使用div
 
-確保您使用適當的HTML標籤來處理事件。例如，要處理點擊事件，請使用<span class="code red">&lt;button onClick={handleClick}&gt;</span>而不是<span class="code red">&lt;div onClick={handleClick}&gt;</span>。使用真正的瀏覽器<span class="code red">&lt;button&gt;</span>可以啟用內置的瀏覽器行為，例如鍵盤導航。
+確保你使用適當的HTML標籤來處理事件。例如，要處理點擊事件，請使用<span class="code red">&lt;button onClick={handleClick}&gt;</span>而不是<span class="code red">&lt;div onClick={handleClick}&gt;</span>。使用真正的瀏覽器<span class="code red">&lt;button&gt;</span>可以啟用內置的瀏覽器行為，例如鍵盤導航。
 
 ## 通知React重新渲染使用setState函式
 

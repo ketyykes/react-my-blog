@@ -227,9 +227,9 @@ export default defineConfig({
 })
 ```
 
-1. `host: true`：這是最重要的設置。當在 Docker 容器內運行 Vite 開發服務時，設置 `host: true` 會使開發服務監聽所有網卡的地址 (即 `0.0.0.0`)，而不僅僅是 localhost (`127.0.0.1`)。這意味著您可以從容器外部的主機或其他設備訪問開發服務。
-2. `strictPort: true`：這個設置確保如果指定的端口（在這個案例中是 5173）不可用，Vite 會直接終止，而不是嘗試使用另一個端口。這使得端口行為更可預測，尤其是在 Docker 環境中，您可能需要配置端口映射。
-3. `port: 5173`：這指定了 Vite 開發伺服器運行的端口。5173 是 Vite 的默認端口。在 Docker 的情況下，您需要確保 Docker 容器的端口映射配置與此設定一致。
+1. `host: true`：這是最重要的設置。當在 Docker 容器內運行 Vite 開發服務時，設置 `host: true` 會使開發服務監聽所有網卡的地址 (即 `0.0.0.0`)，而不僅僅是 localhost (`127.0.0.1`)。這意味著你可以從容器外部的主機或其他設備訪問開發服務。
+2. `strictPort: true`：這個設置確保如果指定的端口（在這個案例中是 5173）不可用，Vite 會直接終止，而不是嘗試使用另一個端口。這使得端口行為更可預測，尤其是在 Docker 環境中，你可能需要配置端口映射。
+3. `port: 5173`：這指定了 Vite 開發伺服器運行的端口。5173 是 Vite 的默認端口。在 Docker 的情況下，你需要確保 Docker 容器的端口映射配置與此設定一致。
 
 ---
 
@@ -337,41 +337,41 @@ docker run --name my-react-container3000 -d -p 3000:5173 my-react:dev
 ```
 #### **構建映像**
 
-使用 `docker build` 命令來構建一個映像。您需要在包含 `Dockerfile` 的目錄中執行此命令。
+使用 `docker build` 命令來構建一個映像。你需要在包含 `Dockerfile` 的目錄中執行此命令。
 命令的一般形式如下：
 
 ```bash
-docker build -t <您的映像名稱>:<標籤> .
+docker build -t <你的映像名稱>:<標籤> .
 ```
-- -t 參數允許您為映像指定一個名稱和標籤，通常的形式是 `name:tag`，比如 `myapp:1.0`。
-- 最後的 `.` 指的是 Dockerfile 所在的當前目錄。如果 Dockerfile 在其他路徑，您需要指定正確的路徑。
+- -t 參數允許你為映像指定一個名稱和標籤，通常的形式是 `name:tag`，比如 `myapp:1.0`。
+- 最後的 `.` 指的是 Dockerfile 所在的當前目錄。如果 Dockerfile 在其他路徑，你需要指定正確的路徑。
 
 #### **執行映像檔建構容器**
-當映像構建完成後，您可以使用 `docker run` 命令來運行映像：
+當映像構建完成後，你可以使用 `docker run` 命令來運行映像：
 
 ```bash
-docker run --name <命名容器名稱> -d -p <主機端口>:<容器端口> <您的映像名稱>:<標籤>
+docker run --name <命名容器名稱> -d -p <主機端口>:<容器端口> <你的映像名稱>:<標籤>
 ```
 
 - `-d` 參數表示容器在後台運行。
-- `-p` 參數用於將容器內的端口映射到您的主機的端口上。
-- `<主機端口>` 是您機器上的端口號，`<容器端口>` 是容器內部的端口號。
-- `<您的映像名稱>:<標籤>` 是您之前構建的映像的名稱和標籤。`
+- `-p` 參數用於將容器內的端口映射到你的主機的端口上。
+- `<主機端口>` 是你機器上的端口號，`<容器端口>` 是容器內部的端口號。
+- `<你的映像名稱>:<標籤>` 是你之前構建的映像的名稱和標籤。`
 - `--name` 表示你可以替容器命名的 
 
 ##### 額外補充：多個 dockerfile
 
-如果您有一個特定的 `Dockerfile`，名稱不是預設的 `Dockerfile`，比如說 `Dockerfile.dev`，並且您想要使用它來構建一個 Docker 映像，您可以使用 `-f` 或 `--file` 選項指定 `Dockerfile` 路徑。以下是相應的指令：
+如果你有一個特定的 `Dockerfile`，名稱不是預設的 `Dockerfile`，比如說 `Dockerfile.dev`，並且你想要使用它來構建一個 Docker 映像，你可以使用 `-f` 或 `--file` 選項指定 `Dockerfile` 路徑。以下是相應的指令：
 
 ```bash
-docker build -f Dockerfile.dev -t [您的映像名稱]:[標籤] .
+docker build -f Dockerfile.dev -t [你的映像名稱]:[標籤] .
 ```
 
 - `-f Dockerfile.dev` 指定了要使用的 Dockerfile 路徑和名稱。
-- `-t [您的映像名稱]:[標籤]` 允許您為構建的映像指定名稱和標籤。
-- 最後的 `.` 指的是 Dockerfile 所在的當前目錄。如果您的 Dockerfile 位於其他目錄，您需要指定正確的路徑。
+- `-t [你的映像名稱]:[標籤]` 允許你為構建的映像指定名稱和標籤。
+- 最後的 `.` 指的是 Dockerfile 所在的當前目錄。如果你的 Dockerfile 位於其他目錄，你需要指定正確的路徑。
 
-舉例來說，如果您想構建一個名為 `my-react`，標籤為 `dev` 的映像，您可以這樣寫：
+舉例來說，如果你想構建一個名為 `my-react`，標籤為 `dev` 的映像，你可以這樣寫：
 
 ```bash
 docker build -f Dockerfile.dev -t my-react:dev .
@@ -384,7 +384,7 @@ docker build -f Dockerfile.dev -t my-react:dev .
 ![image](https://hackmd.io/_uploads/H1SFpnm56.png)
 
 
-如果您想要在啟動 Docker 容器時，將您主機上的某個目錄（例如 `/path/to/host/src`）掛載到容器內的某個目錄（例如 `/path/in/container/src`），您可以使用 Docker 的 `-v` 或 `--mount` 選項來進行 bind mount。：
+如果你想要在啟動 Docker 容器時，將你主機上的某個目錄（例如 `/path/to/host/src`）掛載到容器內的某個目錄（例如 `/path/in/container/src`），你可以使用 Docker 的 `-v` 或 `--mount` 選項來進行 bind mount。：
 
 ### 使用 -v 或 --mount 指令
 
@@ -392,7 +392,7 @@ docker build -f Dockerfile.dev -t my-react:dev .
    ```bash
    docker run -v /path/to/host/src:/path/in/container/src [其他選項] [映像名稱]
    ```
-   這裡，`/path/to/host/src` 是您主機上的目錄，`/path/in/container/src` 是容器內的目錄。這個命令會將主機上的 `/path/to/host/src` 目錄掛載到容器的 `/path/in/container/src` 目錄。
+   這裡，`/path/to/host/src` 是你主機上的目錄，`/path/in/container/src` 是容器內的目錄。這個命令會將主機上的 `/path/to/host/src` 目錄掛載到容器的 `/path/in/container/src` 目錄。
 
 **使用 `--mount` 選項**（更為明確和推薦的方式）:
    ```bash
@@ -400,7 +400,7 @@ docker build -f Dockerfile.dev -t my-react:dev .
    ```
    這裡，`type=bind` 表示這是一個 bind mount，`source=/path/to/host/src` 指定了主機上的源目錄，`target=/path/in/container/src` 指定了容器內的目標掛載點。
 
-> 在這兩個例子中，`[其他選項]` 可以是您想要添加的其他 `docker run` 選項，例如 `-d` 來在後臺運行容器，或 `-p` 來映射端口等。`[映像名稱]` 是您要啟動的 Docker 映像的名稱。
+> 在這兩個例子中，`[其他選項]` 可以是你想要添加的其他 `docker run` 選項，例如 `-d` 來在後臺運行容器，或 `-p` 來映射端口等。`[映像名稱]` 是你要啟動的 Docker 映像的名稱。
 
 ### 關於掛載的不同方式
 Docker 中的支持不同的 `type`，用於指定掛載的類型。通常有以下三種主要的 `type`：
@@ -425,7 +425,7 @@ Docker 中的支持不同的 `type`，用於指定掛載的類型。通常有以
 
 1. 點擊齒輪圖標 打開 "Settings"。
 2. 轉到 "Resources" 部分。 
-3. 在 "File Sharing" 添加您希望對 Docker 容器可見的目錄。在您的情況下，添加 `/src` 目錄。
+3. 在 "File Sharing" 添加你希望對 Docker 容器可見的目錄。在你的情況下，添加 `/src` 目錄。
 4. 應用更改並重啟 Docker Desktop。
 
 如下圖
@@ -502,12 +502,12 @@ services:
 docker-compose up --build
 ```
 
-- `docker-compose up`: 這是 Docker Compose 的主要命令之一，用於啟動和運行您在 `docker-compose.yml` 文件中定義的所有服務。如果服務中引用的映像尚未下載，Docker Compose 會自動拉取這些映像。
-- `--build`: 這個選項會告訴 Docker Compose 在啟動服務之前先構建（或重建）映像。這尤其有用於開發環境，當您更改了 Dockerfile 或相關的構建文件並希望這些更改被包括在新啟動的容器中時。
+- `docker-compose up`: 這是 Docker Compose 的主要命令之一，用於啟動和運行你在 `docker-compose.yml` 文件中定義的所有服務。如果服務中引用的映像尚未下載，Docker Compose 會自動拉取這些映像。
+- `--build`: 這個選項會告訴 Docker Compose 在啟動服務之前先構建（或重建）映像。這尤其有用於開發環境，當你更改了 Dockerfile 或相關的構建文件並希望這些更改被包括在新啟動的容器中時。
 
 使用這個命令時，Docker Compose 會進行以下操作：
 
-1. **自動構建或重建映像**：根據您的 `docker-compose.yml`（和任何相關的 `docker-compose.override.yml`）文件中的 `build` 配置，Docker Compose 會構建或重建服務所需的映像。如果 `docker-compose.yml` 文件中的服務指定了 `build` 路徑，那麼對應的 Dockerfile 將被用來構建映像。
-2. **創建並啟動容器**：構建完成後，Docker Compose 會創建並啟動所有服務所定義的容器。這包括配置任何網絡、掛載 volumes 和啟動您在 `docker-compose.yml` 文件中定義的容器。
-3. **服務依賴性管理**：如果您的服務之間有依賴關係，Docker Compose 會以正確的順序啟動它們。
+1. **自動構建或重建映像**：根據你的 `docker-compose.yml`（和任何相關的 `docker-compose.override.yml`）文件中的 `build` 配置，Docker Compose 會構建或重建服務所需的映像。如果 `docker-compose.yml` 文件中的服務指定了 `build` 路徑，那麼對應的 Dockerfile 將被用來構建映像。
+2. **創建並啟動容器**：構建完成後，Docker Compose 會創建並啟動所有服務所定義的容器。這包括配置任何網絡、掛載 volumes 和啟動你在 `docker-compose.yml` 文件中定義的容器。
+3. **服務依賴性管理**：如果你的服務之間有依賴關係，Docker Compose 會以正確的順序啟動它們。
 

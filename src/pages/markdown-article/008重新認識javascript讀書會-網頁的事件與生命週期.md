@@ -151,7 +151,7 @@ mouseout 有事件冒泡
 
 - keydown 事件：「壓下」鍵盤按鍵時會觸發 keydown 事件。
 - keypress 事件：除了 Shift, Fn, CapsLock 這三種按鍵外按住時會觸發，若按著不放則會連續觸發。
-  <span class="red">警告：由於此事件已被棄用，您應該使用 beforeinput 或 keydown 代替</span>
+  <span class="red">警告：由於此事件已被棄用，你應該使用 beforeinput 或 keydown 代替</span>
 - keyup 事件：「放開」鍵盤按鍵時觸發。
 
 [MDN-keypress 棄用](https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event)
