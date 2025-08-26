@@ -82,7 +82,7 @@ function add(a, b) {
 
 若我們希望可以在編輯器當中得到相對應的提示，以 Visual Studio Code 為例，在不修改任何程式碼的情況下，啟用 **所有 JavaScript 檔案的型別檢查**，只需在 VSCode 的「使用者設定」或「工作區設定」中加入以下設定：
 
-```jsonc
+```json
 "js/ts.implicitProjectConfig.checkJs": true
 ```
 
@@ -113,7 +113,7 @@ function add(a, b) {
 
 要在專案中啟用型別檢查與更完善的編輯器支援，只需要在專案根目錄建立一個名為 jsconfig.json 的檔案，撰寫以下最基本的設定：
 
-```jsonc
+```json
 {
   "compilerOptions": {
     "checkJs": true
