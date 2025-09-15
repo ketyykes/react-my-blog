@@ -31,7 +31,6 @@ const TagsTemplate = ({ data }) => {
 export default TagsTemplate;
 export const Head = ({ pageContext: { tag } }) => (
 	<>
-		<html lang="zh-Hant-TW" />
 		<Seo title={tag} />;
 	</>
 );

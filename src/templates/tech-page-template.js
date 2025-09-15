@@ -90,7 +90,6 @@ export default TechPageTemplate;
 
 export const Head = () => (
 	<>
-		<html lang="zh-Hant-TW" />
 		<Seo title="Tech-page" />
 	</>
 );

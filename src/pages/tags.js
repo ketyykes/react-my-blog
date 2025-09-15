@@ -35,7 +35,6 @@ export default TagsPage;
 
 export const Head = () => (
 	<>
-		<html lang="zh-Hant-TW" />
 		<Seo title="Tags" />;
 	</>
 );
