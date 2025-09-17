@@ -377,7 +377,7 @@ docker build -f Dockerfile.dev -t [你的映像名稱]:[標籤] .
 docker build -f Dockerfile.dev -t my-react:dev .
 ```
 
-## 什麼是 Volumn
+## 什麼是 Volume
 
 卷（Volume）是 Docker 用於實現數據持久化和存儲的一種機制，它允許數據在容器重啟或刪除後依然存在。卷由 Docker 宿主機管理，與容器的生命週期獨立，並且可以被多個容器掛載和共享。
 
