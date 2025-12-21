@@ -5,8 +5,6 @@ date: 2025-10-04T13:31:00.000Z
 tags: ["AI"]
 ---
 
-
-
 <style> 
 .rem25{
 font-size:2.5rem;
