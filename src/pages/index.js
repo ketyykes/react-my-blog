@@ -1,3 +1,4 @@
+import React from "react";
 import { graphql } from "gatsby";
 import { PortfolioTab } from "../components/index";
 import Seo from "../components/seo/Seo";

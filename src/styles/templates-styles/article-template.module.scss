@@ -58,7 +58,8 @@ $element: ul, li, img, a, b, h1, h2, h3, h4, h5, h6, p, div, code;
 	code {
 		max-width: 90%;
 	}
-	p {
+	// 使用 :not(:where(svg p)) 排除 Mermaid 圖表（SVG）內的段落元素
+	p:not(:where(svg p)) {
 		font-size: 1rem;
 		line-height: 2;
 		padding: 0 10px;
