@@ -11,42 +11,38 @@ const articleTemplate = ({ pageContext }) => {
 	const { html, title, date } = pageContext;
 	const formateDate = dayjs(date).format("YYYY-MM-DD ddd");
 	return (
-		<>
-			<div className={articleContent}>
-				<h1>{title}</h1>
-				<h2>{formateDate}</h2>
-				<article dangerouslySetInnerHTML={{ __html: html }} />
+		<div className={articleContent}>
+			<h1>{title}</h1>
+			<h2>{formateDate}</h2>
+			<article dangerouslySetInnerHTML={{ __html: html }} />
 
-				<Giscus
-					id="comments"
-					repo="ketyykes/react-my-blog"
-					repoId="R_kgDOG8KeJw"
-					term="Welcome to my wedsatcoming blog"
-					category="Announcements"
-					categoryId="DIC_kwDOG8KeJ84CdyXw"
-					mapping="og:title"
-					reactionsEnabled="1"
-					emitMetadata="0"
-					inputPosition="bottom"
-					theme="cobalt"
-					lang="zh-TW"
-					data-strict="0"
-				/>
-			</div>
-		</>
+			<Giscus
+				id="comments"
+				repo="ketyykes/react-my-blog"
+				repoId="R_kgDOG8KeJw"
+				term="Welcome to my wedsatcoming blog"
+				category="Announcements"
+				categoryId="DIC_kwDOG8KeJ84CdyXw"
+				mapping="og:title"
+				reactionsEnabled="1"
+				emitMetadata="0"
+				inputPosition="bottom"
+				theme="cobalt"
+				lang="zh-TW"
+				data-strict="0"
+			/>
+		</div>
 	);
 };
 
 export const Head = ({ pageContext: { title, excerpt, date, tags, slug } }) => (
-	<>
-		<Seo
-			title={title}
-			description={excerpt}
-			article={true}
-			publishedDate={date}
-			tags={tags || []}
-			pathname={slug}
-		/>
-	</>
+	<Seo
+		title={title}
+		description={excerpt}
+		article={true}
+		publishedDate={date}
+		tags={tags || []}
+		pathname={slug}
+	/>
 );
 export default articleTemplate;
