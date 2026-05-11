@@ -1,5 +1,5 @@
 ---
-title: webpack一堆筆記
+title: webpack 一堆筆記
 slug: 2021-11-15T07:49:37.000Z
 date: 2021-11-15T07:49:37.000Z
 tags: ["Webpack"]
@@ -27,11 +27,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 ## 如何建置一個簡單有 webpack 伺服器和 html 模板自動注入 JS 的設定檔
 
-在 npm 套件的部分安裝 corss-env、webpack-dev-server、html-webpack-plugin
+在 npm 套件的部分安裝 cross-env、webpack-dev-server、html-webpack-plugin
 
 ### 使用 cross-env 使得在 windows 或 linux 的指令統一
 
-由於在 linux 系統底下和 windows 系統設置環境變數的指令不同，為了統一執行指令因此使用`npm install corss-env --save-dev`指令
+由於在 linux 系統底下和 windows 系統設置環境變數的指令不同，為了統一執行指令因此使用`npm install cross-env --save-dev`指令
 
 如果是在 linux 指令設置環境變數的話是輸入 export
 如下
@@ -51,7 +51,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 }
 ```
 
-為了統一設定因此使用 corss-env，指令如下
+為了統一設定因此使用 cross-env，指令如下
 
 ```javascript{numberLines: true}
 "start": "cross-env NODE_ENV=development webpack",
@@ -72,10 +72,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 ```javascript{numberLines: true}
 const path = require('path');
-const modeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development' //使用node的process.env抓取環境變數來判斷當下的
+const modeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development' //使用 node 的 process.env 抓取環境變數來判斷當下的
 
 module.exports = {
-    mode: modeEnv,//設定要打包的模式可以設定production或development
+    mode: modeEnv,//設定要打包的模式可以設定 production 或 development
     entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),//使用絕對路徑方式設定打包後產生出的資料夾
@@ -115,8 +115,8 @@ devServer:{
       directory: path.join(__dirname, './dist/')
     },
     open: true, //自動打開瀏覽器
-    port: 8080,//開啟的port號是8080
-    hot:true,//4.0.0默認是開啟的
+    port: 8080,//開啟的 port 號是 8080
+    hot:true,//4.0.0 默認是開啟的
 }
 ```
 
@@ -135,9 +135,9 @@ devServer:{
 ```javascript{numberLines: true}
 plugins: [new HtmlWebpackPlugin({
         title: 'Custom template',
-        filename: 'index.html',//這樣會在output指定的資料夾建立一個html資料夾後再產出名叫index.html的檔案
+        filename: 'index.html',//這樣會在 output 指定的資料夾建立一個 html 資料夾後再產出名叫 index.html 的檔案
         template:'src/html/index.html',//模板的來源
-        chunks: ['index','index2'] //指定注入哪些js文件，如果沒有設定預設是全部注入
+        chunks: ['index','index2'] //指定注入哪些 js 文件，如果沒有設定預設是全部注入
     })],
 ```
 
@@ -151,7 +151,7 @@ plugins: [new HtmlWebpackPlugin({
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.options.title %></title><!-- 使用<% %>來添加參數這裡是取得key是title的參數 -->
+    <title><%= htmlWebpackPlugin.options.title %></title><!-- 使用<% %>來添加參數這裡是取得 key 是 title 的參數 -->
 
 </head>
 <body>
@@ -182,8 +182,8 @@ module.exports = {
     module: {
         rules: [
             {
-              test: /\.s[ac]ss$/i,//使用正則表達式選擇副檔名含有scss或sass的檔案
-              // 使用loader webpack是從後面讀到前面所以sass-loader放陣列最後一筆不過是優先處理的loader
+              test: /\.s[ac]ss$/i,//使用正則表達式選擇副檔名含有 scss 或 sass 的檔案
+              // 使用 loader webpack 是從後面讀到前面所以 sass-loader 放陣列最後一筆不過是優先處理的 loader
               use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
           ],
@@ -234,7 +234,7 @@ module.exports = {
         }),
        new MiniCssExtractPlugin({
         filename: "./css/[contenthash].bundle.css"
-           //filename的value地方意思是產生出css資料夾並且隨機產生hash檔名+bundle的css，產生隨機檔名可以避免瀏覽器快取
+           //filename 的 value 地方意思是產生出 css 資料夾並且隨機產生 hash 檔名+bundle 的 css，產生隨機檔名可以避免瀏覽器快取
        }),
     ],
 
@@ -277,9 +277,9 @@ postcss-loader 會自動搜尋如果檔名叫做 postcss.config.js 的檔案就�
 
 ```javascript{numberLines: true}
 module.exports = {
-    map: true,//是否開啟source-map
+    map: true,//是否開啟 source-map
     plugins: [require('postcss-preset-  env'),require('autoprefixer'),]
-    //引入postcss-preset-env和autoprefixer
+    //引入 postcss-preset-env 和 autoprefixer
 };
 ```
 
@@ -316,11 +316,11 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[hash][name][ext]' //建立至images資料夾且自動產生hash和原檔案名稱和副檔名
+                    filename: 'images/[hash][name][ext]' //建立至 images 資料夾且自動產生 hash 和原檔案名稱和副檔名
                   },
                 },
 
-            //主要是這邊 添加此項配置來讓webpack對以上副檔名做處理
+            //主要是這邊 添加此項配置來讓 webpack 對以上副檔名做處理
           ],
       },
 ```
@@ -352,7 +352,7 @@ module.exports = {
                   },
                 parser: {
                     dataUrlCondition: {
-                        maxSize: 8 * 1024 //在多少位元組以下就變成base64
+                        maxSize: 8 * 1024 //在多少位元組以下就變成 base64
                     }
                 }
             },
@@ -377,7 +377,7 @@ module.exports = {
     module: {
         rules: [       {
                 test: /\.m?js$/,
-                exclude: /node_modules/, //node module底下的東西就不用做了
+                exclude: /node_modules/, //node module 底下的東西就不用做了
                 use: {
                   loader: "babel-loader",
                 }
@@ -448,7 +448,7 @@ module.exports = {
 
 ```javascript{numberLines: true}
 (async function (){
-    const a= await fetch('某個API');
+    const a= await fetch('某個 API');
     const b = await a.json();
     console.log(b);
 }())

@@ -1,5 +1,5 @@
 ---
-title: bootstrap的一堆筆記
+title: bootstrap 的一堆筆記
 slug: 2021-05-14T02:31:00.000Z
 date: 2021-05-14T02:31:00.000Z
 tags: ["Bootstrap","UI Framework","CSS"]
@@ -100,7 +100,7 @@ lead 前導主題
 
 ### 表單 inline
 
-讓 ul 呈現行內元素的樣式(最常使用在 navbar 的 a 連結處)
+讓 ul 呈現行內元素的樣式 (最常使用在 navbar 的 a 連結處)
 程式碼如下
 
 ```html{numberLines: true}
@@ -174,12 +174,12 @@ height: auto;
 <img src="..." class="img-thumbnail" alt="...">
 ```
 
-### 圖片排版-文繞圖
+### 圖片排版 - 文繞圖
 
 使用 float 靠左或 float 靠右
 程式碼如下
 
-<span class="red">注意事項-記得補上清除浮動</span>
+<span class="red">注意事項 - 記得補上清除浮動</span>
 
 ```html{numberLines: true}
 <div class="clearfix">
@@ -191,7 +191,7 @@ height: auto;
 </p>
 ```
 
-### 圖片排版-水平置中-方法一
+### 圖片排版 - 水平置中 - 方法一
 
 程式碼如下，利用 m0-auto 還有將圖片設成 block 的方式
 
@@ -200,7 +200,7 @@ height: auto;
 <img src="..." class="rounded mx-auto d-block" alt="...">
 ```
 
-### 圖片排版-水平置中-方法二
+### 圖片排版 - 水平置中 - 方法二
 
 程式碼如下，利用 text-align 的方式置中維持行內元素，但是也會造成文字也置中
 
@@ -297,7 +297,7 @@ height: auto;
 
 ## 欄與列-col 和 row
 
-<span class="rem25">row 做了哪些事情?</span>
+<span class="rem25">row 做了哪些事情？</span>
 
 1. 設定 display:flex
 2. 設定 flex-wrap
@@ -317,8 +317,8 @@ bootstrap 的格線系統 col 的欄數相加是 12
 
 ```html{numberLines: true}
 <div class="container mt-3">
-  <div class="row"> <!--row一定是在外層-->
-    <div class="col-6"> <!--col一定是在內層-->
+  <div class="row"> <!--row 一定是在外層-->
+    <div class="col-6"> <!--col 一定是在內層-->
       <div class="box"></div> <!--頁面內容一定是在內層-->
     </div>
     <div class="col-6">
@@ -495,7 +495,7 @@ col-auto
 ```
 
 <span class="rem40">方法二在 row 添加數字</span>
-col 無數字(它會自動分配剩餘的空間)
+col 無數字 (它會自動分配剩餘的空間)
 row 添加數字例如
 row-col-1 泛指在小裝置的時候只有一欄
 row-cols-md-3 在中型裝置的時候變成三欄式排版
@@ -567,7 +567,7 @@ container 稱為<span class="red rem25">定寬容器</span>也就是有固定寬
 
 如果不想要定寬的話使用<span class="red rem25">container-fluid</span>
 
-container-fluid 的 class 的寬度皆是使用 100%來表示，因此在各個寬度的時候都會滿版
+container-fluid 的 class 的寬度皆是使用 100% 來表示，因此在各個寬度的時候都會滿版
 
 先前提到使用 col 和 row 來進行排版，建議外層再加上 container 的方式
 藉由外層增加 container 的 class 可以達到在某個解析度底下版型是滿版
@@ -649,7 +649,7 @@ flex 的預設 order 值是 0
 換句話說沒有設置任何 order 的時候他的值是 0
 
 另外還有 order-first 和 order-last
-裡面 order 的 css 屬性值對應到的是-1 和 13
+裡面 order 的 css 屬性值對應到的是 -1 和 13
 (因為 col 最多就是 12 欄很自然的最大值就是 13)
 
 如上也就是讓該內容在 576px 以下的時候的排列順序
@@ -671,7 +671,7 @@ bootstrap5 官方文件
 舉例：mt-5
 bootstrap5 使用 start 和 end 來取代之前的 left 和 right
 
-> 由於某些語言 例如希伯來文和阿拉伯文是由右閱讀到左(RTL)
+> 由於某些語言 例如希伯來文和阿拉伯文是由右閱讀到左 (RTL)
 > 因此若採用 ps-Num 和 pe-Num 可以避免在切換語言的時候要改大量的 HTMLclass 的名稱
 
 <span class=rem25>在 bootstrap4 版本</span>
@@ -796,7 +796,7 @@ offset 的原理是使用 margin:left 的技巧
             <div class="txt">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium vel, iusto sint temporibus blanditiis, eos quis eum, alias voluptatibus repellat animi. Voluptatibus inventore nihil harum in asperiores, hic voluptatum.</p>
             </div>
-        </div>ㄎ
+        </div>
         <div class="col-12 col-md-7">
             <div class="item">
                 <img class="w-100"src="https://picsum.photos/id/1058/600/400" class="w-100" alt="">
@@ -1080,13 +1080,13 @@ bootstrap5 獨立出來在 component 底下
 
 ### dropdown 的方向性
 
-加入 dropup 使其向上(如果空間不夠的話還是自動切換會向下)
+加入 dropup 使其向上 (如果空間不夠的話還是自動切換會向下)
 
 [參考官方文件](https://getbootstrap.com/docs/5.0/components/dropdowns/#directions)
 
 ### dropdown 的標題
 
-加入 dropdown-header 使其顯示(且不能按)
+加入 dropdown-header 使其顯示 (且不能按)
 [dropdown-header](https://getbootstrap.com/docs/5.0/components/dropdowns/#headers)
 
 ### dropdown 分隔線
@@ -1474,7 +1474,7 @@ data-bs-target 要對應到 div 內容下的 id 記得加入#號來指定目標�
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
 ```
 
-由上面可以見到<span class="red">tab-content</span>是要透過上面的 ol 裡的 li(也就是被稱為標籤)來切換的內容物
+由上面可以見到<span class="red">tab-content</span>是要透過上面的 ol 裡的 li(也就是被稱為標籤) 來切換的內容物
 
 在 tab-content 裡面的 div 有 id 因此原先的 li 內容<span class="red">data-bs-toggle="tab"</span>需要<span class="red rem25">給定一個類型</span>_(這裡的類型是 tab)_ 而<span class="red>data-bs-target="目標"</span>需要<span class="red rem25">給定目標</span>且由於是 id 所以需要加<span class="rem25">#號</span>
 

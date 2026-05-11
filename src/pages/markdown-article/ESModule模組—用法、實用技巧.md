@@ -1,33 +1,33 @@
 ---
-title: ESModule模組—用法、實用技巧
+title: ESModule 模組—用法、實用技巧
 slug: 2022-09-24T03:35:00.000Z
 date: 2022-09-24T03:35:00.000Z
 tags: ["Javascript","React"]
 ---
 
-Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著時間的推演，一個網頁擁有大量複雜的腳本需要被執行，直到近年網頁所涵蓋的Javascript腳本越來越多，勢必要考慮將Javascript模組拆分，因此慢慢衍生一些模組化系統，在ES6之前比較知名的有CommonJS和AMD(Asynchronous Module Definition)，ComonJS主要是設計給伺服器端的Node.js使用，AMD的目標則是給瀏覽器端，近年制定Javascript標準的[ECMAScript](https://zh.wikipedia.org/zh-tw/ECMAScript)在2015年將模組化的語法納入到標準當中，因此被稱為ES6 Moudle(ESM)。
+Javascript 當初設計的時候僅是網頁執行簡單腳本的語言，隨著時間的推演，一個網頁擁有大量複雜的腳本需要被執行，直到近年網頁所涵蓋的 Javascript 腳本越來越多，勢必要考慮將 Javascript 模組拆分，因此慢慢衍生一些模組化系統，在 ES6 之前比較知名的有 CommonJS 和 AMD(Asynchronous Module Definition)，ComonJS 主要是設計給伺服器端的 Node.js 使用，AMD 的目標則是給瀏覽器端，近年制定 Javascript 標準的[ECMAScript](https://zh.wikipedia.org/zh-tw/ECMAScript)在 2015 年將模組化的語法納入到標準當中，因此被稱為 ES6 Moudle(ESM)。
 
-本文重點將會以ES6的Module為主
+本文重點將會以 ES6 的 Module 為主
 
 文章將會提到以下幾點
-- 什麼是module
+- 什麼是 module
 - 基本用法
 - 具名匯出、預設匯出
-- default匯出就像具名匯出？
-- 其他技巧—as別名、包裹物件匯出、sideEffect模組
+- default 匯出就像具名匯出？
+- 其他技巧—as 別名、包裹物件匯出、sideEffect 模組
 - 合併模組
-- React中實際應用場景
+- React 中實際應用場景
 - 重點回顧
 
 
-## 什麼是Module
+## 什麼是 Module
 
-在介紹ES moudle之前，首先得簡單講解一下模組是什麼，根據維基百科[模組化設計
+在介紹 ES moudle 之前，首先得簡單講解一下模組是什麼，根據維基百科[模組化設計
 ](https://zh.m.wikipedia.org/zh-tw/%E6%A8%A1%E7%B5%84%E5%8C%96%E8%A8%AD%E8%A8%88)的介紹提到**其旨在於將一個系統細分為許多小單元，稱為模組（module）或模塊（block），可以獨立的於不同的系統中被建立與使用**，對應到現實生活中例如一台車子當中，具有煞車模組、引擎控制模組、傳動系統等等，以電腦為例擁有供電模組、散熱模組、記憶體模組，每個模組可能不僅只能使用在同一型號的電腦，藉由不同型號的裝置，共用模組可以達到大量製造、降低生產成本等等的優點。
 
-回到Javascript的Module，其內容就是將一個功能或者類似的功能組合在一起的程式碼，而且其中也常被包含在更大的應用程式用來執行某些特定的任務。
+回到 Javascript 的 Module，其內容就是將一個功能或者類似的功能組合在一起的程式碼，而且其中也常被包含在更大的應用程式用來執行某些特定的任務。
 
-## 為什麼我們需要模組化?
+## 為什麼我們需要模組化？
 
 大致上整理出以下幾點
 
@@ -38,7 +38,7 @@ Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著�
 
 ## 基本用法
 
-例如我們在src的資料夾內有`app.js`和`data.js`和index.html如下
+例如我們在 src 的資料夾內有`app.js`和`data.js`和 index.html 如下
 
 ```bash
 └─src
@@ -47,7 +47,7 @@ Javascript當初設計的時候僅是網頁執行簡單腳本的語言，隨著�
     index.html
 ```
 
-在index.html的`script`使用`type=module`的方式如下
+在 index.html 的`script`使用`type=module`的方式如下
 ```html
 <html lang="en">
   <head>
@@ -73,7 +73,7 @@ import { data } from './data.js'
 console.log(data);
 ```
 
-這樣的做法就能如期印出data了，換言之就是在app程式當中引用了data的模組
+這樣的做法就能如期印出 data 了，換言之就是在 app 程式當中引用了 data 的模組
 
 ### Module—嚴格模式
 需要注意的地方是`**當我們使用模組的時候，其程式碼部分將會自動成為嚴格模式**`
@@ -91,14 +91,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#st
 - default export(預設匯出)
     - 一個檔案**只能有一個**default export
 
-另外匯出的時候不一定需要取名字，因為在import的時候會取名，但是通常使用原本module的名字，換句話說引入的時候也可以改成你想要的名字 
+另外匯出的時候不一定需要取名字，因為在 import 的時候會取名，但是通常使用原本 module 的名字，換句話說引入的時候也可以改成你想要的名字 
 
-### 匯出function
+### 匯出 function
 
-我們除了看到基本用法匯出資料以外，通常一個模組的檔案也會包含許多function，這邊示範如何匯出function
+我們除了看到基本用法匯出資料以外，通常一個模組的檔案也會包含許多 function，這邊示範如何匯出 function
 
-#### 預設匯出function
-上面基本用法簡單介紹了一下匯出資料的方式，這裡使用**default**匯出function
+#### 預設匯出 function
+上面基本用法簡單介紹了一下匯出資料的方式，這裡使用**default**匯出 function
 
 這裡假設命名了一隻檔案叫做`fn.js`
 檔案內容如下
@@ -108,15 +108,15 @@ export default function (name) {
 }
 ```
 
-在另一支檔案`app.js`裡面就是import直接使用，程式碼如下
+在另一支檔案`app.js`裡面就是 import 直接使用，程式碼如下
 ```javascript
 import fn from "./fn.js";
 fn("Danny");
 ```
 
-#### 具名匯出function
+#### 具名匯出 function
 
-上面示範如何預設匯出function 我們可能一隻檔案有很多function，因此可以使用具名匯出範例如下
+上面示範如何預設匯出 function 我們可能一隻檔案有很多 function，因此可以使用具名匯出範例如下
 
 ```javascript
 export function sayHello() {
@@ -127,14 +127,14 @@ export function sayMyName(name) {
 }
 ```
 
-在app.js使用大括弧的方式引入如下
+在 app.js 使用大括弧的方式引入如下
 ```javascript
 import { sayHello, sayMyName } from "./fn.js";
 sayHello();//Hello
 sayMyName("Danny");//Hi I am Danny
 ```
 
-## default匯出就像具名匯出？
+## default 匯出就像具名匯出？
 
 這次原本的`data.js`以下片段
 ```javascript
@@ -146,15 +146,15 @@ export default function () {
   console.log("你好");
 }
 ```
-在app.js改成以下片段
+在 app.js 改成以下片段
 
-我們使用`*`表示全部引入的意思，他會包含default和具名匯出的東西。
+我們使用`*`表示全部引入的意思，他會包含 default 和具名匯出的東西。
 ```javascript
 import * as myModule from "./data.js";
 console.log(myModule);
 ```
 
-這裡我們可以看到如下圖擁有一個key叫做**default**的屬性
+這裡我們可以看到如下圖擁有一個 key 叫做**default**的屬性
 
 ![](https://i.imgur.com/z56RZSr.png)
 
@@ -172,17 +172,17 @@ sayMyName("Danny");
 
 因此可以知道的事情如下
 
-- 由於default是[保留字](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words)(備註)所以**得額外取名**
-- defalut與其他具名匯出的模組類似**可以用解構的方式得到該內容**
+- 由於 default 是[保留字](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words)(備註) 所以**得額外取名**
+- defalut 與其他具名匯出的模組類似**可以用解構的方式得到該內容**
 
-> 備註:更多保留字的解釋可以參考[MDN-保留字](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words)
+> 備註：更多保留字的解釋可以參考[MDN-保留字](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words)
 
 
-## 其他技巧—as別名、包裹物件匯出、sideEffect模組
+## 其他技巧—as 別名、包裹物件匯出、sideEffect 模組
 
 ### 包裹成物件匯出
 
-另外如果想要export多個函式卻又不想要一直撰寫`export`這個關鍵字的時候，可以使用包裹成物件的形式預設匯出
+另外如果想要 export 多個函式卻又不想要一直撰寫`export`這個關鍵字的時候，可以使用包裹成物件的形式預設匯出
 ```javascript
 const foo = () => console.log('你好')
 const foo2 = () => console.log('安安')
@@ -190,7 +190,7 @@ const foo3 = () => console.log('安安你好')
 export default { foo, foo2, foo3 }
 ```
 
-另一隻app.js檔案
+另一隻 app.js 檔案
 ```javascript
 import hiModule from "./data.js";
 console.log(hiModule);
@@ -204,29 +204,29 @@ foo3();
 
 ![](https://i.imgur.com/79zjPpw.png)
 
-### 使用as取別名
+### 使用 as 取別名
 
 我們在引入的時候也可以另外取名字的方式，通常會這麼做的時候是因為可能原先**export**的太過冗長或是在引用的檔案當中有相同的命名，因此會使用`as`來做為額外命名
 
-> 比較方便記憶的方式是as是英文alias的簡寫，而alias的中文有化名、別名的意思
+> 比較方便記憶的方式是 as 是英文 alias 的簡寫，而 alias 的中文有化名、別名的意思
 
-我們的data.js裡面有以下內容
+我們的 data.js 裡面有以下內容
 ```javascript
 export const data=[1,2,3,4,5,6,7,8];
 export function sayMyName(name){
     return console.log(name);
 }
 ```
-引入的app.js，這時候可以看到下面的sayMyName被取名成say了。
+引入的 app.js，這時候可以看到下面的 sayMyName 被取名成 say 了。
 ```javascript
 import {data,sayMyName as say }from './data.js';
 console.log(data);
 say("Tom");
 ```
-###  匯入side effect模組
-如果我們在原本的檔案當中不寫**export**關鍵字的話，一樣可以在其他要使用的地方引入，只是這樣的做法就被稱為**side effect模組**
+###  匯入 side effect 模組
+如果我們在原本的檔案當中不寫**export**關鍵字的話，一樣可以在其他要使用的地方引入，只是這樣的做法就被稱為**side effect 模組**
 
-原本的`data.js`不寫入export
+原本的`data.js`不寫入 export
 ```javascript
 function hello(){
     console.log("hello");
@@ -240,7 +240,7 @@ hello();
 import("./data.js");
 ```
 
-瀏覽器就會直接顯示hello，換句話說如果我們希望在引入的時候直接使用的話可以使用**sideEffect**的方式。
+瀏覽器就會直接顯示 hello，換句話說如果我們希望在引入的時候直接使用的話可以使用**sideEffect**的方式。
 
 ## 合併模組
 
@@ -259,10 +259,10 @@ export default function(){
 }
 ```
 
-需要注意的地方是 在`data.js`，**雖然export`*` 但其實並沒有匯出`test.js`的default。**
+需要注意的地方是 在`data.js`，**雖然 export`*` 但其實並沒有匯出`test.js`的 default。**
 
 ```javascript
-export * from  './test.js';  // 匯出此種方法並不會匯出在test的default
+export * from  './test.js';  // 匯出此種方法並不會匯出在 test 的 default
 ```
 
 在`app.js`撰寫如下
@@ -273,21 +273,21 @@ console.log(module);
 const { a , b }= module;//使用解構賦值方式將其取出
 ```
 
-如此一來印出module的時候會發現並沒有default的內容
+如此一來印出 module 的時候會發現並沒有 default 的內容
 
 ![](https://i.imgur.com/K65aE8a.png)
 
 ### 匯入預設模組再匯出
 
-為了能夠在重新匯出的時候也包含了原先在test的defautl的內容，因此`data.js`必須改成如下
+為了能夠在重新匯出的時候也包含了原先在 test 的 defautl 的內容，因此`data.js`必須改成如下
 
 ```javascript
-export * from "./test.js"; // 匯出此種方法並不會匯出在test的default
-//要匯出default的話要寫以下片段
+export * from "./test.js"; // 匯出此種方法並不會匯出在 test 的 default
+//要匯出 default 的話要寫以下片段
 export { default } from "./test.js";
 ```
 
-在`app.js`撰寫成以下片段，就能如期的使用剛剛在test所匯出的function
+在`app.js`撰寫成以下片段，就能如期的使用剛剛在 test 所匯出的 function
 
 ```javascript
 import fn, * as module from "./data.js";
@@ -297,15 +297,15 @@ const { a, b, test } = module; //使用解構賦值方式將其取出
 ```
 
 ### 匯入預設模組再取名匯出
-另外我們一樣可以使用as的方式將預設模組匯入之後再取名匯出
-再data.js的內容改成如下
+另外我們一樣可以使用 as 的方式將預設模組匯入之後再取名匯出
+再 data.js 的內容改成如下
 
 ```javascript
-export * from "./test.js"; // 匯出此種方法並不會匯出在test的default
-//要匯出default的話要寫以下片段
+export * from "./test.js"; // 匯出此種方法並不會匯出在 test 的 default
+//要匯出 default 的話要寫以下片段
 export { default as test} from "./test.js";
 ```
-在app.js的檔案使用大括號的方式就能夠如期使用，內容如下
+在 app.js 的檔案使用大括號的方式就能夠如期使用，內容如下
 ```javascript
 import { a, b, test } from "./data.js";
 console.log(a);
@@ -315,10 +315,10 @@ test();
 印出內容如下
 ![](https://i.imgur.com/2znfGxw.png)
 
-## React中實際應用場景
-### component拆分
-在React中(或其他框架)我們可以透過module的方式做到**component的檔案拆分**。
-例如以下就是將各個網頁上的component實際切分出的資料夾形式
+## React 中實際應用場景
+### component 拆分
+在 React 中 (或其他框架) 我們可以透過 module 的方式做到**component 的檔案拆分**。
+例如以下就是將各個網頁上的 component 實際切分出的資料夾形式
 ```bash
 ├─API
 ├─component
@@ -339,9 +339,9 @@ test();
 ├─store
 └─styles
 ```
-### 整合component到index.js檔案
+### 整合 component 到 index.js 檔案
 
-在React中(或其他框架中)，我們可以**透過整合模組的技巧，建立一支index.js，簡化引入時候的程式碼**。
+在 React 中 (或其他框架中)，我們可以**透過整合模組的技巧，建立一支 index.js，簡化引入時候的程式碼**。
 
 ```javascript
 export { default as Banner } from "./Banner/Banner";
@@ -351,7 +351,7 @@ export { default as Pagination } from "./Pagination/Pagination";
 ```
 
 這樣在引入的地方就能減少程式碼的量，增加可讀性。
-例如我們在page的js檔案，import的時候僅需要寫一行就好。
+例如我們在 page 的 js 檔案，import 的時候僅需要寫一行就好。
 
 ```javascript
 import { Aside, Header, Banner, Footer } from '../../component'
@@ -395,19 +395,19 @@ export const JapaneseCharacter = [
 ];
 ```
 
-在需要日文資料的地方再import就好了。
+在需要日文資料的地方再 import 就好了。
 
 ## 重點回顧
-* **一支檔案只能有一個default Export** 另外引入的時候可以改成你想要的名字 但是一般人不會這樣做，換句話說模組名字會和引入的名字一樣像是<font color="red">`import lodash from 'lodash'`</font>
-* 如果在export沒有使用default 的方式的話 就要使用大括號的方式做引入
-* 用大括弧方式引入可以寫alias來另取名字 通常會這麼做是因為import的variable名字太長或是命名衝突的問題
-* 在瀏覽器的時候要寫 tyle=module 
-* import* 可以引入那支檔案所有的export包含default但是還是要有名字alias的方式做引入
+* **一支檔案只能有一個 default Export** 另外引入的時候可以改成你想要的名字 但是一般人不會這樣做，換句話說模組名字會和引入的名字一樣像是<font color="red">`import lodash from 'lodash'`</font>
+* 如果在 export 沒有使用 default 的方式的話 就要使用大括號的方式做引入
+* 用大括弧方式引入可以寫 alias 來另取名字 通常會這麼做是因為 import 的 variable 名字太長或是命名衝突的問題
+* 在瀏覽器的時候要寫 type=module 
+* import* 可以引入那支檔案所有的 export 包含 default 但是還是要有名字 alias 的方式做引入
 * 具名匯入比較嚴謹，因為需要名字一樣才能使用。
 
 
 ##### 參考資料 
-- [從ES6開始的Javascript學習生活—模組系統](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/module_system.html)
+- [從 ES6 開始的 Javascript 學習生活—模組系統](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/module_system.html)
 - [MDN-JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [Javascript modules, why?](https://dev.to/ishansrivastava/javascript-modules-why-28gh)
 - [Everything You Need to Know About Javascript Modules in 6 Minutes](https://medium.com/swlh/everything-you-need-to-know-about-javascript-modules-in-6-minutes-54922fea9880)
