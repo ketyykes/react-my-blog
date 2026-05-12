@@ -1,0 +1,164 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Gatsby 部落格專案開發規則
+
+## 專案架構概覽
+
+這是一個基於 Gatsby.js 的技術部落格專案「水土曜來了」，使用 React + Material-UI + SCSS 開發。
+
+### 核心檔案結構
+
+- **Gatsby 配置**: [gatsby-config.js](mdc:gatsby-config.js), [gatsby-node.js](mdc:gatsby-node.js), [gatsby-browser.js](mdc:gatsby-browser.js)
+- **入口點**: [src/pages/index.js](mdc:src/pages/index.js)
+- **主要配置**: [package.json](mdc:package.json)
+- **全域樣式**: [src/styles/global.scss](mdc:src/styles/global.scss)
+
+## 元件開發規範
+
+### 主要元件結構
+- **Layout**: [src/components/layout/Layout.js](mdc:src/components/layout/Layout.js) - 主要版型元件
+- **頁面元件**: 位於 [src/pages/](mdc:src/pages) 目錄
+- **可重用元件**: 位於 [src/components/](mdc:src/components) 目錄
+
+### 元件命名規則
+- 使用 PascalCase 命名 (如: `ArticleCard`, `PhotoSlider`)
+- 每個元件都有專屬目錄和對應的模組化樣式檔案
+- 樣式檔案使用 `.module.scss` 後綴
+
+### 元件匯出方式
+主要元件透過 [src/components/index.js](mdc:src/components/index.js) 統一匯出：
+```javascript
+export { default as Layout } from "./layout/Layout";
+export { default as Header } from "./header/Header";
+```
+
+## 樣式系統規範
+
+### SCSS 架構
+- **全域樣式**: [src/styles/global.scss](mdc:src/styles/global.scss)
+- **顏色變數**: [src/styles/_color.scss](mdc:src/styles/_color.scss)
+- **Mixin**: [src/styles/_mixin.scss](mdc:src/styles/_mixin.scss)
+- **頁面樣式**: [src/styles/pages-styles/](mdc:src/styles/pages-styles)
+- **模板樣式**: [src/styles/templates-styles/](mdc:src/styles/templates-styles)
+
+### 樣式命名規則
+- 使用 camelCase 命名 CSS 類別
+- 模組化樣式檔案命名: `component.module.scss`
+- 匯入樣式: `import { className } from "./component.module.scss"`
+
+## 內容管理
+
+### Markdown 文章
+- 文章檔案位於: [src/pages/markdown-article/](mdc:src/pages/markdown-article)
+- 使用 `gatsby-transformer-remark` 處理 Markdown
+- 支援程式碼高亮 (Prism.js)
+
+### 文章模板
+- 主要模板: [src/templates/article-template.js](mdc:src/templates/article-template.js)
+- 標籤頁模板: [src/templates/tags-template.js](mdc:src/templates/tags-template.js)
+- 技術文章模板: [src/templates/tech-page-template.js](mdc:src/templates/tech-page-template.js)
+
+### 靜態資源
+- 圖片: [src/images/](mdc:src/images)
+- JSON 資料: [src/json/](mdc:src/json)
+
+## GraphQL 資料查詢
+
+### 資料來源配置
+在 [gatsby-config.js](mdc:gatsby-config.js) 中配置:
+- `gatsby-source-filesystem` - 檔案系統資料來源
+- `gatsby-transformer-remark` - Markdown 轉換
+- `gatsby-transformer-json` - JSON 資料轉換
+
+### 查詢範例
+```graphql
+query {
+  allMarkdownRemark {
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+        }
+        html
+        excerpt
+      }
+    }
+  }
+}
+```
+
+## UI 框架整合
+
+### Material-UI 使用
+- 主要使用 `@mui/material` 和 `@mui/icons-material`
+- Container、Box、IconButton 等元件廣泛使用
+- 響應式設計透過 Material-UI 的 sx prop
+
+### 第三方套件
+- **輪播**: react-slick + slick-carousel
+- **動畫**: ityped
+- **留言系統**: @giscus/react
+- **日期處理**: dayjs
+
+## 效能優化
+
+### 圖片處理
+- 使用 `gatsby-plugin-image` 和 `gatsby-plugin-sharp`
+- 自動生成 WebP 格式
+- 響應式圖片斷點: [576, 768, 1366, 1920]
+
+### 程式碼分割
+- 按頁面自動分割
+- 動態匯入重型元件
+
+## SEO 和無障礙性
+
+### SEO 配置
+- 使用 [src/components/seo/Seo.js](mdc:src/components/seo/Seo.js)
+- 網站地圖自動產生 (`gatsby-plugin-sitemap`)
+- Google Analytics 整合
+
+### 國際化
+- 主要語言: 繁體中文 (zh-Hant-TW)
+- 字體: Noto Sans TC
+
+## 開發流程
+
+### 常用指令
+```bash
+npm run develop  # 開發模式
+npm run build    # 產品建置
+npm run serve    # 預覽建置結果
+npm run clean    # 清理快取
+```
+
+### 部署配置
+- 目標平台: Netlify
+- 使用 `@netlify/plugin-gatsby` 插件
+- PWA 支援 (`gatsby-plugin-manifest`)
+
+## 程式碼品質
+
+### 檔案組織原則
+1. 元件按功能分類到專屬目錄
+2. 樣式檔案與元件檔案並置
+3. 共用邏輯抽取到獨立模組
+4. 靜態資源按類型組織
+
+### 最佳實務
+- 使用函式元件和 Hooks
+- 適當的 PropTypes 或 TypeScript 型別檢查
+- 語意化 HTML 結構
+- 無障礙性考量 (alt text, ARIA labels)
+
+## 疑難排解
+
+### 常見問題
+1. **建置失敗**: 檢查 Node.js 版本 (專案要求 18.19.1)
+2. **樣式問題**: 確認 SCSS 匯入路徑正確
+3. **GraphQL 錯誤**: 驗證查詢語法和資料來源配置
+4. **圖片載入問題**: 檢查圖片路徑和 gatsby-plugin-image 設定
