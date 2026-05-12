@@ -1,5 +1,5 @@
 ---
-title: 從 prompt 到 harness：駕馭 AI Agent 的完整工程演進指南
+title: 從 Prompt 到 Context 再到 Harness：駕馭 AI agent 的 Harness
 slug: 2026-05-11T00:00:00.000Z
 date: 2026-05-11T00:00:00.000Z
 tags: ["AI"]
@@ -8,6 +8,12 @@ tags: ["AI"]
 ## 前言
 
 想像一位騎師面對一匹力量強大卻不受拘束的野馬，他並不會試圖以蠻力壓制馬匹的天性，而是透過韁繩、馬鞍與馬勒這套**馬具（harness）**，將馬的力量導引到正確的方向。一旦少了這套器材，再強的馬也很難跑出一條穩定的路線；換句話說，**馬的可用性不在於馬本身，而在於我們如何駕馭它**。
+
+如下圖
+
+![0396755b-9feb-4c68-88c8-cedb38c7ec80](https://hackmd.io/_uploads/SJutffekfe.png)
+
+
 
 近兩年 AI 領域出現了一個角色 — `harness engineer`。我們從 prompt engineering 為起始點、經歷了 context engineering 的階段，如今來到了 harness engineering。這三者並不是彼此取代，而是責任邊界一層一層往外推、向更大的系統治理範圍延伸。
 
@@ -40,7 +46,10 @@ Agent = Model + Harness
 - **執行環境（execution environment）** — sandbox、權限隔離與運行時的資源限制
 - **評估與可觀測性（evaluation / observability）** — 自動化測試、trace、log、reward 訊號、失敗報告與回歸紀錄
 
-這些元件平時都隱身在 agent 的外圍，使用者多半感受不到它們的存在；但每一條都是讓模型能跑得穩、跑得久的關鍵基礎設施。後文要介紹的「五大支柱」，其實就是把這些元件再進一步收斂出來的功能性責任分組。
+
+![62ce6425-0989-4ddb-8a1a-2a0c81d7a937](https://hackmd.io/_uploads/BkNczzeyzl.png)
+
+就像上圖這些元件平時都隱身在 agent 的外圍，使用者多半感受不到它們的存在；但每一條都是讓模型能跑得穩、跑得久的關鍵基礎設施。後文要介紹的「五大支柱」，其實就是把這些元件再進一步收斂出來的功能性責任分組。
 
 ## prompt engineering：管理模型前的文字介面
 
@@ -55,6 +64,8 @@ Agent = Model + Harness
 - **reasoning model**：演進到由模型自動決定是否需要展開思考
 
 這個階段的精神可以一句話總結 — **專注於輸入，讓模型回答得更好**。它關注的點是「我們該怎麼問」，而不是「模型該知道什麼」或「模型該怎麼運作」。
+
+即使到了 2026 年，prompt engineering 依然是基礎中的基礎 — 社群長期維護了完整的 [Prompt Engineering Guide](https://www.promptingguide.ai/zh)，而 [OpenAI](https://developers.openai.com/api/docs/guides/prompt-guidance)、[Google Cloud](https://cloud.google.com/discover/what-is-prompt-engineering) 與 [Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) 等主要前沿模型廠商也都各自維護著官方的 prompt 指南。這幾份文件至今仍持續更新，足以證明這個階段累積下來的技巧並未過時，反而是進入後續 context engineering 與 harness engineering 的必備底座。
 
 ## context engineering：管理進入 context window 的所有資訊
 
@@ -78,7 +89,7 @@ Agent = Model + Harness
 
 ### 四種實踐策略：Write / Select / Compress / Isolate
 
-LangChain 把 context engineering 的實作手法整理成四個動詞：
+[LangChain](https://blog.langchain.com/context-engineering-for-agents/) 在一篇部落格談論時把 context engineering 的實作手法整理成四個動詞：
 
 - **Write（寫入）** — 把不該佔住 context window 的訊息（中間運算、決策紀錄）寫到外部存放，例如暫存器、長期記憶資料庫
 - **Select（選擇）** — 在需要時透過相似度檢索（RAG / embedding）動態拉進來
@@ -113,9 +124,8 @@ Anthropic 在《Effective Harnesses for Long-Running Agents》中指出，long-r
 
 值得注意的是，這三個階段並不是後者把前者替換掉，而是**巢狀結構** — 後者把前者整個包進來，往外擴張了關注的範圍：
 
-```
-Harness 包含 Context 包含 Prompt
-```
+
+![9dd89138-4154-440f-bc2a-cdb01146a486](https://hackmd.io/_uploads/BJ2ZQzlJzx.png)
 
 換句話說，做 harness engineering 不代表可以不寫好 prompt；做 context engineering 也不代表可以放任 prompt 隨便寫。每一層都假設前一層已經做好了。
 
@@ -206,15 +216,22 @@ OpenAI 在公開指南中也明確列出哪些動作必須觸發人工核可：*
 
 **起手式一：把 agent 看不到的東西全部落地成 in-repo artifact**。從 agent 的視角來看，**它在 context 裡看不到的東西就等於不存在**。因此 spec、規則、進度、決策紀錄都應該寫成版本控制下的檔案 — 例如 `AGENTS.md`、`CLAUDE.md`、`.cursor/rules`。
 
-**起手式二：把規範從 prompt 改為確定性約束**。寫一段 prompt 要求 agent「請遵守 ESLint 規則」是**機率性**的，但寫一個 pre-commit hook 直接 block 不合規的 commit 是**確定性**的。可以靠工具強制執行的事，就不要交給 prompt 提醒。
+**起手式二：把規範從 prompt 改為確定性約束**。寫一段 prompt 要求 agent「請遵守 ESLint 規則」是**機率性**的，但寫一個 pre-commit hook 直接禁止掉不合規的 commit 是**確定性**的。可以靠工具強制執行的事，就不要交給 prompt 提醒。
 
-**起手式三：建立最小可觀測性 — 一份進度日誌、一份功能清單、一個 git 歷史**。不必一開始就上完整的 telemetry pipeline，光是這三樣東西，就能讓 agent 在跨會話之間順暢交接，也讓人類審查時能快速定位「現在到哪了、漏了什麼」，緩解審查瓶頸。
+**起手式三：建立最小可觀測性 — 一份進度日誌、一份功能清單、一個 git 歷史**。不必一開始就上完整的 telemetry pipeline，光是這三樣東西，就能讓 agent 在跨會話之間順暢交接，也讓人類審查時能快速定位「現在到哪了、漏了什麼」減少 Review 瓶頸。
 
-至於更進階的支柱 — 多代理協作、衝刺合約、自動演化（AHE）— 都可以在這三個基礎穩定之後再逐步補上。
+至於更進階的支柱 — 多代理協作、衝刺合約、自動演化（AHE）— 都可以在這三個基礎穩定之後再漸漸補上。
+
+### 補充說明
+> - **多代理協作（multi-agent collaboration）** — 把 Planner、Generator、Evaluator 等角色拆給不同 agent 分工，讓規劃、執行、驗證在彼此隔離的 context 中進行，避免單一模型既當球員又當裁判
+> - **衝刺合約（sprint contract）** — 開工前先把這一輪的「完成定義」與驗收標準寫成明確契約，避免 agent 自己解釋成功、自己宣告完成
+> - **自動演化（AHE，Agentic Harness Engineering）** — 透過 telemetry 與評估資料自動回饋更新 harness 本身（規則、提示、權限），讓整個系統具備隨任務累積自我改進的能力
 
 ## 總結
 
-回顧整篇文章，AI 工程的演進可以濃縮成三句話：
+當然，我們也可以反過來追問 — 把 prompt engineering 做好算不算一種 harness？是。把 context engineering 做好算不算一種 harness？也是 — 它們本質上都是為了讓模型跑得更穩，而從模型外部疊上的約束。但當我們刻意拿出這三個詞彙來區分時，真正關注的焦點其實不同
+
+AI 工程的演進可以濃縮成三句話：
 
 - **Prompt engineering** 管的是模型前的文字介面 — 我們在意「該怎麼問」
 - **Context engineering** 管的是進入 context window 的所有資訊 — 我們在意「該知道什麼」
@@ -228,22 +245,27 @@ OpenAI 在公開指南中也明確列出哪些動作必須觸發人工核可：*
 
 ## 參考資料
 
-- [Context Engineering — ihower](https://ihower.tw/blog/12817-context-engineering)
-- [Harness Engineering — OpenAI](https://openai.com/zh-Hant/index/harness-engineering/)
-- [Harness Design for Long-Running Apps — Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-- [Effective Harnesses for Long-Running Agents — Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-- [What is Harness Engineering: Complete Guide 2026 — nxcode](https://www.nxcode.io/resources/news/what-is-harness-engineering-complete-guide-2026)
-- [Harness engineering for coding agent users — Martin Fowler](https://martinfowler.com/articles/harness-engineering.html)
-- [How Stripe Ships 1,300 AI PRs a Week — MindStudio](https://www.mindstudio.ai/blog/what-is-harness-engineering-beyond-prompt-context-engineering)
-- [Harness engineering: Structured workflows for AI-assisted development — Red Hat](https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development)
-- [Agentic Harness Engineering: Observability-Driven Automatic Evolution (arXiv)](https://arxiv.org/abs/2604.25850)
-- [Andrej Karpathy on context engineering — X / Twitter](https://x.com/karpathy/status/1937902205765607626)
-- [Context Engineering for Agents — LangChain Blog](https://blog.langchain.com/context-engineering-for-agents/)
-- [What Is Context Engineering? — IBM](https://www.ibm.com/think/topics/context-engineering)
-- [Context Engineering: Bringing Engineering Discipline to Prompts — Addy Osmani](https://addyo.substack.com/p/context-engineering-bringing-engineering)
-- [Context Engineering 101: What We Can Learn from Anthropic](https://omnigeorgio.beehiiv.com/p/context-engineering-101-what-we-can-learn-from-anthropic)
-- [The Anatomy of an Agent Harness — LangChain](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness)
-- [What Is an Agent Harness? Architecture Behind Claude Code, Codex, Cursor — MindStudio](https://www.mindstudio.ai/blog/what-is-agent-harness-architecture-explained)
-- [Continually improving our agent harness — Cursor](https://cursor.com/blog/continually-improving-agent-harness)
-- [What is an AI Agent Harness? 5 Core Pillars — Aiquinta](https://aiquinta.ai/blog/agent-harness-5-core-pillars-and-how-to-build/)
-- [awesome-harness-engineering](https://github.com/walkinglabs/awesome-harness-engineering)
+- **Context engineering**
+  - [Context Engineering — ihower](https://ihower.tw/blog/12817-context-engineering)
+  - [Andrej Karpathy on context engineering — X / Twitter](https://x.com/karpathy/status/1937902205765607626)
+  - [Context Engineering for Agents — LangChain Blog](https://blog.langchain.com/context-engineering-for-agents/)
+  - [What Is Context Engineering? — IBM](https://www.ibm.com/think/topics/context-engineering)
+  - [Context Engineering: Bringing Engineering Discipline to Prompts — Addy Osmani](https://addyo.substack.com/p/context-engineering-bringing-engineering)
+  - [Context Engineering 101: What We Can Learn from Anthropic](https://omnigeorgio.beehiiv.com/p/context-engineering-101-what-we-can-learn-from-anthropic)
+- **Harness engineering 概論**
+  - [Harness Engineering — OpenAI](https://openai.com/zh-Hant/index/harness-engineering/)
+  - [Harness Design for Long-Running Apps — Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+  - [Effective Harnesses for Long-Running Agents — Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+  - [Harness engineering for coding agent users — Martin Fowler](https://martinfowler.com/articles/harness-engineering.html)
+  - [What is Harness Engineering: Complete Guide 2026 — nxcode](https://www.nxcode.io/resources/news/what-is-harness-engineering-complete-guide-2026)
+  - [Harness engineering: Structured workflows for AI-assisted development — Red Hat](https://developers.redhat.com/articles/2026/04/07/harness-engineering-structured-workflows-ai-assisted-development)
+  - [Agentic Harness Engineering: Observability-Driven Automatic Evolution (arXiv)](https://arxiv.org/abs/2604.25850)
+- **Agent harness 架構**
+  - [The Anatomy of an Agent Harness — LangChain](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness)
+  - [What Is an Agent Harness? Architecture Behind Claude Code, Codex, Cursor — MindStudio](https://www.mindstudio.ai/blog/what-is-agent-harness-architecture-explained)
+  - [Continually improving our agent harness — Cursor](https://cursor.com/blog/continually-improving-agent-harness)
+  - [What is an AI Agent Harness? 5 Core Pillars — Aiquinta](https://aiquinta.ai/blog/agent-harness-5-core-pillars-and-how-to-build/)
+- **其他**
+  - [How Stripe Ships 1,300 AI PRs a Week — MindStudio](https://www.mindstudio.ai/blog/what-is-harness-engineering-beyond-prompt-context-engineering)
+  - [awesome-harness-engineering](https://github.com/walkinglabs/awesome-harness-engineering)
+
