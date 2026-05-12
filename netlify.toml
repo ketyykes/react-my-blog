@@ -1,6 +1,8 @@
 [build]
-  command = "npm run clean && npm run build"
+  command = "npx playwright install chromium && npm run clean && npm run build"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "18.19.1"
+  # 將 Playwright 瀏覽器裝到 node_modules 內，讓 Netlify 的 node_modules cache 一併保存
+  PLAYWRIGHT_BROWSERS_PATH = "0"
