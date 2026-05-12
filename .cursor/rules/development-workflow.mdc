@@ -1,0 +1,185 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 開發工作流程與程式碼風格指南
+
+## 程式碼風格規範
+
+### JavaScript/React 風格
+- 使用函式元件 (Function Components) 而非類別元件
+- 偏好使用 React Hooks 進行狀態管理
+- 使用解構賦值 (Destructuring) 簡化程式碼
+- 使用 ES6+ 語法特性 (箭頭函式、模板字串等)
+
+### 檔案命名慣例
+```
+元件檔案: PascalCase (ArticleCard.js, PhotoSlider.js)
+樣式檔案: camelCase.module.scss (articleCard.module.scss)
+頁面檔案: kebab-case 或 camelCase (about.js, markdown-article/)
+資料檔案: camelCase.json (portfolioCard.json)
+```
+
+### 匯入順序
+```javascript
+// 1. React 及相關套件
+import React from "react";
+import { useState, useEffect } from "react";
+
+// 2. 第三方套件
+import { Container, Box } from "@mui/material";
+import dayjs from "dayjs";
+
+// 3. 本地元件和模組
+import { Layout, Seo } from "../components";
+import styles from "./component.module.scss";
+```
+
+## Git 工作流程
+
+### 分支策略
+- `master` - 主要分支，穩定版本
+- `develop` - 開發分支
+- `feature/*` - 功能開發分支
+- `hotfix/*` - 緊急修復分支
+
+### 提交訊息格式
+```
+feat: 新增文章分類功能
+fix: 修復響應式選單問題
+style: 調整首頁 banner 樣式
+docs: 更新 README 文件
+refactor: 重構文章模板結構
+```
+
+## 元件開發模式
+
+### 建立新元件步驟
+1. 在 [src/components/](mdc:src/components) 建立元件目錄
+2. 建立元件檔案 `ComponentName.js`
+3. 建立樣式檔案 `componentName.module.scss`
+4. 在 [src/components/index.js](mdc:src/components/index.js) 匯出元件
+5. 撰寫元件文件和使用範例
+
+### 元件結構範本
+```javascript
+import React from "react";
+import styles from "./componentName.module.scss";
+
+const ComponentName = ({ children, ...props }) => {
+  return (
+    <div className={styles.container} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export default ComponentName;
+```
+
+## 效能最佳化指南
+
+### 圖片優化
+- 使用 [gatsby-plugin-image](mdc:gatsby-config.js) 進行圖片處理
+- 優先使用 WebP 格式
+- 實作延遲載入 (Lazy Loading)
+- 適當設定圖片尺寸和品質
+
+### 程式碼優化
+- 使用動態匯入分割大型元件
+- 實作適當的快取策略
+- 避免不必要的重新渲染
+- 使用 React.memo 包裝純元件
+
+### 建置優化
+```bash
+# 分析建置大小
+npm run build -- --analyze
+
+# 清理快取
+npm run clean
+
+# 效能測試
+npm run develop -- --host 0.0.0.0
+```
+
+## 除錯指南
+
+### 常用除錯工具
+- React Developer Tools
+- Gatsby 開發工具
+- Chrome DevTools
+- Lighthouse 效能檢測
+
+### 除錯技巧
+```javascript
+// 使用 console.log 除錯
+console.log('Debug data:', data);
+
+// 使用 React DevTools 檢查元件狀態
+// 在瀏覽器中檢查 GraphQL 查詢
+// 使用 gatsby develop 的 GraphiQL 介面
+```
+
+## 測試策略
+
+### 測試範圍
+- 元件渲染測試
+- 使用者互動測試
+- GraphQL 查詢測試
+- 響應式設計測試
+
+### 測試工具建議
+- Jest - 單元測試框架
+- React Testing Library - React 元件測試
+- Cypress - 端對端測試
+- Storybook - 元件開發和測試
+
+## 部署清單
+
+### 部署前檢查
+- [ ] 執行 `npm run build` 確認建置成功
+- [ ] 檢查所有圖片和連結是否正常
+- [ ] 驗證 SEO 標籤設定
+- [ ] 測試響應式設計
+- [ ] 確認無障礙性符合標準
+
+### Netlify 部署設定
+```toml
+# netlify.toml
+[build]
+  publish = "public/"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18.19.1"
+  NPM_VERSION = "9.1.2"
+```
+
+## 效能監控
+
+### 關鍵指標
+- Core Web Vitals (LCP, FID, CLS)
+- 頁面載入時間
+- 圖片載入效能
+- JavaScript 包大小
+
+### 監控工具
+- Google PageSpeed Insights
+- GTmetrix
+- WebPageTest
+- Lighthouse CI
+
+## 安全性考量
+
+### 內容安全
+- 驗證 Markdown 內容
+- 防範 XSS 攻擊
+- 安全的外部連結處理
+
+### 部署安全
+- HTTPS 強制執行
+- 安全標頭設定
+- 環境變數保護
+- 定期更新依賴套件

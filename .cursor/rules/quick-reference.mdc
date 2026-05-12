@@ -1,0 +1,383 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 快速參考指南
+
+## 常用指令速查
+
+### Gatsby 開發指令
+```bash
+# 啟動開發伺服器
+npm run develop
+gatsby develop
+
+# 建置專案
+npm run build
+gatsby build
+
+# 預覽建置結果
+npm run serve
+gatsby serve
+
+# 清理快取和建置檔案
+npm run clean
+gatsby clean
+
+# 開啟 GraphiQL 介面
+http://localhost:8000/___graphql
+```
+
+### 專案管理
+```bash
+# 安裝依賴
+npm install
+
+# 新增套件
+npm install package-name
+npm install -D package-name  # 開發依賴
+
+# 檢查過時套件
+npm outdated
+
+# 更新套件
+npm update
+```
+
+## 程式碼範本
+
+### React 函式元件範本
+```javascript
+import React from "react";
+import styles from "./ComponentName.module.scss";
+
+const ComponentName = ({ children, className, ...props }) => {
+  return (
+    <div 
+      className={`${styles.container} ${className || ''}`} 
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default ComponentName;
+```
+
+### Gatsby 頁面元件範本
+```javascript
+import React from "react";
+import { Layout, Seo } from "../components";
+
+const PageName = () => {
+  return (
+    <Layout>
+      <div>
+        <h1>頁面標題</h1>
+        {/* 頁面內容 */}
+      </div>
+    </Layout>
+  );
+};
+
+export const Head = () => (
+  <>
+    <html lang="zh-Hant-TW" />
+    <Seo title="頁面標題" description="頁面描述" />
+  </>
+);
+
+export default PageName;
+```
+
+### GraphQL 查詢範本
+```javascript
+import { graphql, useStaticQuery } from "gatsby";
+
+const ComponentWithQuery = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
+    }
+  `);
+
+  return (
+    <div>
+      <h1>{data.site.siteMetadata.title}</h1>
+    </div>
+  );
+};
+```
+
+### 頁面查詢範本
+```javascript
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date
+      }
+      html
+      excerpt
+    }
+  }
+`;
+```
+
+## SCSS 樣式範本
+
+### 模組化樣式範本
+```scss
+// component.module.scss
+@import "../../styles/color";
+@import "../../styles/mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  @include mobile {
+    flex-direction: row;
+  }
+}
+
+.title {
+  color: $primary_color;
+  font-size: 2rem;
+  
+  &:hover {
+    color: $secondary_color;
+  }
+}
+```
+
+### 響應式設計 Mixin
+```scss
+// 在 _mixin.scss 中定義
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+```
+
+## Material-UI 整合範本
+
+### 基本元件使用
+```javascript
+import React from "react";
+import { 
+  Container, 
+  Box, 
+  Typography, 
+  Button,
+  IconButton 
+} from "@mui/material";
+import { ArrowForward } from "@mui/icons-material";
+
+const MUIComponent = () => {
+  return (
+    <Container maxWidth="lg">
+      <Box sx={{ py: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          標題
+        </Typography>
+        <Button 
+          variant="contained" 
+          endIcon={<ArrowForward />}
+          sx={{ mt: 2 }}
+        >
+          按鈕
+        </Button>
+      </Box>
+    </Container>
+  );
+};
+```
+
+### 主題客製化
+```javascript
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#469ad5",
+    },
+    secondary: {
+      main: "#4296d1",
+    },
+  },
+  typography: {
+    fontFamily: '"Noto Sans TC", sans-serif',
+  },
+});
+
+// 在根元件中使用
+<ThemeProvider theme={theme}>
+  {/* 應用內容 */}
+</ThemeProvider>
+```
+
+## Gatsby Node.js 範本
+
+### 建立頁面範本
+```javascript
+// gatsby-node.js
+const path = require("path");
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve("src/templates/article-template.js"),
+      context: {
+        slug: node.fields.slug,
+      },
+    });
+  });
+};
+```
+
+## 除錯和效能調校
+
+### 效能分析
+```javascript
+// 使用 React DevTools Profiler
+import { Profiler } from "react";
+
+const onRenderCallback = (id, phase, actualDuration) => {
+  console.log('Profiler:', { id, phase, actualDuration });
+};
+
+<Profiler id="ComponentName" onRender={onRenderCallback}>
+  <ComponentName />
+</Profiler>
+```
+
+### 延遲載入元件
+```javascript
+import { lazy, Suspense } from "react";
+
+const LazyComponent = lazy(() => import("./LazyComponent"));
+
+const ParentComponent = () => {
+  return (
+    <Suspense fallback={<div>載入中...</div>}>
+      <LazyComponent />
+    </Suspense>
+  );
+};
+```
+
+## Git 工作流程快捷指令
+
+### 常用 Git 指令
+```bash
+# 檢查狀態
+git status
+
+# 暫存檔案
+git add .
+git add src/components/
+
+# 提交變更
+git commit -m "feat: 新增元件功能"
+
+# 推送到遠端
+git push origin master
+
+# 拉取最新變更
+git pull origin master
+
+# 建立新分支
+git checkout -b feature/new-component
+
+# 切換分支
+git checkout master
+git checkout develop
+```
+
+### 分支管理
+```bash
+# 查看所有分支
+git branch -a
+
+# 刪除本地分支
+git branch -d feature/old-feature
+
+# 刪除遠端分支
+git push origin --delete feature/old-feature
+
+# 合併分支
+git checkout master
+git merge feature/new-feature
+```
+
+## 快速故障排除
+
+### 常見錯誤解決方案
+```bash
+# 模組找不到錯誤
+rm -rf node_modules package-lock.json
+npm install
+
+# Gatsby 快取問題
+npm run clean
+npm run develop
+
+# 圖片載入問題
+# 檢查圖片路徑是否正確
+# 確認 gatsby-plugin-image 設定
+
+# GraphQL 查詢錯誤
+# 使用 GraphiQL 介面測試查詢
+# 檢查欄位名稱和結構
+```
+
+### 效能檢查清單
+- [ ] 圖片是否已最佳化 (WebP 格式)
+- [ ] JavaScript 包大小是否合理
+- [ ] 是否使用程式碼分割
+- [ ] CSS 是否已壓縮
+- [ ] 是否啟用快取機制
+- [ ] Core Web Vitals 分數如何
