@@ -82,7 +82,7 @@ JSDoc 是一種用來為 JavaScript 程式碼撰寫註解的標準格式，透�
 
 若希望在不修改任何程式碼的情況下，啟用 **所有 JavaScript 檔案的型別檢查**，只需在 VSCode 的「使用者設定」或「工作區設定」中加入以下設定：
 
-```jsonc
+```json
 "js/ts.implicitProjectConfig.checkJs": true
 ```
 

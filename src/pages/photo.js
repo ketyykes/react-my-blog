@@ -8,7 +8,6 @@ const Photo = () => {
 export default Photo;
 export const Head = () => (
 	<>
-		<html lang="zh-Hant-TW" />
 		<Seo title="Photo" />;
 	</>
 );

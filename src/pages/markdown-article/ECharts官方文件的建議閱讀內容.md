@@ -119,7 +119,7 @@ Apache ECharts™ 5 引入「資料轉換」功能，能以宣告式方式根據
 
 實用性說明：對解決常見問題非常有幫助，但實用性取決於實際使用情境。
 
-如果您使用 Vue，務必查看 FAQ 的 <span style="color:red;">其他</span> 部分
+如果你使用 Vue，務必查看 FAQ 的 <span style="color:red;">其他</span> 部分
 
 ![image](https://hackmd.io/_uploads/HkQlhRRXye.png)
 

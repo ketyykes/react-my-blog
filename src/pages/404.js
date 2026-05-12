@@ -12,7 +12,6 @@ const NotFound = () => {
 
 export const Head = () => (
 	<>
-		<html lang="zh-Hant-TW" />
 		<Seo title="Not Found" />;
 	</>
 );

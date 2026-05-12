@@ -10,7 +10,6 @@ const Index = ({ data }) => {
 export default Index;
 export const Head = () => (
 	<>
-		<html lang="zh-Hant-TW" />
 		<Seo
 			title="首頁"
 			description="水土曜來了 - 技術部落格，專注於前端開發、React、JavaScript、TypeScript 等技術分享"

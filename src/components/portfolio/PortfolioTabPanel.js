@@ -19,7 +19,6 @@ const PortfolioTabPanel = ({ index, value, data }) => {
 		isDesktopXl: useMediaQuery(" (993px <= width <= 1440px) "),
 		isDesktopXXl: useMediaQuery(" ( width > 1441px ) "),
 	};
-	console.log(data);
 
 	const imageListCol = (({
 		// isMobile,
